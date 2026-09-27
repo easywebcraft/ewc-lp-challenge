@@ -417,6 +417,14 @@ footer a{color:#ddd}
 }
 .pc-only{display:none}
 @media (min-width:1100px){ .pc-only{display:block} }
+
+/* FV：デザイン画像をそのまま表示（人物・文字が切れないよう、画像の縦横比のまま出す） */
+.fv2{padding:0; background:#050505; border-top:0}
+.fv2-in{position:relative; max-width:1672px; margin:0 auto}
+.fv2-in img{width:100%; height:auto}
+.fv2-cta{position:absolute; left:3.2%; top:79.7%; width:93.1%; height:8.2%; border-radius:999px}
+.fv2-cta:focus-visible{outline:3px solid var(--gold-lt); outline-offset:3px}
+@media (min-width: 700px){ .fv2-cta{left:4.7%; top:77.6%; width:48.4%; height:11%} }
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -446,27 +454,16 @@ footer a{color:#ddd}
 
 <main id="top">
 
-<!-- ① ファーストビュー -->
-<section class="fv" aria-label="EasyWebCraft">
-  <div class="fv-in">
-    <div class="fv-visual pc-only"><img src="img/v3/fv-visual.webp" alt="" width="1424" height="1754" fetchpriority="high"></div>
-    <div class="fv-text">
-      <p class="fv-lead"><em>起業・開業</em>の最初の一手に。信頼されるホームページを。</p>
-      <h1 class="fv-title"><img src="img/v3/fv-title.webp" alt="その挑戦に、ホームページを。" width="1980" height="529"></h1>
-      <p class="fv-sns">SNSで知ってもらい、ホームページで<em>信頼</em>につなげる。</p>
-      <p class="fv-for">開業前・開業したばかりの方へ。<br>想いだけでは伝わらない事業の魅力を、伝わる形にします。</p>
-      <div class="fv-visual"><img src="img/v3/fv-visual.webp" alt="" width="1424" height="1754" fetchpriority="high"></div>
-      <div class="fv-bottom">
-      <ul class="badges">
-        <li><small>初期費用</small><b class="g">0<i>円</i></b></li>
-        <li><small>月額</small><b class="s g">5,980<i>円〜</i></b></li>
-        <li><small>最短</small><b class="t g">7日で<br>デザイン案</b></li>
-      </ul>
-      <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a>
-      <ul class="checks"><li>トップページ1ページ分を無料提案</li><li>デザインを見てから契約判断OK</li><li>開業前の相談もOK</li></ul>
-      <p class="fine">※表示価格は税別（税込6,578円〜）・最低契約期間6ヶ月</p>
-      </div>
-    </div>
+<!-- ① ファーストビュー（デザイン画像をそのまま表示。CTA部分に透明リンクを重ねる） -->
+<section class="fv2" aria-label="EasyWebCraft">
+  <h1 class="sr">その挑戦に、ホームページを。起業・開業の最初の一手に、信頼されるホームページを。</h1>
+  <p class="sr">初期費用0円、月額5,980円〜（税別）、最短7日で公開。トップページ1ページ分を無料提案、デザインを見てから契約判断OK、開業前の相談もOK。最低契約期間6ヶ月。</p>
+  <div class="fv2-in">
+    <picture>
+      <source media="(min-width: 700px)" srcset="img/v3/fv-pc.webp" width="2560" height="1346">
+      <img src="img/v3/fv-sp.webp" alt="" width="1170" height="1974" fetchpriority="high">
+    </picture>
+    <a class="fv2-cta" href="#contact" aria-label="無料デザイン案をもらう"></a>
   </div>
 </section>
 
@@ -736,7 +733,7 @@ footer a{color:#ddd}
     es.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
     bar.classList.toggle('off', seen.size > 0);
   }, { threshold: 0.01 });
-  [document.querySelector('.fv'), document.getElementById('contact')].forEach(function (el) { if (el) io.observe(el); });
+  [document.querySelector('.fv2'), document.getElementById('contact')].forEach(function (el) { if (el) io.observe(el); });
 })();
 // フォーム送信
 document.getElementById('cform').addEventListener('submit', function (e) {
