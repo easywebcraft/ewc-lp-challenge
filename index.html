@@ -5,417 +5,421 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>EasyWebCraft｜その挑戦に、ホームページを。</title>
-<meta name="description" content="起業・開業の最初の一手に、信頼されるホームページを。あなたの事業に合わせたデザイン案を無料でご提案します。初期費用0円・月額5,980円〜（税別）。">
+<meta name="description" content="開業前・開業したばかりの方へ。あなたの事業に合わせたトップページのデザイン案を無料でご提案します。初期費用0円・月額5,980円〜（税別）・最低契約期間6ヶ月。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="その挑戦に、ホームページを。｜EasyWebCraft">
-<meta property="og:description" content="あなたの事業に合わせたデザイン案を無料でご提案。初期費用0円・月額5,980円〜（税別）。">
-<meta property="og:image" content="https://easywebcraft.github.io/ewc-lp-challenge/img/hero-bg-pc.webp">
+<meta property="og:description" content="トップページのデザイン案を無料でご提案。初期費用0円・月額5,980円〜（税別）。">
+<meta property="og:image" content="https://easywebcraft.github.io/ewc-lp-challenge/img/v3/fv-visual.webp">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><text x='50' y='72' font-size='62' font-weight='bold' text-anchor='middle' font-family='sans-serif' fill='%23ffc61a'>E</text></svg>">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@600;700&family=Noto+Serif+JP:wght@700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&family=Oswald:wght@600;700&display=swap">
 <style>
-/* 黒×赤×金の「挑戦」トーン。デザイン案（1024px幅の1枚画像）を、PCではほぼそのままの配置で、スマホでは縦に積んで再現する */
+/* 黒×金×赤。デザイン画像（lp_element の 1〜7）の構成と見た目を、文字はHTML・写真は画像で再現 */
 :root{
-  --ink:#111; --black:#0a0a0a; --char:#1a1a1a; --red:#d7141a; --red-dk:#9e0c10;
-  --gold:#e3b43a; --gold-lt:#ffe38a; --yellow:#ffc61a; --paper:#fff; --muted:#666; --line:#e2e2e2;
-  --num:"Oswald","Noto Sans JP",sans-serif;
+  --bg:#070707; --line:rgba(227,180,58,.45); --line2:rgba(255,255,255,.12);
+  --gold:#e3b43a; --gold-lt:#ffe08a; --red:#d7141a; --red-lt:#ff3b40; --ink:#f3f0ea; --muted:#b9b2a5; --paper:#f7f3ea; --paper-ink:#1b1712;
+  --num:"Oswald","Noto Sans JP",sans-serif; --serif:"Noto Serif JP","Hiragino Mincho ProN",serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0; background:var(--black); color:var(--ink); font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic UI",sans-serif; line-height:1.7}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic UI",sans-serif; line-height:1.75; font-size:15px}
 img{max-width:100%; display:block}
 a{color:inherit}
-.wrap{max-width:1024px; margin:0 auto}
 .sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+.wrap{max-width:1180px; margin:0 auto; padding:0 16px}
+section{position:relative; padding:64px 0; scroll-margin-top:58px;
+  background:radial-gradient(60% 50% at 15% 0%,rgba(227,180,58,.10),transparent 70%),radial-gradient(50% 45% at 90% 100%,rgba(227,180,58,.08),transparent 70%),var(--bg)}
+section + section{border-top:1px solid rgba(227,180,58,.18)}
+
+/* 見出し（金のセリフ体・左右の罫線） */
+.sec-h{text-align:center; margin:0 0 30px}
+.sec-h .en{display:block; font-family:var(--num); letter-spacing:.3em; color:var(--gold); font-size:13px; margin-bottom:6px}
+.sec-h h2{display:flex; align-items:center; justify-content:center; gap:18px; margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(26px,6.4vw,48px); line-height:1.25; color:#fff}
+.sec-h h2::before,.sec-h h2::after{content:""; flex:0 1 110px; height:1px; background:linear-gradient(90deg,transparent,var(--gold))}
+.sec-h h2::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.g{background:linear-gradient(180deg,#fff3c4,#e9bd4a 55%,#b8860b); -webkit-background-clip:text; background-clip:text; color:transparent}
+.r{color:var(--red-lt)}
+.sec-h p{margin:12px 0 0; font-size:clamp(15px,3.8vw,22px); font-weight:700; line-height:1.6}
+.sec-h p em{font-style:normal; color:var(--gold-lt)}
+.sec-h small{display:block; margin-top:6px; font-size:13px; color:var(--muted)}
+
+/* ボタン */
+.btn-red{display:flex; align-items:center; justify-content:center; gap:12px; max-width:620px; margin:0 auto; text-decoration:none; color:#fff4c2; font-weight:900; font-size:clamp(18px,4.6vw,28px); letter-spacing:.04em;
+  background:linear-gradient(180deg,#ff3a40,#c10d13 55%,#8e070b); border:2px solid #ff8b8e; border-radius:999px; padding:14px 26px; box-shadow:0 0 0 3px rgba(255,59,64,.18), 0 10px 30px rgba(215,20,26,.5)}
+.btn-red svg{width:1.1em; height:1.1em; flex:0 0 auto; stroke:currentColor; fill:none; stroke-width:2}
+.btn-red .arr{font-weight:400}
+.btn-red:focus-visible{outline:3px solid var(--gold-lt); outline-offset:3px}
+.checks{list-style:none; margin:14px auto 0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:6px 22px; font-size:13px; font-weight:700; color:#fff}
+.checks li{display:flex; align-items:center; gap:6px}
+.checks li::before{content:"✓"; width:20px; height:20px; border-radius:50%; border:2px solid var(--gold); color:var(--gold); font-size:12px; display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto}
+.cta-block{margin-top:34px}
+.fine{margin:8px 0 0; text-align:center; font-size:12px; color:var(--muted)}
 
 /* ヘッダー */
-.top{position:sticky; top:0; z-index:50; background:#000; border-bottom:1px solid #222}
-.top-in{max-width:1024px; margin:0 auto; display:flex; align-items:center; gap:18px; padding:8px 16px}
-.top .logo img{height:20px; width:auto}
-.top .tagline{color:#ddd; font-size:12px; font-weight:700; margin:0}
-.top .cta{margin-left:auto; background:var(--yellow); color:#111; text-decoration:none; font-weight:900; font-size:14px; border-radius:999px; padding:8px 22px; white-space:nowrap; box-shadow:0 0 18px rgba(255,198,26,.35)}
-.top .cta::after{content:" →"}
-.top .menu{width:26px; display:grid; gap:5px}
-.top .menu i{display:block; height:2px; background:#fff}
+.top{position:sticky; top:0; z-index:50; background:rgba(0,0,0,.92); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); border-bottom:1px solid rgba(227,180,58,.25)}
+.top-in{max-width:1400px; margin:0 auto; display:flex; align-items:center; gap:14px; padding:8px 16px}
+.top .logo img{height:22px; width:auto}
+.gnav{display:none}
+.top .cta{margin-left:auto; background:linear-gradient(180deg,#ffe07a,#e3b43a); color:#1a1200; text-decoration:none; font-weight:900; font-size:13px; border-radius:999px; padding:8px 16px; white-space:nowrap; box-shadow:0 0 18px rgba(227,180,58,.35)}
+.menu-btn{background:none; border:0; padding:6px; cursor:pointer; display:grid; gap:5px}
+.menu-btn i{display:block; width:24px; height:2px; background:#fff}
+.mnav{display:none; position:absolute; left:0; right:0; top:100%; background:rgba(0,0,0,.96); border-bottom:1px solid var(--line)}
+.mnav.open{display:block}
+.mnav a{display:block; padding:14px 20px; text-decoration:none; font-weight:700; border-top:1px solid var(--line2)}
 
-/* ヒーロー（人物・筆文字・バッジは1枚画像） */
-.hero{position:relative; background:#000}
-.hero picture img{width:100%; height:auto}
-.hero img{width:100%; height:auto}
+/* ① ファーストビュー */
+.fv{padding:0; overflow:hidden; background:radial-gradient(70% 90% at 75% 40%,rgba(227,150,40,.22),transparent 60%),radial-gradient(40% 50% at 10% 20%,rgba(227,150,40,.12),transparent 70%),#050505}
+.fv-in{position:relative; max-width:1400px; margin:0 auto; display:grid; grid-template-columns:1fr; padding:0 0 22px}
+.fv-visual{position:relative; height:calc(max(170px, var(--fvh, 664px) - 520px)); overflow:hidden}
+.fv-visual img{width:100%; height:100%; object-fit:cover; object-position:30% 18%}
+.fv-visual::after{content:""; position:absolute; inset:auto 0 0 0; height:45%; background:linear-gradient(transparent,#050505)}
+.fv-text{position:relative; padding:0 14px; margin-top:-34px; z-index:2}
+.fv-lead{display:inline-block; margin:0; padding:3px 14px; font-family:var(--serif); font-weight:900; font-size:13px; color:#fff; background:linear-gradient(90deg,rgba(215,20,26,.9),rgba(215,20,26,.55) 80%,transparent); transform:skewX(-8deg)}
+.fv-lead em{font-style:normal; color:var(--gold-lt)}
+.fv-title{margin:6px 0 0}
+.fv-title img{width:100%; height:auto; filter:drop-shadow(0 4px 12px rgba(0,0,0,.8))}
+.fv-sns{margin:4px 0 0; font-family:var(--serif); font-weight:900; font-size:16px; line-height:1.5}
+.fv-sns em{font-style:normal; color:var(--gold-lt); font-size:1.25em}
+.fv-for{margin:6px 0 0; padding-left:10px; border-left:2px solid var(--gold); font-size:12px; color:#e9e4da; line-height:1.6}
+.badges{list-style:none; margin:12px 0 12px; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+.badges li{border-radius:999px; border:2px solid var(--gold); background:radial-gradient(circle at 50% 30%,#1c1a16,#060606); box-shadow:inset 0 0 0 2px #5a4108, 0 0 16px rgba(227,180,58,.35); text-align:center; padding:6px 4px 8px; line-height:1.1}
+.badges small{display:block; font-size:11px; font-weight:800; color:#fff}
+.badges b{display:block; margin-top:3px; font-family:var(--num); font-weight:700; font-size:24px}
+.badges b i{font-style:normal; font-family:"Noto Sans JP"; font-weight:900; font-size:.55em}
+.badges b.s{font-size:18px}
+.badges b.t{font-family:"Noto Sans JP"; font-weight:900; font-size:14px; line-height:1.25}
+.fv .btn-red{font-size:19px; padding:12px 18px}
+.fv .checks{margin-top:10px; font-size:11.5px; gap:4px 12px}
+.fv .fine{margin-top:4px; font-size:11px}
 
-/* ヒーロー（背景写真＋HTMLの文字）。文字は全部HTMLなので、どの画面でもくっきり表示される。
-   スマホ：写真の上半分を見せ、下の暗い部分に見出し→価格→CTAを上から順に並べる ／ PC：16:9の上に配置 */
-.hero2{position:relative; overflow:hidden; background:#050505; color:#fff}
-.hero2 .bg img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top}
-.h-in{position:relative; max-width:1680px; margin:0 auto; padding:92vw 14px 22px}
-.v-ask{position:absolute; left:10px; top:12px; margin:0; writing-mode:vertical-rl; font-family:"Noto Serif JP",serif; font-weight:900; font-size:30px; line-height:1.15; color:#ff2d34; text-shadow:0 0 10px #000, 0 0 3px #000}
-.v-ask small{font-size:.55em; color:#fff}
-.quote,.note-r,.devices{display:none}
-.quote{margin:0}
-.h-title{position:relative; margin:0; font-family:"Noto Serif JP",serif; font-weight:900; line-height:1.1; text-align:center; text-shadow:0 4px 18px rgba(0,0,0,.9); transform:skewX(-6deg)}
-.h-title::before{content:""; position:absolute; left:-6%; right:-6%; top:36%; bottom:-12%; background:radial-gradient(60% 55% at 50% 50%,rgba(214,162,28,.55),rgba(170,120,10,.28) 55%,transparent 75%); z-index:-1}
-.h-title .w{display:block; font-size:clamp(32px,10vw,46px); color:#fff}
-.h-title .r{display:block; font-size:clamp(34px,10.4vw,48px); color:#ff1f26; white-space:nowrap}
-.h-sub{margin:12px 0 18px; text-align:center; font-family:"Noto Serif JP",serif; font-weight:700; font-size:15px; line-height:1.6; text-shadow:0 2px 10px #000}
-.badges{list-style:none; margin:0 0 16px; padding:0; display:flex; justify-content:center; gap:10px}
-.badges li{width:31%; max-width:120px; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle at 50% 40%,#1c1c1c,#050505); border:3px solid #d6a21c; box-shadow:0 0 0 2px #6b4a00 inset, 0 0 18px rgba(214,162,28,.45); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; line-height:1}
-.badges small{font-size:12px; font-weight:800}
-.badges small.tx{font-size:10px; margin-top:2px}
-.badges b{font-family:var(--num); font-weight:700; font-size:40px; background:linear-gradient(180deg,#fff6c8,#e3b43a 55%,#b88400); -webkit-background-clip:text; background-clip:text; color:transparent; margin-top:3px}
-.badges b i{font-style:normal; font-family:"Noto Sans JP"; font-size:.42em; font-weight:900}
-.badges b.s{font-size:24px}
-.badges b.t{font-family:"Noto Sans JP"; font-weight:900; font-size:19px}
-.free-cta{display:flex; align-items:stretch; text-decoration:none; color:#fff; position:relative; margin:62px 0 0 40px}
-.free-cta .seal{position:absolute; left:-40px; top:50%; transform:translateY(-50%); width:84px; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle at 35% 30%,#fff6c8,#e9b73b 55%,#9a6a00); border:3px solid #fff1b0; box-shadow:0 6px 18px rgba(0,0,0,.5); display:flex; align-items:center; justify-content:center; text-align:center; color:#1a1200; font-weight:900; font-size:19px; line-height:1.05; z-index:2}
-.free-cta .main{flex:1; background:linear-gradient(180deg,#f0262c,#b90f14); border:2px solid #ff6b6f; border-radius:999px 0 0 999px; padding:10px 4px 10px 50px; font-weight:900; font-size:12px; line-height:1.45; box-shadow:0 8px 24px rgba(215,20,26,.45)}
-.free-cta .main em{font-style:normal; color:var(--gold-lt); font-size:1.3em; white-space:nowrap}
-.free-cta .main em + .arr{white-space:nowrap}
-.free-cta .arr{margin-left:.3em}
-.free-cta .chk{display:flex; flex-direction:column; justify-content:center; gap:3px; background:linear-gradient(180deg,#b80f14,#7c070b); border:2px solid #ff6b6f; border-left:none; border-radius:0 999px 999px 0; padding:6px 12px 6px 6px; font-size:9.5px; font-weight:800; white-space:nowrap}
-.free-cta .chk span::before{content:"☑ "}
-.free-cta .chk span:first-child{color:var(--gold-lt)}
-.free-cta:focus-visible{outline:3px solid var(--gold); outline-offset:4px}
-@media (min-width: 861px){
-  .h-in{aspect-ratio:16/9; max-height:940px; padding:0}
-  .v-ask{left:1.5%; top:3%; font-size:clamp(26px,2.5vw,44px)}
-  .quote{display:block; position:absolute; left:30%; top:7%; transform:rotate(-3deg)}
-  .quote b{display:block; font-family:"Noto Serif JP",serif; font-weight:900; font-size:clamp(20px,1.9vw,34px); color:#ff2d34; text-shadow:0 2px 8px #000}
-  .quote span{display:block; margin:6px 0 0 5%; font-size:clamp(14px,1.3vw,23px); font-weight:800; text-shadow:0 2px 8px #000}
-  .note-r{display:block; position:absolute; right:2%; top:13%; margin:0; background:#fbfaf6; color:#111; font-family:"Noto Serif JP",serif; font-weight:900; font-size:clamp(16px,1.6vw,30px); line-height:1.35; padding:14px 22px; transform:rotate(-6deg); box-shadow:0 8px 22px rgba(0,0,0,.5); clip-path:polygon(2% 0,100% 3%,98% 100%,0 96%)}
-  .note-r em{font-style:normal; color:#e0141b; font-size:1.5em}
-  .h-title{position:absolute; left:6%; top:30%; text-align:left; white-space:nowrap}
-  .h-title .w{display:inline; font-size:clamp(40px,4vw,76px)}
-  .h-title .r{display:inline; font-size:clamp(46px,4.7vw,88px)}
-  .h-sub{position:absolute; left:14%; top:49%; margin:0; text-align:left; font-size:clamp(17px,1.7vw,30px); transform:rotate(-2deg)}
-  .h-sub br.sp{display:none}
-  .devices{display:block; position:absolute; right:3%; bottom:8%; width:27%}
-  .d-pc{border:9px solid #1b1b1b; border-bottom-width:16px; border-radius:12px; overflow:hidden; background:#fff; box-shadow:0 20px 40px rgba(0,0,0,.6)}
-  .d-pc img{display:block; width:100%; aspect-ratio:800/476; object-fit:cover; object-position:top}
-  .d-sp{position:absolute; right:-5%; bottom:-8%; width:24%; border:5px solid #1b1b1b; border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 14px 30px rgba(0,0,0,.6); aspect-ratio:390/760}
-  .d-sp img{width:100%; height:100%; object-fit:cover; object-position:top}
-  .note-b{position:absolute; z-index:3; left:-8%; top:-30%; margin:0; background:#fbfaf6; color:#111; font-family:"Noto Serif JP",serif; font-weight:900; font-size:clamp(12px,1.05vw,19px); line-height:1.4; padding:10px 14px; transform:rotate(-5deg); box-shadow:0 8px 22px rgba(0,0,0,.5)}
-  .note-b em{font-style:normal; color:#e0141b; font-size:1.3em}
-  .h-bottom{position:absolute; left:3%; bottom:7%; width:64%; display:flex; align-items:center; gap:2%}
-  .badges{margin:0; flex:0 0 40%; gap:4%; justify-content:flex-start}
-  .badges li{width:30%; max-width:none}
-  .badges small{font-size:clamp(11px,1vw,19px)}
-  .badges small.tx{font-size:clamp(9px,.8vw,14px)}
-  .badges b{font-size:clamp(30px,3.2vw,60px)}
-  .badges b.s{font-size:clamp(18px,1.9vw,36px)}
-  .badges b.t{font-size:clamp(15px,1.6vw,30px)}
-  .free-cta{flex:1; margin:0 0 0 4.5vw}
-  .free-cta .main em{font-size:1.35em}
-  .free-cta .seal{left:-4.5vw; width:9vw; max-width:170px; font-size:clamp(18px,1.8vw,34px)}
-  .free-cta .main{font-size:clamp(12px,1.1vw,20px); padding:14px 10px 14px calc(5vw)}
-  .free-cta .chk{font-size:clamp(10px,.85vw,15px); padding:10px 18px 10px 10px}
-}
-/* 赤帯のCTA */
-.band{background:#0a0a0a; position:relative; padding:14px 10px}
-.band-img{display:block; max-width:760px; margin:0 auto; border-radius:999px}
-.band-img img{width:100%; height:auto}
-.band-img:focus-visible{outline:3px solid var(--gold); outline-offset:3px}
-.band-in{max-width:1024px; margin:0 auto; display:flex; align-items:center; gap:18px; padding:14px 20px 14px 16px}
-.seal{flex:0 0 120px; height:120px; margin:-34px 0; border-radius:50%; flex-direction:column; background:radial-gradient(circle at 35% 30%,#fff6c8,#e9b73b 55%,#9a6a00); display:flex; align-items:center; justify-content:center; text-align:center; font-weight:900; font-size:30px; line-height:1.05; color:#1a1200; box-shadow:0 6px 18px rgba(0,0,0,.45), 0 0 0 4px rgba(255,241,176,.35); border:3px solid #fff1b0}
-.seal small{font-size:12px; letter-spacing:.06em; margin-bottom:2px}
-.band a.main .kicker{display:block; font-size:14px; color:#fff; opacity:.95; margin-bottom:2px}
-.band a.main .kicker b{color:var(--gold-lt); font-size:18px; margin-left:4px}
-.band a.main{flex:1; color:#fff; text-decoration:none; font-weight:900; font-size:26px; letter-spacing:.01em; line-height:1.4}
-.band a.main em{font-style:normal; color:var(--gold-lt)}
-.band a.main .nw{white-space:nowrap}
-.band a.main .nw::after{content:" →"}
-.band ul{list-style:none; margin:0; padding:10px 14px; background:rgba(0,0,0,.25); border-radius:10px; color:#fff; font-size:13px; font-weight:700; display:grid; gap:2px}
-.band li::before{content:"☑ "; color:#fff}
+/* ② 制作デザインのサンプル */
+.cards3{display:grid; gap:16px}
+.scard{background:linear-gradient(180deg,#141210,#0a0908); border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.scard .ph img{width:100%; height:auto}
+.scard .cap{display:flex; align-items:center; gap:14px; padding:14px 16px 16px; border-top:1px solid var(--line)}
+.ic{flex:0 0 52px; height:52px; border-radius:50%; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center}
+.ic svg{width:26px; height:26px; stroke:var(--gold-lt); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+.scard h3{margin:0; font-family:var(--serif); font-weight:900; font-size:24px; line-height:1.3}
+.scard p{margin:2px 0 0; font-size:14px; color:#e8e2d5}
 
-/* 特徴アイコン */
-.feats{background:#0f0f0f; border-top:1px solid #222}
-.feats ul{max-width:1024px; margin:0 auto; list-style:none; padding:14px 8px; display:grid; grid-template-columns:repeat(6,1fr)}
-.feats li{color:#fff; font-size:13px; font-weight:700; text-align:center; display:grid; justify-items:center; gap:6px; border-left:1px solid #2c2c2c}
-.feats li:first-child{border-left:none}
-.feats svg{width:28px; height:28px; stroke:#fff; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+/* ③ お悩み */
+.worry{display:grid; gap:20px; align-items:center}
+.worry-box{background:linear-gradient(180deg,#fbf8f1,#f1ebdd); color:var(--paper-ink); border-radius:12px; padding:26px 18px 22px; box-shadow:0 12px 40px rgba(0,0,0,.6); border:1px solid rgba(227,180,58,.6)}
+.worry-box h2{margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(30px,8vw,56px); line-height:1.2; text-align:center}
+.worry-box h2 .r{color:#c4121a; background:linear-gradient(100deg,transparent 2%,rgba(227,180,58,.55) 10%,rgba(227,180,58,.35) 85%,transparent)}
+.worry-box .sub{margin:12px 0 16px; text-align:center; font-family:var(--serif); font-weight:700; font-size:16px}
+.worry-box .sub em{font-style:normal; color:#c4121a}
+.worry-list{list-style:none; margin:0; padding:0; display:grid; gap:8px}
+.worry-list li{display:flex; align-items:center; gap:12px; background:#fff; border-radius:8px; padding:10px 12px; font-weight:700; font-size:15px; box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.worry-list li::before{content:"✓"; flex:0 0 26px; height:26px; border-radius:50%; background:#c4121a; color:#fff; font-size:15px; display:flex; align-items:center; justify-content:center}
+.worry-list b{color:#c4121a}
+.worry-man img{width:100%; height:auto; border-radius:12px}
 
-/* 悩み＋業種 */
-.mid{background:#141414 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M0 6L6 0' stroke='%23222' stroke-width='1'/%3E%3C/svg%3E")}
-.mid-in{max-width:1024px; margin:0 auto; display:grid; grid-template-columns:1.1fr 1fr; gap:14px; padding:16px 12px}
-.pain{position:relative; background:#f4f1ea; border-radius:4px; padding:10px 150px 16px 18px; min-height:230px; overflow:hidden; box-shadow:0 4px 18px rgba(0,0,0,.4)}
-.pain .title{width:100%; max-width:470px; height:auto; margin:-4px 0 8px -8px}
-.pain ul{list-style:none; margin:0; padding:0; display:grid; gap:6px}
-.pain li{position:relative; padding-left:28px; font-weight:800; font-size:15px; color:#111}
-.pain li::before{content:"✓"; position:absolute; left:0; top:2px; width:20px; height:20px; border-radius:50%; background:var(--red); color:#fff; font-size:12px; display:flex; align-items:center; justify-content:center}
-.pain .man{position:absolute; right:0; bottom:0; width:140px; height:auto}
+/* ④ できること */
+.can4{display:grid; gap:14px}
+.can{background:linear-gradient(180deg,#141210,#0a0908); border:1px solid var(--line2); border-radius:12px; overflow:hidden; display:flex; flex-direction:column}
+.can .hd{display:flex; align-items:center; gap:10px; padding:14px 14px 10px}
+.no{flex:0 0 34px; height:34px; border-radius:50%; background:linear-gradient(180deg,#ffe07a,#e3b43a); color:#1a1200; font-family:var(--num); font-weight:700; font-size:16px; display:flex; align-items:center; justify-content:center}
+.can h3{margin:0; font-size:18px; font-weight:900; line-height:1.35}
+.can img{width:100%; height:auto}
+.can p{margin:0; padding:12px 14px 16px; font-size:14px; color:#e8e2d5}
+.plus{margin:26px 0 16px; text-align:center; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.6vw,30px); line-height:1.5}
+.plus::before{content:"＋"; display:block; color:var(--gold); font-size:1.4em; line-height:1}
+.plus em{font-style:normal; color:var(--gold-lt)}
+.ops{display:grid; gap:12px}
+.op{background:var(--paper); color:var(--paper-ink); border-radius:10px; overflow:hidden; display:flex; flex-direction:column}
+.op .hd{display:flex; align-items:center; gap:10px; padding:12px 12px 8px}
+.op h3{margin:0; font-size:16px; font-weight:900}
+.op img{width:calc(100% - 24px); margin:0 12px; border-radius:6px; height:auto}
+.op p{margin:0; padding:10px 12px 14px; font-size:13.5px; line-height:1.65}
+.op p small{display:block; color:#6b6254}
 
-.ind h2{margin:0 0 10px; text-align:center; font-size:20px; font-weight:900; color:#111; background:linear-gradient(100deg,transparent 2%,#f2c14e 6%,#ffd86b 50%,#e6b035 94%,transparent 98%); padding:8px 0}
-.ind ul{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
-.ind li{position:relative; border-radius:6px; overflow:hidden; aspect-ratio:142/96; border:1px solid #333}
-.ind li img{width:100%; height:100%; object-fit:cover}
-.ind li p{position:absolute; left:0; right:0; bottom:0; margin:0; padding:6px 8px; color:#fff; font-size:13px; font-weight:900; line-height:1.35; text-align:center; text-shadow:0 2px 6px rgba(0,0,0,.8)}
-.ind .note{color:#aaa; font-size:11px; text-align:right; margin:6px 0 0}
+/* ⑤ 制作事例 */
+.ex3{display:grid; gap:16px}
+.ex{background:linear-gradient(180deg,#141210,#0a0908); border:1px solid var(--line); border-radius:14px; overflow:hidden; padding:14px 14px 16px}
+.ex .hd{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+.ex .hd .ic{flex-basis:46px; height:46px}
+.ex h3{margin:0; font-family:var(--serif); font-weight:900; font-size:22px; flex:1}
+.tag{background:linear-gradient(180deg,#ffe07a,#e3b43a); color:#1a1200; font-size:12px; font-weight:900; border-radius:999px; padding:3px 14px}
+.ex img{width:100%; height:auto; border-radius:8px}
+.ex ul{list-style:none; margin:12px 0 0; padding:0; display:grid; gap:6px; font-size:14px}
+.ex li{display:flex; gap:8px}
+.ex li::before{content:"✓"; flex:0 0 20px; height:20px; border-radius:50%; border:2px solid var(--gold); color:var(--gold); font-size:11px; display:flex; align-items:center; justify-content:center; margin-top:2px}
+.flow-h{display:flex; align-items:center; gap:14px; margin:40px 0 16px; flex-wrap:wrap}
+.flow-h h3{margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(26px,6vw,40px)}
+.flow-h p{margin:0; font-weight:700; font-size:14px}
+.flow5{list-style:none; margin:0; padding:0; display:grid; gap:12px}
+.flow5 li{background:var(--paper); color:var(--paper-ink); border-radius:10px; overflow:hidden; padding:12px}
+.flow5 .hd{display:flex; align-items:center; gap:10px; margin-bottom:8px}
+.flow5 h4{margin:0; font-size:17px; font-weight:900}
+.flow5 img{width:100%; height:auto; border-radius:6px}
+.flow5 p{margin:8px 0 0; font-size:13.5px; line-height:1.65}
+.note{margin:18px 0 0; text-align:center; font-size:12px; color:var(--muted)}
 
-/* 悩み・業種・BEFORE/AFTER・料金をまとめたグリッド
-   スマホ：1列（悩み→業種→CTA→BEFORE/AFTER→料金→CTA）
-   タブレット：2列 ／ PC（1100px〜）：ワイドのデザイン案どおり4列（悩み｜BEFORE/AFTER｜業種｜料金） */
-.grid4{background:#141414 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M0 6L6 0' stroke='%23222' stroke-width='1'/%3E%3C/svg%3E")}
-.g4-in{max-width:1024px; margin:0 auto; display:grid; grid-template-columns:1.1fr 1fr; gap:14px; padding:16px 12px; align-items:start}
-.g4-in .midcta{grid-column:1/-1; padding-bottom:6px}
-.hero-cta{display:none}
-@media (max-width: 860px){ .g4-in{grid-template-columns:1fr} }
+/* ⑥ 料金 */
+.all{display:table; margin:0 auto 22px; border:1.5px solid var(--gold); border-radius:999px; padding:6px 22px; font-family:var(--serif); font-weight:900; font-size:clamp(14px,3.6vw,20px); text-align:center}
+.all b{color:var(--gold-lt)}
+.plans{display:grid; gap:16px; align-items:stretch}
+.plan{position:relative; background:linear-gradient(180deg,#141210,#0a0908); border:1px solid var(--line2); border-radius:14px; padding:22px 18px 18px}
+.plan.reco{border:2px solid var(--gold); box-shadow:0 0 34px rgba(227,180,58,.35), inset 0 0 40px rgba(227,180,58,.08)}
+.plan .ribbon{position:absolute; top:-2px; right:14px; background:linear-gradient(180deg,#e41d23,#9e0c10); color:#fff; font-weight:900; font-size:15px; padding:6px 14px 10px; clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%)}
+.plan h3{margin:0; font-family:var(--serif); font-weight:900; font-size:30px; line-height:1.2}
+.plan .for{display:inline-block; margin:8px 0 0; background:linear-gradient(180deg,#ffe9a6,#e3b43a); color:#1a1200; font-weight:900; font-size:14px; border-radius:999px; padding:3px 16px}
+.plan .p{margin:8px 0 0; font-family:var(--serif); font-weight:900; font-size:44px; line-height:1.1}
+.plan .p small{font-family:"Noto Sans JP"; font-size:18px; font-weight:900}
+.plan .tx{font-size:14px; font-weight:700; color:var(--muted)}
+.plan .taxin{margin:2px 0 10px; font-size:12px; color:var(--muted)}
+.plan img{width:100%; height:auto; margin:6px 0 10px}
+.plan ul{list-style:none; margin:0; padding:0; display:grid; gap:6px; font-size:15px}
+.plan li{display:flex; gap:8px}
+.plan li::before{content:"✓"; flex:0 0 20px; height:20px; border-radius:50%; border:2px solid var(--gold); color:var(--gold); font-size:11px; display:flex; align-items:center; justify-content:center; margin-top:3px}
+.cmp-wrap{margin-top:22px; overflow-x:auto; border-radius:10px; border:1px solid var(--line)}
+.cmp{width:100%; min-width:620px; border-collapse:collapse; font-size:14px; background:rgba(0,0,0,.6)}
+.cmp th,.cmp td{border-bottom:1px solid var(--line2); padding:9px 10px; text-align:center}
+.cmp thead th{font-family:var(--serif); font-weight:900; font-size:16px; color:#fff; background:linear-gradient(180deg,#9a7418,#6e520c)}
+.cmp thead th.reco{background:linear-gradient(180deg,#b3141a,#7c0a0e)}
+.cmp thead th:first-child{background:#111}
+.cmp tbody th{text-align:left; font-weight:700; white-space:nowrap}
+.ok{display:inline-flex; width:22px; height:22px; border-radius:50%; border:2px solid var(--gold); color:var(--gold); font-size:12px; align-items:center; justify-content:center}
+.plan-msg{margin:16px 0 0; text-align:center; font-weight:700}
+.plan-msg em{font-style:normal; color:var(--gold-lt)}
 
-/* BEFORE / AFTER と料金 */
-.low{background:#141414}
-.low-in{max-width:1024px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:6px 12px 18px}
-.change h2{margin:4px 0 10px; text-align:center; color:#fff; font-size:22px; font-weight:900; line-height:1.4}
-.change h2 em{font-style:normal; color:var(--yellow)}
-.ba{display:grid; grid-template-columns:1fr 34px 1fr; align-items:center; gap:6px}
-.ba .box{background:#fff; border-radius:6px; padding:10px 12px 12px; min-height:176px}
-.ba .box h3{margin:0 0 4px; text-align:center; font-family:var(--num); letter-spacing:.06em; font-size:16px; color:#fff; background:#333; border-radius:3px; padding:2px 0}
-.ba .box.a h3{background:#1f6fe0}
-.ba .box .sub{margin:0 0 6px; text-align:center; font-size:12px; font-weight:700; color:#555; border-bottom:1px solid var(--line); padding-bottom:4px}
-.ba .box.a .sub{color:#1f6fe0}
-.ba ul{list-style:none; margin:0; padding:0; display:grid; gap:4px; font-size:13px; font-weight:700}
-.ba li{padding-left:22px; position:relative}
-.ba li::before{content:"✓"; position:absolute; left:0; top:1px; width:16px; height:16px; border-radius:50%; border:1.5px solid #888; color:#888; font-size:10px; display:flex; align-items:center; justify-content:center}
-.ba .box.a li::before{background:#1f6fe0; border-color:#1f6fe0; color:#fff}
-.ba .box.a li b{color:#1f6fe0}
-.ba .arr{color:#fff; font-size:30px; text-align:center}
+/* ⑦ 無料デザイン案の流れ */
+.tops{display:flex; flex-wrap:wrap; justify-content:center; gap:10px 26px; margin:0 auto 22px; border:1.5px solid var(--gold); border-radius:30px; padding:10px 22px; max-width:780px; font-family:var(--serif); font-weight:900; font-size:clamp(14px,3.6vw,20px); text-align:center}
+.tops b{color:var(--gold-lt); font-size:1.3em}
+.steps{list-style:none; margin:0; padding:0; display:grid; gap:14px}
+.step{position:relative; background:linear-gradient(180deg,#141210,#0a0908); border:1px solid var(--line); border-radius:12px; padding:14px}
+.step .hd{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+.step .sn{flex:0 0 56px; height:56px; border-radius:50%; background:radial-gradient(circle at 40% 30%,#fff1b0,#e3b43a 60%,#a47510); color:#1a1200; display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1; font-family:var(--num); font-weight:700}
+.step .sn small{font-size:10px; letter-spacing:.06em}
+.step .sn b{font-size:22px}
+.step h3{margin:0; font-family:var(--serif); font-weight:900; font-size:22px; line-height:1.2}
+.step h3 small{display:block; font-family:"Noto Sans JP"; color:var(--gold-lt); font-size:13px; font-weight:700; margin-top:4px}
+.step .ph{position:relative}
+.step .ph img{width:100%; height:auto; border-radius:6px}
+.step .time{position:absolute; left:50%; bottom:-14px; transform:translateX(-50%); display:flex; align-items:center; gap:6px; background:linear-gradient(180deg,#e41d23,#9e0c10); color:#fff; font-weight:900; font-size:14px; border-radius:999px; padding:4px 18px; white-space:nowrap; border:1px solid #ff8b8e}
+.step .time::before{content:""; width:14px; height:14px; border-radius:50%; border:2px solid #fff; box-sizing:border-box}
+.step p{margin:22px 0 0; font-size:14px; color:#e8e2d5}
+.points-h{margin:34px 0 14px; text-align:center; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.6vw,26px)}
+.points-h b{color:var(--gold-lt); font-size:1.3em}
+.points{display:grid; gap:10px}
+.point{display:flex; align-items:center; gap:14px; border:1px solid var(--line); border-radius:10px; padding:14px 16px; background:rgba(0,0,0,.5)}
+.point b{display:block; font-family:var(--serif); font-weight:900; color:var(--gold-lt); font-size:17px; line-height:1.4}
+.point span{font-size:13px}
 
-.price h2{display:flex; align-items:baseline; gap:12px; margin:4px 0 10px}
-.price h2{flex-wrap:wrap}
-.price h2 span{white-space:nowrap; font-size:22px; font-weight:900; color:#111; background:linear-gradient(100deg,transparent 2%,#f2c14e 6%,#ffd86b 50%,#e6b035 94%,transparent 98%); padding:4px 24px}
-.price h2 small{color:#fff; font-size:12px; font-weight:700}
-.plans{display:grid; grid-template-columns:repeat(3,1fr); gap:6px}
-.plan{background:#fff; border-radius:6px; padding:10px 8px 12px; text-align:center; position:relative}
-.plan.reco{outline:3px solid var(--red); outline-offset:-3px}
-.plan .tag{position:absolute; top:-9px; left:50%; transform:translateX(-50%); background:var(--red); color:#fff; font-size:11px; font-weight:900; border-radius:3px; padding:1px 8px; white-space:nowrap}
-.plan .name{font-weight:900; font-size:15px}
-.plan.reco .name, .plan.reco .p{color:var(--red)}
-.plan .cap{font-size:11px; color:var(--muted)}
-.plan .p{font-family:var(--num); font-weight:700; font-size:28px; line-height:1.1; margin:4px 0 0}
-.plan .p small{font-family:"Noto Sans JP"; font-size:12px; font-weight:900}
-.plan .tax{font-size:10px; color:var(--muted); margin-bottom:6px}
-.plan ul{list-style:none; margin:0; padding:0; display:grid; gap:2px; text-align:left; font-size:11.5px; font-weight:700}
-.plan li::before{content:"✓ "; color:#111}
-.plan.reco li{color:var(--red)}
-.plan.reco li::before{color:var(--red)}
+/* ⑧ FAQ・運営会社 */
+.faq{max-width:860px; margin:0 auto; display:grid; gap:10px}
+.qa{border:1px solid var(--line); border-radius:10px; background:rgba(0,0,0,.5); overflow:hidden}
+.qa summary{list-style:none; cursor:pointer; display:flex; align-items:center; gap:12px; padding:14px 16px; font-weight:800; font-size:15px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::before{content:"Q"; flex:0 0 30px; height:30px; border-radius:50%; background:linear-gradient(180deg,#ffe07a,#e3b43a); color:#1a1200; font-family:var(--num); font-weight:700; display:flex; align-items:center; justify-content:center}
+.qa summary::after{content:"＋"; margin-left:auto; color:var(--gold)}
+.qa[open] summary::after{content:"－"}
+.qa summary:focus-visible{outline:3px solid var(--gold-lt); outline-offset:-3px}
+.qa .a{padding:0 16px 16px 58px; font-size:14px; color:#e8e2d5}
+.company{max-width:860px; margin:34px auto 0}
+.company h3{margin:0 0 12px; text-align:center; font-family:var(--serif); font-weight:900; font-size:24px}
+.company table{width:100%; border-collapse:collapse; font-size:14px}
+.company th,.company td{border-bottom:1px solid var(--line2); padding:12px 10px; text-align:left; vertical-align:top}
+.company th{width:9em; color:var(--gold-lt); font-weight:700; white-space:nowrap}
 
-/* セクション間のCTA */
-.midcta{max-width:560px; margin:0 auto; padding:6px 16px 22px; text-align:center}
-.midcta p{margin:8px 0 0; color:#ddd; font-size:13px; font-weight:700}
-br.sp{display:none}
-@media (max-width:640px){ br.sp{display:inline} .midcta p{font-size:12px} }
-/* 完全無料のオファー */
-.offer{background:radial-gradient(80% 90% at 50% 0%,#3a2a00 0%,#0a0a0a 70%); border-top:2px solid var(--gold); border-bottom:2px solid var(--gold); padding:40px 16px 44px; color:#fff; text-align:center}
-.offer-in{max-width:760px; margin:0 auto}
-.o-kicker{display:inline-block; margin:0; border:2px solid var(--gold); color:var(--gold-lt); border-radius:999px; padding:4px 20px; font-weight:900; font-size:15px}
-.offer h2{margin:14px 0 22px; font-size:20px; font-weight:800; line-height:1.5}
-.o-big{font-size:36px; font-weight:900}
-.o-big em{font-style:normal; color:#111; background:linear-gradient(180deg,#fff3b0,#e3b43a 55%,#b88400); padding:0 12px; border-radius:6px; margin-left:6px; display:inline-block; line-height:1.3}
-.o-flow{list-style:none; margin:0 auto; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:18px; max-width:640px}
-.o-flow li{position:relative; background:#fff; color:#111; border-radius:10px; padding:12px 4px; font-weight:800; font-size:15px; line-height:1.35; display:flex; flex-direction:column; justify-content:center}
-.o-flow li b{display:block; font-family:var(--num); font-size:26px; color:var(--red)}
-.o-flow li + li::before{content:"→"; position:absolute; left:-16px; top:50%; transform:translateY(-50%); color:var(--gold)}
-.o-flow li.judge{background:var(--red); color:#fff; font-size:16px}
-.o-points{list-style:none; margin:22px auto 0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; max-width:760px}
-.o-points li{background:rgba(255,255,255,.06); border:1px solid rgba(227,180,58,.5); border-radius:10px; padding:12px 10px; font-size:12px; color:#ddd}
-.o-points b{display:block; color:var(--gold-lt); font-size:16px; margin-bottom:2px}
-.o-scope{margin:16px 0 18px; font-size:12px; color:#bbb}
-.btn-gold{display:block; max-width:520px; margin:0 auto; background:linear-gradient(180deg,#fff0a8,#e3b43a 50%,#b88400); color:#1a1200; text-decoration:none; font-weight:900; font-size:22px; border-radius:999px; padding:16px 20px; box-shadow:0 8px 26px rgba(227,180,58,.45); border:2px solid #fff3b0}
-.btn-gold::after{content:"　→"}
-@media (max-width:640px){
-  .o-big{font-size:26px}
-  .o-flow{grid-template-columns:1fr 1fr; row-gap:14px}
-  .o-flow li:nth-child(3)::before{display:none}
-  .o-points{grid-template-columns:1fr}
-  .btn-gold{font-size:18px}
-}
-/* 締めの帯 */
-.closing{background:#000; border-top:2px solid var(--red)}
-.closing-in{max-width:1024px; margin:0 auto; display:grid; grid-template-columns:632px 1fr; align-items:center}
-.closing .go{text-align:center; padding:12px 18px}
-.closing .go p{margin:0 0 10px; color:#fff; font-size:17px; font-weight:900; line-height:1.5}
-.closing .go p em{font-style:normal; color:var(--yellow)}
-.btn-red{display:block; background:linear-gradient(180deg,#f0262c,#b90f14); color:#fff; text-decoration:none; font-weight:900; font-size:22px; border-radius:999px; padding:16px 20px; box-shadow:0 8px 24px rgba(215,20,26,.45); border:2px solid #ff6b6f}
-.btn-red::after{content:"　→"}
-
-/* フォーム */
-.contact{background:#f4f1ea; padding:40px 16px}
-.contact-in{max-width:620px; margin:0 auto}
-.contact h2{margin:0 0 6px; text-align:center; font-size:26px; font-weight:900; line-height:1.4}
-.contact h2 em{font-style:normal; color:var(--red)}
-.contact .lead{text-align:center; color:#444; margin:0 0 20px; font-size:14px}
-.form{display:grid; gap:14px; background:#fff; border-radius:10px; padding:24px 20px; box-shadow:0 8px 24px rgba(0,0,0,.08)}
+/* ⑨ 最終CTA・フォーム */
+.scope{max-width:760px; margin:0 auto 22px; padding:0; display:grid; gap:10px}
+.scope li{list-style:none; display:flex; gap:12px; align-items:flex-start; background:rgba(0,0,0,.5); border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-size:14px}
+.scope li b{display:block; color:var(--gold-lt); font-size:16px}
+.scope li::before{content:"✓"; flex:0 0 26px; height:26px; border-radius:50%; background:linear-gradient(180deg,#ffe07a,#e3b43a); color:#1a1200; font-weight:900; display:flex; align-items:center; justify-content:center}
+.form{max-width:640px; margin:0 auto; display:grid; gap:14px; background:var(--paper); color:var(--paper-ink); border-radius:14px; padding:24px 18px; border:1px solid var(--gold)}
 .form label,.form fieldset{display:grid; gap:6px; font-weight:800; font-size:14px}
-.form fieldset{border:none; margin:0; padding:0}
+.form fieldset{border:0; margin:0; padding:0}
 .form legend{padding:0; margin-bottom:6px}
-.opt{font-weight:700; color:var(--muted); font-size:12px}
-.form input[type=text],.form textarea{width:100%; border:1px solid #ccc; border-radius:8px; padding:12px; font-size:16px; font-family:inherit}
-.form input:focus-visible,.form textarea:focus-visible,.btn-red:focus-visible,.top .cta:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+.opt{font-weight:700; color:#6b6254; font-size:12px}
+.form input[type=text],.form textarea{width:100%; border:1px solid #cfc6b4; border-radius:8px; padding:12px; font-size:16px; font-family:inherit; background:#fff}
+.form input:focus-visible,.form textarea:focus-visible{outline:3px solid var(--gold); outline-offset:1px}
 .stage{display:flex; flex-wrap:wrap; gap:8px}
 .stage label{display:block; font-weight:700; font-size:13px}
 .stage input{position:absolute; opacity:0}
-.stage span{display:block; border:1px solid #ccc; border-radius:999px; padding:7px 14px; cursor:pointer}
-.stage input:checked + span{background:#111; color:#fff; border-color:#111}
+.stage span{display:block; border:1px solid #cfc6b4; border-radius:999px; padding:7px 14px; cursor:pointer; background:#fff}
+.stage input:checked + span{background:#1b1712; color:#fff; border-color:#1b1712}
 .stage input:focus-visible + span{outline:3px solid var(--gold); outline-offset:2px}
-.before{margin:0; text-align:center; font-size:13px; font-weight:700; background:#f7f2e4; border-radius:8px; padding:10px}
-.form .btn-red{width:100%; border:none; cursor:pointer; font-family:inherit}
-.form-note{margin:0; text-align:center; font-size:12px; color:var(--muted)}
-.form-note a{color:#1f6fe0}
+.before{margin:0; text-align:center; font-size:13px; font-weight:700; background:#efe6cf; border-radius:8px; padding:10px}
+.form .btn-red{width:100%; max-width:none; border:0; cursor:pointer; font-family:inherit; font-size:20px}
+.form-note{margin:0; text-align:center; font-size:12px; color:#6b6254}
+.form-note a{color:#1f5fbf}
 .form-sent{margin:0; text-align:center; font-weight:800}
-.form-err{margin:0; text-align:center; color:var(--red); font-size:13px; font-weight:700}
+.form-err{margin:0; text-align:center; color:#c4121a; font-size:13px; font-weight:700}
 
-footer{background:#000; color:#aaa; text-align:center; font-size:12px; padding:30px 16px 40px}
-footer img{height:auto; width:200px; margin:0 auto 10px}
+footer{background:#000; color:#aaa; text-align:center; font-size:12px; padding:30px 16px 96px; border-top:1px solid rgba(227,180,58,.25)}
+footer img{height:auto; width:190px; margin:0 auto 10px}
 footer a{color:#ddd}
 
-/* スマホ：縦に積む */
-@media (max-width: 860px){
-  .top .tagline{display:none}
-  .top .cta{font-size:12px; padding:7px 14px}
-  .band-in{flex-wrap:wrap; justify-content:center; text-align:center; padding:26px 16px 16px}
-  .seal{margin:-60px 0 0; flex-basis:104px; height:104px; font-size:26px}
-  .band a.main{flex-basis:100%; font-size:20px}
-  .feats ul{grid-template-columns:repeat(3,1fr); row-gap:14px}
-  .feats li:nth-child(4){border-left:none}
-  .mid-in,.low-in{grid-template-columns:1fr}
-  .pain{padding-right:118px}
-  .pain .man{width:112px}
-  .closing-in{grid-template-columns:1fr}
+.sticky-cta{position:fixed; left:10px; right:10px; bottom:calc(10px + env(safe-area-inset-bottom, 0px)); z-index:60; display:flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; color:#fff4c2; font-weight:900; font-size:16px; background:linear-gradient(180deg,#ff3a40,#c10d13 55%,#8e070b); border:2px solid #ff8b8e; border-radius:999px; padding:12px 10px; box-shadow:0 8px 24px rgba(0,0,0,.5); transition:transform .25s, opacity .25s}
+.sticky-cta.off{transform:translateY(140%); opacity:0; pointer-events:none}
+.sticky-cta[hidden]{display:none}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .sticky-cta{transition:none} }
+
+/* タブレット */
+@media (min-width: 700px){
+  .cards3,.ex3,.plans{grid-template-columns:repeat(3,1fr)}
+  .can4{grid-template-columns:repeat(2,1fr)}
+  .ops{grid-template-columns:repeat(3,1fr)}
+  .flow5,.steps{grid-template-columns:repeat(2,1fr)}
+  .points{grid-template-columns:repeat(3,1fr)}
+  .worry{grid-template-columns:1.15fr 1fr}
+  .scard h3{font-size:22px}
+  .plan h3{font-size:24px}
+  .plan .p{font-size:36px}
 }
-@media (max-width: 480px){
-  .band a.main{font-size:18px}
-  .feats li{font-size:11px; letter-spacing:-.02em}
-  .ind ul{grid-template-columns:1fr 1fr}
-  .ind li p{font-size:13px}
-  .price h2 small{flex-basis:100%}
-  .pain li{font-size:14px}
-  .ba{grid-template-columns:1fr; }
-  .ba .arr{transform:rotate(90deg); line-height:1}
-  .plans{grid-template-columns:1fr}
-  .plan{padding:14px 16px}
-  .plan ul{grid-template-columns:1fr 1fr; font-size:12px}
-  .closing .go p{font-size:16px}
-  .btn-red{font-size:18px}
-}
-@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+/* PC（デザイン画像と同じ横並び） */
 @media (min-width: 1100px){
-  .top-in,.feats ul{max-width:1680px}
-  .band{display:none}
-  .hero{max-width:1672px; margin:0 auto}
-  .hero-cta{display:block; position:absolute; left:31.6%; width:37%; top:70.5%; height:23.5%; border-radius:999px}
-  .hero-cta:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
-  /* PCも1列で縦に並べ、各セクションを大きく見せる */
-  .g4-in{max-width:1100px; grid-template-columns:1fr; gap:48px; padding:56px 24px 40px}
-  .g4-in .c1,.g4-in .c2{display:block}
-  .midcta{max-width:640px}
-  .midcta .btn-red{font-size:26px; padding:20px}
-  .midcta p{font-size:15px}
-  /* 悩み：左に一覧、右に人物を大きく */
-  .pain{padding:28px 300px 32px 40px; min-height:360px}
-  .pain .title{max-width:620px; margin:0 0 18px -12px}
-  .pain ul{gap:14px}
-  .pain li{font-size:22px; padding-left:40px}
-  .pain li::before{width:28px; height:28px; font-size:16px; top:4px}
-  .pain .man{width:270px}
-  /* 業種：3×2を大きく */
-  .ind h2,.price h2 span{font-size:30px}
-  .ind h2{padding:14px 0; margin-bottom:18px}
-  .ind ul{gap:16px}
-  .ind li p{font-size:22px; padding:14px 12px}
-  .ind .note{font-size:13px}
-  /* BEFORE / AFTER を横並びで大きく */
-  .change h2{font-size:34px; margin:0 0 22px}
-  .ba{grid-template-columns:1fr 70px 1fr; gap:10px}
-  .ba .box{padding:18px 24px 22px; min-height:0}
-  .ba .box h3{font-size:24px; padding:6px 0}
-  .ba .box .sub{font-size:16px; padding-bottom:10px; margin-bottom:12px}
-  .ba ul{font-size:19px; gap:12px}
-  .ba li{padding-left:34px}
-  .ba li::before{width:24px; height:24px; font-size:14px; top:3px}
-  .ba .arr{font-size:56px}
-  /* 料金：3枚を大きく */
-  .price h2{margin:0 0 22px; align-items:center}
-  .price h2 small{font-size:16px}
-  .plans{gap:18px}
-  .plan{padding:30px 22px 26px}
-  .plan .tag{font-size:14px; padding:3px 14px; top:-13px}
-  .plan .name{font-size:24px}
-  .plan .cap{font-size:14px}
-  .plan .p{font-size:46px; margin-top:10px}
-  .plan .p small{font-size:16px}
-  .plan .tax{font-size:13px; margin-bottom:14px}
-  .plan ul{font-size:15px; gap:6px}
+  body{font-size:16px}
+  section{padding:84px 0}
+  .gnav{display:flex; margin-left:auto}
+  .gnav a{text-decoration:none; font-size:14px; font-weight:700; padding:4px 18px; border-left:1px solid rgba(255,255,255,.2)}
+  .gnav a:first-child{border-left:0}
+  .gnav a:hover{color:var(--gold-lt)}
+  .top .cta{margin-left:18px; font-size:15px; padding:10px 22px}
+  .menu-btn{display:none}
+  .fv-in{grid-template-columns:1.08fr .92fr; align-items:center; min-height:min(calc(100vh - 56px), 860px); padding:0}
+  .fv-visual{order:2; height:100%; min-height:640px}
+  .fv-visual img{object-position:center 20%}
+  .fv-visual::after{inset:0 auto 0 0; width:28%; height:auto; background:linear-gradient(90deg,#050505,transparent)}
+  .fv-text{order:1; margin:0; padding:34px 0 34px 40px}
+  .fv-lead{font-size:22px; padding:4px 22px}
+  .fv-title{margin:10px -40px 0 -10px}
+  .fv-sns{font-size:28px; margin-top:6px}
+  .fv-for{font-size:17px; margin-top:10px}
+  .badges{margin:22px 0 18px; gap:14px; max-width:720px}
+  .badges li{padding:12px 6px 14px}
+  .badges small{font-size:17px}
+  .badges b{font-size:52px}
+  .badges b.s{font-size:40px}
+  .badges b.t{font-size:24px}
+  .fv .btn-red{font-size:30px; padding:16px 26px; max-width:720px; margin:0}
+  .fv .checks{justify-content:flex-start; font-size:15px; gap:6px 26px; max-width:720px}
+  .fv .fine{text-align:right; max-width:720px; font-size:12px}
+  .can4{grid-template-columns:repeat(4,1fr)}
+  .ops{grid-template-columns:repeat(5,1fr)}
+  .flow5,.steps{grid-template-columns:repeat(5,1fr)}
+  .flow5 li + li::before,.step + .step::before{content:"›"; position:absolute; left:-12px; top:40%; color:var(--gold); font-size:30px; line-height:1; z-index:2}
+  .flow5 li{position:relative; overflow:visible}
+  .worry-man{align-self:stretch}
+  .worry-man img{height:100%; object-fit:cover}
+  .sticky-cta{display:none}
+  footer{padding-bottom:40px}
 }
 
-/* スマホ：「完全無料」のボタンまでを最初の画面（アドレスバーを除いた高さ）に収める。
-   CTAの文字は16px以上、補足のチェックはボタンの下に1行で出す */
-.chk-sp{display:none}
-.sticky-cta{display:none}
-@media (max-width: 860px){
-  /* 画面の高さは読み込み時に1回だけ測った値（--fvh）を使う。100svh/vh だとアプリ内ブラウザで
-     アドレスバーが出入りするたびに高さが変わり、スクロール中にFVの文字がカクカク動いていた */
-  .h-in{padding:calc(max(130px, var(--fvh, 664px) - 480px) - 50px) 12px 12px}
-  .v-ask{font-size:22px; top:8px}
-  .h-title .w{font-size:clamp(26px,8vw,36px)}
-  .h-title .r{font-size:clamp(28px,8.8vw,40px)}
-  .h-sub{margin:4px 0 8px; font-size:13px; line-height:1.5}
-  .badges{gap:6px; margin:0; justify-content:flex-end}
-  .badges li{width:22%; max-width:82px; border-width:2px}
-  .badges small{font-size:10px}
-  .badges small.tx{font-size:8px}
+/* ===== スマホ（〜699px）：lp_element/iphone のデザインに合わせる ===== */
+@media (max-width: 699px){
+  section{padding:44px 0}
+  .sec-h{margin-bottom:20px}
+  .sec-h h2::before,.sec-h h2::after{flex-basis:30px}
+  .sec-h small{font-size:12px}
+  /* ① FV：文字→写真→価格・CTAの順に縦に並べ、重ならないようにする（1画面に収める） */
+  .fv-in{display:block; padding:0 0 14px}
+  .fv-text{margin:0; padding:10px 12px 0; display:flex; flex-direction:column}
+  .fv-lead{font-size:11.5px; align-self:flex-start}
+  .fv-title{margin:6px 0 0; width:92%}
+  .fv-sns{font-size:14px; margin-top:4px}
+  .fv-for{display:none}
+  .fv-visual{height:calc(max(150px, var(--fvh, 664px) - 470px)); margin:8px 0 10px}
+  .fv-visual img{object-position:55% 30%}
+  .fv-visual::after{height:30%}
+  .fv-text .fv-visual{margin-left:-12px; margin-right:-12px}
+  .badges{margin:0 0 10px}
   .badges b{font-size:26px}
-  .badges b.s{font-size:16px}
-  .badges b.t{font-size:13px}
-  .free-cta{margin:14px 0 0 34px}
-  .free-cta .seal{left:-34px; width:72px; font-size:17px}
-  .free-cta .main{border-radius:999px; padding:10px 14px 10px 46px; font-size:16px; line-height:1.35; text-align:center}
-  .free-cta .main em{font-size:1.15em}
-  .free-cta .main .pc-br{display:none}
-  .free-cta .chk.pc{display:none}
-  .chk-sp{display:flex; justify-content:center; flex-wrap:wrap; gap:4px 12px; margin:8px 0 0; font-size:12px; font-weight:800; color:#fff; text-shadow:0 1px 4px #000}
-  .chk-sp span::before{content:"☑ "; color:var(--gold-lt)}
-  /* 画面下の固定CTA（ヒーローのCTAとフォームが見えている間は隠す） */
-  .sticky-cta{display:block; position:fixed; left:10px; right:10px; bottom:calc(10px + env(safe-area-inset-bottom, 0px)); z-index:60; text-align:center; text-decoration:none; color:#fff; font-weight:900; font-size:16px; background:linear-gradient(180deg,#f0262c,#b90f14); border:2px solid #ff6b6f; border-radius:999px; padding:13px 10px; box-shadow:0 8px 24px rgba(0,0,0,.45); transition:transform .25s, opacity .25s}
-  .sticky-cta b{display:inline-block; background:linear-gradient(180deg,#fff0a8,#e3b43a); color:#1a1200; border-radius:999px; padding:1px 10px; margin-right:8px; font-size:13px; vertical-align:1px}
-  .sticky-cta.off{transform:translateY(140%); opacity:0; pointer-events:none}
-  .sticky-cta[hidden]{display:none}
-  footer{padding-bottom:90px}
+  .badges b.s{font-size:19px}
+  .fv .btn-red{font-size:19px}
+  /* ② サンプル：左に説明、右に端末 */
+  .scard{display:grid; grid-template-columns:1fr 1.05fr; align-items:center}
+  .scard .ph{order:2; padding:10px 8px 10px 0}
+  .scard .ph img{border-radius:6px}
+  .scard .cap{order:1; border-top:0; display:block; padding:14px 6px 14px 14px}
+  .scard .cap .ic{width:44px; height:44px; margin-bottom:8px}
+  .scard .cap .ic svg{width:22px; height:22px}
+  .scard h3{font-size:19px}
+  .scard p{font-size:13px}
+  /* ③ お悩み：見出しの右上に人物 */
+  .worry{position:relative; display:block}
+  .worry-man{position:absolute; top:-44px; right:-16px; width:62%; z-index:0}
+  .worry-man img{border-radius:0; -webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent); mask-image:linear-gradient(to bottom,#000 70%,transparent)}
+  .worry-box{position:relative; z-index:1; background:none; color:#fff; box-shadow:none; border:0; padding:0}
+  .worry-box h2{text-align:left; font-size:40px; text-shadow:0 3px 12px rgba(0,0,0,.9); padding-top:10px; max-width:66%}
+  .worry-box h2 .r{color:var(--red-lt); background:none}
+  .worry-box .sub{text-align:left; color:#fff; text-shadow:0 2px 8px #000; margin-bottom:14px}
+  .worry-box .sub em{color:var(--gold-lt)}
+  .worry-list{background:linear-gradient(180deg,#fbf8f1,#efe7d6); border:1px solid var(--gold); border-radius:10px; padding:10px; color:var(--paper-ink)}
+  .worry-list li{font-size:14px}
+  /* ④ できること：左に文字、右に画像 */
+  .can{display:grid; grid-template-columns:1fr 44%; grid-template-rows:auto 1fr; border-color:var(--line)}
+  .can .hd{grid-column:1; grid-row:1; padding:12px 0 4px 12px}
+  .can h3{font-size:16px}
+  .can p{grid-column:1; grid-row:2; padding:4px 8px 12px 12px; font-size:12.5px}
+  .can img{grid-column:2; grid-row:1 / span 2; align-self:center; padding:8px 8px 8px 0}
+  .ops{display:grid; grid-auto-flow:column; grid-auto-columns:44%; grid-template-columns:none; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px; gap:8px}
+  .op{scroll-snap-align:start}
+  .op h3{font-size:14px}
+  .op p{font-size:12px}
+  /* ⑤ 制作事例：左に文字、右に端末／流れは横長の行 */
+  .ex{display:grid; grid-template-columns:1fr 1.05fr; gap:0 8px; align-items:center; padding:12px}
+  .ex .hd{grid-column:1 / -1; margin-bottom:6px}
+  .ex .hd .ic{flex-basis:40px; height:40px}
+  .ex h3{font-size:19px}
+  .ex ul{grid-column:1; grid-row:2; margin:0; font-size:12.5px}
+  .ex img{grid-column:2; grid-row:2}
+  .flow-h{justify-content:center; text-align:center; margin-top:30px}
+  .flow5 li{display:grid; grid-template-columns:40px 34% 1fr; grid-template-rows:auto auto; align-items:center; gap:0 10px; padding:8px}
+  .flow5 .hd{display:contents}
+  .flow5 .no{grid-column:1; grid-row:1 / span 2}
+  .flow5 img{grid-column:2; grid-row:1 / span 2; height:62px; object-fit:cover}
+  .flow5 h4{grid-column:3; grid-row:1; font-size:15px}
+  .flow5 p{grid-column:3; grid-row:2; margin:2px 0 0; font-size:12px; line-height:1.5}
+  /* ⑥ 料金：左に価格と内容、右に端末 */
+  .plan{display:grid; grid-template-columns:1fr 46%; gap:0 8px; padding:16px 12px}
+  .plan > *:not(img):not(.ribbon){grid-column:1}
+  .plan img{grid-column:2; grid-row:1 / span 5; align-self:center; margin:0}
+  .plan h3{font-size:24px}
+  .plan .for{font-size:12px; justify-self:start}
+  .plan .p{font-size:32px}
+  .plan ul{grid-column:1 / -1 !important; margin-top:8px; font-size:14px}
+  .plan .ribbon{left:auto; right:auto; top:-2px; left:44%; font-size:13px}
+  /* ⑦ 流れ：左に文字、右に写真 */
+  .step{display:grid; grid-template-columns:1fr 40%; gap:0 8px; padding:12px}
+  .step .hd{grid-column:1; margin-bottom:4px}
+  .step .sn{flex-basis:48px; height:48px}
+  .step h3{font-size:19px}
+  .step .ph{grid-column:2; grid-row:1 / span 2; align-self:center}
+  .step .time{position:static; transform:none; margin:0 0 6px; display:inline-flex; font-size:12px; padding:3px 12px}
+  .step p{grid-column:1; margin:0; font-size:12.5px}
+  .step .tm{grid-column:1}
+  .points{grid-template-columns:repeat(3,1fr); gap:6px}
+  .point{flex-direction:column; text-align:center; padding:10px 6px; gap:6px}
+  .point .ic{width:40px; height:40px; flex-basis:40px}
+  .point b{font-size:13px}
+  .point span{font-size:11px}
 }
-@media (prefers-reduced-motion: reduce){ .sticky-cta{transition:none} }
 
-/* FVの文字は画像（元デザインから切り出し→4倍に高解像度化→背景を透過） */
-.v-ask{writing-mode:horizontal-tb; width:40px; left:6px; top:8px; text-shadow:none}
-.v-ask img{width:100%; height:auto}
-.h-title{transform:none; text-shadow:none; margin:0 -6px}
-.h-title::before{display:none}
-.h-title img{width:100%; height:auto; filter:drop-shadow(0 4px 10px rgba(0,0,0,.7))}
-.note-r img,.note-b img{width:100%; height:auto; display:block}
-@media (max-width: 860px){ .h-in{padding-bottom:12px} .h-title{margin-bottom:10px} }
-@media (min-width: 861px){
-  .v-ask{width:5.5%; left:1.2%; top:3%}
-  .quote{left:33%; top:5%; width:27%; transform:none}
-  .quote img{display:block; height:auto}
-  .quote .qr{width:100%}
-  .quote .qw{width:58%; margin:6px 0 0 16%}
-  .note-r{width:16%; background:none; padding:0; box-shadow:none; clip-path:none; transform:none; right:2%; top:9%}
-  .h-title{left:6%; top:25%; width:63%; white-space:normal; margin:0}
-  .note-b{background:none; padding:0; box-shadow:none; transform:none; width:50%; left:auto; right:-4%; top:auto; bottom:-6%}
+@media (max-width: 699px){
+  .sec-h h2::before,.sec-h h2::after{display:none}
+  .sec-h h2{font-size:clamp(22px,6.6vw,28px)}
+  .worry-box h2{font-size:clamp(24px,7.4vw,30px); max-width:60%}
+  .can h3{font-size:14.5px}
+  .plan .ribbon{left:auto; right:10px}
+  .plan .for{font-size:11.5px; white-space:nowrap}
+  .all{font-size:13px; padding:6px 14px}
+  .step h3{font-size:17px}
+  .form .btn-red{font-size:17px}
 }
-
-/* 見出し：スマホは「その挑戦に、」「ホームページを。」「サブ」の3枚を積む／PCは1枚 */
-.h-title .t-pc{display:none}
-.h-title .t-sp{display:block}
-.h-title .t-sp img{display:block; height:auto; filter:drop-shadow(0 4px 10px rgba(0,0,0,.75))}
-.h-title .l1{width:74%; margin:0 auto 0 4%}
-.h-title .l2{width:96%; margin:-2% 0 0 auto}
-.h-title .l3{width:92%; margin:2% auto 0}
-@media (min-width: 861px){
-  .h-title .t-pc{display:block}
-  .h-title .t-sp{display:none}
+/* PCでは写真を右の列に戻す */
+@media (min-width: 1100px){
+  .fv-text .fv-visual{display:none}
+  .step h3{font-size:18px} .step .sn{flex-basis:46px; height:46px} .step .sn b{font-size:18px}
 }
+.pc-only{display:none}
+@media (min-width:1100px){ .pc-only{display:block} }
 </style>
 <script>
-// FVの高さ用：開いたときの見える高さを1回だけ測って固定する。
-// 横幅が変わったとき（画面の回転など）だけ測り直し、アドレスバーの出入り（高さだけの変化）では変えない
+// FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
 (function () {
   var w = window.innerWidth;
   function set() { document.documentElement.style.setProperty('--fvh', window.innerHeight + 'px'); }
@@ -429,192 +433,283 @@ footer a{color:#ddd}
 <header class="top">
   <div class="top-in">
     <a class="logo" href="#top" aria-label="EasyWebCraft ページの先頭へ"><img src="img/logo-mark.webp" alt="EasyWebCraft" width="640" height="69"></a>
-    <p class="tagline">起業・開業の最初の一手に、信頼されるホームページを。</p>
-    <a class="cta" href="#contact">無料でデザイン案を見る</a>
-    <span class="menu" aria-hidden="true"><i></i><i></i><i></i></span>
+    <nav class="gnav" aria-label="ページ内メニュー">
+      <a href="#can">サービスの特徴</a><a href="#works">制作実績</a><a href="#plans">料金プラン</a><a href="#flow">ご利用の流れ</a><a href="#faq">よくある質問</a>
+    </nav>
+    <a class="cta" href="#contact">無料デザイン案をもらう →</a>
+    <button class="menu-btn" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
   </div>
+  <nav class="mnav" id="mnav" aria-label="メニュー">
+    <a href="#can">サービスの特徴</a><a href="#works">制作実績</a><a href="#plans">料金プラン</a><a href="#flow">ご利用の流れ</a><a href="#faq">よくある質問</a>
+  </nav>
 </header>
 
 <main id="top">
-  <section class="hero2">
-    <picture class="bg">
-      <source media="(min-width: 861px)" srcset="img/hero-bg-pc.webp 2560w, img/hero-bg-pc@2x.webp 3344w" sizes="100vw">
-      <img src="img/hero-bg-sp.webp" alt="" width="1242" height="2208" fetchpriority="high">
-    </picture>
-    <div class="h-in">
-      <p class="v-ask"><img src="img/fv-vask.webp" alt="それ、ホームページあるの？" width="400" height="1108"></p>
-      <p class="quote"><img class="qr" src="img/fv-quote-r.webp" alt="「SNSだけで勝てる時代は終わった。」" width="1779" height="232"><img class="qw" src="img/fv-quote-w.webp" alt="ビジネスで信頼を取るなら、公式サイトは必須です。" width="1051" height="295"></p>
-      <p class="note-r"><img src="img/fv-note-r.webp" alt="このサービスであなたの事業を加速させたい。" width="1005" height="816"></p>
-      <h1 class="h-title"><span class="sr">その挑戦に、ホームページを。想いだけじゃ、伝わらない。伝わるカタチを、プロがつくります。</span>
-        <img class="t-pc" src="img/fv-title.webp" alt="" width="2400" height="417">
-        <span class="t-sp" aria-hidden="true"><img class="l1" src="img/fv-t1.webp" alt="" width="1044" height="270"><img class="l2" src="img/fv-t2.webp" alt="" width="1410" height="300"><img class="l3" src="img/fv-t3.webp" alt="" width="1916" height="147"></span></h1>
-      <div class="devices" aria-hidden="true">
-        <div class="d-pc"><img src="img/mock-pc.webp" alt="" width="800" height="476"></div>
-        <div class="d-sp"><img src="img/mock-sp.webp" alt="" width="390" height="844"></div>
-        <p class="note-b"><img src="img/fv-note-b.webp" alt="あなたの事業に合わせたオリジナルデザインを無料でご提案します。" width="850" height="426"></p>
-      </div>
-      <div class="h-bottom">
-        <ul class="badges">
-          <li><small>初期費用</small><b>0<i>円</i></b></li>
-          <li><small>月額</small><b class="s">5,980<i>円〜</i></b><small class="tx">（税別）</small></li>
-          <li><small>開業前も</small><b class="t">相談OK</b></li>
-        </ul>
-        <a class="free-cta" href="#contact">
-          <span class="seal">完全<br>無料</span>
-          <span class="main">今すぐ、あなたの<br class="pc-br">ホームページの<br><em>デザイン案をもらう<span class="arr" aria-hidden="true">→</span></em></span>
-          <span class="chk pc"><span>見てから契約OK</span><span>気に入らなければ0円</span><span>最短1分でお申し込み</span></span>
-        </a>
-        <p class="chk-sp"><span>見てから契約OK</span><span>気に入らなければ0円</span><span>最短1分でお申し込み</span></p>
-      </div>
-    </div>
-  </section>
 
-  <section class="feats" aria-label="月額にふくまれるもの">
-    <ul>
-      <li><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/><path d="M13 8l3 3-3 1-1 3-3-3"/></svg>デザイン制作</li>
-      <li><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>スマホ対応</li>
-      <li><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>SEOの基本設定</li>
-      <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3 7l9 6 9-6"/></svg>お問い合わせフォーム</li>
-      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>サーバー・SSL込み</li>
-      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>更新・修正も月額で対応</li>
-    </ul>
-  </section>
-
-  <section class="grid4">
-    <div class="g4-in">
-      <div class="pain">
-        <h2 class="sr">こんなお悩みありませんか？</h2>
-        <img class="title" src="img/pain-title.webp" alt="" width="470" height="64">
-        <ul>
-          <li>会社を設立したが、まだHPがない</li>
-          <li>SNSだけで信頼感が弱い</li>
-          <li>取引先から「HPはありますか？」と聞かれる</li>
-          <li>制作会社に頼むと高額で手が出せない</li>
-          <li>とにかく早く公開して事業を進めたい</li>
-        </ul>
-        <img class="man" src="img/pain-man2.webp" alt="" width="865" height="1100">
-      </div>
-      <div class="ind">
-        <h2>こんな業種に対応しています</h2>
-        <ul>
-          <li><img src="img/ind-food.webp" alt="" loading="lazy"><p>メニュー・予約の<br>入口をまとめる</p></li>
-          <li><img src="img/ind-salon.webp" alt="" loading="lazy"><p>SNSから<br>予約ページへ</p></li>
-          <li><img src="img/ind-clinic.webp" alt="" loading="lazy"><p>診療案内と<br>アクセスを明確に</p></li>
-          <li><img src="img/ind-build.webp" alt="" loading="lazy"><p>施工事例と<br>会社情報を掲載</p></li>
-          <li><img src="img/ind-gym.webp" alt="" loading="lazy"><p>体験予約の<br>導線をつくる</p></li>
-          <li><img src="img/ind-pro.webp" alt="" loading="lazy"><p>事務所の<br>信用を伝える</p></li>
-        </ul>
-        <p class="note">※写真はイメージです</p>
-      </div>
-      <div class="midcta c1"><a class="btn-red" href="#contact">無料でデザイン案をもらう</a><p>あなたの業種に合わせたデザイン案を、<br class="sp">完全無料でおつくりします</p></div>
-      <div class="change">
-        <h2>ホームページがあるだけで<br><em>ここまで変わります</em></h2>
-        <div class="ba">
-          <div class="box b">
-            <h3>BEFORE</h3>
-            <p class="sub">検索しても何も出てこない…</p>
-            <ul><li>会社の情報が見つからない</li><li>信頼感がない</li><li>問い合わせが来ない</li><li>SNSだけで集客が不安</li></ul>
-          </div>
-          <span class="arr" aria-hidden="true">➜</span>
-          <div class="box a">
-            <h3>AFTER</h3>
-            <p class="sub">公式サイトが見つかる！</p>
-            <ul><li><b>検索</b>で見つかる</li><li><b>会社の信頼感</b>がアップ</li><li><b>問い合わせ</b>の入口ができる</li><li><b>採用・取引</b>の窓口が広がる</li></ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="price" id="plans">
-        <h2><span>料金プラン</span><small>すべてのプランで初期費用0円・最低契約期間6ヶ月</small></h2>
-        <div class="plans">
-          <div class="plan">
-            <p class="name">EasyWeb LP</p><p class="cap">まず1ページで</p>
-            <p class="p">5,980<small>円/月</small></p><p class="tax">（税別・税込6,578円）</p>
-            <ul><li>1ページ</li><li>スマホ対応</li><li>お問い合わせフォーム</li><li>サーバー・SSL込み</li></ul>
-          </div>
-          <div class="plan reco">
-            <span class="tag">おすすめ</span>
-            <p class="name">EasyWeb HP</p><p class="cap">6ページまで</p>
-            <p class="p">7,700<small>円/月</small></p><p class="tax">（税別・税込8,470円）</p>
-            <ul><li>トップ＋下層5P</li><li>スマホ対応</li><li>SEOの基本設定</li><li>サーバー・SSL込み</li></ul>
-          </div>
-          <div class="plan">
-            <p class="name">EasyWeb HP+</p><p class="cap">ページを増やしたい方</p>
-            <p class="p">9,800<small>円/月</small></p><p class="tax">（税別・税込10,780円）</p>
-            <ul><li>ページ数の上限なし</li><li>スマホ対応</li><li>SEOの基本設定</li><li>サーバー・SSL込み</li></ul>
-          </div>
-        </div>
-      </div>
-      <div class="midcta c2"><a class="btn-red" href="#contact">無料でデザイン案をもらう</a><p>料金は契約するときだけ。<br class="sp">デザイン案を見るまでは0円です</p></div>
-    </div>
-  </section>
-
-
-  <section class="offer" id="free">
-    <div class="offer-in">
-      <p class="o-kicker">いきなり契約しなくてOK</p>
-      <h2><span class="o-big">デザイン案づくりは<em>完全無料</em></span><br>見てから、<br class="sp">頼むかどうか決めてください</h2>
-      <ol class="o-flow">
-        <li>相談<b>0円</b></li>
-        <li>ヒアリング<b>0円</b></li>
-        <li>デザイン案<b>0円</b></li>
-        <li class="judge">見てから<br>判断</li>
-      </ol>
-      <ul class="o-points">
-        <li><b>気に入らなければ0円</b>見送っても費用は一切かかりません</li>
-        <li><b>しつこい営業はしません</b>ご相談だけでもOKです</li>
-        <li><b>最短1分で申し込み</b>名前と連絡先だけでOK</li>
+<!-- ① ファーストビュー -->
+<section class="fv" aria-label="EasyWebCraft">
+  <div class="fv-in">
+    <div class="fv-visual pc-only"><img src="img/v3/fv-visual.webp" alt="" width="1424" height="1754" fetchpriority="high"></div>
+    <div class="fv-text">
+      <p class="fv-lead"><em>起業・開業</em>の最初の一手に。信頼されるホームページを。</p>
+      <h1 class="fv-title"><img src="img/v3/fv-title.webp" alt="その挑戦に、ホームページを。" width="1980" height="529"></h1>
+      <p class="fv-sns">SNSで知ってもらい、ホームページで<em>信頼</em>につなげる。</p>
+      <p class="fv-for">開業前・開業したばかりの方へ。<br>想いだけでは伝わらない事業の魅力を、伝わる形にします。</p>
+      <div class="fv-visual"><img src="img/v3/fv-visual.webp" alt="" width="1424" height="1754" fetchpriority="high"></div>
+      <div class="fv-bottom">
+      <ul class="badges">
+        <li><small>初期費用</small><b class="g">0<i>円</i></b></li>
+        <li><small>月額</small><b class="s g">5,980<i>円〜</i></b></li>
+        <li><small>最短</small><b class="t g">7日で<br>デザイン案</b></li>
       </ul>
-      <p class="o-scope">※無料でお作りするのは、トップページ1ページ分のデザイン案です</p>
-      <a class="btn-gold" href="#contact">完全無料でデザイン案をもらう</a>
-    </div>
-  </section>
-  <section class="closing">
-    <div class="closing-in">
-      <img src="img/closing.webp" alt="あなたの事業の虎になりたい。想いを、形に。ビジネスを、次のステージへ。" width="632" height="170" loading="lazy">
-      <div class="go">
-        <p>まずは、あなたのホームページの<br><em>デザイン案を無料</em>で見てみる</p>
-        <a class="btn-red" href="#contact">無料でデザイン案をもらう</a>
+      <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a>
+      <ul class="checks"><li>トップページ1ページ分を無料提案</li><li>デザインを見てから契約判断OK</li><li>開業前の相談もOK</li></ul>
+      <p class="fine">※表示価格は税別（税込6,578円〜）・最低契約期間6ヶ月</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="contact" id="contact">
-    <div class="contact-in">
-      <h2>あなたの事業の<br><em>デザイン案を無料で</em>おつくりします</h2>
-      <p class="lead">無料でお作りするのはトップページ1ページ分のデザイン案です。<br>見てから契約するか決められます。1営業日以内にご返信します。</p>
-      <form class="form" id="cform" action="https://formspree.io/f/maqkzjek" method="POST">
-        <input type="hidden" name="_subject" value="【EasyWebCraft 挑戦LP】無料デザイン案の申し込み">
-        <label>お名前
-          <input type="text" name="name" required autocomplete="name" placeholder="例：山田 太郎">
-        </label>
-        <fieldset>
-          <legend>いまの状況 <span class="opt">（任意）</span></legend>
-          <div class="stage">
-            <label><input type="radio" name="stage" value="これから開業"><span>これから開業</span></label>
-            <label><input type="radio" name="stage" value="開業1年以内"><span>開業1年以内</span></label>
-            <label><input type="radio" name="stage" value="それ以外"><span>それ以外</span></label>
-          </div>
-        </fieldset>
-        <label>事業・会社の名前 <span class="opt">（任意・未定でも可）</span>
-          <input type="text" name="shop" autocomplete="organization" placeholder="例：株式会社〇〇">
-        </label>
-        <label>ご連絡先（メール または 電話）
-          <input type="text" name="contact" required placeholder="例：info@example.com / 090-0000-0000">
-        </label>
-        <label>ご相談内容 <span class="opt">（任意）</span>
-          <textarea name="body" rows="4" placeholder="例：パーソナルジムを開業予定。体験予約につながるHPにしたい。"></textarea>
-        </label>
-        <p class="before">相談・デザイン案の作成は無料です。<br>契約はデザイン案をご覧いただいた後です。</p>
-        <p class="form-note">送信いただいた内容は<a href="https://easywebcraft.github.io/easyweb-lp/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に基づいて取り扱います。</p>
-        <button class="btn-red" type="submit">無料でデザイン案をもらう</button>
-        <p class="form-err" id="form-err" hidden>送信できませんでした。お手数ですが、時間をおいて再度お試しください。</p>
-      </form>
+<!-- ② 制作デザインのサンプル -->
+<section id="samples">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2><span>制作デザイン<span class="g">サンプル</span></span></h2>
+      <p>あなたの<em>業種に合わせたデザイン例</em>をご提案</p>
+      <small>どんなホームページが作れるのか、具体的なイメージを先に確認できます。※以下はデザイン例です</small>
     </div>
-  </section>
+    <div class="cards3">
+      <article class="scard"><div class="ph"><img src="img/v3/s-izakaya.webp" alt="飲食店のデザイン例（PCとスマホ）" width="1100" height="806" loading="lazy"></div>
+        <div class="cap"><span class="ic"><svg viewBox="0 0 24 24"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 3c-2 2-2 6 0 8v10"/></svg></span><div><h3>飲食店</h3><p>写真で世界観と料理の魅力を伝える</p></div></div></article>
+      <article class="scard"><div class="ph"><img src="img/v3/s-salon.webp" alt="美容室・サロンのデザイン例（PCとスマホ）" width="1100" height="815" loading="lazy"></div>
+        <div class="cap"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.5 16L20 4M15.5 16L4 4"/></svg></span><div><h3>美容室・サロン</h3><p>清潔感と予約のしやすさを両立</p></div></div></article>
+      <article class="scard"><div class="ph"><img src="img/v3/s-gym.webp" alt="パーソナルジムのデザイン例（PCとスマホ）" width="1100" height="803" loading="lazy"></div>
+        <div class="cap"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg></span><div><h3>パーソナルジム</h3><p>強みと信頼感をわかりやすく訴求</p></div></div></article>
+    </div>
+    <div class="cta-block">
+      <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a>
+      <ul class="checks"><li>トップページ1ページ分を無料提案</li><li>デザインを見てから契約判断OK</li><li>開業前の相談もOK</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ③ こんなお悩みありませんか？ -->
+<section id="worry">
+  <div class="wrap">
+    <div class="worry">
+      <div class="worry-box">
+        <h2>こんな<span class="r">お悩み</span><br>ありませんか？</h2>
+        <p class="sub">起業前・開業直後の<em>こんな不安</em>、ありませんか？</p>
+        <ul class="worry-list">
+          <li><span>会社を設立したが、<b>まだHPがない</b></span></li>
+          <li><span>SNSだけでは<b>信頼感が弱い</b></span></li>
+          <li><span>取引先から<b>「HPはありますか？」</b>と聞かれる</span></li>
+          <li><span>制作会社に頼むと<b>高額で手が出せない</b></span></li>
+          <li><span>とにかく<b>早く公開して</b>事業を進めたい</span></li>
+          <li><span><b>何を載せればいいかわからない</b></span></li>
+        </ul>
+      </div>
+      <div class="worry-man"><img src="img/v3/q-man.webp" alt="考え込む男性。「HPがないと信頼されないのでは…？」「制作費が高すぎて手が出せない…」「何を載せればいいのかわからない…」" width="1100" height="1350" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ EasyWebCraftでできること -->
+<section id="can">
+  <div class="wrap">
+    <div class="sec-h">
+      <span class="en">SERVICE</span>
+      <h2><span><span class="g">EasyWebCraft</span>でできること</span></h2>
+      <p>ホームページの制作から、公開後の運用までまるごとサポートします。</p>
+    </div>
+    <div class="can4">
+      <article class="can"><div class="hd"><span class="no">01</span><h3>オリジナルデザインの<br>ホームページ制作</h3></div><img src="img/v3/c-1.webp" alt="" width="760" height="504" loading="lazy"><p>あなたの業種・コンセプトに合わせた、完全オリジナルのデザインで制作します。スマホ・タブレットにも対応した、見やすく使いやすいホームページを作ります。</p></article>
+      <article class="can"><div class="hd"><span class="no">02</span><h3>基本ページの作成</h3></div><img src="img/v3/c-2.webp" alt="トップページ・サービス紹介・会社概要・お知らせ・お問い合わせ・その他必要なページ" width="760" height="657" loading="lazy"><p>事業に必要な基本的なページを、わかりやすく整ったデザインで作成します。</p></article>
+      <article class="can"><div class="hd"><span class="no">03</span><h3>スマホ対応・<br>SEOの基本設定</h3></div><img src="img/v3/c-3.webp" alt="" width="760" height="501" loading="lazy"><p>スマホ・タブレットでも見やすく表示されるレスポンシブ対応。さらに、検索エンジンに評価されやすい基本的なSEO設定を行います。</p></article>
+      <article class="can"><div class="hd"><span class="no">04</span><h3>写真・文章のサポート</h3></div><img src="img/v3/c-4.webp" alt="" width="760" height="575" loading="lazy"><p>写真の選定や撮影のアドバイス、文章作成のサポートも行います。初めての方でも安心してお任せください。</p></article>
+    </div>
+    <p class="plus"><em>公開後</em>も、安心して<em>運用できるサポート</em>をご用意しています。</p>
+    <div class="ops">
+      <article class="op"><div class="hd"><span class="no">01</span><h3>更新サポート</h3></div><img src="img/v3/o-1.webp" alt="" width="600" height="279" loading="lazy"><p>お知らせの追加や簡単な修正など、更新作業をサポートします。<small>（プランにより対応範囲が異なります）</small></p></article>
+      <article class="op"><div class="hd"><span class="no">02</span><h3>セキュリティ・保守</h3></div><img src="img/v3/o-2.webp" alt="" width="600" height="279" loading="lazy"><p>SSL設定やシステムの保守を行い、安心して運用できる環境を維持します。</p></article>
+      <article class="op"><div class="hd"><span class="no">03</span><h3>アクセス解析レポート</h3></div><img src="img/v3/o-3.webp" alt="" width="600" height="279" loading="lazy"><p>アクセス状況を分析し、改善のアドバイスを行います。<small>（プランにより対応範囲が異なります）</small></p></article>
+      <article class="op"><div class="hd"><span class="no">04</span><h3>運用の相談対応</h3></div><img src="img/v3/o-4.webp" alt="" width="600" height="286" loading="lazy"><p>ホームページの運用に関するお悩みやご相談に、メールやチャットで対応します。</p></article>
+      <article class="op"><div class="hd"><span class="no">05</span><h3>継続的な改善提案</h3></div><img src="img/v3/o-5.webp" alt="" width="600" height="284" loading="lazy"><p>アクセスデータや市場の動向をもとに、より良いサイト運用のための改善提案を行います。</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ 制作事例 -->
+<section id="works">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2><span class="g">制作事例</span></h2>
+      <p>実際のサンプルデザインと、制作の進め方をご紹介します。</p>
+      <small>さまざまな業種に対応したホームページのサンプルをご覧いただけます。</small>
+    </div>
+    <div class="ex3">
+      <article class="ex"><div class="hd"><span class="ic"><svg viewBox="0 0 24 24"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 3c-2 2-2 6 0 8v10"/></svg></span><h3>飲食店・居酒屋</h3><span class="tag">サンプル</span></div>
+        <img src="img/v3/e-izakaya.webp" alt="飲食店・居酒屋のサンプルデザイン" width="1100" height="721" loading="lazy">
+        <ul><li>料理の魅力が伝わる、迫力ある写真とレイアウト</li><li>メニュー・店舗情報・予約導線をわかりやすく配置</li><li>スマホでも見やすい、シンプルで上質なデザイン</li></ul></article>
+      <article class="ex"><div class="hd"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.5 16L20 4M15.5 16L4 4"/></svg></span><h3>美容室・サロン</h3><span class="tag">サンプル</span></div>
+        <img src="img/v3/e-salon.webp" alt="美容室・サロンのサンプルデザイン" width="1100" height="714" loading="lazy">
+        <ul><li>サロンの雰囲気が伝わる、やさしく洗練されたデザイン</li><li>メニュー・スタイル写真で魅力を視覚的に訴求</li><li>予約ボタンを目立たせた、スムーズな導線設計</li></ul></article>
+      <article class="ex"><div class="hd"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg></span><h3>パーソナルジム</h3><span class="tag">サンプル</span></div>
+        <img src="img/v3/e-gym.webp" alt="パーソナルジムのサンプルデザイン" width="1100" height="690" loading="lazy">
+        <ul><li>トレーニングの魅力が伝わる、ダイナミックなビジュアル</li><li>サービス内容・料金・トレーナー紹介をわかりやすく掲載</li><li>問い合わせ・体験予約につながる導線設計</li></ul></article>
+    </div>
+    <div class="flow-h"><h3 class="g">制作の流れ</h3><p>ご依頼から公開まで、担当者がしっかりサポートします。</p></div>
+    <ol class="flow5">
+      <li><div class="hd"><span class="no">01</span><h4>ヒアリング</h4></div><img src="img/v3/f-1.webp" alt="" width="600" height="173" loading="lazy"><p>ご要望や目的、イメージを詳しくお伺いし、最適なプランをご提案します。</p></li>
+      <li><div class="hd"><span class="no">02</span><h4>構成・設計</h4></div><img src="img/v3/f-2.webp" alt="" width="600" height="180" loading="lazy"><p>ヒアリング内容をもとに、サイトの構成・ページ設計を行います。</p></li>
+      <li><div class="hd"><span class="no">03</span><h4>デザイン案</h4></div><img src="img/v3/f-3.webp" alt="" width="600" height="180" loading="lazy"><p>ご希望に沿ったデザイン案を作成し、実際のイメージをご確認いただきます。</p></li>
+      <li><div class="hd"><span class="no">04</span><h4>修正・確認</h4></div><img src="img/v3/f-4.webp" alt="" width="600" height="180" loading="lazy"><p>ご確認いただいた内容をもとに修正を行い、仕上げていきます。</p></li>
+      <li><div class="hd"><span class="no">05</span><h4>公開・運用開始</h4></div><img src="img/v3/f-5.webp" alt="" width="600" height="175" loading="lazy"><p>最終確認後、ホームページを公開。公開後の運用・更新もサポートいたします。</p></li>
+    </ol>
+    <p class="note">※掲載しているのはサンプルデザインです。実際の制作は、お客様のご要望に合わせてオリジナルで制作いたします。お客様の声は、実績ができしだい掲載します。</p>
+  </div>
+</section>
+
+<!-- ⑥ 料金プランとサービス比較 -->
+<section id="plans">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2><span><span class="g">料金プラン</span>とサービス比較</span></h2>
+      <p>事業の規模や必要なページ数に合わせて、選びやすい3つのプランをご用意しています。</p>
+    </div>
+    <p class="all">すべてのプランで <b>初期費用0円</b> ／ <b>最低契約期間6ヶ月</b></p>
+    <div class="plans">
+      <article class="plan"><h3 class="g">EasyWeb LP</h3><span class="for">まず1ページで始めたい方向け</span>
+        <p class="p g">5,980<small>円/月</small></p><p class="taxin"><span class="tx">（税別）</span>税込 6,578円/月</p>
+        <img src="img/v3/p-lp.webp" alt="" width="1100" height="526" loading="lazy">
+        <ul><li>トップページ1P</li><li>スマホ対応</li><li>お問い合わせフォーム</li><li>サーバー・SSL込み</li></ul></article>
+      <article class="plan reco"><span class="ribbon">おすすめ</span><h3 class="g">EasyWeb HP</h3><span class="for">6ページまで対応</span>
+        <p class="p g">7,700<small>円/月</small></p><p class="taxin"><span class="tx">（税別）</span>税込 8,470円/月</p>
+        <img src="img/v3/p-hp.webp" alt="" width="1100" height="492" loading="lazy">
+        <ul><li>トップ＋下層5P</li><li>スマホ対応</li><li>基本SEO設定</li><li>お問い合わせフォーム</li><li>サーバー・SSL込み</li></ul></article>
+      <article class="plan"><h3 class="g">EasyWeb HP+</h3><span class="for">ページを増やしたい方向け</span>
+        <p class="p g">9,800<small>円/月</small></p><p class="taxin"><span class="tx">（税別）</span>税込 10,780円/月</p>
+        <img src="img/v3/p-hpp.webp" alt="" width="1100" height="563" loading="lazy">
+        <ul><li>さらに下層ページ追加</li><li>スマホ対応</li><li>アクセス解析設定</li><li>基本SEO設定</li><li>サーバー・SSL込み</li></ul></article>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <caption class="sr">プラン比較表</caption>
+        <thead><tr><th scope="col"><span class="sr">項目</span></th><th scope="col">EasyWeb LP</th><th scope="col" class="reco">EasyWeb HP</th><th scope="col">EasyWeb HP+</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">ページ数</th><td>1ページ（トップのみ）</td><td>最大6ページ（トップ＋下層5P）</td><td>6ページ以上（追加可能）</td></tr>
+          <tr><th scope="row">スマホ対応</th><td><span class="ok" aria-label="対応">✓</span></td><td><span class="ok" aria-label="対応">✓</span></td><td><span class="ok" aria-label="対応">✓</span></td></tr>
+          <tr><th scope="row">お問い合わせフォーム</th><td><span class="ok" aria-label="対応">✓</span></td><td><span class="ok" aria-label="対応">✓</span></td><td><span class="ok" aria-label="対応">✓</span></td></tr>
+          <tr><th scope="row">基本SEO設定</th><td>—</td><td><span class="ok" aria-label="対応">✓</span></td><td><span class="ok" aria-label="対応">✓</span></td></tr>
+          <tr><th scope="row">サーバー・SSL</th><td><span class="ok" aria-label="対応">✓</span></td><td><span class="ok" aria-label="対応">✓</span></td><td><span class="ok" aria-label="対応">✓</span></td></tr>
+          <tr><th scope="row">アクセス解析</th><td>—</td><td>—</td><td><span class="ok" aria-label="対応">✓</span></td></tr>
+          <tr><th scope="row">公開後の更新相談</th><td>メールで相談</td><td>メールで相談</td><td>メール・チャットで相談</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="plan-msg">プランに迷う場合も、事業内容に合わせて<em>最適な構成</em>をご提案します。</p>
+    <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a></div>
+    <p class="fine">※表示価格は税別です。詳しい条件は<a href="https://easywebcraft.github.io/easyweb-lp/tokushoho.html">特定商取引法に基づく表記</a>をご覧ください。</p>
+  </div>
+</section>
+
+<!-- ⑦ 無料デザイン案の制作の流れ -->
+<section id="flow">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2><span><span class="g">無料デザイン案</span>の制作の流れ</span></h2>
+      <p>お申し込みからご提案まで、わかりやすい流れでスムーズに進みます。</p>
+    </div>
+    <p class="tops"><span>最短<b>7日</b>でデザイン案をご提案</span><span>開業前・準備中の方もご相談OK</span></p>
+    <ol class="steps">
+      <li class="step"><div class="hd"><span class="sn"><small>STEP</small><b>01</b></span><h3>お申し込み<small>フォームから送信</small></h3></div><div class="ph"><img src="img/v3/st-1.webp" alt="" width="760" height="439" loading="lazy"><span class="time">最短1分</span></div><p>お問い合わせフォームから、業種・ご希望内容をお送りください。</p></li>
+      <li class="step"><div class="hd"><span class="sn"><small>STEP</small><b>02</b></span><h3>ヒアリング<small>目的・イメージ確認</small></h3></div><div class="ph"><img src="img/v3/st-2.webp" alt="" width="760" height="464" loading="lazy"><span class="time">当日〜1営業日</span></div><p>事業内容、ターゲット、必要なページや雰囲気を確認します。</p></li>
+      <li class="step"><div class="hd"><span class="sn"><small>STEP</small><b>03</b></span><h3>構成整理<small>情報をわかりやすく整理</small></h3></div><div class="ph"><img src="img/v3/st-3.webp" alt="" width="760" height="462" loading="lazy"><span class="time">1〜2営業日</span></div><p>掲載内容や導線を整理し、見せ方の方向性を固めます。</p></li>
+      <li class="step"><div class="hd"><span class="sn"><small>STEP</small><b>04</b></span><h3>デザイン案作成<small>トップページ案を制作</small></h3></div><div class="ph"><img src="img/v3/st-4.webp" alt="" width="760" height="460" loading="lazy"><span class="time">2〜4営業日</span></div><p>ヒアリング内容をもとに、あなたの事業に合ったデザイン案を作成します。</p></li>
+      <li class="step"><div class="hd"><span class="sn"><small>STEP</small><b>05</b></span><h3>ご提案・確認<small>デザインを確認</small></h3></div><div class="ph"><img src="img/v3/st-5.webp" alt="" width="760" height="454" loading="lazy"><span class="time">最短7日</span></div><p>完成したデザイン案をご確認いただき、気に入ってから契約判断できます。</p></li>
+    </ol>
+    <p class="points-h">安心してご利用いただける<b>3</b>つのポイント</p>
+    <div class="points">
+      <div class="point"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span><div><b>トップページ1ページ分を無料提案</b><span>実際のデザインイメージをご確認いただけます。</span></div></div>
+      <div class="point"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 12l4-4 4 3 3-3 4 4-5 5-3-2-3 2z"/><path d="M7 8L3 6M17 8l4-2"/></svg></span><div><b>デザイン確認後に契約判断OK</b><span>気に入ってからのご契約で安心です。</span></div></div>
+      <div class="point"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h11v8H8l-4 3z"/><path d="M15 9h5v8l-3-2h-6v-2"/></svg></span><div><b>ご不明点はメール・チャットで相談可能</b><span>些細なことでもお気軽にご相談ください。</span></div></div>
+    </div>
+    <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a></div>
+    <p class="fine">※ご提案内容はヒアリング内容に応じて異なります。※混雑状況により日数が前後する場合があります。</p>
+  </div>
+</section>
+
+<!-- ⑧ よくある質問・運営会社 -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-h"><span class="en">FAQ</span><h2><span>よくある<span class="g">質問</span></span></h2></div>
+    <div class="faq">
+      <details class="qa"><summary>本当にデザイン案まで無料ですか？</summary><div class="a">はい。トップページ1ページ分のデザイン案を無料でお作りします。ご覧になって見送られても、費用は一切かかりません。</div></details>
+      <details class="qa"><summary>契約期間はありますか？</summary><div class="a">最低契約期間は6ヶ月です。すべてのプランで初期費用は0円です。詳しい条件は、ご契約前に書面でご説明します。</div></details>
+      <details class="qa"><summary>デザインの修正はできますか？</summary><div class="a">デザイン案をご確認いただいたうえで、ご要望に合わせて修正して仕上げます。公開後のお知らせの追加や簡単な修正も、月額の中でサポートします（プランにより対応範囲が異なります）。</div></details>
+      <details class="qa"><summary>解約するときはどうすればいいですか？</summary><div class="a">最低契約期間の経過後に、メールでお申し出ください。解約の条件は、ご契約前に書面でご説明します。</div></details>
+      <details class="qa"><summary>ドメイン（URL）はどうなりますか？</summary><div class="a">独自ドメインの取得や、すでにお持ちのドメインの利用も含めて、ご相談の際にご案内します。</div></details>
+      <details class="qa"><summary>開業前でも相談できますか？</summary><div class="a">できます。屋号やサービス内容がまだ整理中の段階でも大丈夫です。開業日から逆算して進め方をご提案します。</div></details>
+      <details class="qa"><summary>文章や写真がなくても大丈夫ですか？</summary><div class="a">大丈夫です。お話をうかがって文章づくりをサポートし、写真の選び方や撮影のアドバイスも行います。</div></details>
+    </div>
+    <div class="company">
+      <h3>運営会社</h3>
+      <table>
+        <tr><th scope="row">会社名</th><td>株式会社TAC</td></tr>
+        <tr><th scope="row">サービス名</th><td>EasyWebCraft</td></tr>
+        <tr><th scope="row">所在地</th><td>愛知県名古屋市守山区瀬古東1-1701 201</td></tr>
+        <tr><th scope="row">事業内容</th><td>ホームページの制作・運用・保守</td></tr>
+        <tr><th scope="row">お問い合わせ</th><td>下記のフォームからお送りください（1営業日以内にご返信します）</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ⑨ 最終CTA・申し込みフォーム -->
+<section class="last" id="contact">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2><span>あなたの事業の<span class="g">デザイン案</span>を無料で</span></h2>
+      <p>無料の範囲をご確認のうえ、お申し込みください。</p>
+    </div>
+    <ul class="scope">
+      <li><div><b>無料で作るのは、トップページ1ページ分のデザイン案です</b>PC版・スマホ版のイメージをご確認いただけます。</div></li>
+      <li><div><b>デザイン案を見てから、契約するか決められます</b>見送られても費用は一切かかりません。</div></li>
+      <li><div><b>ご契約後は月額制です</b>初期費用0円・月額5,980円〜（税別）・最低契約期間6ヶ月。</div></li>
+    </ul>
+    <form class="form" id="cform" action="https://formspree.io/f/maqkzjek" method="POST">
+      <input type="hidden" name="_subject" value="【EasyWebCraft 挑戦LP】無料デザイン案の申し込み">
+      <label>お名前
+        <input type="text" name="name" required autocomplete="name" placeholder="例：山田 太郎">
+      </label>
+      <fieldset>
+        <legend>いまの状況 <span class="opt">（任意）</span></legend>
+        <div class="stage">
+          <label><input type="radio" name="stage" value="これから開業"><span>これから開業</span></label>
+          <label><input type="radio" name="stage" value="開業1年以内"><span>開業1年以内</span></label>
+          <label><input type="radio" name="stage" value="それ以外"><span>それ以外</span></label>
+        </div>
+      </fieldset>
+      <label>業種・事業の名前 <span class="opt">（任意・未定でも可）</span>
+        <input type="text" name="shop" autocomplete="organization" placeholder="例：パーソナルジム〇〇（開業予定）">
+      </label>
+      <label>ご連絡先（メール または 電話）
+        <input type="text" name="contact" required placeholder="例：info@example.com / 090-0000-0000">
+      </label>
+      <label>ご希望・ご相談内容 <span class="opt">（任意）</span>
+        <textarea name="body" rows="4" placeholder="例：11月に開業予定。体験予約につながるHPにしたい。"></textarea>
+      </label>
+      <p class="before">送信後、1営業日以内にご返信します。<br>相談・デザイン案の作成は無料です。</p>
+      <p class="form-note">送信いただいた内容は<a href="https://easywebcraft.github.io/easyweb-lp/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に基づいて取り扱います。</p>
+      <button class="btn-red" type="submit">無料デザイン案を申し込む<span class="arr" aria-hidden="true">→</span></button>
+      <p class="form-err" id="form-err" hidden>送信できませんでした。お手数ですが、時間をおいて再度お試しください。</p>
+    </form>
+  </div>
+</section>
+
 </main>
 
-<a class="sticky-cta" href="#contact" hidden><b>完全無料</b>デザイン案をもらう →</a>
+<a class="sticky-cta" href="#contact" hidden>無料デザイン案をもらう →</a>
 
 <footer>
   <img src="img/logo-full.webp" alt="EasyWebCraft Web Design &amp; Development" width="800" height="124" loading="lazy">
@@ -625,19 +720,13 @@ footer a{color:#ddd}
 </footer>
 
 <script>
-document.getElementById('cform').addEventListener('submit', function (e) {
-  e.preventDefault();
-  var f = e.target, btn = f.querySelector('button[type="submit"]'), err = document.getElementById('form-err');
-  err.hidden = true; btn.disabled = true; btn.textContent = '送信中…';
-  fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
-    .then(function (res) {
-      if (!res.ok) throw new Error('send failed');
-      f.innerHTML = '<p class="form-sent">送信しました。ありがとうございます。<br>1営業日以内にご連絡いたします。</p>';
-    })
-    .catch(function () { btn.disabled = false; btn.textContent = '無料でデザイン案をもらう'; err.hidden = false; });
-});
-
-// スマホの固定CTA：ヒーローのCTAかフォームが画面に見えている間は隠す
+// スマホのメニュー
+(function () {
+  var b = document.querySelector('.menu-btn'), m = document.getElementById('mnav');
+  b.addEventListener('click', function () { var o = m.classList.toggle('open'); b.setAttribute('aria-expanded', o); });
+  m.addEventListener('click', function (e) { if (e.target.tagName === 'A') { m.classList.remove('open'); b.setAttribute('aria-expanded', false); } });
+})();
+// スマホの固定CTA：ファーストビューかフォームが見えている間は隠す
 (function () {
   var bar = document.querySelector('.sticky-cta');
   if (!bar || !('IntersectionObserver' in window)) return;
@@ -647,8 +736,20 @@ document.getElementById('cform').addEventListener('submit', function (e) {
     es.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
     bar.classList.toggle('off', seen.size > 0);
   }, { threshold: 0.01 });
-  [document.querySelector('.hero2'), document.getElementById('contact')].forEach(function (el) { if (el) io.observe(el); });
+  [document.querySelector('.fv'), document.getElementById('contact')].forEach(function (el) { if (el) io.observe(el); });
 })();
+// フォーム送信
+document.getElementById('cform').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.target, btn = f.querySelector('button[type="submit"]'), err = document.getElementById('form-err');
+  err.hidden = true; btn.disabled = true; btn.textContent = '送信中…';
+  fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+    .then(function (res) {
+      if (!res.ok) throw new Error('send failed');
+      f.innerHTML = '<p class="form-sent">送信しました。ありがとうございます。<br>1営業日以内にご連絡いたします。</p>';
+    })
+    .catch(function () { btn.disabled = false; btn.textContent = '無料デザイン案を申し込む →'; err.hidden = false; });
+});
 </script>
 </body>
 </html>
