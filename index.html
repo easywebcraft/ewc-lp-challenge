@@ -46,7 +46,10 @@ a{color:inherit}
 .hero img{width:100%; height:auto}
 
 /* 赤帯のCTA */
-.band{background:linear-gradient(90deg,#b30d12,#e41b20 45%,#b30d12); position:relative}
+.band{background:#0a0a0a; position:relative; padding:14px 10px}
+.band-img{display:block; max-width:760px; margin:0 auto; border-radius:999px}
+.band-img img{width:100%; height:auto}
+.band-img:focus-visible{outline:3px solid var(--gold); outline-offset:3px}
 .band-in{max-width:1024px; margin:0 auto; display:flex; align-items:center; gap:18px; padding:14px 20px 14px 16px}
 .seal{flex:0 0 120px; height:120px; margin:-34px 0; border-radius:50%; flex-direction:column; background:radial-gradient(circle at 35% 30%,#fff6c8,#e9b73b 55%,#9a6a00); display:flex; align-items:center; justify-content:center; text-align:center; font-weight:900; font-size:30px; line-height:1.05; color:#1a1200; box-shadow:0 6px 18px rgba(0,0,0,.45), 0 0 0 4px rgba(255,241,176,.35); border:3px solid #fff1b0}
 .seal small{font-size:12px; letter-spacing:.06em; margin-bottom:2px}
@@ -300,11 +303,7 @@ footer a{color:#ddd}
   </section>
 
   <section class="band">
-    <div class="band-in">
-      <span class="seal"><small>デザイン案</small>完全<br>無料</span>
-      <a class="main" href="#contact"><span class="kicker">相談・ヒアリング・デザイン案づくりまで<b>0円</b></span>今すぐ、あなたのホームページの<em>デザイン案</em>を<span class="nw">もらう</span></a>
-      <ul><li>見てから契約OK</li><li>気に入らなければ0円</li><li>最短1分でお申し込み</li></ul>
-    </div>
+    <a class="band-img" href="#contact"><img src="img/cta-free.webp" alt="完全無料。今すぐ、あなたのホームページのデザイン案をもらう。見てから契約OK、気に入らなければ0円、最短1分でお申し込み" width="642" height="153"></a>
   </section>
 
   <section class="feats" aria-label="月額にふくまれるもの">
