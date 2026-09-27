@@ -47,10 +47,14 @@ a{color:inherit}
 /* 赤帯のCTA */
 .band{background:linear-gradient(90deg,#b30d12,#e41b20 45%,#b30d12); position:relative}
 .band-in{max-width:1024px; margin:0 auto; display:flex; align-items:center; gap:18px; padding:14px 20px 14px 16px}
-.seal{flex:0 0 96px; height:96px; margin:-26px 0; border-radius:50%; background:radial-gradient(circle at 35% 30%,#fff6c8,#e9b73b 55%,#9a6a00); display:flex; align-items:center; justify-content:center; text-align:center; font-weight:900; font-size:22px; line-height:1.1; color:#1a1200; box-shadow:0 6px 18px rgba(0,0,0,.45); border:3px solid #fff1b0}
+.seal{flex:0 0 120px; height:120px; margin:-34px 0; border-radius:50%; flex-direction:column; background:radial-gradient(circle at 35% 30%,#fff6c8,#e9b73b 55%,#9a6a00); display:flex; align-items:center; justify-content:center; text-align:center; font-weight:900; font-size:30px; line-height:1.05; color:#1a1200; box-shadow:0 6px 18px rgba(0,0,0,.45), 0 0 0 4px rgba(255,241,176,.35); border:3px solid #fff1b0}
+.seal small{font-size:12px; letter-spacing:.06em; margin-bottom:2px}
+.band a.main .kicker{display:block; font-size:14px; color:#fff; opacity:.95; margin-bottom:2px}
+.band a.main .kicker b{color:var(--gold-lt); font-size:18px; margin-left:4px}
 .band a.main{flex:1; color:#fff; text-decoration:none; font-weight:900; font-size:26px; letter-spacing:.01em; line-height:1.4}
 .band a.main em{font-style:normal; color:var(--gold-lt)}
-.band a.main::after{content:"　→"}
+.band a.main .nw{white-space:nowrap}
+.band a.main .nw::after{content:" →"}
 .band ul{list-style:none; margin:0; padding:10px 14px; background:rgba(0,0,0,.25); border-radius:10px; color:#fff; font-size:13px; font-weight:700; display:grid; gap:2px}
 .band li::before{content:"☑ "; color:#fff}
 
@@ -115,6 +119,36 @@ a{color:inherit}
 .plan.reco li{color:var(--red)}
 .plan.reco li::before{color:var(--red)}
 
+/* セクション間のCTA */
+.midcta{max-width:560px; margin:0 auto; padding:6px 16px 22px; text-align:center}
+.midcta p{margin:8px 0 0; color:#ddd; font-size:13px; font-weight:700}
+br.sp{display:none}
+@media (max-width:640px){ br.sp{display:inline} .midcta p{font-size:12px} }
+/* 完全無料のオファー */
+.offer{background:radial-gradient(80% 90% at 50% 0%,#3a2a00 0%,#0a0a0a 70%); border-top:2px solid var(--gold); border-bottom:2px solid var(--gold); padding:40px 16px 44px; color:#fff; text-align:center}
+.offer-in{max-width:760px; margin:0 auto}
+.o-kicker{display:inline-block; margin:0; border:2px solid var(--gold); color:var(--gold-lt); border-radius:999px; padding:4px 20px; font-weight:900; font-size:15px}
+.offer h2{margin:14px 0 22px; font-size:20px; font-weight:800; line-height:1.5}
+.o-big{font-size:36px; font-weight:900}
+.o-big em{font-style:normal; color:#111; background:linear-gradient(180deg,#fff3b0,#e3b43a 55%,#b88400); padding:0 12px; border-radius:6px; margin-left:6px; display:inline-block; line-height:1.3}
+.o-flow{list-style:none; margin:0 auto; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:18px; max-width:640px}
+.o-flow li{position:relative; background:#fff; color:#111; border-radius:10px; padding:12px 4px; font-weight:800; font-size:15px; line-height:1.35; display:flex; flex-direction:column; justify-content:center}
+.o-flow li b{display:block; font-family:var(--num); font-size:26px; color:var(--red)}
+.o-flow li + li::before{content:"→"; position:absolute; left:-16px; top:50%; transform:translateY(-50%); color:var(--gold)}
+.o-flow li.judge{background:var(--red); color:#fff; font-size:16px}
+.o-points{list-style:none; margin:22px auto 0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; max-width:760px}
+.o-points li{background:rgba(255,255,255,.06); border:1px solid rgba(227,180,58,.5); border-radius:10px; padding:12px 10px; font-size:12px; color:#ddd}
+.o-points b{display:block; color:var(--gold-lt); font-size:16px; margin-bottom:2px}
+.o-scope{margin:16px 0 18px; font-size:12px; color:#bbb}
+.btn-gold{display:block; max-width:520px; margin:0 auto; background:linear-gradient(180deg,#fff0a8,#e3b43a 50%,#b88400); color:#1a1200; text-decoration:none; font-weight:900; font-size:22px; border-radius:999px; padding:16px 20px; box-shadow:0 8px 26px rgba(227,180,58,.45); border:2px solid #fff3b0}
+.btn-gold::after{content:"　→"}
+@media (max-width:640px){
+  .o-big{font-size:26px}
+  .o-flow{grid-template-columns:1fr 1fr; row-gap:14px}
+  .o-flow li:nth-child(3)::before{display:none}
+  .o-points{grid-template-columns:1fr}
+  .btn-gold{font-size:18px}
+}
 /* 締めの帯 */
 .closing{background:#000; border-top:2px solid var(--red)}
 .closing-in{max-width:1024px; margin:0 auto; display:grid; grid-template-columns:632px 1fr; align-items:center}
@@ -159,7 +193,7 @@ footer a{color:#ddd}
   .top .tagline{display:none}
   .top .cta{font-size:12px; padding:7px 14px}
   .band-in{flex-wrap:wrap; justify-content:center; text-align:center; padding:26px 16px 16px}
-  .seal{margin:-52px 0 0; flex-basis:84px; height:84px; font-size:19px}
+  .seal{margin:-60px 0 0; flex-basis:104px; height:104px; font-size:26px}
   .band a.main{flex-basis:100%; font-size:20px}
   .feats ul{grid-template-columns:repeat(3,1fr); row-gap:14px}
   .feats li:nth-child(4){border-left:none}
@@ -205,8 +239,8 @@ footer a{color:#ddd}
 
   <section class="band">
     <div class="band-in">
-      <span class="seal">完全<br>無料</span>
-      <a class="main" href="#contact">今すぐ、あなたのホームページの<em>デザイン案</em>をもらう</a>
+      <span class="seal"><small>デザイン案</small>完全<br>無料</span>
+      <a class="main" href="#contact"><span class="kicker">相談・ヒアリング・デザイン案づくりまで<b>0円</b></span>今すぐ、あなたのホームページの<em>デザイン案</em>を<span class="nw">もらう</span></a>
       <ul><li>見てから契約OK</li><li>気に入らなければ0円</li><li>最短1分でお申し込み</li></ul>
     </div>
   </section>
@@ -250,6 +284,7 @@ footer a{color:#ddd}
         <p class="note">※写真はイメージです</p>
       </div>
     </div>
+  <div class="midcta"><a class="btn-red" href="#contact">無料でデザイン案をもらう</a><p>あなたの業種に合わせたデザイン案を、<br class="sp">完全無料でおつくりします</p></div>
   </section>
 
   <section class="low">
@@ -293,8 +328,29 @@ footer a{color:#ddd}
         </div>
       </div>
     </div>
+  <div class="midcta"><a class="btn-red" href="#contact">無料でデザイン案をもらう</a><p>料金は契約するときだけ。<br class="sp">デザイン案を見るまでは0円です</p></div>
   </section>
 
+
+  <section class="offer" id="free">
+    <div class="offer-in">
+      <p class="o-kicker">いきなり契約しなくてOK</p>
+      <h2><span class="o-big">デザイン案づくりは<em>完全無料</em></span><br>見てから、<br class="sp">頼むかどうか決めてください</h2>
+      <ol class="o-flow">
+        <li>相談<b>0円</b></li>
+        <li>ヒアリング<b>0円</b></li>
+        <li>デザイン案<b>0円</b></li>
+        <li class="judge">見てから<br>判断</li>
+      </ol>
+      <ul class="o-points">
+        <li><b>気に入らなければ0円</b>見送っても費用は一切かかりません</li>
+        <li><b>しつこい営業はしません</b>ご相談だけでもOKです</li>
+        <li><b>最短1分で申し込み</b>名前と連絡先だけでOK</li>
+      </ul>
+      <p class="o-scope">※無料でお作りするのは、トップページ1ページ分のデザイン案です</p>
+      <a class="btn-gold" href="#contact">完全無料でデザイン案をもらう</a>
+    </div>
+  </section>
   <section class="closing">
     <div class="closing-in">
       <img src="img/closing.webp" alt="あなたの事業の虎になりたい。想いを、形に。ビジネスを、次のステージへ。" width="632" height="170" loading="lazy">
