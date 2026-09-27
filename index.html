@@ -101,6 +101,9 @@ section + section{border-top:1px solid rgba(227,180,58,.18)}
 .ic{flex:0 0 52px; height:52px; border-radius:50%; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center}
 .ic svg{width:26px; height:26px; stroke:var(--gold-lt); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
 .scard h3{margin:0; font-family:var(--serif); font-weight:900; font-size:24px; line-height:1.3}
+.scard .sb{list-style:none; margin:8px 0 0; padding:0; display:grid; gap:4px; font-size:12.5px; color:#e8e2d5}
+.scard .sb li{display:flex; gap:6px}
+.scard .sb li::before{content:"✓"; color:var(--gold); font-weight:900}
 .scard p{margin:2px 0 0; font-size:14px; color:#e8e2d5}
 
 /* ③ お悩み */
@@ -425,6 +428,33 @@ footer a{color:#ddd}
 .fv2-cta{position:absolute; left:3.2%; top:79.7%; width:93.1%; height:8.2%; border-radius:999px}
 .fv2-cta:focus-visible{outline:3px solid var(--gold-lt); outline-offset:3px}
 @media (min-width: 700px){ .fv2-cta{left:4.7%; top:77.6%; width:48.4%; height:11%} }
+
+/* FV：PCはデザイン画像、スマホは画像＋HTML */
+.fv2-sp{display:none}
+@media (max-width: 699px){
+  .fv2-pc{display:none}
+  .fv2-sp{display:block}
+  .fv2-sp > img{width:100%; height:auto}
+  .fv2-sp-in{padding:0 12px 16px; margin-top:-8px; position:relative}
+  .fv2-sp .badges{margin:0 0 10px}
+  .fv2-sp .badges b{font-size:26px}
+  .fv2-sp .badges b.s{font-size:19px}
+  .fv2-sp .badges li{display:flex; flex-direction:column; align-items:center; justify-content:center; padding:8px 4px 10px}
+  .fv2-sp .badges b{font-size:30px; line-height:1}
+  .fv2-sp .badges b.s{font-size:21px}
+  .fv2-sp .badges b.t{font-size:14px; line-height:1.25}
+  .fv2-sp .btn-red{font-size:19px; padding:13px 16px}
+  .fv2-note{margin:8px 0 0; text-align:center; font-size:12.5px; font-weight:700}
+  .fv2-sp .fine{margin-top:2px; font-size:11px}
+}
+.ops .plan-tag{display:inline-block; margin:6px 12px 0; font-size:11px; font-weight:900; color:#6b4a00; background:#f3dea0; border-radius:999px; padding:1px 10px}
+.form .pair{display:grid; gap:12px}
+.form .req-note{margin:-4px 0 0; font-size:12px; color:#6b6254; font-weight:700}
+.form input[type=email],.form input[type=tel]{width:100%; border:1px solid #cfc6b4; border-radius:8px; padding:12px; font-size:16px; font-family:inherit; background:#fff}
+.form input.bad{border-color:#c4121a; outline:2px solid rgba(196,18,26,.2)}
+.samples-more{margin:12px 0 0; text-align:center; font-size:13px}
+.samples-more a{color:var(--gold-lt)}
+@media (min-width:700px){ .form .pair{grid-template-columns:1fr 1fr} }
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -454,16 +484,25 @@ footer a{color:#ddd}
 
 <main id="top">
 
-<!-- ① ファーストビュー（デザイン画像をそのまま表示。CTA部分に透明リンクを重ねる） -->
+<!-- ① ファーストビュー（PC：デザイン画像そのまま／スマホ：見出しと人物は画像、価格・CTAはHTMLで短く） -->
 <section class="fv2" aria-label="EasyWebCraft">
   <h1 class="sr">その挑戦に、ホームページを。起業・開業の最初の一手に、信頼されるホームページを。</h1>
-  <p class="sr">初期費用0円、月額5,980円〜（税別）、最短7日で公開。トップページ1ページ分を無料提案、デザインを見てから契約判断OK、開業前の相談もOK。最低契約期間6ヶ月。</p>
-  <div class="fv2-in">
-    <picture>
-      <source media="(min-width: 700px)" srcset="img/v3/fv-pc.webp" width="2560" height="1346">
-      <img src="img/v3/fv-sp.webp" alt="" width="1170" height="1974" fetchpriority="high">
-    </picture>
+  <div class="fv2-in fv2-pc">
+    <img src="img/v3/fv-pc.webp" alt="SNSで知ってもらい、ホームページで信頼につなげる。初期費用0円、月額5,980円〜、最短7日でデザイン案。トップページ1ページ分を無料提案、デザインを見てから契約判断OK、開業前の相談もOK。最低契約期間6ヶ月。" width="2560" height="1346" fetchpriority="high">
     <a class="fv2-cta" href="#contact" aria-label="無料デザイン案をもらう"></a>
+  </div>
+  <div class="fv2-sp">
+    <img src="img/v3/fv-sp-top.webp" alt="SNSで知ってもらい、ホームページで信頼につなげる。" width="1170" height="726" fetchpriority="high">
+    <div class="fv2-sp-in">
+      <ul class="badges">
+        <li><small>初期費用</small><b class="g">0<i>円</i></b></li>
+        <li><small>月額</small><b class="s g">5,980<i>円〜</i></b></li>
+        <li><small>最短</small><b class="t g">7日で<br>デザイン案</b></li>
+      </ul>
+      <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a>
+      <p class="fv2-note">トップページ1ページ分を無料提案。デザインを見てから契約判断OK。</p>
+      <p class="fine">※税別（税込6,578円〜）・最低契約期間6ヶ月</p>
+    </div>
   </div>
 </section>
 
@@ -477,11 +516,11 @@ footer a{color:#ddd}
     </div>
     <div class="cards3">
       <article class="scard"><div class="ph"><img src="img/v3/s-izakaya.webp" alt="飲食店のデザイン例（PCとスマホ）" width="1100" height="806" loading="lazy"></div>
-        <div class="cap"><span class="ic"><svg viewBox="0 0 24 24"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 3c-2 2-2 6 0 8v10"/></svg></span><div><h3>飲食店</h3><p>写真で世界観と料理の魅力を伝える</p></div></div></article>
+        <div class="cap"><span class="ic"><svg viewBox="0 0 24 24"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 3c-2 2-2 6 0 8v10"/></svg></span><div><h3>飲食店</h3><p>写真で世界観と料理の魅力を伝える</p><ul class="sb"><li>料理の魅力が伝わる、迫力ある写真とレイアウト</li><li>メニュー・店舗情報・予約導線をわかりやすく配置</li><li>スマホでも見やすい、シンプルで上質なデザイン</li></ul></p></div></div></article>
       <article class="scard"><div class="ph"><img src="img/v3/s-salon.webp" alt="美容室・サロンのデザイン例（PCとスマホ）" width="1100" height="815" loading="lazy"></div>
-        <div class="cap"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.5 16L20 4M15.5 16L4 4"/></svg></span><div><h3>美容室・サロン</h3><p>清潔感と予約のしやすさを両立</p></div></div></article>
+        <div class="cap"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.5 16L20 4M15.5 16L4 4"/></svg></span><div><h3>美容室・サロン</h3><p>清潔感と予約のしやすさを両立</p><ul class="sb"><li>サロンの雰囲気が伝わる、やさしく洗練されたデザイン</li><li>メニュー・スタイル写真で魅力を視覚的に訴求</li><li>予約ボタンを目立たせた、スムーズな導線設計</li></ul></p></div></div></article>
       <article class="scard"><div class="ph"><img src="img/v3/s-gym.webp" alt="パーソナルジムのデザイン例（PCとスマホ）" width="1100" height="803" loading="lazy"></div>
-        <div class="cap"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg></span><div><h3>パーソナルジム</h3><p>強みと信頼感をわかりやすく訴求</p></div></div></article>
+        <div class="cap"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg></span><div><h3>パーソナルジム</h3><p>強みと信頼感をわかりやすく訴求</p><ul class="sb"><li>トレーニングの魅力が伝わる、ダイナミックなビジュアル</li><li>サービス内容・料金・トレーナー紹介をわかりやすく掲載</li><li>問い合わせ・体験予約につながる導線設計</li></ul></p></div></div></article>
     </div>
     <div class="cta-block">
       <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a>
@@ -526,12 +565,13 @@ footer a{color:#ddd}
       <article class="can"><div class="hd"><span class="no">04</span><h3>写真・文章のサポート</h3></div><img src="img/v3/c-4.webp" alt="" width="760" height="575" loading="lazy"><p>写真の選定や撮影のアドバイス、文章作成のサポートも行います。初めての方でも安心してお任せください。</p></article>
     </div>
     <p class="plus"><em>公開後</em>も、安心して<em>運用できるサポート</em>をご用意しています。</p>
+    <p class="fine" style="margin:-8px 0 14px">※対象プランの範囲内は月額料金に含まれます。対象外のサポートや追加作業の料金は、ご相談時にお見積りします。</p>
     <div class="ops">
-      <article class="op"><div class="hd"><span class="no">01</span><h3>更新サポート</h3></div><img src="img/v3/o-1.webp" alt="" width="600" height="279" loading="lazy"><p>お知らせの追加や簡単な修正など、更新作業をサポートします。<small>（プランにより対応範囲が異なります）</small></p></article>
-      <article class="op"><div class="hd"><span class="no">02</span><h3>セキュリティ・保守</h3></div><img src="img/v3/o-2.webp" alt="" width="600" height="279" loading="lazy"><p>SSL設定やシステムの保守を行い、安心して運用できる環境を維持します。</p></article>
-      <article class="op"><div class="hd"><span class="no">03</span><h3>アクセス解析レポート</h3></div><img src="img/v3/o-3.webp" alt="" width="600" height="279" loading="lazy"><p>アクセス状況を分析し、改善のアドバイスを行います。<small>（プランにより対応範囲が異なります）</small></p></article>
-      <article class="op"><div class="hd"><span class="no">04</span><h3>運用の相談対応</h3></div><img src="img/v3/o-4.webp" alt="" width="600" height="286" loading="lazy"><p>ホームページの運用に関するお悩みやご相談に、メールやチャットで対応します。</p></article>
-      <article class="op"><div class="hd"><span class="no">05</span><h3>継続的な改善提案</h3></div><img src="img/v3/o-5.webp" alt="" width="600" height="284" loading="lazy"><p>アクセスデータや市場の動向をもとに、より良いサイト運用のための改善提案を行います。</p></article>
+      <article class="op"><div class="hd"><span class="no">01</span><h3>更新サポート</h3></div><span class="plan-tag">対象：全プラン（範囲はプランにより異なる）</span><img src="img/v3/o-1.webp" alt="" width="600" height="279" loading="lazy"><p>お知らせの追加や簡単な修正など、更新作業をサポートします。</p></article>
+      <article class="op"><div class="hd"><span class="no">02</span><h3>セキュリティ・保守</h3></div><span class="plan-tag">対象：全プラン</span><img src="img/v3/o-2.webp" alt="" width="600" height="279" loading="lazy"><p>SSL設定やシステムの保守を行い、安心して運用できる環境を維持します。</p></article>
+      <article class="op"><div class="hd"><span class="no">03</span><h3>アクセス解析レポート</h3></div><span class="plan-tag">対象：HP+プラン</span><img src="img/v3/o-3.webp" alt="" width="600" height="279" loading="lazy"><p>アクセス状況を分析し、改善のアドバイスを行います。</p></article>
+      <article class="op"><div class="hd"><span class="no">04</span><h3>運用の相談対応</h3></div><span class="plan-tag">対象：全プラン（HP+はチャットも可）</span><img src="img/v3/o-4.webp" alt="" width="600" height="286" loading="lazy"><p>ホームページの運用に関するお悩みやご相談に、メールやチャットで対応します。</p></article>
+      <article class="op"><div class="hd"><span class="no">05</span><h3>継続的な改善提案</h3></div><span class="plan-tag">対象：HP+プラン（他プランはご相談）</span><img src="img/v3/o-5.webp" alt="" width="600" height="284" loading="lazy"><p>アクセスデータや市場の動向をもとに、より良いサイト運用のための改善提案を行います。</p></article>
     </div>
   </div>
 </section>
@@ -540,21 +580,10 @@ footer a{color:#ddd}
 <section id="works">
   <div class="wrap">
     <div class="sec-h">
-      <h2><span class="g">制作事例</span></h2>
-      <p>実際のサンプルデザインと、制作の進め方をご紹介します。</p>
-      <small>さまざまな業種に対応したホームページのサンプルをご覧いただけます。</small>
+      <h2><span><span class="g">制作事例</span>・お客様の声</span></h2>
+      <p>ご依頼から公開まで、どのように進めるかをご紹介します。</p>
     </div>
-    <div class="ex3">
-      <article class="ex"><div class="hd"><span class="ic"><svg viewBox="0 0 24 24"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 3c-2 2-2 6 0 8v10"/></svg></span><h3>飲食店・居酒屋</h3><span class="tag">サンプル</span></div>
-        <img src="img/v3/e-izakaya.webp" alt="飲食店・居酒屋のサンプルデザイン" width="1100" height="721" loading="lazy">
-        <ul><li>料理の魅力が伝わる、迫力ある写真とレイアウト</li><li>メニュー・店舗情報・予約導線をわかりやすく配置</li><li>スマホでも見やすい、シンプルで上質なデザイン</li></ul></article>
-      <article class="ex"><div class="hd"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.5 16L20 4M15.5 16L4 4"/></svg></span><h3>美容室・サロン</h3><span class="tag">サンプル</span></div>
-        <img src="img/v3/e-salon.webp" alt="美容室・サロンのサンプルデザイン" width="1100" height="714" loading="lazy">
-        <ul><li>サロンの雰囲気が伝わる、やさしく洗練されたデザイン</li><li>メニュー・スタイル写真で魅力を視覚的に訴求</li><li>予約ボタンを目立たせた、スムーズな導線設計</li></ul></article>
-      <article class="ex"><div class="hd"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg></span><h3>パーソナルジム</h3><span class="tag">サンプル</span></div>
-        <img src="img/v3/e-gym.webp" alt="パーソナルジムのサンプルデザイン" width="1100" height="690" loading="lazy">
-        <ul><li>トレーニングの魅力が伝わる、ダイナミックなビジュアル</li><li>サービス内容・料金・トレーナー紹介をわかりやすく掲載</li><li>問い合わせ・体験予約につながる導線設計</li></ul></article>
-    </div>
+    <p class="samples-more">※現在はサンプルデザインのみ掲載しています。業種別のデザイン例は<a href="#samples">制作デザインサンプル</a>をご覧ください。<br>実際の制作実績・お客様の声は、公開の許可をいただけしだい掲載します。</p>
     <div class="flow-h"><h3 class="g">制作の流れ</h3><p>ご依頼から公開まで、担当者がしっかりサポートします。</p></div>
     <ol class="flow5">
       <li><div class="hd"><span class="no">01</span><h4>ヒアリング</h4></div><img src="img/v3/f-1.webp" alt="" width="600" height="173" loading="lazy"><p>ご要望や目的、イメージを詳しくお伺いし、最適なプランをご提案します。</p></li>
@@ -563,7 +592,7 @@ footer a{color:#ddd}
       <li><div class="hd"><span class="no">04</span><h4>修正・確認</h4></div><img src="img/v3/f-4.webp" alt="" width="600" height="180" loading="lazy"><p>ご確認いただいた内容をもとに修正を行い、仕上げていきます。</p></li>
       <li><div class="hd"><span class="no">05</span><h4>公開・運用開始</h4></div><img src="img/v3/f-5.webp" alt="" width="600" height="175" loading="lazy"><p>最終確認後、ホームページを公開。公開後の運用・更新もサポートいたします。</p></li>
     </ol>
-    <p class="note">※掲載しているのはサンプルデザインです。実際の制作は、お客様のご要望に合わせてオリジナルで制作いたします。お客様の声は、実績ができしだい掲載します。</p>
+    <p class="note">※実際の制作は、お客様のご要望に合わせてオリジナルで制作いたします。</p>
   </div>
 </section>
 
@@ -632,7 +661,7 @@ footer a{color:#ddd}
       <div class="point"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h11v8H8l-4 3z"/><path d="M15 9h5v8l-3-2h-6v-2"/></svg></span><div><b>ご不明点はメール・チャットで相談可能</b><span>些細なことでもお気軽にご相談ください。</span></div></div>
     </div>
     <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a></div>
-    <p class="fine">※ご提案内容はヒアリング内容に応じて異なります。※混雑状況により日数が前後する場合があります。</p>
+    <p class="fine">※「最短7日」は無料デザイン案をご提案するまでの目安です。ご契約後、ホームページ公開までの日数はページ数や内容によって異なるため、ご相談時にご案内します。<br>※ご提案内容はヒアリング内容に応じて異なります。※混雑状況により日数が前後する場合があります。</p>
   </div>
 </section>
 
@@ -645,7 +674,9 @@ footer a{color:#ddd}
       <details class="qa"><summary>契約期間はありますか？</summary><div class="a">最低契約期間は6ヶ月です。すべてのプランで初期費用は0円です。詳しい条件は、ご契約前に書面でご説明します。</div></details>
       <details class="qa"><summary>デザインの修正はできますか？</summary><div class="a">デザイン案をご確認いただいたうえで、ご要望に合わせて修正して仕上げます。公開後のお知らせの追加や簡単な修正も、月額の中でサポートします（プランにより対応範囲が異なります）。</div></details>
       <details class="qa"><summary>解約するときはどうすればいいですか？</summary><div class="a">最低契約期間の経過後に、メールでお申し出ください。解約の条件は、ご契約前に書面でご説明します。</div></details>
-      <details class="qa"><summary>ドメイン（URL）はどうなりますか？</summary><div class="a">独自ドメインの取得や、すでにお持ちのドメインの利用も含めて、ご相談の際にご案内します。</div></details>
+      <details class="qa"><summary>ドメイン（URL）の費用はかかりますか？</summary><div class="a">独自ドメインの取得・費用の扱いや、すでにお持ちのドメインの利用も含めて、ご相談の際にご案内し、ご契約前に書面でご説明します。</div></details>
+      <details class="qa"><summary>修正は何回までできますか？</summary><div class="a">デザイン案の修正回数や、公開後の更新作業の範囲はプランによって異なります。ご相談の際にご案内し、ご契約前に書面でご説明します。</div></details>
+      <details class="qa"><summary>最低契約期間（6ヶ月）が終わったあとはどうなりますか？</summary><div class="a">最低契約期間の経過後の更新や解約の扱いは、ご契約前に書面でご説明します。</div></details>
       <details class="qa"><summary>開業前でも相談できますか？</summary><div class="a">できます。屋号やサービス内容がまだ整理中の段階でも大丈夫です。開業日から逆算して進め方をご提案します。</div></details>
       <details class="qa"><summary>文章や写真がなくても大丈夫ですか？</summary><div class="a">大丈夫です。お話をうかがって文章づくりをサポートし、写真の選び方や撮影のアドバイスも行います。</div></details>
     </div>
@@ -690,13 +721,19 @@ footer a{color:#ddd}
       <label>業種・事業の名前 <span class="opt">（任意・未定でも可）</span>
         <input type="text" name="shop" autocomplete="organization" placeholder="例：パーソナルジム〇〇（開業予定）">
       </label>
-      <label>ご連絡先（メール または 電話）
-        <input type="text" name="contact" required placeholder="例：info@example.com / 090-0000-0000">
-      </label>
+      <div class="pair">
+        <label>メールアドレス
+          <input type="email" name="email" id="f-email" autocomplete="email" inputmode="email" placeholder="例：info@example.com">
+        </label>
+        <label>電話番号
+          <input type="tel" name="tel" id="f-tel" autocomplete="tel" inputmode="tel" placeholder="例：090-0000-0000">
+        </label>
+      </div>
+      <p class="req-note">※メールアドレスか電話番号の、どちらか一方は必ずご入力ください</p>
       <label>ご希望・ご相談内容 <span class="opt">（任意）</span>
         <textarea name="body" rows="4" placeholder="例：11月に開業予定。体験予約につながるHPにしたい。"></textarea>
       </label>
-      <p class="before">送信後、1営業日以内にご返信します。<br>相談・デザイン案の作成は無料です。</p>
+      <p class="before">送信後、1営業日以内にご返信します。<br>相談・デザイン案の作成は無料です。ご提案後に契約しなくても費用はかかりません。</p>
       <p class="form-note">送信いただいた内容は<a href="https://easywebcraft.github.io/easyweb-lp/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に基づいて取り扱います。</p>
       <button class="btn-red" type="submit">無料デザイン案を申し込む<span class="arr" aria-hidden="true">→</span></button>
       <p class="form-err" id="form-err" hidden>送信できませんでした。お手数ですが、時間をおいて再度お試しください。</p>
@@ -739,13 +776,19 @@ footer a{color:#ddd}
 document.getElementById('cform').addEventListener('submit', function (e) {
   e.preventDefault();
   var f = e.target, btn = f.querySelector('button[type="submit"]'), err = document.getElementById('form-err');
+  var em = document.getElementById('f-email'), tl = document.getElementById('f-tel');
+  em.classList.remove('bad'); tl.classList.remove('bad');
+  var ev = em.value.trim(), tv = tl.value.trim();
+  if (!ev && !tv) { em.classList.add('bad'); tl.classList.add('bad'); err.textContent = 'メールアドレスか電話番号の、どちらか一方をご入力ください。'; err.hidden = false; em.focus(); return; }
+  if (ev && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ev)) { em.classList.add('bad'); err.textContent = 'メールアドレスの形式をご確認ください。'; err.hidden = false; em.focus(); return; }
+  if (tv && tv.replace(/[^0-9]/g, '').length < 10) { tl.classList.add('bad'); err.textContent = '電話番号の桁数をご確認ください。'; err.hidden = false; tl.focus(); return; }
   err.hidden = true; btn.disabled = true; btn.textContent = '送信中…';
   fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
     .then(function (res) {
       if (!res.ok) throw new Error('send failed');
       f.innerHTML = '<p class="form-sent">送信しました。ありがとうございます。<br>1営業日以内にご連絡いたします。</p>';
     })
-    .catch(function () { btn.disabled = false; btn.textContent = '無料デザイン案を申し込む →'; err.hidden = false; });
+    .catch(function () { btn.disabled = false; btn.textContent = '無料デザイン案を申し込む →'; err.textContent = '送信できませんでした。お手数ですが、時間をおいて再度お試しください。'; err.hidden = false; });
 });
 </script>
 </body>
