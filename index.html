@@ -91,32 +91,7 @@ a{color:inherit}
 .g4-in .midcta{grid-column:1/-1; padding-bottom:6px}
 .hero-cta{display:none}
 @media (max-width: 860px){ .g4-in{grid-template-columns:1fr} }
-@media (min-width: 1100px){
-  .top-in,.feats ul{max-width:1680px}
-  .band{display:none}
-  .hero{max-width:1672px; margin:0 auto}
-  .hero-cta{display:block; position:absolute; left:31.6%; width:37%; top:70.5%; height:23.5%; border-radius:999px}
-  .hero-cta:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
-  .g4-in{max-width:1680px; grid-template-columns:1.12fr .98fr 1.05fr 1.15fr; grid-template-areas:"pain change ind price" "c2 c2 c2 c2"; gap:16px; padding:18px 16px}
-  .pain{grid-area:pain; min-height:0; height:100%; padding:10px 96px 16px 14px}
-  .pain .title{max-width:100%; margin-left:-6px}
-  .pain li{font-size:13.5px; padding-left:26px}
-  .pain .man{width:118px}
-  .g4-in{grid-template-columns:1.2fr .95fr 1.05fr 1.12fr !important}
-  .change{grid-area:change}
-  .ind{grid-area:ind}
-  .price{grid-area:price}
-  .g4-in .c1{display:none}
-  .g4-in .c2{grid-area:c2}
-  .change h2{font-size:19px; margin-top:0}
-  .ba .box{min-height:190px; padding:8px 8px 10px}
-  .ba ul{font-size:12px}
-  .ind h2,.price h2 span{font-size:18px}
-  .price h2{margin-top:0}
-  .price h2 small{font-size:11px}
-  .plan .p{font-size:24px}
-  .plan ul{font-size:11px}
-}
+
 /* BEFORE / AFTER と料金 */
 .low{background:#141414}
 .low-in{max-width:1024px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:6px 12px 18px}
@@ -253,6 +228,54 @@ footer a{color:#ddd}
   .btn-red{font-size:18px}
 }
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+@media (min-width: 1100px){
+  .top-in,.feats ul{max-width:1680px}
+  .band{display:none}
+  .hero{max-width:1672px; margin:0 auto}
+  .hero-cta{display:block; position:absolute; left:31.6%; width:37%; top:70.5%; height:23.5%; border-radius:999px}
+  .hero-cta:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+  /* PCも1列で縦に並べ、各セクションを大きく見せる */
+  .g4-in{max-width:1100px; grid-template-columns:1fr; gap:48px; padding:56px 24px 40px}
+  .g4-in .c1,.g4-in .c2{display:block}
+  .midcta{max-width:640px}
+  .midcta .btn-red{font-size:26px; padding:20px}
+  .midcta p{font-size:15px}
+  /* 悩み：左に一覧、右に人物を大きく */
+  .pain{padding:28px 300px 32px 40px; min-height:360px}
+  .pain .title{max-width:620px; margin:0 0 18px -12px}
+  .pain ul{gap:14px}
+  .pain li{font-size:22px; padding-left:40px}
+  .pain li::before{width:28px; height:28px; font-size:16px; top:4px}
+  .pain .man{width:270px}
+  /* 業種：3×2を大きく */
+  .ind h2,.price h2 span{font-size:30px}
+  .ind h2{padding:14px 0; margin-bottom:18px}
+  .ind ul{gap:16px}
+  .ind li p{font-size:22px; padding:14px 12px}
+  .ind .note{font-size:13px}
+  /* BEFORE / AFTER を横並びで大きく */
+  .change h2{font-size:34px; margin:0 0 22px}
+  .ba{grid-template-columns:1fr 70px 1fr; gap:10px}
+  .ba .box{padding:18px 24px 22px; min-height:0}
+  .ba .box h3{font-size:24px; padding:6px 0}
+  .ba .box .sub{font-size:16px; padding-bottom:10px; margin-bottom:12px}
+  .ba ul{font-size:19px; gap:12px}
+  .ba li{padding-left:34px}
+  .ba li::before{width:24px; height:24px; font-size:14px; top:3px}
+  .ba .arr{font-size:56px}
+  /* 料金：3枚を大きく */
+  .price h2{margin:0 0 22px; align-items:center}
+  .price h2 small{font-size:16px}
+  .plans{gap:18px}
+  .plan{padding:30px 22px 26px}
+  .plan .tag{font-size:14px; padding:3px 14px; top:-13px}
+  .plan .name{font-size:24px}
+  .plan .cap{font-size:14px}
+  .plan .p{font-size:46px; margin-top:10px}
+  .plan .p small{font-size:16px}
+  .plan .tax{font-size:13px; margin-bottom:14px}
+  .plan ul{font-size:15px; gap:6px}
+}
 </style>
 </head>
 <body>
