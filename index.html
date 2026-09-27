@@ -345,6 +345,27 @@ footer a{color:#ddd}
   .plan .tax{font-size:13px; margin-bottom:14px}
   .plan ul{font-size:15px; gap:6px}
 }
+
+/* スマホ：「完全無料」のボタンまでを最初の画面（アドレスバーを除いた高さ）に収める。
+   写真の見える高さを画面の高さに合わせて縮め、見出し・価格の丸を小さくする */
+@media (max-width: 860px){
+  .h-in{padding:calc(max(150px, 100svh - 470px) - 50px) 12px 14px}
+  .v-ask{font-size:24px; top:8px}
+  .h-title .w{font-size:clamp(28px,8.6vw,38px)}
+  .h-title .r{font-size:clamp(30px,9.4vw,42px)}
+  .h-sub{margin:6px 0 10px; font-size:13px; line-height:1.5}
+  .badges{gap:8px; margin-bottom:0; justify-content:flex-end; padding-right:2px}
+  .badges li{width:25%; max-width:92px; border-width:2px}
+  .badges small{font-size:10px}
+  .badges small.tx{font-size:8.5px}
+  .badges b{font-size:30px}
+  .badges b.s{font-size:18px}
+  .badges b.t{font-size:15px}
+  .free-cta{margin:14px 0 0 36px}
+  .free-cta .seal{left:-36px; width:74px; font-size:17px}
+  .free-cta .main{padding:8px 4px 8px 44px; font-size:11.5px; line-height:1.4}
+  .free-cta .chk{font-size:9px; padding:5px 10px 5px 5px; gap:1px}
+}
 </style>
 </head>
 <body>
