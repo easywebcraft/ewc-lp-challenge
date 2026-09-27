@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>EasyWebCraft｜その挑戦に、ホームページを。</title>
+<meta name="description" content="起業・開業の最初の一手に、信頼されるホームページを。あなたの事業に合わせたデザイン案を無料でご提案します。初期費用0円・月額5,980円〜（税別）。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="その挑戦に、ホームページを。｜EasyWebCraft">
+<meta property="og:description" content="あなたの事業に合わせたデザイン案を無料でご提案。初期費用0円・月額5,980円〜（税別）。">
+<meta property="og:image" content="https://easywebcraft.github.io/ewc-lp-challenge/img/hero.webp">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><text x='50' y='72' font-size='62' font-weight='bold' text-anchor='middle' font-family='sans-serif' fill='%23ffc61a'>E</text></svg>">
+<link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@600;700&display=swap">
+<style>
+/* 黒×赤×金の「挑戦」トーン。デザイン案（1024px幅の1枚画像）を、PCではほぼそのままの配置で、スマホでは縦に積んで再現する */
+:root{
+  --ink:#111; --black:#0a0a0a; --char:#1a1a1a; --red:#d7141a; --red-dk:#9e0c10;
+  --gold:#e3b43a; --gold-lt:#ffe38a; --yellow:#ffc61a; --paper:#fff; --muted:#666; --line:#e2e2e2;
+  --num:"Oswald","Noto Sans JP",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0; background:var(--black); color:var(--ink); font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic UI",sans-serif; line-height:1.7}
+img{max-width:100%; display:block}
+a{color:inherit}
+.wrap{max-width:1024px; margin:0 auto}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+
+/* ヘッダー */
+.top{position:sticky; top:0; z-index:50; background:#000; border-bottom:1px solid #222}
+.top-in{max-width:1024px; margin:0 auto; display:flex; align-items:center; gap:18px; padding:8px 16px}
+.top .logo img{height:20px; width:auto}
+.top .tagline{color:#ddd; font-size:12px; font-weight:700; margin:0}
+.top .cta{margin-left:auto; background:var(--yellow); color:#111; text-decoration:none; font-weight:900; font-size:14px; border-radius:999px; padding:8px 22px; white-space:nowrap; box-shadow:0 0 18px rgba(255,198,26,.35)}
+.top .cta::after{content:" →"}
+.top .menu{width:26px; display:grid; gap:5px}
+.top .menu i{display:block; height:2px; background:#fff}
+
+/* ヒーロー（人物・筆文字・バッジは1枚画像） */
+.hero{position:relative; background:#000}
+.hero img{width:100%; height:auto}
+
+/* 赤帯のCTA */
+.band{background:linear-gradient(90deg,#b30d12,#e41b20 45%,#b30d12); position:relative}
+.band-in{max-width:1024px; margin:0 auto; display:flex; align-items:center; gap:18px; padding:14px 20px 14px 16px}
+.seal{flex:0 0 96px; height:96px; margin:-26px 0; border-radius:50%; background:radial-gradient(circle at 35% 30%,#fff6c8,#e9b73b 55%,#9a6a00); display:flex; align-items:center; justify-content:center; text-align:center; font-weight:900; font-size:22px; line-height:1.1; color:#1a1200; box-shadow:0 6px 18px rgba(0,0,0,.45); border:3px solid #fff1b0}
+.band a.main{flex:1; color:#fff; text-decoration:none; font-weight:900; font-size:26px; letter-spacing:.01em; line-height:1.4}
+.band a.main em{font-style:normal; color:var(--gold-lt)}
+.band a.main::after{content:"　→"}
+.band ul{list-style:none; margin:0; padding:10px 14px; background:rgba(0,0,0,.25); border-radius:10px; color:#fff; font-size:13px; font-weight:700; display:grid; gap:2px}
+.band li::before{content:"☑ "; color:#fff}
+
+/* 特徴アイコン */
+.feats{background:#0f0f0f; border-top:1px solid #222}
+.feats ul{max-width:1024px; margin:0 auto; list-style:none; padding:14px 8px; display:grid; grid-template-columns:repeat(6,1fr)}
+.feats li{color:#fff; font-size:13px; font-weight:700; text-align:center; display:grid; justify-items:center; gap:6px; border-left:1px solid #2c2c2c}
+.feats li:first-child{border-left:none}
+.feats svg{width:28px; height:28px; stroke:#fff; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+
+/* 悩み＋業種 */
+.mid{background:#141414 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M0 6L6 0' stroke='%23222' stroke-width='1'/%3E%3C/svg%3E")}
+.mid-in{max-width:1024px; margin:0 auto; display:grid; grid-template-columns:1.1fr 1fr; gap:14px; padding:16px 12px}
+.pain{position:relative; background:#f4f1ea; border-radius:4px; padding:10px 150px 16px 18px; min-height:230px; overflow:hidden; box-shadow:0 4px 18px rgba(0,0,0,.4)}
+.pain .title{width:100%; max-width:470px; height:auto; margin:-4px 0 8px -8px}
+.pain ul{list-style:none; margin:0; padding:0; display:grid; gap:6px}
+.pain li{position:relative; padding-left:28px; font-weight:800; font-size:15px; color:#111}
+.pain li::before{content:"✓"; position:absolute; left:0; top:2px; width:20px; height:20px; border-radius:50%; background:var(--red); color:#fff; font-size:12px; display:flex; align-items:center; justify-content:center}
+.pain .man{position:absolute; right:0; bottom:0; width:140px; height:auto}
+
+.ind h2{margin:0 0 10px; text-align:center; font-size:20px; font-weight:900; color:#111; background:linear-gradient(100deg,transparent 2%,#f2c14e 6%,#ffd86b 50%,#e6b035 94%,transparent 98%); padding:8px 0}
+.ind ul{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+.ind li{position:relative; border-radius:6px; overflow:hidden; aspect-ratio:142/96; border:1px solid #333}
+.ind li img{width:100%; height:100%; object-fit:cover}
+.ind li p{position:absolute; left:0; right:0; bottom:0; margin:0; padding:6px 8px; color:#fff; font-size:13px; font-weight:900; line-height:1.35; text-align:center; text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.ind .note{color:#aaa; font-size:11px; text-align:right; margin:6px 0 0}
+
+/* BEFORE / AFTER と料金 */
+.low{background:#141414}
+.low-in{max-width:1024px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:6px 12px 18px}
+.change h2{margin:4px 0 10px; text-align:center; color:#fff; font-size:22px; font-weight:900; line-height:1.4}
+.change h2 em{font-style:normal; color:var(--yellow)}
+.ba{display:grid; grid-template-columns:1fr 34px 1fr; align-items:center; gap:6px}
+.ba .box{background:#fff; border-radius:6px; padding:10px 12px 12px; min-height:176px}
+.ba .box h3{margin:0 0 4px; text-align:center; font-family:var(--num); letter-spacing:.06em; font-size:16px; color:#fff; background:#333; border-radius:3px; padding:2px 0}
+.ba .box.a h3{background:#1f6fe0}
+.ba .box .sub{margin:0 0 6px; text-align:center; font-size:12px; font-weight:700; color:#555; border-bottom:1px solid var(--line); padding-bottom:4px}
+.ba .box.a .sub{color:#1f6fe0}
+.ba ul{list-style:none; margin:0; padding:0; display:grid; gap:4px; font-size:13px; font-weight:700}
+.ba li{padding-left:22px; position:relative}
+.ba li::before{content:"✓"; position:absolute; left:0; top:1px; width:16px; height:16px; border-radius:50%; border:1.5px solid #888; color:#888; font-size:10px; display:flex; align-items:center; justify-content:center}
+.ba .box.a li::before{background:#1f6fe0; border-color:#1f6fe0; color:#fff}
+.ba .box.a li b{color:#1f6fe0}
+.ba .arr{color:#fff; font-size:30px; text-align:center}
+
+.price h2{display:flex; align-items:baseline; gap:12px; margin:4px 0 10px}
+.price h2{flex-wrap:wrap}
+.price h2 span{white-space:nowrap; font-size:22px; font-weight:900; color:#111; background:linear-gradient(100deg,transparent 2%,#f2c14e 6%,#ffd86b 50%,#e6b035 94%,transparent 98%); padding:4px 24px}
+.price h2 small{color:#fff; font-size:12px; font-weight:700}
+.plans{display:grid; grid-template-columns:repeat(3,1fr); gap:6px}
+.plan{background:#fff; border-radius:6px; padding:10px 8px 12px; text-align:center; position:relative}
+.plan.reco{outline:3px solid var(--red); outline-offset:-3px}
+.plan .tag{position:absolute; top:-9px; left:50%; transform:translateX(-50%); background:var(--red); color:#fff; font-size:11px; font-weight:900; border-radius:3px; padding:1px 8px; white-space:nowrap}
+.plan .name{font-weight:900; font-size:15px}
+.plan.reco .name, .plan.reco .p{color:var(--red)}
+.plan .cap{font-size:11px; color:var(--muted)}
+.plan .p{font-family:var(--num); font-weight:700; font-size:28px; line-height:1.1; margin:4px 0 0}
+.plan .p small{font-family:"Noto Sans JP"; font-size:12px; font-weight:900}
+.plan .tax{font-size:10px; color:var(--muted); margin-bottom:6px}
+.plan ul{list-style:none; margin:0; padding:0; display:grid; gap:2px; text-align:left; font-size:11.5px; font-weight:700}
+.plan li::before{content:"✓ "; color:#111}
+.plan.reco li{color:var(--red)}
+.plan.reco li::before{color:var(--red)}
+
+/* 締めの帯 */
+.closing{background:#000; border-top:2px solid var(--red)}
+.closing-in{max-width:1024px; margin:0 auto; display:grid; grid-template-columns:632px 1fr; align-items:center}
+.closing .go{text-align:center; padding:12px 18px}
+.closing .go p{margin:0 0 10px; color:#fff; font-size:17px; font-weight:900; line-height:1.5}
+.closing .go p em{font-style:normal; color:var(--yellow)}
+.btn-red{display:block; background:linear-gradient(180deg,#f0262c,#b90f14); color:#fff; text-decoration:none; font-weight:900; font-size:22px; border-radius:999px; padding:16px 20px; box-shadow:0 8px 24px rgba(215,20,26,.45); border:2px solid #ff6b6f}
+.btn-red::after{content:"　→"}
+
+/* フォーム */
+.contact{background:#f4f1ea; padding:40px 16px}
+.contact-in{max-width:620px; margin:0 auto}
+.contact h2{margin:0 0 6px; text-align:center; font-size:26px; font-weight:900; line-height:1.4}
+.contact h2 em{font-style:normal; color:var(--red)}
+.contact .lead{text-align:center; color:#444; margin:0 0 20px; font-size:14px}
+.form{display:grid; gap:14px; background:#fff; border-radius:10px; padding:24px 20px; box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.form label,.form fieldset{display:grid; gap:6px; font-weight:800; font-size:14px}
+.form fieldset{border:none; margin:0; padding:0}
+.form legend{padding:0; margin-bottom:6px}
+.opt{font-weight:700; color:var(--muted); font-size:12px}
+.form input[type=text],.form textarea{width:100%; border:1px solid #ccc; border-radius:8px; padding:12px; font-size:16px; font-family:inherit}
+.form input:focus-visible,.form textarea:focus-visible,.btn-red:focus-visible,.top .cta:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+.stage{display:flex; flex-wrap:wrap; gap:8px}
+.stage label{display:block; font-weight:700; font-size:13px}
+.stage input{position:absolute; opacity:0}
+.stage span{display:block; border:1px solid #ccc; border-radius:999px; padding:7px 14px; cursor:pointer}
+.stage input:checked + span{background:#111; color:#fff; border-color:#111}
+.stage input:focus-visible + span{outline:3px solid var(--gold); outline-offset:2px}
+.before{margin:0; text-align:center; font-size:13px; font-weight:700; background:#f7f2e4; border-radius:8px; padding:10px}
+.form .btn-red{width:100%; border:none; cursor:pointer; font-family:inherit}
+.form-note{margin:0; text-align:center; font-size:12px; color:var(--muted)}
+.form-note a{color:#1f6fe0}
+.form-sent{margin:0; text-align:center; font-weight:800}
+.form-err{margin:0; text-align:center; color:var(--red); font-size:13px; font-weight:700}
+
+footer{background:#000; color:#aaa; text-align:center; font-size:12px; padding:30px 16px 40px}
+footer img{height:auto; width:200px; margin:0 auto 10px}
+footer a{color:#ddd}
+
+/* スマホ：縦に積む */
+@media (max-width: 860px){
+  .top .tagline{display:none}
+  .top .cta{font-size:12px; padding:7px 14px}
+  .band-in{flex-wrap:wrap; justify-content:center; text-align:center; padding:26px 16px 16px}
+  .seal{margin:-52px 0 0; flex-basis:84px; height:84px; font-size:19px}
+  .band a.main{flex-basis:100%; font-size:20px}
+  .feats ul{grid-template-columns:repeat(3,1fr); row-gap:14px}
+  .feats li:nth-child(4){border-left:none}
+  .mid-in,.low-in{grid-template-columns:1fr}
+  .pain{padding-right:118px}
+  .pain .man{width:112px}
+  .closing-in{grid-template-columns:1fr}
+}
+@media (max-width: 480px){
+  .band a.main{font-size:18px}
+  .feats li{font-size:11px; letter-spacing:-.02em}
+  .ind ul{grid-template-columns:1fr 1fr}
+  .ind li p{font-size:13px}
+  .price h2 small{flex-basis:100%}
+  .pain li{font-size:14px}
+  .ba{grid-template-columns:1fr; }
+  .ba .arr{transform:rotate(90deg); line-height:1}
+  .plans{grid-template-columns:1fr}
+  .plan{padding:14px 16px}
+  .plan ul{grid-template-columns:1fr 1fr; font-size:12px}
+  .closing .go p{font-size:16px}
+  .btn-red{font-size:18px}
+}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="logo" href="#top" aria-label="EasyWebCraft ページの先頭へ"><img src="img/logo-mark.webp" alt="EasyWebCraft" width="640" height="69"></a>
+    <p class="tagline">起業・開業の最初の一手に、信頼されるホームページを。</p>
+    <a class="cta" href="#contact">無料でデザイン案を見る</a>
+    <span class="menu" aria-hidden="true"><i></i><i></i><i></i></span>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <h1 class="sr">その挑戦に、ホームページを。想いだけじゃ、伝わらない。伝わるカタチを、プロがつくります。</h1>
+    <img src="img/hero.webp" alt="その挑戦に、ホームページを。初期費用0円、月額5,980円〜（税別）、開業前も相談OK。あなたの事業に合わせたオリジナルデザインを無料でご提案します。" width="1024" height="662">
+  </section>
+
+  <section class="band">
+    <div class="band-in">
+      <span class="seal">完全<br>無料</span>
+      <a class="main" href="#contact">今すぐ、あなたのホームページの<em>デザイン案</em>をもらう</a>
+      <ul><li>見てから契約OK</li><li>気に入らなければ0円</li><li>最短1分でお申し込み</li></ul>
+    </div>
+  </section>
+
+  <section class="feats" aria-label="月額にふくまれるもの">
+    <ul>
+      <li><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/><path d="M13 8l3 3-3 1-1 3-3-3"/></svg>デザイン制作</li>
+      <li><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>スマホ対応</li>
+      <li><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>SEOの基本設定</li>
+      <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3 7l9 6 9-6"/></svg>お問い合わせフォーム</li>
+      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>サーバー・SSL込み</li>
+      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>更新・修正も月額で対応</li>
+    </ul>
+  </section>
+
+  <section class="mid">
+    <div class="mid-in">
+      <div class="pain">
+        <h2 class="sr">こんなお悩みありませんか？</h2>
+        <img class="title" src="img/pain-title.webp" alt="" width="470" height="64">
+        <ul>
+          <li>会社を設立したが、まだHPがない</li>
+          <li>SNSだけで信頼感が弱い</li>
+          <li>取引先から「HPはありますか？」と聞かれる</li>
+          <li>制作会社に頼むと高額で手が出せない</li>
+          <li>とにかく早く公開して事業を進めたい</li>
+        </ul>
+        <img class="man" src="img/pain-man.webp" alt="" width="140" height="205">
+      </div>
+
+      <div class="ind">
+        <h2>こんな業種に対応しています</h2>
+        <ul>
+          <li><img src="img/ind-food.webp" alt="" loading="lazy"><p>メニュー・予約の<br>入口をまとめる</p></li>
+          <li><img src="img/ind-salon.webp" alt="" loading="lazy"><p>SNSから<br>予約ページへ</p></li>
+          <li><img src="img/ind-clinic.webp" alt="" loading="lazy"><p>診療案内と<br>アクセスを明確に</p></li>
+          <li><img src="img/ind-build.webp" alt="" loading="lazy"><p>施工事例と<br>会社情報を掲載</p></li>
+          <li><img src="img/ind-gym.webp" alt="" loading="lazy"><p>体験予約の<br>導線をつくる</p></li>
+          <li><img src="img/ind-pro.webp" alt="" loading="lazy"><p>事務所の<br>信用を伝える</p></li>
+        </ul>
+        <p class="note">※写真はイメージです</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="low">
+    <div class="low-in">
+      <div class="change">
+        <h2>ホームページがあるだけで<br><em>ここまで変わります</em></h2>
+        <div class="ba">
+          <div class="box b">
+            <h3>BEFORE</h3>
+            <p class="sub">検索しても何も出てこない…</p>
+            <ul><li>会社の情報が見つからない</li><li>信頼感がない</li><li>問い合わせが来ない</li><li>SNSだけで集客が不安</li></ul>
+          </div>
+          <span class="arr" aria-hidden="true">➜</span>
+          <div class="box a">
+            <h3>AFTER</h3>
+            <p class="sub">公式サイトが見つかる！</p>
+            <ul><li><b>検索</b>で見つかる</li><li><b>会社の信頼感</b>がアップ</li><li><b>問い合わせ</b>の入口ができる</li><li><b>採用・取引</b>の窓口が広がる</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="price" id="plans">
+        <h2><span>料金プラン</span><small>すべてのプランで初期費用0円・最低契約期間6ヶ月</small></h2>
+        <div class="plans">
+          <div class="plan">
+            <p class="name">EasyWeb LP</p><p class="cap">まず1ページで</p>
+            <p class="p">5,980<small>円/月</small></p><p class="tax">（税別・税込6,578円）</p>
+            <ul><li>1ページ</li><li>スマホ対応</li><li>お問い合わせフォーム</li><li>サーバー・SSL込み</li></ul>
+          </div>
+          <div class="plan reco">
+            <span class="tag">おすすめ</span>
+            <p class="name">EasyWeb HP</p><p class="cap">6ページまで</p>
+            <p class="p">7,700<small>円/月</small></p><p class="tax">（税別・税込8,470円）</p>
+            <ul><li>トップ＋下層5P</li><li>スマホ対応</li><li>SEOの基本設定</li><li>サーバー・SSL込み</li></ul>
+          </div>
+          <div class="plan">
+            <p class="name">EasyWeb HP+</p><p class="cap">ページを増やしたい方</p>
+            <p class="p">9,800<small>円/月</small></p><p class="tax">（税別・税込10,780円）</p>
+            <ul><li>ページ数の上限なし</li><li>スマホ対応</li><li>SEOの基本設定</li><li>サーバー・SSL込み</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="closing-in">
+      <img src="img/closing.webp" alt="あなたの事業の虎になりたい。想いを、形に。ビジネスを、次のステージへ。" width="632" height="170" loading="lazy">
+      <div class="go">
+        <p>まずは、あなたのホームページの<br><em>デザイン案を無料</em>で見てみる</p>
+        <a class="btn-red" href="#contact">無料でデザイン案をもらう</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-in">
+      <h2>あなたの事業の<br><em>デザイン案を無料で</em>おつくりします</h2>
+      <p class="lead">無料でお作りするのはトップページ1ページ分のデザイン案です。<br>見てから契約するか決められます。1営業日以内にご返信します。</p>
+      <form class="form" id="cform" action="https://formspree.io/f/maqkzjek" method="POST">
+        <input type="hidden" name="_subject" value="【EasyWebCraft 挑戦LP】無料デザイン案の申し込み">
+        <label>お名前
+          <input type="text" name="name" required autocomplete="name" placeholder="例：山田 太郎">
+        </label>
+        <fieldset>
+          <legend>いまの状況 <span class="opt">（任意）</span></legend>
+          <div class="stage">
+            <label><input type="radio" name="stage" value="これから開業"><span>これから開業</span></label>
+            <label><input type="radio" name="stage" value="開業1年以内"><span>開業1年以内</span></label>
+            <label><input type="radio" name="stage" value="それ以外"><span>それ以外</span></label>
+          </div>
+        </fieldset>
+        <label>事業・会社の名前 <span class="opt">（任意・未定でも可）</span>
+          <input type="text" name="shop" autocomplete="organization" placeholder="例：株式会社〇〇">
+        </label>
+        <label>ご連絡先（メール または 電話）
+          <input type="text" name="contact" required placeholder="例：info@example.com / 090-0000-0000">
+        </label>
+        <label>ご相談内容 <span class="opt">（任意）</span>
+          <textarea name="body" rows="4" placeholder="例：パーソナルジムを開業予定。体験予約につながるHPにしたい。"></textarea>
+        </label>
+        <p class="before">相談・デザイン案の作成は無料です。<br>契約はデザイン案をご覧いただいた後です。</p>
+        <p class="form-note">送信いただいた内容は<a href="https://easywebcraft.github.io/easyweb-lp/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に基づいて取り扱います。</p>
+        <button class="btn-red" type="submit">無料でデザイン案をもらう</button>
+        <p class="form-err" id="form-err" hidden>送信できませんでした。お手数ですが、時間をおいて再度お試しください。</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img src="img/logo-full.webp" alt="EasyWebCraft Web Design &amp; Development" width="800" height="124" loading="lazy">
+  <div>運営：株式会社TAC</div>
+  <div>愛知県名古屋市守山区瀬古東1-1701 201</div>
+  <div style="margin-top:10px"><a href="https://easywebcraft.github.io/easyweb-lp/privacy.html">プライバシーポリシー</a>｜<a href="https://easywebcraft.github.io/easyweb-lp/tokushoho.html">特定商取引法に基づく表記</a></div>
+  <div style="margin-top:8px">※表示価格は税別です。最低契約期間は6ヶ月です。</div>
+</footer>
+
+<script>
+document.getElementById('cform').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.target, btn = f.querySelector('button[type="submit"]'), err = document.getElementById('form-err');
+  err.hidden = true; btn.disabled = true; btn.textContent = '送信中…';
+  fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+    .then(function (res) {
+      if (!res.ok) throw new Error('send failed');
+      f.innerHTML = '<p class="form-sent">送信しました。ありがとうございます。<br>1営業日以内にご連絡いたします。</p>';
+    })
+    .catch(function () { btn.disabled = false; btn.textContent = '無料でデザイン案をもらう'; err.hidden = false; });
+});
+</script>
+</body>
+</html>
