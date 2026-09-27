@@ -55,7 +55,7 @@ a{color:inherit}
 .quote,.note-r,.devices{display:none}
 .quote{margin:0}
 .h-title{position:relative; margin:0; font-family:"Noto Serif JP",serif; font-weight:900; line-height:1.1; text-align:center; text-shadow:0 4px 18px rgba(0,0,0,.9); transform:skewX(-6deg)}
-.h-title::before{content:""; position:absolute; left:-4%; right:-4%; top:40%; bottom:-8%; background:linear-gradient(100deg,transparent,rgba(214,162,28,.55) 12%,rgba(170,120,10,.4) 75%,transparent); filter:blur(8px); z-index:-1}
+.h-title::before{content:""; position:absolute; left:-6%; right:-6%; top:36%; bottom:-12%; background:radial-gradient(60% 55% at 50% 50%,rgba(214,162,28,.55),rgba(170,120,10,.28) 55%,transparent 75%); z-index:-1}
 .h-title .w{display:block; font-size:clamp(32px,10vw,46px); color:#fff}
 .h-title .r{display:block; font-size:clamp(34px,10.4vw,48px); color:#ff1f26; white-space:nowrap}
 .h-sub{margin:12px 0 18px; text-align:center; font-family:"Noto Serif JP",serif; font-weight:700; font-size:15px; line-height:1.6; text-shadow:0 2px 10px #000}
@@ -351,7 +351,9 @@ footer a{color:#ddd}
 .chk-sp{display:none}
 .sticky-cta{display:none}
 @media (max-width: 860px){
-  .h-in{padding:calc(max(130px, 100svh - 480px) - 50px) 12px 12px}
+  /* 画面の高さは読み込み時に1回だけ測った値（--fvh）を使う。100svh/vh だとアプリ内ブラウザで
+     アドレスバーが出入りするたびに高さが変わり、スクロール中にFVの文字がカクカク動いていた */
+  .h-in{padding:calc(max(130px, var(--fvh, 664px) - 480px) - 50px) 12px 12px}
   .v-ask{font-size:22px; top:8px}
   .h-title .w{font-size:clamp(26px,8vw,36px)}
   .h-title .r{font-size:clamp(28px,8.8vw,40px)}
@@ -380,6 +382,16 @@ footer a{color:#ddd}
 }
 @media (prefers-reduced-motion: reduce){ .sticky-cta{transition:none} }
 </style>
+<script>
+// FVの高さ用：開いたときの見える高さを1回だけ測って固定する。
+// 横幅が変わったとき（画面の回転など）だけ測り直し、アドレスバーの出入り（高さだけの変化）では変えない
+(function () {
+  var w = window.innerWidth;
+  function set() { document.documentElement.style.setProperty('--fvh', window.innerHeight + 'px'); }
+  set();
+  window.addEventListener('resize', function () { if (window.innerWidth !== w) { w = window.innerWidth; set(); } });
+})();
+</script>
 </head>
 <body>
 
