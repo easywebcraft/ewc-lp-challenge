@@ -42,6 +42,7 @@ a{color:inherit}
 
 /* ヒーロー（人物・筆文字・バッジは1枚画像） */
 .hero{position:relative; background:#000}
+.hero picture img{width:100%; height:auto}
 .hero img{width:100%; height:auto}
 
 /* 赤帯のCTA */
@@ -82,6 +83,40 @@ a{color:inherit}
 .ind li p{position:absolute; left:0; right:0; bottom:0; margin:0; padding:6px 8px; color:#fff; font-size:13px; font-weight:900; line-height:1.35; text-align:center; text-shadow:0 2px 6px rgba(0,0,0,.8)}
 .ind .note{color:#aaa; font-size:11px; text-align:right; margin:6px 0 0}
 
+/* 悩み・業種・BEFORE/AFTER・料金をまとめたグリッド
+   スマホ：1列（悩み→業種→CTA→BEFORE/AFTER→料金→CTA）
+   タブレット：2列 ／ PC（1100px〜）：ワイドのデザイン案どおり4列（悩み｜BEFORE/AFTER｜業種｜料金） */
+.grid4{background:#141414 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M0 6L6 0' stroke='%23222' stroke-width='1'/%3E%3C/svg%3E")}
+.g4-in{max-width:1024px; margin:0 auto; display:grid; grid-template-columns:1.1fr 1fr; gap:14px; padding:16px 12px; align-items:start}
+.g4-in .midcta{grid-column:1/-1; padding-bottom:6px}
+.hero-cta{display:none}
+@media (max-width: 860px){ .g4-in{grid-template-columns:1fr} }
+@media (min-width: 1100px){
+  .top-in,.feats ul{max-width:1680px}
+  .band{display:none}
+  .hero{max-width:1672px; margin:0 auto}
+  .hero-cta{display:block; position:absolute; left:31.6%; width:37%; top:70.5%; height:23.5%; border-radius:999px}
+  .hero-cta:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+  .g4-in{max-width:1680px; grid-template-columns:1.12fr .98fr 1.05fr 1.15fr; grid-template-areas:"pain change ind price" "c2 c2 c2 c2"; gap:16px; padding:18px 16px}
+  .pain{grid-area:pain; min-height:0; height:100%; padding:10px 96px 16px 14px}
+  .pain .title{max-width:100%; margin-left:-6px}
+  .pain li{font-size:13.5px; padding-left:26px}
+  .pain .man{width:118px}
+  .g4-in{grid-template-columns:1.2fr .95fr 1.05fr 1.12fr !important}
+  .change{grid-area:change}
+  .ind{grid-area:ind}
+  .price{grid-area:price}
+  .g4-in .c1{display:none}
+  .g4-in .c2{grid-area:c2}
+  .change h2{font-size:19px; margin-top:0}
+  .ba .box{min-height:190px; padding:8px 8px 10px}
+  .ba ul{font-size:12px}
+  .ind h2,.price h2 span{font-size:18px}
+  .price h2{margin-top:0}
+  .price h2 small{font-size:11px}
+  .plan .p{font-size:24px}
+  .plan ul{font-size:11px}
+}
 /* BEFORE / AFTER と料金 */
 .low{background:#141414}
 .low-in{max-width:1024px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:6px 12px 18px}
@@ -234,7 +269,11 @@ footer a{color:#ddd}
 <main id="top">
   <section class="hero">
     <h1 class="sr">その挑戦に、ホームページを。想いだけじゃ、伝わらない。伝わるカタチを、プロがつくります。</h1>
-    <img src="img/hero.webp" alt="その挑戦に、ホームページを。初期費用0円、月額5,980円〜（税別）、開業前も相談OK。あなたの事業に合わせたオリジナルデザインを無料でご提案します。" width="1024" height="662">
+    <picture>
+      <source media="(min-width: 1100px)" srcset="img/hero-pc.webp" width="1672" height="540">
+      <img src="img/hero.webp" alt="その挑戦に、ホームページを。初期費用0円、月額5,980円〜（税別）、開業前も相談OK。完全無料で、あなたのホームページのデザイン案をもらう。" width="1024" height="662">
+    </picture>
+    <a class="hero-cta" href="#contact" aria-label="完全無料で、あなたのホームページのデザイン案をもらう"></a>
   </section>
 
   <section class="band">
@@ -256,8 +295,8 @@ footer a{color:#ddd}
     </ul>
   </section>
 
-  <section class="mid">
-    <div class="mid-in">
+  <section class="grid4">
+    <div class="g4-in">
       <div class="pain">
         <h2 class="sr">こんなお悩みありませんか？</h2>
         <img class="title" src="img/pain-title.webp" alt="" width="470" height="64">
@@ -270,7 +309,6 @@ footer a{color:#ddd}
         </ul>
         <img class="man" src="img/pain-man.webp" alt="" width="140" height="205">
       </div>
-
       <div class="ind">
         <h2>こんな業種に対応しています</h2>
         <ul>
@@ -283,12 +321,7 @@ footer a{color:#ddd}
         </ul>
         <p class="note">※写真はイメージです</p>
       </div>
-    </div>
-  <div class="midcta"><a class="btn-red" href="#contact">無料でデザイン案をもらう</a><p>あなたの業種に合わせたデザイン案を、<br class="sp">完全無料でおつくりします</p></div>
-  </section>
-
-  <section class="low">
-    <div class="low-in">
+      <div class="midcta c1"><a class="btn-red" href="#contact">無料でデザイン案をもらう</a><p>あなたの業種に合わせたデザイン案を、<br class="sp">完全無料でおつくりします</p></div>
       <div class="change">
         <h2>ホームページがあるだけで<br><em>ここまで変わります</em></h2>
         <div class="ba">
@@ -327,8 +360,8 @@ footer a{color:#ddd}
           </div>
         </div>
       </div>
+      <div class="midcta c2"><a class="btn-red" href="#contact">無料でデザイン案をもらう</a><p>料金は契約するときだけ。<br class="sp">デザイン案を見るまでは0円です</p></div>
     </div>
-  <div class="midcta"><a class="btn-red" href="#contact">無料でデザイン案をもらう</a><p>料金は契約するときだけ。<br class="sp">デザイン案を見るまでは0円です</p></div>
   </section>
 
 
