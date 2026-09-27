@@ -9,12 +9,12 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="その挑戦に、ホームページを。｜EasyWebCraft">
 <meta property="og:description" content="あなたの事業に合わせたデザイン案を無料でご提案。初期費用0円・月額5,980円〜（税別）。">
-<meta property="og:image" content="https://easywebcraft.github.io/ewc-lp-challenge/img/hero.webp">
+<meta property="og:image" content="https://easywebcraft.github.io/ewc-lp-challenge/img/hero-bg-pc.webp">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><text x='50' y='72' font-size='62' font-weight='bold' text-anchor='middle' font-family='sans-serif' fill='%23ffc61a'>E</text></svg>">
-<link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@600;700&family=Noto+Serif+JP:wght@700;900&display=swap">
 <style>
 /* 黒×赤×金の「挑戦」トーン。デザイン案（1024px幅の1枚画像）を、PCではほぼそのままの配置で、スマホでは縦に積んで再現する */
 :root{
@@ -45,6 +45,72 @@ a{color:inherit}
 .hero picture img{width:100%; height:auto}
 .hero img{width:100%; height:auto}
 
+/* ヒーロー（背景写真＋HTMLの文字）。文字は全部HTMLなので、どの画面でもくっきり表示される。
+   スマホ：写真の上半分を見せ、下の暗い部分に見出し→価格→CTAを上から順に並べる ／ PC：16:9の上に配置 */
+.hero2{position:relative; overflow:hidden; background:#050505; color:#fff}
+.hero2 .bg img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top}
+.h-in{position:relative; max-width:1680px; margin:0 auto; padding:92vw 14px 22px}
+.v-ask{position:absolute; left:10px; top:12px; margin:0; writing-mode:vertical-rl; font-family:"Noto Serif JP",serif; font-weight:900; font-size:30px; line-height:1.15; color:#ff2d34; text-shadow:0 0 10px #000, 0 0 3px #000}
+.v-ask small{font-size:.55em; color:#fff}
+.quote,.note-r,.devices{display:none}
+.quote{margin:0}
+.h-title{position:relative; margin:0; font-family:"Noto Serif JP",serif; font-weight:900; line-height:1.1; text-align:center; text-shadow:0 4px 18px rgba(0,0,0,.9); transform:skewX(-6deg)}
+.h-title::before{content:""; position:absolute; left:-4%; right:-4%; top:40%; bottom:-8%; background:linear-gradient(100deg,transparent,rgba(214,162,28,.55) 12%,rgba(170,120,10,.4) 75%,transparent); filter:blur(8px); z-index:-1}
+.h-title .w{display:block; font-size:clamp(32px,10vw,46px); color:#fff}
+.h-title .r{display:block; font-size:clamp(34px,10.4vw,48px); color:#ff1f26; white-space:nowrap}
+.h-sub{margin:12px 0 18px; text-align:center; font-family:"Noto Serif JP",serif; font-weight:700; font-size:15px; line-height:1.6; text-shadow:0 2px 10px #000}
+.badges{list-style:none; margin:0 0 16px; padding:0; display:flex; justify-content:center; gap:10px}
+.badges li{width:31%; max-width:120px; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle at 50% 40%,#1c1c1c,#050505); border:3px solid #d6a21c; box-shadow:0 0 0 2px #6b4a00 inset, 0 0 18px rgba(214,162,28,.45); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; line-height:1}
+.badges small{font-size:12px; font-weight:800}
+.badges small.tx{font-size:10px; margin-top:2px}
+.badges b{font-family:var(--num); font-weight:700; font-size:40px; background:linear-gradient(180deg,#fff6c8,#e3b43a 55%,#b88400); -webkit-background-clip:text; background-clip:text; color:transparent; margin-top:3px}
+.badges b i{font-style:normal; font-family:"Noto Sans JP"; font-size:.42em; font-weight:900}
+.badges b.s{font-size:24px}
+.badges b.t{font-family:"Noto Sans JP"; font-weight:900; font-size:19px}
+.free-cta{display:flex; align-items:stretch; text-decoration:none; color:#fff; position:relative; margin:62px 0 0 40px}
+.free-cta .seal{position:absolute; left:-40px; top:50%; transform:translateY(-50%); width:84px; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle at 35% 30%,#fff6c8,#e9b73b 55%,#9a6a00); border:3px solid #fff1b0; box-shadow:0 6px 18px rgba(0,0,0,.5); display:flex; align-items:center; justify-content:center; text-align:center; color:#1a1200; font-weight:900; font-size:19px; line-height:1.05; z-index:2}
+.free-cta .main{flex:1; background:linear-gradient(180deg,#f0262c,#b90f14); border:2px solid #ff6b6f; border-radius:999px 0 0 999px; padding:10px 4px 10px 50px; font-weight:900; font-size:12px; line-height:1.45; box-shadow:0 8px 24px rgba(215,20,26,.45)}
+.free-cta .main em{font-style:normal; color:var(--gold-lt); font-size:1.3em; white-space:nowrap}
+.free-cta .main em + .arr{white-space:nowrap}
+.free-cta .arr{margin-left:.3em}
+.free-cta .chk{display:flex; flex-direction:column; justify-content:center; gap:3px; background:linear-gradient(180deg,#b80f14,#7c070b); border:2px solid #ff6b6f; border-left:none; border-radius:0 999px 999px 0; padding:6px 12px 6px 6px; font-size:9.5px; font-weight:800; white-space:nowrap}
+.free-cta .chk span::before{content:"☑ "}
+.free-cta .chk span:first-child{color:var(--gold-lt)}
+.free-cta:focus-visible{outline:3px solid var(--gold); outline-offset:4px}
+@media (min-width: 861px){
+  .h-in{aspect-ratio:16/9; max-height:940px; padding:0}
+  .v-ask{left:1.5%; top:3%; font-size:clamp(26px,2.5vw,44px)}
+  .quote{display:block; position:absolute; left:30%; top:7%; transform:rotate(-3deg)}
+  .quote b{display:block; font-family:"Noto Serif JP",serif; font-weight:900; font-size:clamp(20px,1.9vw,34px); color:#ff2d34; text-shadow:0 2px 8px #000}
+  .quote span{display:block; margin:6px 0 0 5%; font-size:clamp(14px,1.3vw,23px); font-weight:800; text-shadow:0 2px 8px #000}
+  .note-r{display:block; position:absolute; right:2%; top:13%; margin:0; background:#fbfaf6; color:#111; font-family:"Noto Serif JP",serif; font-weight:900; font-size:clamp(16px,1.6vw,30px); line-height:1.35; padding:14px 22px; transform:rotate(-6deg); box-shadow:0 8px 22px rgba(0,0,0,.5); clip-path:polygon(2% 0,100% 3%,98% 100%,0 96%)}
+  .note-r em{font-style:normal; color:#e0141b; font-size:1.5em}
+  .h-title{position:absolute; left:6%; top:30%; text-align:left; white-space:nowrap}
+  .h-title .w{display:inline; font-size:clamp(40px,4vw,76px)}
+  .h-title .r{display:inline; font-size:clamp(46px,4.7vw,88px)}
+  .h-sub{position:absolute; left:14%; top:49%; margin:0; text-align:left; font-size:clamp(17px,1.7vw,30px); transform:rotate(-2deg)}
+  .h-sub br.sp{display:none}
+  .devices{display:block; position:absolute; right:3%; bottom:8%; width:27%}
+  .d-pc{border:9px solid #1b1b1b; border-bottom-width:16px; border-radius:12px; overflow:hidden; background:#fff; box-shadow:0 20px 40px rgba(0,0,0,.6)}
+  .d-pc img{display:block; width:100%; aspect-ratio:800/476; object-fit:cover; object-position:top}
+  .d-sp{position:absolute; right:-5%; bottom:-8%; width:24%; border:5px solid #1b1b1b; border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 14px 30px rgba(0,0,0,.6); aspect-ratio:390/760}
+  .d-sp img{width:100%; height:100%; object-fit:cover; object-position:top}
+  .note-b{position:absolute; z-index:3; left:-8%; top:-30%; margin:0; background:#fbfaf6; color:#111; font-family:"Noto Serif JP",serif; font-weight:900; font-size:clamp(12px,1.05vw,19px); line-height:1.4; padding:10px 14px; transform:rotate(-5deg); box-shadow:0 8px 22px rgba(0,0,0,.5)}
+  .note-b em{font-style:normal; color:#e0141b; font-size:1.3em}
+  .h-bottom{position:absolute; left:3%; bottom:7%; width:64%; display:flex; align-items:center; gap:2%}
+  .badges{margin:0; flex:0 0 40%; gap:4%; justify-content:flex-start}
+  .badges li{width:30%; max-width:none}
+  .badges small{font-size:clamp(11px,1vw,19px)}
+  .badges small.tx{font-size:clamp(9px,.8vw,14px)}
+  .badges b{font-size:clamp(30px,3.2vw,60px)}
+  .badges b.s{font-size:clamp(18px,1.9vw,36px)}
+  .badges b.t{font-size:clamp(15px,1.6vw,30px)}
+  .free-cta{flex:1; margin:0 0 0 4.5vw}
+  .free-cta .main em{font-size:1.35em}
+  .free-cta .seal{left:-4.5vw; width:9vw; max-width:170px; font-size:clamp(18px,1.8vw,34px)}
+  .free-cta .main{font-size:clamp(12px,1.1vw,20px); padding:14px 10px 14px calc(5vw)}
+  .free-cta .chk{font-size:clamp(10px,.85vw,15px); padding:10px 18px 10px 10px}
+}
 /* 赤帯のCTA */
 .band{background:#0a0a0a; position:relative; padding:14px 10px}
 .band-img{display:block; max-width:760px; margin:0 auto; border-radius:999px}
@@ -293,17 +359,35 @@ footer a{color:#ddd}
 </header>
 
 <main id="top">
-  <section class="hero">
-    <h1 class="sr">その挑戦に、ホームページを。想いだけじゃ、伝わらない。伝わるカタチを、プロがつくります。</h1>
-    <picture>
-      <source media="(min-width: 1100px)" srcset="img/hero-pc.webp" width="1672" height="540">
-      <img src="img/hero.webp" alt="その挑戦に、ホームページを。初期費用0円、月額5,980円〜（税別）、開業前も相談OK。完全無料で、あなたのホームページのデザイン案をもらう。" width="1024" height="662">
+  <section class="hero2">
+    <picture class="bg">
+      <source media="(min-width: 861px)" srcset="img/hero-bg-pc.webp 2560w, img/hero-bg-pc@2x.webp 3344w" sizes="100vw">
+      <img src="img/hero-bg-sp.webp" alt="" width="1242" height="2208" fetchpriority="high">
     </picture>
-    <a class="hero-cta" href="#contact" aria-label="完全無料で、あなたのホームページのデザイン案をもらう"></a>
-  </section>
-
-  <section class="band">
-    <a class="band-img" href="#contact"><img src="img/cta-free.webp" alt="完全無料。今すぐ、あなたのホームページのデザイン案をもらう。見てから契約OK、気に入らなければ0円、最短1分でお申し込み" width="1260" height="284"></a>
+    <div class="h-in">
+      <p class="v-ask">それ、<small>ホームページ</small><br>あるの？</p>
+      <p class="quote"><b>「SNSだけで勝てる時代は終わった。」</b><span>ビジネスで信頼を取るなら、<br>公式サイトは必須です。</span></p>
+      <p class="note-r">このサービスで<br>あなたの事業を<br><em>加速</em>させたい。</p>
+      <h1 class="h-title"><span class="w">その挑戦に、</span><span class="r">ホームページを。</span></h1>
+      <p class="h-sub">想いだけじゃ、伝わらない。<br class="sp">伝わるカタチを、プロがつくります。</p>
+      <div class="devices" aria-hidden="true">
+        <div class="d-pc"><img src="img/mock-pc.webp" alt="" width="800" height="476"></div>
+        <div class="d-sp"><img src="img/mock-sp.webp" alt="" width="390" height="844"></div>
+        <p class="note-b">あなたの事業に合わせた<br>オリジナルデザインを<br><em>無料</em>でご提案します。</p>
+      </div>
+      <div class="h-bottom">
+        <ul class="badges">
+          <li><small>初期費用</small><b>0<i>円</i></b></li>
+          <li><small>月額</small><b class="s">5,980<i>円〜</i></b><small class="tx">（税別）</small></li>
+          <li><small>開業前も</small><b class="t">相談OK</b></li>
+        </ul>
+        <a class="free-cta" href="#contact">
+          <span class="seal">完全<br>無料</span>
+          <span class="main">今すぐ、あなたの<br>ホームページの<br><em>デザイン案をもらう<span class="arr" aria-hidden="true">→</span></em></span>
+          <span class="chk"><span>見てから契約OK</span><span>気に入らなければ0円</span><span>最短1分でお申し込み</span></span>
+        </a>
+      </div>
+    </div>
   </section>
 
   <section class="feats" aria-label="月額にふくまれるもの">
@@ -329,7 +413,7 @@ footer a{color:#ddd}
           <li>制作会社に頼むと高額で手が出せない</li>
           <li>とにかく早く公開して事業を進めたい</li>
         </ul>
-        <img class="man" src="img/pain-man.webp" alt="" width="140" height="205">
+        <img class="man" src="img/pain-man2.webp" alt="" width="865" height="1100">
       </div>
       <div class="ind">
         <h2>こんな業種に対応しています</h2>
