@@ -381,6 +381,37 @@ footer a{color:#ddd}
   footer{padding-bottom:90px}
 }
 @media (prefers-reduced-motion: reduce){ .sticky-cta{transition:none} }
+
+/* FVの文字は画像（元デザインから切り出し→4倍に高解像度化→背景を透過） */
+.v-ask{writing-mode:horizontal-tb; width:40px; left:6px; top:8px; text-shadow:none}
+.v-ask img{width:100%; height:auto}
+.h-title{transform:none; text-shadow:none; margin:0 -6px}
+.h-title::before{display:none}
+.h-title img{width:100%; height:auto; filter:drop-shadow(0 4px 10px rgba(0,0,0,.7))}
+.note-r img,.note-b img{width:100%; height:auto; display:block}
+@media (max-width: 860px){ .h-in{padding-bottom:12px} .h-title{margin-bottom:10px} }
+@media (min-width: 861px){
+  .v-ask{width:5.5%; left:1.2%; top:3%}
+  .quote{left:33%; top:5%; width:27%; transform:none}
+  .quote img{display:block; height:auto}
+  .quote .qr{width:100%}
+  .quote .qw{width:58%; margin:6px 0 0 16%}
+  .note-r{width:16%; background:none; padding:0; box-shadow:none; clip-path:none; transform:none; right:2%; top:9%}
+  .h-title{left:6%; top:25%; width:63%; white-space:normal; margin:0}
+  .note-b{background:none; padding:0; box-shadow:none; transform:none; width:50%; left:auto; right:-4%; top:auto; bottom:-6%}
+}
+
+/* 見出し：スマホは「その挑戦に、」「ホームページを。」「サブ」の3枚を積む／PCは1枚 */
+.h-title .t-pc{display:none}
+.h-title .t-sp{display:block}
+.h-title .t-sp img{display:block; height:auto; filter:drop-shadow(0 4px 10px rgba(0,0,0,.75))}
+.h-title .l1{width:74%; margin:0 auto 0 4%}
+.h-title .l2{width:96%; margin:-2% 0 0 auto}
+.h-title .l3{width:92%; margin:2% auto 0}
+@media (min-width: 861px){
+  .h-title .t-pc{display:block}
+  .h-title .t-sp{display:none}
+}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定する。
@@ -411,15 +442,16 @@ footer a{color:#ddd}
       <img src="img/hero-bg-sp.webp" alt="" width="1242" height="2208" fetchpriority="high">
     </picture>
     <div class="h-in">
-      <p class="v-ask">それ、<small>ホームページ</small><br>あるの？</p>
-      <p class="quote"><b>「SNSだけで勝てる時代は終わった。」</b><span>ビジネスで信頼を取るなら、<br>公式サイトは必須です。</span></p>
-      <p class="note-r">このサービスで<br>あなたの事業を<br><em>加速</em>させたい。</p>
-      <h1 class="h-title"><span class="w">その挑戦に、</span><span class="r">ホームページを。</span></h1>
-      <p class="h-sub">想いだけじゃ、伝わらない。<br class="sp">伝わるカタチを、プロがつくります。</p>
+      <p class="v-ask"><img src="img/fv-vask.webp" alt="それ、ホームページあるの？" width="400" height="1108"></p>
+      <p class="quote"><img class="qr" src="img/fv-quote-r.webp" alt="「SNSだけで勝てる時代は終わった。」" width="1779" height="232"><img class="qw" src="img/fv-quote-w.webp" alt="ビジネスで信頼を取るなら、公式サイトは必須です。" width="1051" height="295"></p>
+      <p class="note-r"><img src="img/fv-note-r.webp" alt="このサービスであなたの事業を加速させたい。" width="1005" height="816"></p>
+      <h1 class="h-title"><span class="sr">その挑戦に、ホームページを。想いだけじゃ、伝わらない。伝わるカタチを、プロがつくります。</span>
+        <img class="t-pc" src="img/fv-title.webp" alt="" width="2400" height="417">
+        <span class="t-sp" aria-hidden="true"><img class="l1" src="img/fv-t1.webp" alt="" width="1044" height="270"><img class="l2" src="img/fv-t2.webp" alt="" width="1410" height="300"><img class="l3" src="img/fv-t3.webp" alt="" width="1916" height="147"></span></h1>
       <div class="devices" aria-hidden="true">
         <div class="d-pc"><img src="img/mock-pc.webp" alt="" width="800" height="476"></div>
         <div class="d-sp"><img src="img/mock-sp.webp" alt="" width="390" height="844"></div>
-        <p class="note-b">あなたの事業に合わせた<br>オリジナルデザインを<br><em>無料</em>でご提案します。</p>
+        <p class="note-b"><img src="img/fv-note-b.webp" alt="あなたの事業に合わせたオリジナルデザインを無料でご提案します。" width="850" height="426"></p>
       </div>
       <div class="h-bottom">
         <ul class="badges">
