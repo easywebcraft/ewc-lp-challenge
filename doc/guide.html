@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>EasyWebCraft サービス資料</title>
+<style>
+/* A4横のサービス資料。Edgeで印刷してPDFにする（doc/build-pdf.sh） */
+@page{size:A4 landscape; margin:0}
+*{box-sizing:border-box}
+body{margin:0; font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif; color:#f3f0ea; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+.page{width:297mm; height:210mm; padding:14mm 16mm 12mm; position:relative; overflow:hidden; page-break-after:always;
+  background:radial-gradient(60% 50% at 15% 0%,rgba(227,180,58,.14),transparent 70%),radial-gradient(50% 45% at 90% 100%,rgba(227,180,58,.10),transparent 70%),#080706}
+.page:last-child{page-break-after:auto}
+.g{background:linear-gradient(180deg,#fff3c4,#e9bd4a 55%,#b8860b); -webkit-background-clip:text; background-clip:text; color:transparent}
+.r{color:#ff3b40}
+h1,h2,h3,p{margin:0}
+.en{font-size:10pt; letter-spacing:.3em; color:#e3b43a; font-weight:700}
+h2{font-family:"Yu Mincho","Noto Serif JP",serif; font-weight:900; font-size:26pt; margin-top:2mm}
+.lead{font-size:12pt; margin-top:3mm; color:#e8e2d5}
+.foot{position:absolute; left:16mm; right:16mm; bottom:7mm; display:flex; justify-content:space-between; font-size:8.5pt; color:#9b9384; border-top:1px solid rgba(227,180,58,.3); padding-top:2mm}
+.foot img{height:4.2mm}
+.grid{display:grid; gap:5mm; margin-top:7mm}
+.card{border:1px solid rgba(227,180,58,.5); border-radius:3mm; background:rgba(0,0,0,.45); padding:5mm}
+.card h3{font-size:13pt; color:#ffe08a; margin-bottom:2mm}
+.card p,.card li{font-size:10pt; line-height:1.65; color:#e8e2d5}
+.big li{font-size:14pt; line-height:2}
+.card ul{margin:0; padding-left:5mm}
+.no{display:inline-flex; width:8mm; height:8mm; border-radius:50%; background:linear-gradient(180deg,#ffe07a,#e3b43a); color:#1a1200; font-weight:900; font-size:10pt; align-items:center; justify-content:center; margin-right:2mm; vertical-align:middle}
+img.ph{width:100%; border-radius:2mm; display:block}
+
+/* 表紙 */
+.cover{padding:0; display:grid; grid-template-columns:1.05fr .95fr}
+.cover .txt{padding:22mm 0 0 18mm}
+.cover .tag{display:inline-block; background:linear-gradient(90deg,#d7141a,rgba(215,20,26,.4)); padding:1.5mm 5mm; font-weight:900; font-size:12pt; transform:skewX(-8deg)}
+.cover .ttl{width:128mm; margin-top:5mm}
+.cover .sub{font-size:14pt; margin-top:5mm; font-weight:700}
+.cover .pts{display:flex; gap:4mm; margin-top:10mm}
+.cover .pt{border:2px solid #e3b43a; border-radius:30mm; padding:3mm 6mm; text-align:center; font-weight:900; font-size:11pt}
+.cover .pt b{display:block; font-size:20pt}
+.cover .vis{background:url(img/fv-pc.jpg) 92% 30% / auto 118% no-repeat}
+.cover .doc{position:absolute; left:18mm; bottom:14mm; font-size:11pt; color:#bdb5a6}
+
+/* 表 */
+table{width:100%; border-collapse:collapse; font-size:10pt; margin-top:5mm}
+th,td{border-bottom:1px solid rgba(255,255,255,.14); padding:2.2mm 3mm; text-align:center}
+thead th{background:linear-gradient(180deg,#9a7418,#6e520c); color:#fff; font-size:11pt}
+thead th.reco{background:linear-gradient(180deg,#b3141a,#7c0a0e)}
+tbody th{text-align:left; color:#ffe08a}
+.price{font-size:22pt; font-weight:900}
+.price small{font-size:10pt}
+.note{font-size:9pt; color:#b9b2a5; margin-top:3mm}
+.cta{margin-top:6mm; display:flex; gap:6mm; align-items:center; border:2px solid #e3b43a; border-radius:4mm; padding:5mm 7mm; background:rgba(215,20,26,.15)}
+.cta b{font-size:15pt; color:#ffe08a}
+.cta p{font-size:10.5pt}
+</style>
+</head>
+<body>
+
+<!-- 1. 表紙 -->
+<section class="page cover">
+  <div class="txt">
+    <span class="tag">起業・開業の最初の一手に。</span>
+    <img class="ttl" src="img/fv-title.png" alt="その挑戦に、ホームページを。">
+    <p class="sub">開業前・開業したばかりの方のための<br>ホームページ制作サービス</p>
+    <div class="pts">
+      <div class="pt">初期費用<b class="g">0円</b></div>
+      <div class="pt">月額<b class="g">5,980円〜</b></div>
+      <div class="pt">デザイン案<b class="g">無料</b></div>
+    </div>
+    <p class="doc">サービス資料 ｜ EasyWebCraft（運営：株式会社TAC）</p>
+  </div>
+  <div class="vis"></div>
+</section>
+
+<!-- 2. こんなお悩み -->
+<section class="page">
+  <p class="en">PROBLEM</p>
+  <h2>起業前・開業直後の、<span class="r">こんなお悩み</span>ありませんか？</h2>
+  <div class="grid" style="grid-template-columns:1.2fr 1fr; align-items:center">
+    <div class="card big"><ul>
+      <li>会社を設立したが、まだホームページがない</li>
+      <li>SNSだけでは信頼感が弱い</li>
+      <li>取引先から「HPはありますか？」と聞かれる</li>
+      <li>制作会社に頼むと高額で手が出せない</li>
+      <li>とにかく早く公開して事業を進めたい</li>
+      <li>何を載せればいいかわからない</li>
+    </ul></div>
+    <img class="ph" src="img/q-man.jpg" alt="" style="max-height:120mm; object-fit:cover; object-position:top">
+  </div>
+  <p class="lead" style="margin-top:6mm">そのお悩み、<b class="g">EasyWebCraft</b>ならまとめて解決できます。</p>
+  <div class="foot"><img src="img/logo-mark.png" alt="EasyWebCraft"><span>2</span></div>
+</section>
+
+<!-- 3. できること -->
+<section class="page">
+  <p class="en">SERVICE</p>
+  <h2><span class="g">EasyWebCraft</span>でできること</h2>
+  <p class="lead">ホームページの制作から、公開後の運用までまるごとサポートします。</p>
+  <div class="grid" style="grid-template-columns:repeat(4,1fr)">
+    <div class="card"><img class="ph" src="img/c-1.jpg" alt=""><h3 style="margin-top:3mm"><span class="no">1</span>オリジナルデザイン</h3><p>業種・コンセプトに合わせて、完全オリジナルで制作します。</p></div>
+    <div class="card"><img class="ph" src="img/c-2.jpg" alt=""><h3 style="margin-top:3mm"><span class="no">2</span>基本ページの作成</h3><p>トップ・サービス・会社概要・お問い合わせなど、必要なページを作成します。</p></div>
+    <div class="card"><img class="ph" src="img/c-3.jpg" alt=""><h3 style="margin-top:3mm"><span class="no">3</span>スマホ・SEO対応</h3><p>スマホで見やすいレスポンシブ対応と、基本的なSEO設定を行います。</p></div>
+    <div class="card"><img class="ph" src="img/c-4.jpg" alt=""><h3 style="margin-top:3mm"><span class="no">4</span>写真・文章のサポート</h3><p>写真選びや撮影のアドバイス、文章づくりもサポートします。</p></div>
+  </div>
+  <p class="lead" style="margin-top:6mm">＋ 公開後も、更新サポート・保守・相談対応を月額の中でご用意しています（対象範囲はプランにより異なります）。</p>
+  <div class="foot"><img src="img/logo-mark.png" alt="EasyWebCraft"><span>3</span></div>
+</section>
+
+<!-- 4. 安いから品質が不安？ -->
+<section class="page">
+  <p class="en">QUALITY</p>
+  <h2>「安いから、<span class="r">しょぼいホームページ</span>になるのでは？」</h2>
+  <p class="lead">ご安心ください。<b class="g">ご契約の前に、あなたの事業のデザイン案を無料でお作りします。</b>実物を見て、納得してから決められます。</p>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr)">
+    <div class="card"><img class="ph" src="img/s-izakaya.jpg" alt=""><h3 style="margin-top:3mm">飲食店のデザイン例</h3><p>写真で世界観と料理の魅力を伝える</p></div>
+    <div class="card"><img class="ph" src="img/s-salon.jpg" alt=""><h3 style="margin-top:3mm">美容室・サロンのデザイン例</h3><p>清潔感と予約のしやすさを両立</p></div>
+    <div class="card"><img class="ph" src="img/s-gym.jpg" alt=""><h3 style="margin-top:3mm">パーソナルジムのデザイン例</h3><p>強みと信頼感をわかりやすく訴求</p></div>
+  </div>
+  <p class="note">※掲載しているのはデザイン例（サンプル）です。実際の制作は、お客様のご要望に合わせてオリジナルで制作します。</p>
+  <div class="foot"><img src="img/logo-mark.png" alt="EasyWebCraft"><span>4</span></div>
+</section>
+
+<!-- 5. 料金 -->
+<section class="page">
+  <p class="en">PRICE</p>
+  <h2><span class="g">料金プラン</span></h2>
+  <p class="lead">すべてのプランで <b class="g">初期費用0円</b> ／ 最低契約期間6ヶ月</p>
+  <table>
+    <thead><tr><th></th><th>EasyWeb LP</th><th class="reco">EasyWeb HP（おすすめ）</th><th>EasyWeb HP+</th></tr></thead>
+    <tbody>
+      <tr><th>月額（税別）</th><td><span class="price">5,980<small>円</small></span></td><td><span class="price">7,700<small>円</small></span></td><td><span class="price">9,800<small>円</small></span></td></tr>
+      <tr><th>月額（税込）</th><td>6,578円</td><td>8,470円</td><td>10,780円</td></tr>
+      <tr><th>ページ数</th><td>1ページ（トップのみ）</td><td>最大6ページ</td><td>6ページ以上（追加可能）</td></tr>
+      <tr><th>スマホ対応</th><td>○</td><td>○</td><td>○</td></tr>
+      <tr><th>お問い合わせフォーム</th><td>○</td><td>○</td><td>○</td></tr>
+      <tr><th>基本SEO設定</th><td>—</td><td>○</td><td>○</td></tr>
+      <tr><th>サーバー・SSL</th><td>○</td><td>○</td><td>○</td></tr>
+      <tr><th>アクセス解析</th><td>—</td><td>—</td><td>○</td></tr>
+      <tr><th>公開後の更新相談</th><td>メール</td><td>メール</td><td>メール・チャット</td></tr>
+    </tbody>
+  </table>
+  <p class="note">※修正回数・ドメイン費用・最低契約期間後の扱いなど詳しい条件は、ご契約前に書面でご説明します。</p>
+  <div class="foot"><img src="img/logo-mark.png" alt="EasyWebCraft"><span>5</span></div>
+</section>
+
+<!-- 6. 流れ・お申し込み -->
+<section class="page">
+  <p class="en">FLOW</p>
+  <h2><span class="g">無料デザイン案</span>の流れ</h2>
+  <p class="lead">最短7日でデザイン案をご提案します（公開までの日数は内容によりご相談時にご案内）。</p>
+  <div class="grid" style="grid-template-columns:repeat(5,1fr)">
+    <div class="card"><img class="ph" src="img/st-1.jpg" alt=""><h3 style="margin-top:3mm"><span class="no">1</span>お申し込み</h3><p>フォームから送信（最短1分）</p></div>
+    <div class="card"><img class="ph" src="img/st-2.jpg" alt=""><h3 style="margin-top:3mm"><span class="no">2</span>ヒアリング</h3><p>当日〜1営業日</p></div>
+    <div class="card"><img class="ph" src="img/st-3.jpg" alt=""><h3 style="margin-top:3mm"><span class="no">3</span>構成整理</h3><p>1〜2営業日</p></div>
+    <div class="card"><img class="ph" src="img/st-4.jpg" alt=""><h3 style="margin-top:3mm"><span class="no">4</span>デザイン案作成</h3><p>2〜4営業日</p></div>
+    <div class="card"><img class="ph" src="img/st-5.jpg" alt=""><h3 style="margin-top:3mm"><span class="no">5</span>ご提案・確認</h3><p>見てから契約を判断</p></div>
+  </div>
+  <div class="cta">
+    <div><b>トップページ1ページ分のデザイン案を無料でお作りします</b><p>見送られても費用は一切かかりません。お申し込みは下記のページのフォームから。</p></div>
+    <p style="margin-left:auto; font-size:11pt; color:#ffe08a; white-space:nowrap">easywebcraft.github.io/ewc-lp-challenge/</p>
+  </div>
+  <div class="foot"><span>運営：株式会社TAC　愛知県名古屋市守山区瀬古東1-1701 201</span><span>6</span></div>
+</section>
+
+</body>
+</html>

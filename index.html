@@ -455,6 +455,41 @@ footer a{color:#ddd}
 .samples-more{margin:12px 0 0; text-align:center; font-size:13px}
 .samples-more a{color:var(--gold-lt)}
 @media (min-width:700px){ .form .pair{grid-template-columns:1fr 1fr} }
+
+/* 副CTA（資料） */
+.sub-cta{display:block; width:max-content; max-width:100%; margin:12px auto 0; font-size:13px; font-weight:700; color:var(--gold-lt); text-decoration:underline; text-underline-offset:3px}
+.sp-br{display:none}
+@media (max-width:699px){ .sp-br{display:inline} .fv2-sp .sub-cta{margin-top:6px; font-size:12px} }
+/* 安いから…？ */
+.quality{background:radial-gradient(60% 60% at 50% 0%,rgba(215,20,26,.14),transparent 70%),var(--bg)}
+.q-ask{text-align:center}
+.q-bubble{position:relative; display:inline-block; background:#fff; color:#1b1712; border-radius:16px; padding:14px 22px; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.8vw,26px); line-height:1.5; box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.q-bubble b{color:#c4121a}
+.q-bubble::after{content:""; position:absolute; left:50%; bottom:-14px; transform:translateX(-50%); border:14px solid transparent; border-bottom:0; border-top-color:#fff}
+.q-pts{display:grid; gap:10px; max-width:980px; margin:0 auto}
+@media (min-width:700px){ .q-pts{grid-template-columns:repeat(3,1fr)} }
+.q-pt{border:1px solid var(--line); border-radius:12px; background:rgba(0,0,0,.5); padding:16px; display:grid; gap:4px}
+.q-pt .no{margin-bottom:4px; justify-self:start; width:34px}
+.q-pt b{font-family:var(--serif); font-weight:900; color:var(--gold-lt); font-size:17px}
+.q-pt span:last-child{font-size:13.5px; color:#e8e2d5}
+/* 資料DL */
+.doc-box{display:grid; gap:18px; align-items:center; border:1px solid var(--line); border-radius:14px; background:rgba(0,0,0,.5); padding:18px; max-width:1000px; margin:0 auto}
+@media (min-width:700px){ .doc-box{grid-template-columns:.9fr 1.1fr; padding:26px} }
+.doc-img img{width:100%; height:auto; border-radius:8px; border:1px solid var(--line2); box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.doc-en{margin:0; font-family:var(--num); letter-spacing:.3em; color:var(--gold); font-size:12px}
+.doc-txt h2{margin:4px 0 8px; font-family:var(--serif); font-weight:900; font-size:clamp(22px,5.6vw,32px); line-height:1.3}
+.doc-txt > p{margin:0 0 14px; font-size:14px}
+.dform{display:grid; gap:10px}
+.dform label{display:grid; gap:4px; font-weight:800; font-size:13px}
+.dform input{width:100%; border:1px solid #cfc6b4; border-radius:8px; padding:11px; font-size:16px; font-family:inherit; background:#fff; color:#1b1712}
+.dform input:focus-visible{outline:3px solid var(--gold); outline-offset:1px}
+.dform .opt{color:var(--muted)}
+.btn-gold2{display:block; text-align:center; text-decoration:none; border:0; cursor:pointer; font-family:inherit; font-weight:900; font-size:17px; color:#1a1200; background:linear-gradient(180deg,#fff0a8,#e3b43a 55%,#b88400); border-radius:999px; padding:13px 16px; box-shadow:0 8px 22px rgba(227,180,58,.35)}
+.btn-gold2:focus-visible{outline:3px solid #fff; outline-offset:3px}
+.d-note{margin:0; font-size:12px; color:var(--muted); text-align:center}
+.d-note a{color:var(--gold-lt)}
+.d-done{display:grid; gap:10px}
+.d-done p{margin:0}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -478,7 +513,7 @@ footer a{color:#ddd}
     <button class="menu-btn" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
   </div>
   <nav class="mnav" id="mnav" aria-label="メニュー">
-    <a href="#can">サービスの特徴</a><a href="#works">制作実績</a><a href="#plans">料金プラン</a><a href="#flow">ご利用の流れ</a><a href="#faq">よくある質問</a>
+    <a href="#can">サービスの特徴</a><a href="#works">制作実績</a><a href="#plans">料金プラン</a><a href="#flow">ご利用の流れ</a><a href="#faq">よくある質問</a><a href="#doc">資料ダウンロード</a>
   </nav>
 </header>
 
@@ -501,6 +536,7 @@ footer a{color:#ddd}
       </ul>
       <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a>
       <p class="fv2-note">トップページ1ページ分を無料提案。デザインを見てから契約判断OK。</p>
+      <a class="sub-cta" href="#doc">まだ検討中の方は、まずは資料を見る（無料）→</a>
       <p class="fine">※税別（税込6,578円〜）・最低契約期間6ヶ月</p>
     </div>
   </div>
@@ -525,6 +561,7 @@ footer a{color:#ddd}
     <div class="cta-block">
       <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a>
       <ul class="checks"><li>トップページ1ページ分を無料提案</li><li>デザインを見てから契約判断OK</li><li>開業前の相談もOK</li></ul>
+      <a class="sub-cta" href="#doc">まだ検討中の方は、まずは資料を見る（無料）→</a>
     </div>
   </div>
 </section>
@@ -634,8 +671,28 @@ footer a{color:#ddd}
       </table>
     </div>
     <p class="plan-msg">プランに迷う場合も、事業内容に合わせて<em>最適な構成</em>をご提案します。</p>
-    <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a></div>
+    <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a><a class="sub-cta" href="#doc">まだ検討中の方は、まずは資料を見る（無料）→</a></div>
     <p class="fine">※表示価格は税別です。詳しい条件は<a href="https://easywebcraft.github.io/easyweb-lp/tokushoho.html">特定商取引法に基づく表記</a>をご覧ください。</p>
+  </div>
+</section>
+
+<!-- ⑥-2 「安いから、しょぼいのでは？」への答え -->
+<section id="quality" class="quality">
+  <div class="wrap">
+    <div class="q-ask"><span class="q-bubble">でも、安いから<br><b>しょぼいホームページ</b>に<br class="sp-br">なるんじゃないの？</span></div>
+    <div class="sec-h" style="margin-top:22px">
+      <h2><span>ご安心ください。<br><span class="g">デザイン案を無料で</span>作ります</span></h2>
+      <p>ご契約の前に、あなたの事業のトップページのデザイン案を無料でお作りします。<br>実物を見て、<em>納得してから</em>決めてください。</p>
+    </div>
+    <div class="q-pts">
+      <div class="q-pt"><span class="no">1</span><b>テンプレートではなく、オリジナル</b><span>業種やコンセプトに合わせて、1からデザインします。</span></div>
+      <div class="q-pt"><span class="no">2</span><b>仕上がりは、先に目で見て確認</b><span>「思っていたのと違う」を契約前に防げます。</span></div>
+      <div class="q-pt"><span class="no">3</span><b>気に入らなければ、費用は0円</b><span>デザイン案を見て見送られても、費用は一切かかりません。</span></div>
+    </div>
+    <div class="cta-block">
+      <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a>
+      <a class="sub-cta" href="#doc">まだ検討中の方は、まずは資料を見る（無料）→</a>
+    </div>
   </div>
 </section>
 
@@ -662,6 +719,33 @@ footer a{color:#ddd}
     </div>
     <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a></div>
     <p class="fine">※「最短7日」は無料デザイン案をご提案するまでの目安です。ご契約後、ホームページ公開までの日数はページ数や内容によって異なるため、ご相談時にご案内します。<br>※ご提案内容はヒアリング内容に応じて異なります。※混雑状況により日数が前後する場合があります。</p>
+  </div>
+</section>
+
+<!-- 資料ダウンロード（まだ検討中の方向け） -->
+<section id="doc" class="docdl">
+  <div class="wrap">
+    <div class="doc-box">
+      <div class="doc-img"><img src="doc/img/fv-pc.jpg" alt="EasyWebCraft サービス資料の表紙" width="1600" height="841" loading="lazy"></div>
+      <div class="doc-txt">
+        <p class="doc-en">DOCUMENT</p>
+        <h2>まずは資料で<br class="sp-br"><span class="g">検討したい方へ</span></h2>
+        <p>サービス内容・料金・デザイン例・無料デザイン案の流れを、6ページの資料にまとめました（PDF）。</p>
+        <form class="dform" id="dform" action="https://formspree.io/f/maqkzjek" method="POST">
+          <input type="hidden" name="_subject" value="【EasyWebCraft 挑戦LP】資料ダウンロード">
+          <label>メールアドレス<input type="email" name="email" id="d-email" required autocomplete="email" inputmode="email" placeholder="例：info@example.com"></label>
+          <label>お名前 <span class="opt">（任意）</span><input type="text" name="name" autocomplete="name" placeholder="例：山田 太郎"></label>
+          <button class="btn-gold2" type="submit">無料で資料をダウンロード</button>
+          <p class="d-note">送信いただいた内容は<a href="https://easywebcraft.github.io/easyweb-lp/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に基づいて取り扱います。</p>
+          <p class="form-err" id="d-err" hidden></p>
+        </form>
+        <div class="d-done" id="d-done" hidden>
+          <p><b>ありがとうございます。</b>下のボタンから資料をご覧いただけます。</p>
+          <a class="btn-gold2" href="doc/ewc-guide.pdf" target="_blank" rel="noopener">資料（PDF）を開く</a>
+          <p class="d-note">デザイン案の無料作成もお気軽に<a href="#contact">お申し込みください</a>。</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -770,8 +854,22 @@ footer a{color:#ddd}
     es.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
     bar.classList.toggle('off', seen.size > 0);
   }, { threshold: 0.01 });
-  [document.querySelector('.fv2'), document.getElementById('contact')].forEach(function (el) { if (el) io.observe(el); });
+  [document.querySelector('.fv2'), document.getElementById('contact'), document.getElementById('doc')].forEach(function (el) { if (el) io.observe(el); });
 })();
+
+// 資料ダウンロード：送信できたらPDFのボタンを出して、新しいタブで開く
+document.getElementById('dform').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.target, btn = f.querySelector('button'), err = document.getElementById('d-err');
+  err.hidden = true; btn.disabled = true; btn.textContent = '送信中…';
+  fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+    .then(function (res) {
+      if (!res.ok) throw new Error('send failed');
+      f.hidden = true; document.getElementById('d-done').hidden = false;
+      window.open('doc/ewc-guide.pdf', '_blank', 'noopener');
+    })
+    .catch(function () { btn.disabled = false; btn.textContent = '無料で資料をダウンロード'; err.textContent = '送信できませんでした。お手数ですが、時間をおいて再度お試しください。'; err.hidden = false; });
+});
 // フォーム送信
 document.getElementById('cform').addEventListener('submit', function (e) {
   e.preventDefault();
