@@ -489,7 +489,44 @@ footer a{color:#ddd}
 .d-note{margin:0; font-size:12px; color:var(--muted); text-align:center}
 .d-note a{color:var(--gold-lt)}
 .d-done{display:grid; gap:10px}
+.d-done[hidden],.dform[hidden]{display:none}
 .d-done p{margin:0}
+
+/* 2つの選択肢 */
+.choose2{margin-top:36px}
+.c2-h{margin:0 0 14px; text-align:center; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.6vw,24px)}
+.c2-grid{display:grid; gap:12px; max-width:900px; margin:0 auto}
+@media (min-width:700px){ .c2-grid{grid-template-columns:1.25fr 1fr; align-items:stretch} }
+.c2{display:grid; gap:6px; text-decoration:none; border-radius:14px; padding:18px}
+.c2 b{font-family:var(--serif); font-weight:900; font-size:18px}
+.c2 span{font-size:13px}
+.c2 em{font-style:normal; font-weight:900; margin-top:4px}
+.c2.main{background:linear-gradient(180deg,#ff3a40,#c10d13 55%,#8e070b); border:2px solid #ff8b8e; color:#fff; box-shadow:0 10px 30px rgba(215,20,26,.4)}
+.c2.main em{color:#fff4c2; font-size:19px}
+.c2.sub{background:rgba(0,0,0,.5); border:1px solid var(--line); color:var(--ink)}
+.c2.sub b{color:var(--gold-lt)}
+.c2.sub em{color:var(--gold-lt); font-size:15px}
+.c2:focus-visible{outline:3px solid var(--gold-lt); outline-offset:3px}
+/* メリット（⑦冒頭） */
+.merit{max-width:860px; margin:0 auto 26px; text-align:center; border:1px solid var(--line); border-radius:14px; background:rgba(0,0,0,.45); padding:20px 16px}
+.m-q{margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.6vw,24px); color:var(--gold-lt)}
+.m-a{margin:8px 0 12px; font-size:14px}
+.m-list{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; font-weight:800; font-size:14px}
+.m-list li::before{content:"✓ "; color:var(--gold)}
+.flow-sub{margin:0 0 14px; text-align:center; font-weight:800; font-size:15px}
+.after{max-width:860px; margin:26px auto 0; border-top:1px solid var(--line2); padding-top:18px}
+.after-h{margin:0 0 10px; text-align:center; font-weight:900; font-size:16px; color:var(--gold-lt)}
+.after-list{list-style:none; margin:0; padding:0; display:grid; gap:8px; counter-reset:a}
+@media (min-width:700px){ .after-list{grid-template-columns:repeat(4,1fr)} }
+.after-list li{counter-increment:a; background:rgba(0,0,0,.45); border:1px solid var(--line2); border-radius:10px; padding:10px 12px; font-size:12.5px; color:#e8e2d5}
+.after-list b{display:block; color:#fff; font-size:15px}
+.after-list b::before{content:counter(a) ". "; color:var(--gold)}
+/* 資料プレビュー */
+.doc-prev .cover{width:100%; height:auto; border-radius:8px; border:1px solid var(--line2); box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.doc-prev .thumbs{display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:6px}
+.doc-prev .thumbs img{width:100%; height:auto; border-radius:4px; border:1px solid var(--line2)}
+.doc-list{list-style:none; margin:0 0 14px; padding:0; display:grid; gap:4px; font-size:13.5px}
+.doc-list li::before{content:"✓ "; color:var(--gold); font-weight:900}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -507,13 +544,13 @@ footer a{color:#ddd}
   <div class="top-in">
     <a class="logo" href="#top" aria-label="EasyWebCraft ページの先頭へ"><img src="img/logo-mark.webp" alt="EasyWebCraft" width="640" height="69"></a>
     <nav class="gnav" aria-label="ページ内メニュー">
-      <a href="#can">サービスの特徴</a><a href="#works">制作実績</a><a href="#plans">料金プラン</a><a href="#flow">ご利用の流れ</a><a href="#faq">よくある質問</a>
+      <a href="#can">サービスの特徴</a><a href="#samples">制作サンプル</a><a href="#plans">料金プラン</a><a href="#flow">ご利用の流れ</a><a href="#faq">よくある質問</a>
     </nav>
     <a class="cta" href="#contact">無料デザイン案をもらう →</a>
     <button class="menu-btn" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
   </div>
   <nav class="mnav" id="mnav" aria-label="メニュー">
-    <a href="#can">サービスの特徴</a><a href="#works">制作実績</a><a href="#plans">料金プラン</a><a href="#flow">ご利用の流れ</a><a href="#faq">よくある質問</a><a href="#doc">資料ダウンロード</a>
+    <a href="#can">サービスの特徴</a><a href="#samples">制作サンプル</a><a href="#plans">料金プラン</a><a href="#flow">ご利用の流れ</a><a href="#faq">よくある質問</a><a href="#doc">資料ダウンロード</a>
   </nav>
 </header>
 
@@ -536,7 +573,6 @@ footer a{color:#ddd}
       </ul>
       <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a>
       <p class="fv2-note">トップページ1ページ分を無料提案。デザインを見てから契約判断OK。</p>
-      <a class="sub-cta" href="#doc">まだ検討中の方は、まずは資料を見る（無料）→</a>
       <p class="fine">※税別（税込6,578円〜）・最低契約期間6ヶ月</p>
     </div>
   </div>
@@ -561,7 +597,14 @@ footer a{color:#ddd}
     <div class="cta-block">
       <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a>
       <ul class="checks"><li>トップページ1ページ分を無料提案</li><li>デザインを見てから契約判断OK</li><li>開業前の相談もOK</li></ul>
-      <a class="sub-cta" href="#doc">まだ検討中の方は、まずは資料を見る（無料）→</a>
+    </div>
+    <p class="note">※掲載しているのはサンプルデザインです。実際の制作実績・お客様の声は、公開の許可をいただけしだい掲載します。</p>
+    <div class="choose2">
+      <p class="c2-h">あなたに合った方法で、まずは一歩。</p>
+      <div class="c2-grid">
+        <a class="c2 main" href="#contact"><b>あなたの事業のデザイン案を無料で</b><span>実際の仕上がりを見てから、契約するか判断できます。</span><em>無料デザイン案を申し込む →</em></a>
+        <a class="c2 sub" href="#doc"><b>料金・デザイン例をまとめて確認</b><span>サービス内容が分かる6ページのPDF資料をお届けします。</span><em>無料資料をダウンロード →</em></a>
+      </div>
     </div>
   </div>
 </section>
@@ -613,26 +656,6 @@ footer a{color:#ddd}
   </div>
 </section>
 
-<!-- ⑤ 制作事例 -->
-<section id="works">
-  <div class="wrap">
-    <div class="sec-h">
-      <h2><span><span class="g">制作事例</span>・お客様の声</span></h2>
-      <p>ご依頼から公開まで、どのように進めるかをご紹介します。</p>
-    </div>
-    <p class="samples-more">※現在はサンプルデザインのみ掲載しています。業種別のデザイン例は<a href="#samples">制作デザインサンプル</a>をご覧ください。<br>実際の制作実績・お客様の声は、公開の許可をいただけしだい掲載します。</p>
-    <div class="flow-h"><h3 class="g">制作の流れ</h3><p>ご依頼から公開まで、担当者がしっかりサポートします。</p></div>
-    <ol class="flow5">
-      <li><div class="hd"><span class="no">01</span><h4>ヒアリング</h4></div><img src="img/v3/f-1.webp" alt="" width="600" height="173" loading="lazy"><p>ご要望や目的、イメージを詳しくお伺いし、最適なプランをご提案します。</p></li>
-      <li><div class="hd"><span class="no">02</span><h4>構成・設計</h4></div><img src="img/v3/f-2.webp" alt="" width="600" height="180" loading="lazy"><p>ヒアリング内容をもとに、サイトの構成・ページ設計を行います。</p></li>
-      <li><div class="hd"><span class="no">03</span><h4>デザイン案</h4></div><img src="img/v3/f-3.webp" alt="" width="600" height="180" loading="lazy"><p>ご希望に沿ったデザイン案を作成し、実際のイメージをご確認いただきます。</p></li>
-      <li><div class="hd"><span class="no">04</span><h4>修正・確認</h4></div><img src="img/v3/f-4.webp" alt="" width="600" height="180" loading="lazy"><p>ご確認いただいた内容をもとに修正を行い、仕上げていきます。</p></li>
-      <li><div class="hd"><span class="no">05</span><h4>公開・運用開始</h4></div><img src="img/v3/f-5.webp" alt="" width="600" height="175" loading="lazy"><p>最終確認後、ホームページを公開。公開後の運用・更新もサポートいたします。</p></li>
-    </ol>
-    <p class="note">※実際の制作は、お客様のご要望に合わせてオリジナルで制作いたします。</p>
-  </div>
-</section>
-
 <!-- ⑥ 料金プランとサービス比較 -->
 <section id="plans">
   <div class="wrap">
@@ -676,33 +699,18 @@ footer a{color:#ddd}
   </div>
 </section>
 
-<!-- ⑥-2 「安いから、しょぼいのでは？」への答え -->
-<section id="quality" class="quality">
-  <div class="wrap">
-    <div class="q-ask"><span class="q-bubble">でも、安いから<br><b>しょぼいホームページ</b>に<br class="sp-br">なるんじゃないの？</span></div>
-    <div class="sec-h" style="margin-top:22px">
-      <h2><span>ご安心ください。<br><span class="g">デザイン案を無料で</span>作ります</span></h2>
-      <p>ご契約の前に、あなたの事業のトップページのデザイン案を無料でお作りします。<br>実物を見て、<em>納得してから</em>決めてください。</p>
-    </div>
-    <div class="q-pts">
-      <div class="q-pt"><span class="no">1</span><b>テンプレートではなく、オリジナル</b><span>業種やコンセプトに合わせて、1からデザインします。</span></div>
-      <div class="q-pt"><span class="no">2</span><b>仕上がりは、先に目で見て確認</b><span>「思っていたのと違う」を契約前に防げます。</span></div>
-      <div class="q-pt"><span class="no">3</span><b>気に入らなければ、費用は0円</b><span>デザイン案を見て見送られても、費用は一切かかりません。</span></div>
-    </div>
-    <div class="cta-block">
-      <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a>
-      <a class="sub-cta" href="#doc">まだ検討中の方は、まずは資料を見る（無料）→</a>
-    </div>
-  </div>
-</section>
-
 <!-- ⑦ 無料デザイン案の制作の流れ -->
 <section id="flow">
   <div class="wrap">
     <div class="sec-h">
-      <h2><span><span class="g">無料デザイン案</span>の制作の流れ</span></h2>
-      <p>お申し込みからご提案まで、わかりやすい流れでスムーズに進みます。</p>
+      <h2><span><span class="g">無料デザイン案</span>のメリットと流れ</span></h2>
     </div>
+    <div class="merit">
+      <p class="m-q">この価格で、どんなホームページができるの？</p>
+      <p class="m-a">ご契約前に、あなたの事業に合わせたトップページのデザイン案を無料で制作します。<br>仕上がりのイメージを確認してから、ご判断いただけます。</p>
+      <ul class="m-list"><li>業種・事業内容に合わせたオリジナルデザイン</li><li>PC・スマホ両方のデザインイメージ</li><li>見送った場合も費用0円</li></ul>
+    </div>
+    <p class="flow-sub">お申し込みからご提案までの流れ</p>
     <p class="tops"><span>最短<b>7日</b>でデザイン案をご提案</span><span>開業前・準備中の方もご相談OK</span></p>
     <ol class="steps">
       <li class="step"><div class="hd"><span class="sn"><small>STEP</small><b>01</b></span><h3>お申し込み<small>フォームから送信</small></h3></div><div class="ph"><img src="img/v3/st-1.webp" alt="" width="760" height="439" loading="lazy"><span class="time">最短1分</span></div><p>お問い合わせフォームから、業種・ご希望内容をお送りください。</p></li>
@@ -719,6 +727,10 @@ footer a{color:#ddd}
     </div>
     <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a></div>
     <p class="fine">※「最短7日」は無料デザイン案をご提案するまでの目安です。ご契約後、ホームページ公開までの日数はページ数や内容によって異なるため、ご相談時にご案内します。<br>※ご提案内容はヒアリング内容に応じて異なります。※混雑状況により日数が前後する場合があります。</p>
+    <div class="after">
+      <p class="after-h">ご契約後の流れ</p>
+      <ol class="after-list"><li><b>ご契約</b>内容と料金にご納得いただいてから</li><li><b>制作</b>文章・写真の準備もサポート</li><li><b>修正・確認</b>実際の画面で確認して仕上げ</li><li><b>公開・運用開始</b>公開後の更新・保守も月額で</li></ol>
+    </div>
   </div>
 </section>
 
@@ -726,17 +738,21 @@ footer a{color:#ddd}
 <section id="doc" class="docdl">
   <div class="wrap">
     <div class="doc-box">
-      <div class="doc-img"><img src="doc/img/fv-pc.jpg" alt="EasyWebCraft サービス資料の表紙" width="1600" height="841" loading="lazy"></div>
+      <div class="doc-prev">
+        <img class="cover" src="doc/img/p1.jpg" alt="資料の表紙" width="560" height="396" loading="lazy">
+        <div class="thumbs"><img src="doc/img/p4.jpg" alt="資料の中身：デザイン例" width="560" height="396" loading="lazy"><img src="doc/img/p5.jpg" alt="資料の中身：料金プラン" width="560" height="396" loading="lazy"><img src="doc/img/p6.jpg" alt="資料の中身：無料デザイン案の流れ" width="560" height="396" loading="lazy"></div>
+      </div>
       <div class="doc-txt">
-        <p class="doc-en">DOCUMENT</p>
-        <h2>まずは資料で<br class="sp-br"><span class="g">検討したい方へ</span></h2>
-        <p>サービス内容・料金・デザイン例・無料デザイン案の流れを、6ページの資料にまとめました（PDF）。</p>
+        <p class="doc-en">FREE GUIDE</p>
+        <h2>ホームページ制作が分かる<br><span class="g">無料ガイド</span></h2>
+        <p>制作デザイン・料金・無料提案の流れを、6ページにまとめました（PDF）。</p>
+        <ul class="doc-list"><li>起業・開業時によくあるお悩み</li><li>できること・公開後のサポート</li><li>業種別のデザイン例</li><li>料金プランと比較表</li><li>無料デザイン案の流れと目安日数</li></ul>
         <form class="dform" id="dform" action="https://formspree.io/f/maqkzjek" method="POST">
           <input type="hidden" name="_subject" value="【EasyWebCraft 挑戦LP】資料ダウンロード">
           <label>メールアドレス<input type="email" name="email" id="d-email" required autocomplete="email" inputmode="email" placeholder="例：info@example.com"></label>
           <label>お名前 <span class="opt">（任意）</span><input type="text" name="name" autocomplete="name" placeholder="例：山田 太郎"></label>
-          <button class="btn-gold2" type="submit">無料で資料をダウンロード</button>
-          <p class="d-note">送信いただいた内容は<a href="https://easywebcraft.github.io/easyweb-lp/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に基づいて取り扱います。</p>
+          <button class="btn-gold2" type="submit">無料で資料を受け取る →</button>
+          <p class="d-note">送信後、すぐにこの画面から資料をダウンロードできます。<br>ご入力のメールアドレスに、サービスのご案内をお送りする場合があります。<br>送信いただいた内容は<a href="https://easywebcraft.github.io/easyweb-lp/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に基づいて取り扱います。</p>
           <p class="form-err" id="d-err" hidden></p>
         </form>
         <div class="d-done" id="d-done" hidden>
