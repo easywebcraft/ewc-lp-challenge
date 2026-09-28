@@ -974,6 +974,30 @@ footer a{color:#ddd}
   .fv3-brand img{width:min(58%,250px)}
 }
 @media (min-width:1200px){ .fv3-terms + .fv3-use{font-size:26px} }
+
+/* 料金カード：用途を見出しに */
+.plan .use{margin:0 0 6px; font-family:var(--serif); font-weight:900; font-size:21px; line-height:1.35; color:#fff}
+.plan h3{font-size:22px}
+.plan .for{font-size:13px}
+@media (max-width:699px){
+  .plan .use{font-size:17px; padding-right:0}
+  .plan h3{font-size:19px}
+  .plan .for{font-size:11px; white-space:normal; border-radius:10px}
+  .plan.reco .use{padding-right:64px}
+}
+
+@media (max-width:699px){
+  .plan > .use{grid-column:1 / -1; font-size:18px; white-space:nowrap}
+  .plan.reco .use{padding-right:0; padding-top:18px}
+}
+
+@media (max-width:699px){
+  .plan img{grid-row:2 / span 3}
+  .plan > .use{grid-row:1}
+  .plan.reco .for{grid-column:1 / -1 !important; grid-row:5; justify-self:start; margin-top:8px; font-size:12px; white-space:nowrap}
+  .plan.reco ul{grid-row:6}
+}
+@media (min-width:700px){ .plan.reco .use{padding-right:0; margin-top:20px} .plan .use{white-space:nowrap} }
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -1111,15 +1135,15 @@ footer a{color:#ddd}
     </div>
     <p class="all">すべてのプランで <b>初期費用0円</b> ／ <b>最低契約期間6ヶ月</b></p>
     <div class="plans">
-      <article class="plan"><h3 class="g">EasyWeb LP</h3><span class="for">まず1ページで始めたい方向け</span>
+      <article class="plan"><p class="use">まず名刺代わりのHPが欲しい</p><h3 class="g">EasyWeb LP</h3>
         <p class="p g">5,980<small>円/月</small></p><p class="taxin"><span class="tx">（税別）</span>税込 6,578円/月</p>
         <img src="img/v3/p-lp.webp" alt="" width="1100" height="526" loading="lazy">
         <ul><li>トップページ1P</li><li>スマホ対応</li><li>お問い合わせフォーム</li><li>サーバー・SSL込み</li></ul></article>
-      <article class="plan reco"><span class="ribbon">おすすめ</span><h3 class="g">EasyWeb HP</h3><span class="for">6ページまで対応</span>
+      <article class="plan reco"><span class="ribbon">おすすめ</span><p class="use">会社としてしっかり見せたい</p><h3 class="g">EasyWeb HP</h3><span class="for">会社サイトとして必要なページが一通り揃う</span>
         <p class="p g">7,700<small>円/月</small></p><p class="taxin"><span class="tx">（税別）</span>税込 8,470円/月</p>
         <img src="img/v3/p-hp.webp" alt="" width="1100" height="492" loading="lazy">
         <ul><li>トップ＋下層5P</li><li>スマホ対応</li><li>基本SEO設定</li><li>お問い合わせフォーム</li><li>サーバー・SSL込み</li></ul></article>
-      <article class="plan"><h3 class="g">EasyWeb HP+</h3><span class="for">ページを増やしたい方向け</span>
+      <article class="plan"><p class="use">集客・採用まで活用したい</p><h3 class="g">EasyWeb HP+</h3>
         <p class="p g">9,800<small>円/月</small></p><p class="taxin"><span class="tx">（税別）</span>税込 10,780円/月</p>
         <img src="img/v3/p-hpp.webp" alt="" width="1100" height="563" loading="lazy">
         <ul><li>さらに下層ページ追加</li><li>スマホ対応</li><li>アクセス解析設定</li><li>基本SEO設定</li><li>サーバー・SSL込み</li></ul></article>
