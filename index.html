@@ -692,6 +692,46 @@ footer a{color:#ddd}
   .fv3-h .c em{filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 5px 0 #3a0000) drop-shadow(0 8px 14px rgba(0,0,0,.9))}
   .fv3-sub{border-left:3px solid var(--gold); padding-left:14px}
 }
+
+/* ===== FV v3 文字を大きく ===== */
+.fv3-for{font-size:15px}
+.fv3-h .p small{font-size:26px}
+.fv3-h .p b{font-size:76px; line-height:1}
+.fv3-h .c{font-size:22px; line-height:1.25; margin-top:6px}
+.fv3-h .c em{font-size:1.5em; letter-spacing:.02em}
+.fv3-sub{font-size:14.5px}
+@media (max-width:699px){
+  .fv3-in{padding-top:calc(max(128px, var(--fvh, 664px) - 580px))}
+  .fv3-h::before{top:0; height:48%}
+}
+@media (max-width:699px) and (max-height:600px){
+  .fv3-h .p b{font-size:62px}
+  .fv3-h .c em{font-size:1.35em}
+}
+@media (min-width:700px){
+  .fv3-in > *{max-width:860px}
+  .fv3-for{font-size:27px; padding:14px 46px 15px}
+  .fv3-h{margin-top:14px}
+  .fv3-h .p small{font-size:46px}
+  .fv3-h .p b{font-size:150px}
+  .fv3-h .c{font-size:44px; margin-top:8px}
+  .fv3-h .c em{font-size:1.28em}
+  .fv3-sub{font-size:23px; margin-top:18px}
+  .fv3-name{font-size:16px}
+  .fv3-name b{font-size:22px}
+}
+@media (min-width:700px) and (max-width:1199px){
+  .fv3-h .p b{font-size:112px}
+  .fv3-h .c{font-size:32px}
+  .fv3-for{font-size:21px}
+}
+
+@media (max-width:699px){
+  .fv3-for{font-size:13px; white-space:nowrap; padding:8px 20px 9px}
+  .fv3-in{padding-top:calc(max(150px, var(--fvh, 664px) - 560px))}
+}
+@media (max-width:389px){ .fv3-sub{font-size:13px} .fv3-for{font-size:12.5px; padding:8px 14px 9px} }
+@media (min-width:700px){ .fv3-cta{max-width:640px} .fv3-b{max-width:640px} }
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -728,8 +768,8 @@ footer a{color:#ddd}
     <img src="img/v3/bg-sp.webp" alt="" width="1242" height="2207" fetchpriority="high">
   </picture>
   <div class="fv3-in">
-    <p class="fv3-for">独立したてで、<br class="sp-br">ホームページを検討中の<b>経営者様へ</b></p>
-    <h1 class="fv3-h"><span class="p"><small>月額</small><b class="num">5,980</b><small>円〜</small></span><span class="c">7ヶ月目から<em>いつでも解約OK</em></span></h1>
+    <p class="fv3-for">独立したてで、ホームページを検討中の<b>経営者様へ</b></p>
+    <h1 class="fv3-h"><span class="p"><small>月額</small><b class="num">5,980</b><small>円〜</small></span><span class="c">7ヶ月目から<br class="sp-br"><em>いつでも解約OK</em></span></h1>
     <p class="fv3-sub"><em>集客・求人・ブランディング</em>に使えるホームページを、<br>制作から更新まで<em>まるごとサポート</em>。</p>
     <p class="fv3-name">月額制ホームページ制作サービス<b>EasyWebCraft</b></p>
     <ul class="badges fv3-b">
