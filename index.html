@@ -749,6 +749,30 @@ footer a{color:#ddd}
   .fv3-for em,.fv3-for b{font-size:1.25em}
 }
 @media (min-width:700px) and (max-width:1199px){ .fv3-for{font-size:22px} }
+
+/* ===== FV v3 用途の行 ===== */
+.fv3-use{margin:12px 0 0; font-family:var(--serif); font-weight:900; font-size:20px; line-height:1.35; color:#fff; text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000, 0 3px 10px rgba(0,0,0,.95)}
+.fv3-use em{font-style:normal; background:linear-gradient(180deg,#fffbe6,#ffe38a 45%,#f0c24a 70%,#fff0a8); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:none; filter:drop-shadow(0 2px 0 #2a1800) drop-shadow(0 0 1px #000)}
+.fv3-use + .fv3-h{margin-top:2px}
+@media (max-width:699px){
+  .fv3-in{padding-top:calc(max(118px, var(--fvh, 664px) - 600px))}
+}
+@media (max-width:389px){ .fv3-use{font-size:18px; margin-top:8px} }
+@media (min-width:700px){
+  .fv3-use{font-size:36px; margin-top:18px; white-space:nowrap}
+  .fv3-sub{font-size:24px}
+}
+@media (min-width:700px) and (max-width:1199px){ .fv3-use{font-size:26px} }
+
+@media (min-width:700px){
+  .fv3-in{padding-top:28px; padding-bottom:28px}
+  .fv3-use{margin-top:12px}
+  .fv3-h .p b{font-size:140px}
+  .fv3-h .c{margin-top:0}
+  .fv3-sub{margin-top:10px}
+  .fv3-name{margin-top:6px}
+  .fv3-b{margin:14px 0 14px}
+}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -786,8 +810,9 @@ footer a{color:#ddd}
   </picture>
   <div class="fv3-in">
     <p class="fv3-for"><span class="l1"><em>独立したて</em>で、ホームページを検討中の</span><b>経営者様へ</b></p>
+    <p class="fv3-use"><em>集客・求人・ブランディング</em>に<br class="sp-br">使えるホームページを</p>
     <h1 class="fv3-h"><span class="p"><small>月額</small><b class="num">5,980</b><small>円〜</small></span><span class="c">7ヶ月目から<br class="sp-br"><em>いつでも解約OK</em></span></h1>
-    <p class="fv3-sub"><em>集客・求人・ブランディング</em>に使えるホームページを、<br>制作から更新まで<em>まるごとサポート</em>。</p>
+    <p class="fv3-sub">制作から更新まで<em>まるごとサポート</em>。</p>
     <p class="fv3-name">月額制ホームページ制作サービス<b>EasyWebCraft</b></p>
     <ul class="badges fv3-b">
       <li><small>初期費用</small><b class="g">0<i>円</i></b></li>
