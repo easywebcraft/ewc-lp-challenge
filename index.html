@@ -820,6 +820,24 @@ footer a{color:#ddd}
   .fv3-name{margin-top:2px}
   .fv3-cta{margin-top:8px}
 }
+
+/* ===== FV v3 文字を前面に ===== */
+.fv3::before{background:linear-gradient(180deg,rgba(5,5,5,0) 14%,rgba(5,5,5,.72) 30%,rgba(5,5,5,.9) 42%,#050505 62%)}
+.fv3-h::before{opacity:.3}
+.fv3-for{filter:drop-shadow(0 4px 10px rgba(0,0,0,.8))}
+.fv3-for .l1{text-shadow:2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000,1.5px 1.5px 0 #000,-1.5px -1.5px 0 #000,1.5px -1.5px 0 #000,-1.5px 1.5px 0 #000, 0 3px 8px rgba(0,0,0,.9)}
+.fv3-use{text-shadow:2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000,1.5px 1.5px 0 #000,-1.5px -1.5px 0 #000,1.5px -1.5px 0 #000,-1.5px 1.5px 0 #000, 0 4px 12px rgba(0,0,0,1)}
+.fv3-use em,.fv3-for em,.fv3-for b{filter:drop-shadow(1.5px 0 0 #1a0e00) drop-shadow(-1.5px 0 0 #1a0e00) drop-shadow(0 1.5px 0 #1a0e00) drop-shadow(0 -1.5px 0 #1a0e00) drop-shadow(0 3px 0 #000) drop-shadow(0 0 10px rgba(255,200,70,.35))}
+.fv3-h .p{text-shadow:2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000,1.5px 1.5px 0 #000,-1.5px -1.5px 0 #000,1.5px -1.5px 0 #000,-1.5px 1.5px 0 #000, 0 6px 14px rgba(0,0,0,1)}
+.fv3-h .p b{filter:drop-shadow(2px 0 0 #1a0e00) drop-shadow(-2px 0 0 #1a0e00) drop-shadow(0 2px 0 #1a0e00) drop-shadow(0 -2px 0 #1a0e00) drop-shadow(0 5px 0 #3a2400) drop-shadow(0 0 22px rgba(255,196,60,.55))}
+.fv3-h .c{text-shadow:2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000,1.5px 1.5px 0 #000,-1.5px -1.5px 0 #000,1.5px -1.5px 0 #000,-1.5px 1.5px 0 #000, 0 4px 12px rgba(0,0,0,1)}
+.fv3-h .c em{filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 4px 0 #2a0000) drop-shadow(0 0 18px rgba(255,40,40,.55))}
+.fv3-sub{text-shadow:2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000,1.5px 1.5px 0 #000,-1.5px -1.5px 0 #000,1.5px -1.5px 0 #000,-1.5px 1.5px 0 #000, 0 3px 8px rgba(0,0,0,1)}
+@media (min-width:700px){
+  .fv3::before{background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.97) 42%,rgba(5,5,5,.82) 56%,rgba(5,5,5,.25) 68%,rgba(5,5,5,0) 76%)}
+  .fv3-h .p b{filter:drop-shadow(3px 0 0 #1a0e00) drop-shadow(-3px 0 0 #1a0e00) drop-shadow(0 3px 0 #1a0e00) drop-shadow(0 -3px 0 #1a0e00) drop-shadow(0 8px 0 #3a2400) drop-shadow(0 0 34px rgba(255,196,60,.55))}
+  .fv3-h .c em{filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 6px 0 #2a0000) drop-shadow(0 0 26px rgba(255,40,40,.55))}
+}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
