@@ -885,6 +885,52 @@ footer a{color:#ddd}
   .fv3-terms{margin-top:4px; font-size:10.5px; line-height:1.45}
   .fv3-terms em{font-size:12px}
 }
+
+/* ===== FV v5：価格→解約OK→EasyWebCraft ===== */
+.fv3-tax{margin:4px 0 0; font-size:12px; color:#e8e2d5; text-shadow:0 1px 3px #000, 0 0 2px #000}
+.fv3-cancel{margin-top:6px}
+.fv3-cancel::before{display:none}
+.fv3-terms{margin-top:4px}
+.fv3-brand{margin-top:12px}
+@media (max-width:699px){
+  .fv3-in{padding-top:104px; padding-bottom:84px}
+  .fv3-brand img{width:min(76%,340px); margin-top:4px}
+  .fv3-brand .k{font-size:13px}
+}
+@media (max-width:699px) and (max-height:600px){
+  .fv3-in{padding-top:84px; padding-bottom:76px}
+  .fv3-tax{font-size:10.5px; margin-top:0}
+  .fv3-cancel{margin-top:2px}
+  .fv3-h .c{font-size:15px}
+  .fv3-h .c em{font-size:1.6em}
+  .fv3-terms{margin-top:0}
+  .fv3-brand{margin-top:6px}
+  .fv3-brand img{width:min(64%,280px)}
+  .fv3-brand .k{font-size:11.5px}
+}
+@media (min-width:700px){
+  .fv3-tax{font-size:15px; margin-top:6px}
+  .fv3-cancel{margin-top:8px}
+  .fv3-terms{font-size:14px; margin-top:6px}
+  .fv3-brand{margin-top:22px}
+  .fv3-brand .k{font-size:20px}
+  .fv3-brand img{width:520px}
+}
+
+@media (max-width:699px) and (min-height:601px) and (max-height:700px){
+  .fv3-in{padding-top:92px; padding-bottom:80px}
+  .fv3-use{font-size:20px; margin-top:4px}
+  .fv3-price{margin-top:6px}
+  .fv3-price .z{font-size:21px}
+  .fv3-h.fv3-price .p b{font-size:76px}
+  .fv3-tax{margin-top:0}
+  .fv3-cancel{margin-top:2px}
+  .fv3-h .c{font-size:17px}
+  .fv3-h .c em{font-size:1.75em}
+  .fv3-terms{margin-top:0}
+  .fv3-brand{margin-top:8px}
+  .fv3-brand img{width:min(70%,300px)}
+}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -923,9 +969,11 @@ footer a{color:#ddd}
   <div class="fv3-in">
     <p class="fv3-for"><span class="l1"><em>独立したて</em>で、ホームページを検討中の</span><b>経営者様へ</b></p>
     <p class="fv3-use"><em>集客・求人・ブランディング</em>に<br class="sp-br">必須なホームページを</p>
-    <h1 class="fv3-brand"><span class="k">月額制ホームページ制作サービス</span><img src="img/v3/logo-fv.webp" alt="EasyWebCraft" width="1400" height="150"></h1>
     <p class="fv3-h fv3-price"><span class="z">初期費用<b>0</b>円</span><span class="p"><small>月額</small><b class="num">5,980</b><small>円〜</small></span></p>
-    <p class="fv3-terms">税別（税込6,578円〜）・最低契約期間6ヶ月<br><em>7ヶ月目以降いつでも解約OK</em></p>
+    <p class="fv3-tax">税別（税込6,578円〜）</p>
+    <p class="fv3-h fv3-cancel"><span class="c">7ヶ月目から<br class="sp-br"><em>いつでも解約OK</em></span></p>
+    <p class="fv3-terms">※最低契約期間6ヶ月</p>
+    <h1 class="fv3-brand"><span class="k">月額制ホームページ制作サービス</span><img src="img/v3/logo-fv.webp" alt="EasyWebCraft" width="1400" height="150"></h1>
   </div>
 </section>
 
