@@ -931,6 +931,14 @@ footer a{color:#ddd}
   .fv3-brand{margin-top:8px}
   .fv3-brand img{width:min(70%,300px)}
 }
+
+/* 税込表示：スマホは金額の右下すみ */
+.tax-sp{display:none}
+@media (max-width:699px){
+  .fv3-tax{display:none}
+  .fv3-price .p{position:relative; display:inline-block; padding-bottom:14px}
+  .tax-sp{display:block; position:absolute; right:0; bottom:0; font-family:"Noto Sans JP",sans-serif; font-weight:500; font-size:10.5px; line-height:1; color:#e8e2d5; text-shadow:0 1px 3px #000, 0 0 2px #000; white-space:nowrap}
+}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -969,7 +977,7 @@ footer a{color:#ddd}
   <div class="fv3-in">
     <p class="fv3-for"><span class="l1"><em>独立したて</em>で、ホームページを検討中の</span><b>経営者様へ</b></p>
     <p class="fv3-use"><em>集客・求人・ブランディング</em>に<br class="sp-br">必須なホームページを</p>
-    <p class="fv3-h fv3-price"><span class="z">初期費用<b>0</b>円</span><span class="p"><small>月額</small><b class="num">5,980</b><small>円〜</small></span></p>
+    <p class="fv3-h fv3-price"><span class="z">初期費用<b>0</b>円</span><span class="p"><small>月額</small><b class="num">5,980</b><small>円〜</small><span class="tax-sp">税別（税込6,578円〜）</span></span></p>
     <p class="fv3-tax">税別（税込6,578円〜）</p>
     <p class="fv3-h fv3-cancel"><span class="c">7ヶ月目から<br class="sp-br"><em>いつでも解約OK</em></span></p>
     <p class="fv3-terms">※最低契約期間6ヶ月</p>
