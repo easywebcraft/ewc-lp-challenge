@@ -732,6 +732,23 @@ footer a{color:#ddd}
 }
 @media (max-width:389px){ .fv3-sub{font-size:13px} .fv3-for{font-size:12.5px; padding:8px 14px 9px} }
 @media (min-width:700px){ .fv3-cta{max-width:640px} .fv3-b{max-width:640px} }
+
+/* ===== FV v3 ラベル強調 ===== */
+.fv3-for em,.fv3-for b{font-style:normal; font-size:1.22em; background:linear-gradient(180deg,#fffbe6,#ffe38a 45%,#f0c24a 70%,#fff0a8); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:none; filter:drop-shadow(0 2px 0 #3a0000) drop-shadow(0 0 1px #3a0000)}
+.fv3-for .l1{color:#fff}
+@media (max-width:699px){
+  .fv3-bg img{object-position:62% -34px}
+  .fv3-for{white-space:normal; padding:9px 22px 11px; font-size:14px; line-height:1.35}
+  .fv3-for .l1{display:block}
+  .fv3-for b{display:block; font-size:1.75em; letter-spacing:.08em; line-height:1.15}
+  .fv3-in{padding-top:calc(max(132px, var(--fvh, 664px) - 580px))}
+}
+@media (max-width:389px){ .fv3-for{font-size:13px; padding:8px 16px 10px} }
+@media (min-width:700px){
+  .fv3-for{font-size:28px; padding:16px 50px 18px; white-space:nowrap}
+  .fv3-for em,.fv3-for b{font-size:1.25em}
+}
+@media (min-width:700px) and (max-width:1199px){ .fv3-for{font-size:22px} }
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -768,7 +785,7 @@ footer a{color:#ddd}
     <img src="img/v3/bg-sp.webp" alt="" width="1242" height="2207" fetchpriority="high">
   </picture>
   <div class="fv3-in">
-    <p class="fv3-for">独立したてで、ホームページを検討中の<b>経営者様へ</b></p>
+    <p class="fv3-for"><span class="l1"><em>独立したて</em>で、ホームページを検討中の</span><b>経営者様へ</b></p>
     <h1 class="fv3-h"><span class="p"><small>月額</small><b class="num">5,980</b><small>円〜</small></span><span class="c">7ヶ月目から<br class="sp-br"><em>いつでも解約OK</em></span></h1>
     <p class="fv3-sub"><em>集客・求人・ブランディング</em>に使えるホームページを、<br>制作から更新まで<em>まるごとサポート</em>。</p>
     <p class="fv3-name">月額制ホームページ制作サービス<b>EasyWebCraft</b></p>
