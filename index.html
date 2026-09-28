@@ -666,6 +666,32 @@ footer a{color:#ddd}
 .nw{white-space:nowrap}
 @media (min-width:700px){ .w2-box{padding:28px 26px} .w2-box .worry-list li{font-size:17px; padding:12px 14px} .w2-g{font-size:21px} }
 .wy .for{font-size:12.5px; font-weight:800; color:#ff8b8e}
+
+/* ===== FV v3 装飾（画像風） ===== */
+.fv3-for{position:relative; background:url(img/v3/brush-red.svg) center/100% 100% no-repeat; transform:none; padding:10px 30px 11px; font-family:var(--serif); font-weight:900; letter-spacing:.02em; text-shadow:0 2px 3px rgba(0,0,0,.6)}
+.fv3-for b{color:#ffe38a}
+.fv3-h{position:relative; isolation:isolate}
+.fv3-h::before{content:""; position:absolute; z-index:-1; left:-6%; right:-6%; top:6%; height:62%; background:url(img/v3/brush-gold.svg) center/100% 100% no-repeat; opacity:.5; transform:rotate(-3deg); pointer-events:none}
+.fv3-h .p{text-shadow:0 3px 0 #000, 0 6px 14px rgba(0,0,0,.9)}
+.fv3-h .p b{background:linear-gradient(180deg,#fffbe6 0%,#ffe590 28%,#e0a91f 48%,#fff0a8 60%,#c88d14 80%,#8a5a06 100%); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:none;
+  filter:drop-shadow(1.5px 0 0 #2a1800) drop-shadow(-1.5px 0 0 #2a1800) drop-shadow(0 1.5px 0 #2a1800) drop-shadow(0 -1.5px 0 #2a1800) drop-shadow(0 4px 0 #4a2e00) drop-shadow(0 8px 12px rgba(0,0,0,.9))}
+.fv3-h .c{color:#fff; text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000, 0 4px 10px rgba(0,0,0,.95)}
+.fv3-h .c em{display:inline-block; background:linear-gradient(180deg,#ff8a7a 0%,#ff2d2d 35%,#d10d14 65%,#8a0006 100%); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:none;
+  filter:drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff) drop-shadow(0 -1.5px 0 #fff) drop-shadow(0 3px 0 #3a0000) drop-shadow(0 6px 10px rgba(0,0,0,.9))}
+.fv3-sub{text-shadow:0 2px 6px rgba(0,0,0,.95), 0 0 2px #000}
+.fv3-sub em{color:#ffd966}
+.fv3-name{text-shadow:0 1px 4px #000}
+.fv3-name b{text-shadow:none; filter:drop-shadow(0 1px 2px #000); background:linear-gradient(180deg,#fffbe6,#ffe38a 50%,#f0c24a); -webkit-background-clip:text; background-clip:text; color:transparent}
+.fv3-b li{border:3px solid transparent; background:radial-gradient(circle at 50% 28%,#26221a,#070707 70%) padding-box, linear-gradient(135deg,#fff3b0,#c8961e 28%,#6e4a0c 48%,#f5d36a 68%,#8f6410) border-box; box-shadow:0 0 18px rgba(227,180,58,.45), inset 0 0 12px rgba(0,0,0,.8)}
+.fv3-b b{background:linear-gradient(180deg,#fffbe6,#ffe38a 40%,#d9a21c 70%,#fff0a8); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 2px 0 #2a1800)}
+.fv3-b b i{color:inherit}
+@media (min-width:700px){
+  .fv3-for{padding:12px 40px 13px; margin-left:-14px; font-size:22px}
+  .fv3-h::before{left:-4%; right:-10%; top:4%; height:60%}
+  .fv3-h .p b{filter:drop-shadow(2.5px 0 0 #2a1800) drop-shadow(-2.5px 0 0 #2a1800) drop-shadow(0 2.5px 0 #2a1800) drop-shadow(0 -2.5px 0 #2a1800) drop-shadow(0 7px 0 #4a2e00) drop-shadow(0 12px 18px rgba(0,0,0,.9))}
+  .fv3-h .c em{filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 5px 0 #3a0000) drop-shadow(0 8px 14px rgba(0,0,0,.9))}
+  .fv3-sub{border-left:3px solid var(--gold); padding-left:14px}
+}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
