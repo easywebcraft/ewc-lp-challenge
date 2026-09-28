@@ -527,6 +527,44 @@ footer a{color:#ddd}
 .doc-prev .thumbs img{width:100%; height:auto; border-radius:4px; border:1px solid var(--line2)}
 .doc-list{list-style:none; margin:0 0 14px; padding:0; display:grid; gap:4px; font-size:13.5px}
 .doc-list li::before{content:"✓ "; color:var(--gold); font-weight:900}
+
+/* FV（PC）のボタン・チェック上書き */
+.fv2-cta{display:none}
+.fv2-cta2{position:absolute; left:4.3%; top:77%; width:49%; height:12%; display:flex; align-items:center; justify-content:center; gap:1.2vw; text-decoration:none; color:#fff4c2; font-weight:900; font-size:min(2.35vw,39px); letter-spacing:.04em; background:linear-gradient(180deg,#ff3a40,#c10d13 55%,#8e070b); border:2px solid #ff8b8e; border-radius:999px; box-shadow:0 0 0 4px rgba(255,59,64,.18), 0 10px 30px rgba(215,20,26,.5)}
+.fv2-cta2 svg{width:1em; height:1em; stroke:currentColor; fill:none; stroke-width:2}
+.fv2-cta2:focus-visible{outline:3px solid var(--gold-lt); outline-offset:3px}
+.fv2-chk{position:absolute; left:3%; top:89.4%; width:54%; height:10.6%; margin:0; padding:0 1.4%; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:1%; background:#070605; font-size:min(1.05vw,17.5px); font-weight:700; color:#fff}
+.fv2-chk li{display:flex; align-items:center; gap:.5vw; white-space:nowrap}
+.fv2-chk li::before{content:"✓"; display:inline-flex; width:1.6em; height:1.6em; border-radius:50%; border:2px solid var(--gold); color:var(--gold); align-items:center; justify-content:center; font-size:.85em}
+/* サンプル→料金 */
+.to-price{display:block; max-width:620px; margin:24px auto 0; text-align:center; text-decoration:none; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.6vw,24px); border:1px solid var(--line); border-radius:999px; padding:12px 16px}
+.to-price b{color:var(--gold-lt); font-family:var(--num); font-size:1.3em; margin:0 2px}
+.to-price span{display:block; font-family:"Noto Sans JP"; font-size:13px; color:var(--gold-lt)}
+/* 反論→安心 */
+.relief{background:radial-gradient(70% 50% at 50% 0%,rgba(215,20,26,.16),transparent 70%),radial-gradient(60% 40% at 50% 60%,rgba(227,180,58,.12),transparent 70%),var(--bg)}
+.rl-ask{position:relative; max-width:760px; margin:0 auto; display:grid; grid-template-columns:40% 1fr; align-items:center; gap:10px}
+.rl-ask img{width:100%; height:auto; border-radius:12px; -webkit-mask-image:linear-gradient(#000 75%,transparent); mask-image:linear-gradient(#000 75%,transparent)}
+.rl-bubble{position:relative; margin:0; background:#fff; color:#1b1712; border-radius:18px; padding:16px 18px; font-family:var(--serif); font-weight:900; font-size:clamp(16px,4.4vw,26px); line-height:1.5; box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.rl-bubble b{color:#c4121a}
+.rl-bubble::before{content:""; position:absolute; left:-14px; top:50%; transform:translateY(-50%); border:14px solid transparent; border-left:0; border-right-color:#fff}
+.rl-ans{text-align:center; margin-top:26px}
+.rl-ok{margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(40px,11vw,76px); line-height:1.1; background:linear-gradient(180deg,#fff3c4,#e9bd4a 55%,#b8860b); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:0 0 40px rgba(227,180,58,.25)}
+.rl-ans h2{margin:12px 0 0; font-family:var(--serif); font-weight:900; font-size:clamp(20px,5.4vw,38px); line-height:1.45}
+.rl-lead{margin:14px auto 0; max-width:720px; font-size:clamp(14px,3.6vw,17px); font-weight:700}
+.rl-lead em{font-style:normal; color:var(--gold-lt)}
+.rl-show{margin-top:28px}
+.rl-show-h{margin:0 0 10px; text-align:center; font-weight:900; color:var(--gold-lt)}
+.rl-imgs{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; max-width:1000px; margin:0 auto}
+.rl-imgs img{width:100%; height:auto; border-radius:8px; border:1px solid var(--line)}
+.rl-pts{list-style:none; margin:22px auto 0; padding:0; max-width:1000px; display:grid; gap:10px}
+@media (min-width:700px){ .rl-pts{grid-template-columns:repeat(3,1fr)} }
+.rl-pts li{border:1px solid var(--line); border-radius:12px; background:rgba(0,0,0,.5); padding:14px 16px; font-size:13px; color:#e8e2d5}
+.rl-pts b{display:block; font-family:var(--serif); font-weight:900; color:var(--gold-lt); font-size:17px}
+.rl-pts b::before{content:"✓ "; color:var(--gold)}
+.rl-cta{margin-top:30px; text-align:center}
+.rl-cta-h{margin:0 0 12px; font-family:var(--serif); font-weight:900; font-size:clamp(17px,4.4vw,24px)}
+.btn-red.big{max-width:720px; font-size:clamp(17px,4.6vw,30px); padding:18px 16px; white-space:nowrap}
+@media (max-width:699px){ .rl-ask{grid-template-columns:36% 1fr} .rl-bubble{padding:12px 14px} }
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -546,7 +584,7 @@ footer a{color:#ddd}
     <nav class="gnav" aria-label="ページ内メニュー">
       <a href="#can">サービスの特徴</a><a href="#samples">制作サンプル</a><a href="#plans">料金プラン</a><a href="#flow">ご利用の流れ</a><a href="#faq">よくある質問</a>
     </nav>
-    <a class="cta" href="#contact">無料デザイン案をもらう →</a>
+    <a class="cta" href="#contact">無料で相談する →</a>
     <button class="menu-btn" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
   </div>
   <nav class="mnav" id="mnav" aria-label="メニュー">
@@ -560,8 +598,9 @@ footer a{color:#ddd}
 <section class="fv2" aria-label="EasyWebCraft">
   <h1 class="sr">その挑戦に、ホームページを。起業・開業の最初の一手に、信頼されるホームページを。</h1>
   <div class="fv2-in fv2-pc">
-    <img src="img/v3/fv-pc.webp" alt="SNSで知ってもらい、ホームページで信頼につなげる。初期費用0円、月額5,980円〜、最短7日でデザイン案。トップページ1ページ分を無料提案、デザインを見てから契約判断OK、開業前の相談もOK。最低契約期間6ヶ月。" width="2560" height="1346" fetchpriority="high">
-    <a class="fv2-cta" href="#contact" aria-label="無料デザイン案をもらう"></a>
+    <img src="img/v3/fv-pc.webp" alt="SNSで知ってもらい、ホームページで信頼につなげる。開業前・開業したばかりの方へ。初期費用0円、月額5,980円〜、開業前も相談OK。" width="2560" height="1346" fetchpriority="high">
+    <a class="fv2-cta2" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>まずは無料で相談する<span class="arr" aria-hidden="true">→</span></a>
+    <ul class="fv2-chk"><li>制作・更新・保守まで月額に込み</li><li>スマホ対応・SEOの基本設定</li><li>開業前・開業直後の相談OK</li></ul>
   </div>
   <div class="fv2-sp">
     <img src="img/v3/fv-sp-top.webp" alt="SNSで知ってもらい、ホームページで信頼につなげる。" width="1170" height="753" fetchpriority="high">
@@ -569,10 +608,10 @@ footer a{color:#ddd}
       <ul class="badges">
         <li><small>初期費用</small><b class="g">0<i>円</i></b></li>
         <li><small>月額</small><b class="s g">5,980<i>円〜</i></b></li>
-        <li><small>最短</small><b class="t g">7日で<br>デザイン案</b></li>
+        <li><small>開業前も</small><b class="t g">相談<br>OK</b></li>
       </ul>
-      <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a>
-      <p class="fv2-note">トップページ1ページ分を無料提案。デザインを見てから契約判断OK。</p>
+      <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>まずは無料で相談する<span class="arr" aria-hidden="true">→</span></a>
+      <p class="fv2-note">制作・更新・保守まで月額に込み。開業前の相談もOK。</p>
       <p class="fine">※税別（税込6,578円〜）・最低契約期間6ヶ月</p>
     </div>
   </div>
@@ -584,7 +623,7 @@ footer a{color:#ddd}
     <div class="sec-h">
       <h2><span>制作デザイン<span class="g">サンプル</span></span></h2>
       <p>あなたの<em>業種に合わせたデザイン例</em>をご提案</p>
-      <small>どんなホームページが作れるのか、具体的なイメージを先に確認できます。※以下はデザイン例です</small>
+      <small>どんなホームページが作れるのか、具体的なイメージをご覧ください。※以下はデザイン例です</small>
     </div>
     <div class="cards3">
       <article class="scard"><div class="ph"><img src="img/v3/s-izakaya.webp" alt="飲食店のデザイン例（PCとスマホ）" width="1100" height="806" loading="lazy"></div>
@@ -594,18 +633,8 @@ footer a{color:#ddd}
       <article class="scard"><div class="ph"><img src="img/v3/s-gym.webp" alt="パーソナルジムのデザイン例（PCとスマホ）" width="1100" height="803" loading="lazy"></div>
         <div class="cap"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg></span><div><h3>パーソナルジム</h3><p>強みと信頼感をわかりやすく訴求</p><ul class="sb"><li>トレーニングの魅力が伝わる、ダイナミックなビジュアル</li><li>サービス内容・料金・トレーナー紹介をわかりやすく掲載</li><li>問い合わせ・体験予約につながる導線設計</li></ul></p></div></div></article>
     </div>
-    <div class="cta-block">
-      <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a>
-      <ul class="checks"><li>トップページ1ページ分を無料提案</li><li>デザインを見てから契約判断OK</li><li>開業前の相談もOK</li></ul>
-    </div>
     <p class="note">※掲載しているのはサンプルデザインです。実際の制作実績・お客様の声は、公開の許可をいただけしだい掲載します。</p>
-    <div class="choose2">
-      <p class="c2-h">あなたに合った方法で、まずは一歩。</p>
-      <div class="c2-grid">
-        <a class="c2 main" href="#contact"><b>あなたの事業のデザイン案を無料で</b><span>実際の仕上がりを見てから、契約するか判断できます。</span><em>無料デザイン案を申し込む →</em></a>
-        <a class="c2 sub" href="#doc"><b>料金・デザイン例をまとめて確認</b><span>サービス内容が分かる6ページのPDF資料をお届けします。</span><em>無料資料をダウンロード →</em></a>
-      </div>
-    </div>
+    <a class="to-price" href="#plans">このクオリティで、月額<b>5,980</b>円〜。<span>料金を見る ↓</span></a>
   </div>
 </section>
 
@@ -694,8 +723,37 @@ footer a{color:#ddd}
       </table>
     </div>
     <p class="plan-msg">プランに迷う場合も、事業内容に合わせて<em>最適な構成</em>をご提案します。</p>
-    <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a><a class="sub-cta" href="#doc">まだ検討中の方は、まずは資料を見る（無料）→</a></div>
     <p class="fine">※表示価格は税別です。詳しい条件は<a href="https://easywebcraft.github.io/easyweb-lp/tokushoho.html">特定商取引法に基づく表記</a>をご覧ください。</p>
+  </div>
+</section>
+
+<!-- ⑥-2 「安いから、しょぼいのでは？」→「大丈夫。無料でデザイン案を作ります」 -->
+<section id="relief" class="relief">
+  <div class="wrap">
+    <div class="rl-ask">
+      <img src="img/v3/q-man.webp" alt="" width="1100" height="1350" loading="lazy">
+      <p class="rl-bubble">でも……<br>月額5,980円〜って、<br><b>しょぼいホームページ</b>に<br>なるんじゃないの？</p>
+    </div>
+    <div class="rl-ans">
+      <p class="rl-ok">大丈夫です。</p>
+      <h2>ご契約の前に、あなたの事業の<br><span class="g">デザイン案を無料で</span>お作りします。</h2>
+      <p class="rl-lead">仕上がりを<em>自分の目で確かめてから</em>、頼むかどうか決められます。<br>「安いから、この程度か…」と思ったら、見送っていただいてかまいません。</p>
+    </div>
+    <div class="rl-show">
+      <p class="rl-show-h">例えば、こんなデザイン案を無料で</p>
+      <div class="rl-imgs"><img src="img/v3/s-izakaya.webp" alt="飲食店のデザイン案の例" width="1100" height="806" loading="lazy"><img src="img/v3/s-salon.webp" alt="美容室のデザイン案の例" width="1100" height="815" loading="lazy"><img src="img/v3/s-gym.webp" alt="パーソナルジムのデザイン案の例" width="1100" height="803" loading="lazy"></div>
+    </div>
+    <ul class="rl-pts">
+      <li><b>テンプレートではなく、1からデザイン</b>業種・事業内容に合わせたオリジナル</li>
+      <li><b>PC・スマホ両方のイメージを確認</b>トップページ1ページ分をご提案</li>
+      <li><b>見送っても費用は0円</b>相談・ヒアリング・デザイン案まで無料</li>
+    </ul>
+    <div class="rl-cta">
+      <p class="rl-cta-h">まずは、あなたの事業で試してみてください。</p>
+      <a class="btn-red big" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料でデザイン案を依頼する<span class="arr" aria-hidden="true">→</span></a>
+      <p class="fine">最短7日でご提案／しつこい営業はいたしません／1営業日以内にご返信</p>
+      <a class="sub-cta" href="#doc">まだ迷っている方は、まず無料の資料で確認する →</a>
+    </div>
   </div>
 </section>
 
@@ -703,12 +761,7 @@ footer a{color:#ddd}
 <section id="flow">
   <div class="wrap">
     <div class="sec-h">
-      <h2><span><span class="g">無料デザイン案</span>のメリットと流れ</span></h2>
-    </div>
-    <div class="merit">
-      <p class="m-q">この価格で、どんなホームページができるの？</p>
-      <p class="m-a">ご契約前に、あなたの事業に合わせたトップページのデザイン案を無料で制作します。<br>仕上がりのイメージを確認してから、ご判断いただけます。</p>
-      <ul class="m-list"><li>業種・事業内容に合わせたオリジナルデザイン</li><li>PC・スマホ両方のデザインイメージ</li><li>見送った場合も費用0円</li></ul>
+      <h2><span><span class="g">無料デザイン案</span>の流れ</span></h2>
     </div>
     <p class="flow-sub">お申し込みからご提案までの流れ</p>
     <p class="tops"><span>最短<b>7日</b>でデザイン案をご提案</span><span>開業前・準備中の方もご相談OK</span></p>
@@ -725,7 +778,7 @@ footer a{color:#ddd}
       <div class="point"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 12l4-4 4 3 3-3 4 4-5 5-3-2-3 2z"/><path d="M7 8L3 6M17 8l4-2"/></svg></span><div><b>デザイン確認後に契約判断OK</b><span>気に入ってからのご契約で安心です。</span></div></div>
       <div class="point"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h11v8H8l-4 3z"/><path d="M15 9h5v8l-3-2h-6v-2"/></svg></span><div><b>ご不明点はメール・チャットで相談可能</b><span>些細なことでもお気軽にご相談ください。</span></div></div>
     </div>
-    <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料デザイン案をもらう<span class="arr" aria-hidden="true">→</span></a></div>
+    <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料でデザイン案を依頼する<span class="arr" aria-hidden="true">→</span></a></div>
     <p class="fine">※「最短7日」は無料デザイン案をご提案するまでの目安です。ご契約後、ホームページ公開までの日数はページ数や内容によって異なるため、ご相談時にご案内します。<br>※ご提案内容はヒアリング内容に応じて異なります。※混雑状況により日数が前後する場合があります。</p>
     <div class="after">
       <p class="after-h">ご契約後の流れ</p>
@@ -833,7 +886,7 @@ footer a{color:#ddd}
 
 </main>
 
-<a class="sticky-cta" href="#contact" hidden>無料デザイン案をもらう →</a>
+<a class="sticky-cta" href="#contact" hidden>まずは無料で相談する →</a>
 
 <footer>
   <img src="img/logo-full.webp" alt="EasyWebCraft Web Design &amp; Development" width="800" height="124" loading="lazy">
@@ -860,7 +913,7 @@ footer a{color:#ddd}
     es.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
     bar.classList.toggle('off', seen.size > 0);
   }, { threshold: 0.01 });
-  [document.querySelector('.fv2'), document.getElementById('contact'), document.getElementById('doc')].forEach(function (el) { if (el) io.observe(el); });
+  [document.querySelector('.fv2'), document.getElementById('contact'), document.getElementById('doc'), document.querySelector('.rl-cta')].forEach(function (el) { if (el) io.observe(el); });
 })();
 
 // 資料ダウンロード：送信できたらPDFのボタンを出して、新しいタブで開く
