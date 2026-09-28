@@ -565,6 +565,7 @@ footer a{color:#ddd}
 .rl-cta-h{margin:0 0 12px; font-family:var(--serif); font-weight:900; font-size:clamp(17px,4.4vw,24px)}
 .btn-red.big{max-width:720px; font-size:clamp(17px,4.6vw,30px); padding:18px 16px; white-space:nowrap}
 @media (max-width:699px){ .rl-ask{grid-template-columns:36% 1fr} .rl-bubble{padding:12px 14px} }
+.hp{position:absolute !important; left:-9999px !important; width:1px; height:1px; opacity:0; pointer-events:none}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -802,6 +803,7 @@ footer a{color:#ddd}
         <ul class="doc-list"><li>起業・開業時によくあるお悩み</li><li>できること・公開後のサポート</li><li>業種別のデザイン例</li><li>料金プランと比較表</li><li>無料デザイン案の流れと目安日数</li></ul>
         <form class="dform" id="dform" action="https://formspree.io/f/maqkzjek" method="POST">
           <input type="hidden" name="_subject" value="【EasyWebCraft 挑戦LP】資料ダウンロード">
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <label>メールアドレス<input type="email" name="email" id="d-email" required autocomplete="email" inputmode="email" placeholder="例：info@example.com"></label>
           <label>お名前 <span class="opt">（任意）</span><input type="text" name="name" autocomplete="name" placeholder="例：山田 太郎"></label>
           <button class="btn-gold2" type="submit">無料で資料を受け取る →</button>
@@ -850,6 +852,7 @@ footer a{color:#ddd}
     </ul>
     <form class="form" id="cform" action="https://formspree.io/f/maqkzjek" method="POST">
       <input type="hidden" name="_subject" value="【EasyWebCraft 挑戦LP】無料デザイン案の申し込み">
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label>お名前
         <input type="text" name="name" required autocomplete="name" placeholder="例：山田 太郎">
       </label>
