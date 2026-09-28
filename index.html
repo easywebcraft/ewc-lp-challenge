@@ -1098,6 +1098,40 @@ body{font-size:16.5px}
 
 @media (max-width:699px){ .rl-ok2{font-size:clamp(20px,5.8vw,24px)} }
 @media (min-width:700px){ .cta-see{white-space:nowrap !important; max-width:none; width:max-content} }
+
+/* ② 放置すると：流れの図 */
+.risk-chain{list-style:none; margin:18px auto 6px; padding:0; max-width:460px; display:grid; gap:30px}
+.risk-chain li{position:relative; border-radius:12px; padding:12px 14px; font-weight:800}
+.risk-chain li:not(:last-child)::after{content:""; position:absolute; left:50%; bottom:-24px; transform:translateX(-50%); border:10px solid transparent; border-top:13px solid #ff5a5f; border-bottom:0}
+.risk-chain .c1{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25); color:#fff}
+.risk-chain .c1 b{color:#ff8b8e}
+.risk-chain .c2{display:grid; gap:6px; background:rgba(215,20,26,.14); border:1px solid rgba(255,59,64,.45); font-family:var(--serif); font-weight:900; font-size:1.12em; color:#fff}
+.risk-chain .c3{background:linear-gradient(180deg,#b3131a,#7a070b); border:1px solid #ff5a5f; color:#fff; font-family:var(--serif); font-weight:900; font-size:1.3em}
+.risk-chain .c3 b{color:#fff}
+/* ③ 無料デザイン案を主役に */
+.rl-pre{margin:8px 0 6px; font-weight:800; font-size:clamp(16px,4.4vw,21px); line-height:1.7; color:#e9e4da}
+.rl-pre b{font-family:var(--num); font-weight:700; font-size:1.2em; color:var(--gold-lt)}
+.offer{margin:18px auto 0; max-width:560px; display:flex; align-items:center; justify-content:center; gap:18px; padding:14px 20px; border:2px solid var(--gold); border-radius:16px; background:radial-gradient(circle at 70% 50%,rgba(255,196,60,.18),transparent 70%),rgba(0,0,0,.55); box-shadow:0 0 30px rgba(227,180,58,.25)}
+.offer-h{margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(18px,5vw,28px); line-height:1.35; color:#fff; text-align:left}
+.offer-p{margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(26px,7vw,40px); color:#fff; white-space:nowrap}
+.offer-p b{font-family:var(--num); font-weight:700; font-size:2.6em; line-height:1; margin-right:4px; background:linear-gradient(180deg,#fffbe6 0%,#ffe590 28%,#e0a91f 48%,#fff0a8 60%,#c88d14 80%,#8a5a06 100%); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 3px 0 #3a2400) drop-shadow(0 0 18px rgba(255,196,60,.5))}
+.relief .rl-pts{margin-top:18px}
+.relief .rl-show{margin-top:24px}
+/* ⑥ CTA下の一言 */
+.cta-note{margin:10px 0 0; text-align:center; font-weight:800; font-size:14px; color:var(--gold-lt); letter-spacing:.04em}
+/* ④ SERVICE圧縮 */
+.svc3{display:grid; gap:12px; max-width:1000px; margin:0 auto}
+@media (min-width:700px){ .svc3{grid-template-columns:repeat(3,1fr)} }
+.sv{border:1px solid var(--line2); border-radius:14px; background:rgba(0,0,0,.45); padding:18px}
+.sv-h{margin:0 0 10px; display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:900; font-size:24px; color:#fff}
+.sv-h span{display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:linear-gradient(180deg,#ffe07a,#e3b43a); color:#1a1200; font-family:var(--num); font-size:16px}
+.sv ul{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px}
+.sv li{border:1px solid rgba(227,180,58,.5); border-radius:999px; padding:4px 14px; font-weight:800; font-size:15px; color:var(--gold-lt)}
+#can .fine{margin-top:12px}
+/* ⑤ HPカード */
+.plan-desc{margin:8px 0 10px; font-size:14.5px; color:#e8e2d5; line-height:1.7}
+@media (max-width:699px){ .plan.reco .plan-desc{grid-column:1 / -1 !important; grid-row:6} .plan.reco ul{grid-row:7} }
+@media (min-width:700px){ .offer-h{white-space:nowrap} .offer{max-width:640px} }
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -1117,7 +1151,7 @@ body{font-size:16.5px}
     <nav class="gnav" aria-label="ページ内メニュー">
       <a href="#designs">デザイン例</a><a href="#can">サービスの特徴</a><a href="#plans">料金プラン</a><a href="#flow">ご利用の流れ</a><a href="#faq">よくある質問</a>
     </nav>
-    <a class="cta" href="#contact">無料で相談する →</a>
+    <a class="cta" href="#contact">無料デザイン案を見る →</a>
     <button class="menu-btn" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
   </div>
   <nav class="mnav" id="mnav" aria-label="メニュー">
@@ -1175,10 +1209,12 @@ body{font-size:16.5px}
       <h2><span>その悩み、<span class="r">放置すると……</span></span></h2>
     </div>
     <div class="risk-story">
-      <p>あなたの会社を知った人は、<br>次に<b>会社名を検索する</b>かもしれません。</p>
-      <p>そのときホームページがなければ、</p>
-      <p class="voices"><span>「どんな会社なんだろう？」</span><span>「本当にここに頼んで大丈夫？」</span></p>
-      <p>と、<b>不安にさせてしまう</b>ことも。</p>
+      <p>あなたの会社を知った見込み客は、<br>問い合わせる前に<b>会社名を検索する</b><br class="sp-br">かもしれません。</p>
+      <ol class="risk-chain">
+        <li class="c1">ホームページが<b>見つからない</b></li>
+        <li class="c2"><span>「どんな会社なんだろう？」</span><span>「本当にここに頼んで大丈夫？」</span></li>
+        <li class="c3">そのまま<b>他社へ……</b></li>
+      </ol>
     </div>
     <p class="risk-end">ホームページを<br class="sp-br">後回しにしている間にも、<br>本来取れたはずの<b class="r">問い合わせ</b>を<br class="sp-br">逃しているかもしれません</p>
   </div>
@@ -1212,21 +1248,22 @@ body{font-size:16.5px}
     </div>
     <div class="rl-ans">
       <div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 120 64"><defs><linearGradient id="fag2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a5a06" stop-opacity=".15"/><stop offset=".55" stop-color="#e0a91f"/><stop offset="1" stop-color="#ffe590"/></linearGradient></defs><path d="M0 0h120L60 64z" fill="url(#fag2)"/></svg></div>
-      <p class="rl-ok rl-ok2">だから、契約する前に<br>実際のデザインを見てください</p>
-      <h2>あなたの事業専用の<br><span class="g">HPデザイン案を無料で</span>制作します</h2>
-    </div>
-    <div class="rl-show" id="designs">
-      <div class="rl-imgs"><img src="img/v3/s-izakaya.webp" alt="飲食店のデザイン案の例" width="1100" height="806" loading="lazy"><img src="img/v3/s-salon.webp" alt="美容室のデザイン案の例" width="1100" height="815" loading="lazy"><img src="img/v3/s-gym.webp" alt="パーソナルジムのデザイン案の例" width="1100" height="803" loading="lazy"></div>
-      <p class="note">※掲載しているのはサンプルデザインです。実際の制作実績・お客様の声は、公開の許可をいただけしだい掲載します。</p>
+      <p class="rl-pre">だから<b>EasyWebCraft</b>では、<br>契約してから判断してもらうのではなく、</p>
+      <p class="rl-ok rl-ok2">契約する前に、<br>実際のデザインを作ります</p>
+      <div class="offer"><p class="offer-h">あなたの事業専用<br class="sp-br">HPデザイン案</p><p class="offer-p"><b>0</b>円</p></div>
     </div>
     <ul class="rl-pts">
       <li><b>テンプレートではなく、1からデザイン</b></li>
       <li><b>PC・スマホ両方のイメージを確認</b></li>
       <li><b>見送っても費用は0円</b></li>
     </ul>
+    <div class="rl-show" id="designs">
+      <div class="rl-imgs"><img src="img/v3/s-izakaya.webp" alt="飲食店のデザイン案の例" width="1100" height="806" loading="lazy"><img src="img/v3/s-salon.webp" alt="美容室のデザイン案の例" width="1100" height="815" loading="lazy"><img src="img/v3/s-gym.webp" alt="パーソナルジムのデザイン案の例" width="1100" height="803" loading="lazy"></div>
+      <p class="note">※掲載しているのはサンプルデザインです。実際の制作実績・お客様の声は、公開の許可をいただけしだい掲載します。</p>
+    </div>
     <div class="rl-cta">
-      <a class="btn-red big" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料でデザイン案を依頼する<span class="arr" aria-hidden="true">→</span></a>
-      <p class="fine">最短7日でご提案／しつこい営業はいたしません／1営業日以内にご返信</p>
+      <a class="btn-red big" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料でデザイン案を見てみる<span class="arr" aria-hidden="true">→</span></a>
+      <p class="cta-note">契約不要｜費用0円｜見送ってもOK</p>
       <a class="sub-cta" href="#doc">まだ迷っている方は、まず無料の資料で確認する →</a>
     </div>
   </div>
@@ -1237,23 +1274,14 @@ body{font-size:16.5px}
   <div class="wrap">
     <div class="sec-h">
       <span class="en">SERVICE</span>
-      <h2><span><span class="g">EasyWebCraft</span>でできること</span></h2>
+      <h2><span>制作も、公開後も<br><span class="g">必要なことをまとめてサポート</span></span></h2>
     </div>
-    <div class="can4">
-      <article class="can"><div class="hd"><span class="no">01</span><h3>オリジナルデザインの<br>ホームページ制作</h3></div><img src="img/v3/c-1.webp" alt="" width="760" height="504" loading="lazy"><p>業種に合わせた、完全オリジナルのデザインで制作します。</p></article>
-      <article class="can"><div class="hd"><span class="no">02</span><h3>基本ページの作成</h3></div><img src="img/v3/c-2.webp" alt="トップページ・サービス紹介・会社概要・お知らせ・お問い合わせ・その他必要なページ" width="760" height="657" loading="lazy"><p>事業に必要なページを、見やすく整えて作成します。</p></article>
-      <article class="can"><div class="hd"><span class="no">03</span><h3>スマホ対応・<br>SEOの基本設定</h3></div><img src="img/v3/c-3.webp" alt="" width="760" height="501" loading="lazy"><p>スマホ対応と、検索に強くなる基本設定を行います。</p></article>
-      <article class="can"><div class="hd"><span class="no">04</span><h3>写真・文章のサポート</h3></div><img src="img/v3/c-4.webp" alt="" width="760" height="575" loading="lazy"><p>撮影のアドバイスや文章づくりもサポートします。</p></article>
+    <div class="svc3">
+      <div class="sv"><p class="sv-h"><span>01</span>つくる</p><ul><li>オリジナルデザイン</li><li>文章づくり</li><li>スマホ対応</li><li>SEO基本設定</li></ul></div>
+      <div class="sv"><p class="sv-h"><span>02</span>公開する</p><ul><li>サーバー</li><li>SSL（暗号化）</li><li>お問い合わせフォーム</li></ul></div>
+      <div class="sv"><p class="sv-h"><span>03</span>運用する</p><ul><li>更新</li><li>保守</li><li>アクセス解析</li><li>改善相談</li></ul></div>
     </div>
-    <p class="plus"><em>公開後</em>も、安心して<em>運用できるサポート</em>をご用意しています。</p>
-    <p class="fine" style="margin:-8px 0 14px">※対象プランの範囲内は月額料金に含まれます。対象外のサポートや追加作業の料金は、ご相談時にお見積りします。</p>
-    <div class="ops">
-      <article class="op"><div class="hd"><span class="no">01</span><h3>更新サポート</h3></div><span class="plan-tag">対象：全プラン（範囲はプランにより異なる）</span><img src="img/v3/o-1.webp" alt="" width="600" height="279" loading="lazy"><p>お知らせの追加や簡単な修正など、更新作業をサポートします。</p></article>
-      <article class="op"><div class="hd"><span class="no">02</span><h3>セキュリティ・保守</h3></div><span class="plan-tag">対象：全プラン</span><img src="img/v3/o-2.webp" alt="" width="600" height="279" loading="lazy"><p>SSL設定やシステムの保守を行い、安心して運用できる環境を維持します。</p></article>
-      <article class="op"><div class="hd"><span class="no">03</span><h3>アクセス解析レポート</h3></div><span class="plan-tag">対象：HP+プラン</span><img src="img/v3/o-3.webp" alt="" width="600" height="279" loading="lazy"><p>アクセス状況を分析し、改善のアドバイスを行います。</p></article>
-      <article class="op"><div class="hd"><span class="no">04</span><h3>運用の相談対応</h3></div><span class="plan-tag">対象：全プラン（HP+はチャットも可）</span><img src="img/v3/o-4.webp" alt="" width="600" height="286" loading="lazy"><p>ホームページの運用に関するお悩みやご相談に、メールやチャットで対応します。</p></article>
-      <article class="op"><div class="hd"><span class="no">05</span><h3>継続的な改善提案</h3></div><span class="plan-tag">対象：HP+プラン（他プランはご相談）</span><img src="img/v3/o-5.webp" alt="" width="600" height="284" loading="lazy"><p>アクセスデータや市場の動向をもとに、より良いサイト運用のための改善提案を行います。</p></article>
-    </div>
+    <p class="fine">※対応範囲はプランにより異なります（SEO基本設定はHP・HP+、アクセス解析はHP+が対象）。詳しくは料金プランをご覧ください。</p>
     <a class="to-price" href="#plans">制作〜保守・運用まで<br class="sp-br">完全オリジナルHPを<br>月額<b>5,980</b>円〜<span>プランを見る ↓</span></a>
   </div>
 </section>
@@ -1270,10 +1298,11 @@ body{font-size:16.5px}
         <p class="p g">5,980<small>円/月</small></p><p class="taxin"><span class="tx">（税別）</span>税込 6,578円/月</p>
         <img src="img/v3/p-lp.webp" alt="" width="1100" height="526" loading="lazy">
         <ul><li>トップページ1P</li><li>スマホ対応</li><li>お問い合わせフォーム</li><li>サーバー・SSL込み</li></ul></article>
-      <article class="plan reco"><span class="ribbon">おすすめ</span><p class="use">会社としてしっかり見せたい</p><h3 class="g">EasyWeb HP</h3><span class="for">会社サイトとして必要なページが一通り揃う</span>
+      <article class="plan reco"><span class="ribbon">おすすめ</span><p class="use">起業・開業した会社のホームページに</p><h3 class="g">EasyWeb HP</h3><span class="for">トップページ＋下層5ページ</span>
         <p class="p g">7,700<small>円/月</small></p><p class="taxin"><span class="tx">（税別）</span>税込 8,470円/月</p>
         <img src="img/v3/p-hp.webp" alt="" width="1100" height="492" loading="lazy">
-        <ul><li>トップ＋下層5P</li><li>スマホ対応</li><li>基本SEO設定</li><li>お問い合わせフォーム</li><li>サーバー・SSL込み</li></ul></article>
+        <p class="plan-desc">会社概要・サービス紹介・お問い合わせなど、会社サイトに必要なページをまとめて制作。</p>
+        <ul><li>スマホ対応</li><li>基本SEO設定</li><li>お問い合わせフォーム</li><li>サーバー・SSL込み</li></ul></article>
       <article class="plan"><p class="use">集客・採用まで活用したい</p><h3 class="g">EasyWeb HP+</h3>
         <p class="p g">9,800<small>円/月</small></p><p class="taxin"><span class="tx">（税別）</span>税込 10,780円/月</p>
         <img src="img/v3/p-hpp.webp" alt="" width="1100" height="563" loading="lazy">
@@ -1299,7 +1328,7 @@ body{font-size:16.5px}
       <li class="step"><div class="hd"><span class="sn"><small>STEP</small><b>04</b></span><h3>デザイン案作成<small>トップページ案を制作</small></h3></div><div class="ph"><img src="img/v3/st-4.webp" alt="" width="760" height="460" loading="lazy"><span class="time">2〜4営業日</span></div></li>
       <li class="step"><div class="hd"><span class="sn"><small>STEP</small><b>05</b></span><h3>ご提案・確認<small>デザインを確認</small></h3></div><div class="ph"><img src="img/v3/st-5.webp" alt="" width="760" height="454" loading="lazy"><span class="time">最短7日</span></div></li>
     </ol>
-    <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料でデザイン案を依頼する<span class="arr" aria-hidden="true">→</span></a></div>
+    <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料でデザイン案を見てみる<span class="arr" aria-hidden="true">→</span></a><p class="cta-note">契約不要｜費用0円｜見送ってもOK</p></div>
     <p class="fine">※「最短7日」は無料デザイン案をご提案するまでの目安です。ご契約後、ホームページ公開までの日数はページ数や内容によって異なるため、ご相談時にご案内します。<br>※ご提案内容はヒアリング内容に応じて異なります。※混雑状況により日数が前後する場合があります。</p>
     <div class="after">
       <p class="after-h">ご契約後の流れ</p>
@@ -1392,7 +1421,8 @@ body{font-size:16.5px}
       </label>
       <p class="before">送信後、1営業日以内にご返信します。<br>相談・デザイン案の作成は無料です。ご提案後に契約しなくても費用はかかりません。</p>
       <p class="form-note">送信いただいた内容は<a href="https://easywebcraft.github.io/easyweb-lp/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に基づいて取り扱います。</p>
-      <button class="btn-red" type="submit">無料デザイン案を申し込む<span class="arr" aria-hidden="true">→</span></button>
+      <button class="btn-red" type="submit">無料でデザイン案を見てみる<span class="arr" aria-hidden="true">→</span></button>
+      <p class="cta-note">契約不要｜費用0円｜見送ってもOK</p>
       <p class="form-err" id="form-err" hidden>送信できませんでした。お手数ですが、時間をおいて再度お試しください。</p>
     </form>
   </div>
@@ -1400,7 +1430,7 @@ body{font-size:16.5px}
 
 </main>
 
-<a class="sticky-cta" href="#contact" hidden>まずは無料で相談する →</a>
+<a class="sticky-cta" href="#contact" hidden>無料でデザイン案を見てみる →</a>
 
 <footer>
   <img src="img/logo-full.webp" alt="EasyWebCraft Web Design &amp; Development" width="800" height="124" loading="lazy">
@@ -1459,7 +1489,7 @@ document.getElementById('cform').addEventListener('submit', function (e) {
       if (!res.ok) throw new Error('send failed');
       f.innerHTML = '<p class="form-sent">送信しました。ありがとうございます。<br>1営業日以内にご連絡いたします。</p>';
     })
-    .catch(function () { btn.disabled = false; btn.textContent = '無料デザイン案を申し込む →'; err.textContent = '送信できませんでした。お手数ですが、時間をおいて再度お試しください。'; err.hidden = false; });
+    .catch(function () { btn.disabled = false; btn.textContent = '無料でデザイン案を見てみる →'; err.textContent = '送信できませんでした。お手数ですが、時間をおいて再度お試しください。'; err.hidden = false; });
 });
 </script>
 </body>
