@@ -1007,6 +1007,15 @@ footer a{color:#ddd}
 
 .solve-price{margin:10px 0 14px; font-family:var(--serif); font-weight:900; font-size:clamp(18px,5vw,26px); color:#fff}
 .solve-price b{font-family:var(--num); font-weight:700; font-size:1.45em; margin:0 2px; background:linear-gradient(180deg,#fffbe6,#ffe38a 45%,#f0c24a 70%,#fff0a8); -webkit-background-clip:text; background-clip:text; color:transparent}
+
+/* スマホ料金カード：画像のはみ出し防止 */
+@media (max-width:699px){
+  .plan{grid-template-columns:minmax(0,1fr) 42%}
+  .plan > .use{grid-column:1 / -1 !important; white-space:normal; font-size:clamp(15px,4.5vw,18px)}
+  .plan img{width:100%; max-width:100%; min-width:0}
+  .plan.reco .for{white-space:normal}
+  .all{font-size:clamp(11px,3.4vw,14px)}
+}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
