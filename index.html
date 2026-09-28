@@ -953,6 +953,12 @@ footer a{color:#ddd}
 .rl-q .d{display:block; font-size:.62em; color:#a9a194; letter-spacing:.2em; margin-bottom:6px}
 .rl-q em{font-style:normal; color:#fff; border-bottom:2px dotted rgba(255,255,255,.5); padding-bottom:2px; margin-left:2px}
 .rl-q b{color:#ff6b70; background:linear-gradient(transparent 68%,rgba(215,20,26,.28) 68%)}
+
+/* 大丈夫・ご安心 への下矢印 */
+.flow-arrow{display:flex; justify-content:center; margin:0 auto 10px}
+.flow-arrow svg{width:clamp(90px,26vw,150px); height:auto; filter:drop-shadow(0 0 14px rgba(255,196,60,.35))}
+#solve{padding-top:30px}
+.rl-ans .flow-arrow{margin:6px auto 8px}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -1042,6 +1048,7 @@ footer a{color:#ddd}
 <!-- ④ 解決 -->
 <section id="solve" class="solve">
   <div class="wrap">
+    <div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 120 64"><defs><linearGradient id="fag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a5a06" stop-opacity=".15"/><stop offset=".55" stop-color="#e0a91f"/><stop offset="1" stop-color="#ffe590"/></linearGradient></defs><path d="M0 0h120L60 64z" fill="url(#fag)"/></svg></div>
     <div class="sec-h">
       <h2><span><span class="g">大丈夫！</span><br>その悩み<br class="sp-br"><span class="g">月額5,980円〜</span>で<br><span class="g">すべて解決</span>できます！</span></h2>
       <p class="why-lead"><em>EasyWebCraft</em>が選ばれる3つの理由</p>
@@ -1114,6 +1121,7 @@ footer a{color:#ddd}
       <p class="rl-q"><span class="d">でも……</span>こんなに安くて<em>本当に</em><br><b>ちゃんとしたホームページ</b>が<br>できるの？</p>
     </div>
     <div class="rl-ans">
+      <div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 120 64"><defs><linearGradient id="fag2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a5a06" stop-opacity=".15"/><stop offset=".55" stop-color="#e0a91f"/><stop offset="1" stop-color="#ffe590"/></linearGradient></defs><path d="M0 0h120L60 64z" fill="url(#fag2)"/></svg></div>
       <p class="rl-ok">ご安心を！</p>
       <h2>ご契約の前に、あなたの事業の<br><span class="g">デザイン案を無料で</span>お作りします！</h2>
       <p class="rl-lead">仕上がりを<em>自分の目で確かめたうえで</em><br>「安いから、この程度か…」と思ったら、見送っていただいてかまいません。</p>
