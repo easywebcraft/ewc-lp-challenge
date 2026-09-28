@@ -1023,6 +1023,64 @@ footer a{color:#ddd}
 .rl-empathy .e1{margin-bottom:8px; font-family:var(--serif); font-weight:900; font-size:1.35em; color:#fff}
 .rl-empathy b{color:#fff; font-weight:900}
 .rl-ok small{display:block; font-size:.42em; letter-spacing:.2em; margin-bottom:2px}
+
+/* ===== 全体の文字を一回り大きく（FV以外） ===== */
+body{font-size:16.5px}
+.sec-h h2{font-size:clamp(25px,7.2vw,52px)}
+.sec-h p{font-size:clamp(16px,4.2vw,23px)}
+.worry-list li{font-size:16.5px}
+.w2-box h2{font-size:clamp(30px,8.2vw,52px)}
+.w2-g{font-size:19.5px}
+.rk b{font-size:19px}
+.rk span:last-child{font-size:14.5px}
+.risk-end{font-size:clamp(20px,5.4vw,28px)}
+.wy .pain{font-size:16px}
+.wy h3{font-size:21px}
+.wy p{font-size:15.5px}
+.can p{font-size:15.5px}
+.op p{font-size:15px}
+.plan ul{font-size:16px}
+.plan-msg{font-size:16.5px}
+.rl-q{font-size:clamp(24px,6.8vw,42px)}
+.rl-empathy{font-size:clamp(16.5px,4.6vw,20px)}
+.rl-lead{font-size:clamp(15.5px,4.1vw,18px)}
+.rl-pts li{font-size:16.5px}
+.step h3{font-size:23px}
+.step h3 small{font-size:14px}
+.after-list li{font-size:14px}
+.after-list b{font-size:16.5px}
+.qa summary{font-size:16.5px}
+.qa .a{font-size:15.5px}
+.form label,.form fieldset{font-size:15.5px}
+.fine,.note{font-size:13px}
+@media (max-width:699px){
+  .sec-h h2{font-size:clamp(24px,7.2vw,30px)}
+  .can p{font-size:15px}
+  .op p{font-size:14.5px}
+  .plan ul{font-size:15.5px}
+  .wy h3{font-size:20px}
+}
+
+@media (max-width:699px){
+  #can .sec-h h2{font-size:clamp(22px,6.4vw,27px)}
+  .rl-q{font-size:clamp(20px,6vw,26px)}
+  .step h3{font-size:clamp(18px,5.2vw,21px)}
+  .step h3 small{font-size:12.5px}
+  .worry-list li{font-size:15.5px}
+}
+
+@media (max-width:699px){
+  .can .hd h3{font-size:15px}
+  .step h3{font-size:clamp(17px,4.8vw,19px)}
+  .btn-red{font-size:clamp(16px,4.6vw,19px)}
+  .btn-red.big{font-size:clamp(16px,4.6vw,19px)}
+}
+
+@media (max-width:699px){
+  .can .hd h3{font-size:14px}
+  .cta-block .btn-red{white-space:nowrap; font-size:clamp(15px,4.4vw,18px); padding-left:14px; padding-right:14px; gap:8px}
+}
+@media (min-width:700px){ .step h3{font-size:18px; white-space:nowrap} .rl-pts b{font-size:16px; white-space:nowrap} }
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
