@@ -566,6 +566,106 @@ footer a{color:#ddd}
 .btn-red.big{max-width:720px; font-size:clamp(17px,4.6vw,30px); padding:18px 16px; white-space:nowrap}
 @media (max-width:699px){ .rl-ask{grid-template-columns:36% 1fr} .rl-bubble{padding:12px 14px} }
 .hp{position:absolute !important; left:-9999px !important; width:1px; height:1px; opacity:0; pointer-events:none}
+
+/* ===== FV v3 ===== */
+.sp-br{display:none}
+@media (max-width:699px){ .sp-br{display:inline} }
+.fv3{position:relative; padding:0; overflow:hidden; background:#050505; border-top:0}
+.fv3-bg img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:62% 0}
+.fv3::before{content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(5,5,5,0) 18%,rgba(5,5,5,.55) 38%,rgba(5,5,5,.92) 52%,#050505 70%)}
+.fv3-in{position:relative; z-index:2; max-width:1400px; margin:0 auto; padding:calc(max(120px, var(--fvh, 664px) - 560px)) 14px 18px; text-align:center}
+.fv3-for{display:inline-block; margin:0; padding:5px 16px; font-weight:800; font-size:14px; line-height:1.5; background:linear-gradient(90deg,rgba(215,20,26,.92),rgba(215,20,26,.6)); transform:skewX(-6deg)}
+.fv3-for b{color:var(--gold-lt)}
+.fv3-h{margin:10px 0 0; font-family:var(--serif); font-weight:900; line-height:1.15}
+.fv3-h .p{display:block; color:#fff}
+.fv3-h .p small{font-size:22px}
+.fv3-h .p b{font-family:var(--num); font-weight:700; font-size:64px; margin:0 4px; background:linear-gradient(180deg,#fff6c4,#f0c24a 55%,#b8860b); -webkit-background-clip:text; background-clip:text; color:transparent; letter-spacing:-.01em}
+.fv3-h .c{display:block; font-size:22px; margin-top:4px}
+.fv3-h .c em{font-style:normal; color:var(--red-lt); font-size:1.25em}
+.fv3-sub{margin:10px 0 0; font-size:14px; font-weight:700; line-height:1.6}
+.fv3-sub em{font-style:normal; color:var(--gold-lt)}
+.fv3-name{margin:8px 0 0; font-size:12px; color:#d9d2c3}
+.fv3-name b{display:inline-block; margin-left:6px; font-family:var(--num); letter-spacing:.04em; color:#fff; font-size:15px}
+.fv3-b{margin:12px auto 12px; max-width:420px}
+.fv3-b li{padding:6px 4px 8px}
+.fv3-b b{font-size:26px}
+.fv3-b b.t{font-size:13px}
+.fv3-cta{font-size:19px; padding:13px 16px}
+@media (max-width:699px){
+  .fv3-in{padding-top:calc(max(150px, var(--fvh, 664px) - 520px)); padding-bottom:14px}
+  .fv3-for{font-size:13px}
+  .fv3-h{margin-top:6px}
+  .fv3-h .p b{font-size:58px}
+  .fv3-h .c{font-size:21px; margin-top:0}
+  .fv3-sub{font-size:13px; margin-top:6px}
+  .fv3-name{margin-top:4px}
+  .fv3-b{margin:8px auto 10px}
+  .fv3-b li{padding:4px 4px 6px}
+  .fv3-b b{font-size:24px}
+  .fv3-b b.t{font-size:12.5px}
+}
+@media (max-width:699px) and (max-height:600px){
+  .fv3-h .p b{font-size:50px}
+  .fv3-b{display:none}
+}
+.fv3-fine{margin-top:6px; font-size:10.5px}
+@media (min-width:700px){
+  .fv3::before{background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.94) 34%,rgba(5,5,5,.6) 52%,rgba(5,5,5,0) 68%)}
+  .fv3-bg img{object-position:right center}
+  .fv3-in{min-height:min(calc(100vh - 56px), 900px); padding:48px 32px; text-align:left; display:flex; flex-direction:column; justify-content:center; align-items:flex-start}
+  .fv3-in > *{max-width:640px}
+  .fv3-for{font-size:20px; padding:6px 22px}
+  .fv3-h .p small{font-size:34px}
+  .fv3-h .p b{font-size:112px}
+  .fv3-h .c{font-size:34px}
+  .fv3-sub{font-size:20px; margin-top:16px}
+  .fv3-name{font-size:15px}
+  .fv3-name b{font-size:20px}
+  .fv3-b{margin:22px 0 18px; max-width:600px; gap:14px}
+  .fv3-b li{padding:10px 6px 12px}
+  .fv3-b small{font-size:15px}
+  .fv3-b b{font-size:44px}
+  .fv3-b b.t{font-size:20px}
+  .fv3-cta{margin:0; width:100%; max-width:600px; font-size:28px; padding:16px 24px}
+  .fv3-fine{text-align:left; font-size:12px}
+}
+/* ===== 悩み v2 ===== */
+.w2-grid{display:grid; gap:18px; align-items:center}
+@media (min-width:700px){ .w2-grid{grid-template-columns:1.15fr 1fr} }
+.w2-box{background:linear-gradient(180deg,#fbf8f1,#efe7d6); color:var(--paper-ink); border:1px solid var(--gold); border-radius:12px; padding:22px 16px}
+.w2-box h2{margin:0 0 12px; text-align:center; font-family:var(--serif); font-weight:900; font-size:clamp(28px,7.6vw,48px); line-height:1.25}
+.w2-box h2 .r{color:#c4121a}
+.w2-g{margin:14px 0 8px; font-family:var(--serif); font-weight:900; font-size:18px; color:#1b1712; border-left:4px solid #c4121a; padding-left:10px}
+.worry2 .worry-man img{width:100%; height:auto; border-radius:12px}
+@media (max-width:699px){ .worry2 .worry-man{display:none} }
+/* ===== 危機感 ===== */
+.risk{background:radial-gradient(60% 50% at 50% 0%,rgba(215,20,26,.18),transparent 70%),var(--bg)}
+.risk4{display:grid; gap:10px; max-width:1000px; margin:0 auto}
+@media (min-width:700px){ .risk4{grid-template-columns:repeat(2,1fr)} }
+@media (min-width:1100px){ .risk4{grid-template-columns:repeat(4,1fr)} }
+.rk{display:grid; gap:6px; border:1px solid rgba(255,59,64,.45); border-radius:12px; background:rgba(40,0,0,.35); padding:16px}
+.rk .ic{width:46px; height:46px; border-color:var(--red-lt)}
+.rk .ic svg{stroke:#ff8b8e}
+.rk b{font-family:var(--serif); font-weight:900; font-size:19px; color:#fff}
+.rk span:last-child{font-size:13px; color:#e8e2d5}
+@media (max-width:699px){
+  .rk{grid-template-columns:44px 1fr; column-gap:12px; row-gap:2px; padding:12px 14px}
+  .rk .ic{grid-row:span 2; width:44px; height:44px; align-self:center}
+  .rk b{font-size:17px}
+}
+.risk-end{margin:20px 0 0; text-align:center; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.8vw,26px)}
+/* ===== 解決 ===== */
+.why3{display:grid; gap:12px; max-width:1100px; margin:0 auto}
+@media (min-width:700px){ .why3{grid-template-columns:repeat(3,1fr)} }
+.wy{border:1px solid var(--gold); border-radius:14px; background:rgba(0,0,0,.5); padding:18px; display:grid; gap:6px; align-content:start}
+.wn{font-family:var(--serif); font-weight:900; color:var(--gold); font-size:14px}
+.wn b{font-family:var(--num); font-size:30px; margin-left:4px; background:linear-gradient(180deg,#fff6c4,#f0c24a 55%,#b8860b); -webkit-background-clip:text; background-clip:text; color:transparent}
+.wy h3{margin:0; font-family:var(--serif); font-weight:900; font-size:21px}
+.wy p{margin:0; font-size:14px; color:#e8e2d5}
+.wy p b{color:var(--gold-lt)}
+.nw{white-space:nowrap}
+@media (min-width:700px){ .w2-box{padding:28px 26px} .w2-box .worry-list li{font-size:17px; padding:12px 14px} .w2-g{font-size:21px} }
+.wy .for{font-size:12.5px; font-weight:800; color:#ff8b8e}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -595,26 +695,80 @@ footer a{color:#ddd}
 
 <main id="top">
 
-<!-- ① ファーストビュー（PC：デザイン画像そのまま／スマホ：見出しと人物は画像、価格・CTAはHTMLで短く） -->
-<section class="fv2" aria-label="EasyWebCraft">
-  <h1 class="sr">その挑戦に、ホームページを。起業・開業の最初の一手に、信頼されるホームページを。</h1>
-  <div class="fv2-in fv2-pc">
-    <img src="img/v3/fv-pc.webp" alt="SNSで知ってもらい、ホームページで信頼につなげる。開業前・開業したばかりの方へ。初期費用0円、月額5,980円〜、開業前も相談OK。" width="2560" height="1346" fetchpriority="high">
-    <a class="fv2-cta2" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>まずは無料で相談する<span class="arr" aria-hidden="true">→</span></a>
-    <ul class="fv2-chk"><li>制作・更新・保守まで月額に込み</li><li>スマホ対応・SEOの基本設定</li><li>開業前・開業直後の相談OK</li></ul>
+<!-- ① ファーストビュー（背景写真＋HTMLの文字） -->
+<section class="fv3" aria-label="EasyWebCraft">
+  <picture class="fv3-bg">
+    <source media="(min-width: 700px)" srcset="img/v3/bg-pc.webp 2560w, img/v3/bg-pc@2x.webp 3344w" sizes="100vw">
+    <img src="img/v3/bg-sp.webp" alt="" width="1242" height="2207" fetchpriority="high">
+  </picture>
+  <div class="fv3-in">
+    <p class="fv3-for">独立したてで、<br class="sp-br">ホームページを検討中の<b>経営者様へ</b></p>
+    <h1 class="fv3-h"><span class="p"><small>月額</small><b class="num">5,980</b><small>円〜</small></span><span class="c">7ヶ月目から<em>いつでも解約OK</em></span></h1>
+    <p class="fv3-sub"><em>集客・求人・ブランディング</em>に使えるホームページを、<br>制作から更新まで<em>まるごとサポート</em>。</p>
+    <p class="fv3-name">月額制ホームページ制作サービス<b>EasyWebCraft</b></p>
+    <ul class="badges fv3-b">
+      <li><small>初期費用</small><b class="g">0<i>円</i></b></li>
+      <li><small>更新・保守</small><b class="t g">月額に<br>込み</b></li>
+      <li><small>開業前も</small><b class="t g">相談<br>OK</b></li>
+    </ul>
+    <a class="btn-red fv3-cta" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>まずは無料で相談する<span class="arr" aria-hidden="true">→</span></a>
+    <p class="fine fv3-fine">※表示価格は税別（税込6,578円〜）。最低契約期間6ヶ月、7ヶ月目以降はいつでも解約できます。</p>
   </div>
-  <div class="fv2-sp">
-    <img src="img/v3/fv-sp-top.webp" alt="SNSで知ってもらい、ホームページで信頼につなげる。" width="1170" height="753" fetchpriority="high">
-    <div class="fv2-sp-in">
-      <ul class="badges">
-        <li><small>初期費用</small><b class="g">0<i>円</i></b></li>
-        <li><small>月額</small><b class="s g">5,980<i>円〜</i></b></li>
-        <li><small>開業前も</small><b class="t g">相談<br>OK</b></li>
-      </ul>
-      <a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>まずは無料で相談する<span class="arr" aria-hidden="true">→</span></a>
-      <p class="fv2-note">制作・更新・保守まで月額に込み。開業前の相談もOK。</p>
-      <p class="fine">※税別（税込6,578円〜）・最低契約期間6ヶ月</p>
+</section>
+
+<!-- ② 悩みへの共感 -->
+<section id="worry" class="worry2">
+  <div class="wrap">
+    <div class="w2-grid">
+      <div class="w2-box">
+        <h2>独立前後で、<br><span class="r">こんなお悩み</span><br>ありませんか？</h2>
+        <p class="w2-g">ホームページが無いから……</p>
+        <ul class="worry-list">
+          <li><span>銀行や取引先から<b>信用されにくい</b></span></li>
+          <li><span>SNSだけでは<b>信頼感が弱い</b></span></li>
+        </ul>
+        <p class="w2-g">ホームページが必要だけど……</p>
+        <ul class="worry-list">
+          <li><span>初期投資を抑えたいのに、<b>制作費が高い！</b></span></li>
+          <li><span>早く事業を始めたいのに、<b>制作期間が長い！</b></span></li>
+          <li><span><b>どこに任せていいか</b>わからない！</span></li>
+        </ul>
+      </div>
+      <div class="worry-man"><img src="img/v3/q-man.webp" alt="考え込む男性" width="1100" height="1350" loading="lazy"></div>
     </div>
+  </div>
+</section>
+
+<!-- ③ 危機感 -->
+<section id="risk" class="risk">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2><span>その悩み、<span class="r">放置すると……</span></span></h2>
+      <p>ホームページが無い・伝わらないままだと、<br>こんな場面で<em>チャンスを逃す</em>ことがあります。</p>
+    </div>
+    <div class="risk4">
+      <div class="rk"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 10l9-6 9 6"/><path d="M5 10v9h14v-9"/><path d="M9 19v-5h6v5"/></svg></span><b>融資・取引で不利に</b><span>審査や取引の検討で、事業の実態や信頼性を確かめられない</span></div>
+      <div class="rk"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg></span><b>集客できない</b><span>検索して見つからない、情報が足りない事業は、比較の候補から外れてしまう</span></div>
+      <div class="rk"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c.7-3.8 3-6 6-6s5.3 2.2 6 6"/><path d="M17 11h5M19.5 8.5v5"/></svg></span><b>求人で人が集まらない</b><span>求職者は応募の前に会社を調べる。情報が無い会社は選ばれにくい</span></div>
+      <div class="rk"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.3 5.9.9-4.2 4.1 1 5.8L12 16.4 6.7 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></span><b>ブランドが伝わらない</b><span>こだわりや想いが伝わらず、「どこにでもある事業」に見えてしまう</span></div>
+    </div>
+    <p class="risk-end">結果として、<br class="sp-br"><b class="r">事業の成長が止まってしまう</b>ことも。</p>
+  </div>
+</section>
+
+<!-- ④ 解決 -->
+<section id="solve" class="solve">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2><span>その悩み、<br class="sp-br"><span class="nw"><span class="g">月額5,980円〜で解決</span>できます</span></span></h2>
+      <p>月額制ホームページ制作サービス<br class="sp-br"><em>EasyWebCraft</em>が選ばれる3つの理由</p>
+    </div>
+    <div class="why3">
+      <div class="wy"><span class="wn">理由<b>01</b></span><h3>初期費用0円・月額制</h3><p>まとまった制作費は不要。<b>月額5,980円〜</b>で始められ、<b>7ヶ月目からはいつでも解約OK</b>です。</p><span class="for">→「制作費が高い！」に</span></div>
+      <div class="wy"><span class="wn">理由<b>02</b></span><h3>最短7日でデザイン案</h3><p>ヒアリングから<b>最短7日</b>でトップページのデザイン案をご提案。開業日から逆算して進めます。</p><span class="for">→「制作期間が長い！」に</span></div>
+      <div class="wy"><span class="wn">理由<b>03</b></span><h3>制作から更新までまるごと</h3><p>集客・求人・ブランディングに使えるページづくりから、<b>公開後の更新・保守まで</b>ひとつの窓口で。</p><span class="for">→「どこに任せていいかわからない！」に</span></div>
+    </div>
+    <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>まずは無料で相談する<span class="arr" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
@@ -636,27 +790,6 @@ footer a{color:#ddd}
     </div>
     <p class="note">※掲載しているのはサンプルデザインです。実際の制作実績・お客様の声は、公開の許可をいただけしだい掲載します。</p>
     <a class="to-price" href="#plans">このクオリティで、月額<b>5,980</b>円〜。<span>料金を見る ↓</span></a>
-  </div>
-</section>
-
-<!-- ③ こんなお悩みありませんか？ -->
-<section id="worry">
-  <div class="wrap">
-    <div class="worry">
-      <div class="worry-box">
-        <h2>こんな<span class="r">お悩み</span><br>ありませんか？</h2>
-        <p class="sub">起業前・開業直後の<em>こんな不安</em>、ありませんか？</p>
-        <ul class="worry-list">
-          <li><span>会社を設立したが、<b>まだHPがない</b></span></li>
-          <li><span>SNSだけでは<b>信頼感が弱い</b></span></li>
-          <li><span>取引先から<b>「HPはありますか？」</b>と聞かれる</span></li>
-          <li><span>制作会社に頼むと<b>高額で手が出せない</b></span></li>
-          <li><span>とにかく<b>早く公開して</b>事業を進めたい</span></li>
-          <li><span><b>何を載せればいいかわからない</b></span></li>
-        </ul>
-      </div>
-      <div class="worry-man"><img src="img/v3/q-man.webp" alt="考え込む男性。「HPがないと信頼されないのでは…？」「制作費が高すぎて手が出せない…」「何を載せればいいのかわからない…」" width="1100" height="1350" loading="lazy"></div>
-    </div>
   </div>
 </section>
 
@@ -826,12 +959,12 @@ footer a{color:#ddd}
     <div class="sec-h"><span class="en">FAQ</span><h2><span>よくある<span class="g">質問</span></span></h2></div>
     <div class="faq">
       <details class="qa"><summary>本当にデザイン案まで無料ですか？</summary><div class="a">はい。トップページ1ページ分のデザイン案を無料でお作りします。ご覧になって見送られても、費用は一切かかりません。</div></details>
-      <details class="qa"><summary>契約期間はありますか？</summary><div class="a">最低契約期間は6ヶ月です。すべてのプランで初期費用は0円です。詳しい条件は、ご契約前に書面でご説明します。</div></details>
+      <details class="qa"><summary>契約期間はありますか？</summary><div class="a">最低契約期間は6ヶ月です。7ヶ月目以降は、いつでも解約できます。すべてのプランで初期費用は0円です。詳しい条件は、ご契約前に書面でご説明します。</div></details>
       <details class="qa"><summary>デザインの修正はできますか？</summary><div class="a">デザイン案をご確認いただいたうえで、ご要望に合わせて修正して仕上げます。公開後のお知らせの追加や簡単な修正も、月額の中でサポートします（プランにより対応範囲が異なります）。</div></details>
-      <details class="qa"><summary>解約するときはどうすればいいですか？</summary><div class="a">最低契約期間の経過後に、メールでお申し出ください。解約の条件は、ご契約前に書面でご説明します。</div></details>
+      <details class="qa"><summary>解約するときはどうすればいいですか？</summary><div class="a">最低契約期間（6ヶ月）の経過後、7ヶ月目以降はいつでも解約できます。メールでお申し出ください。解約の条件は、ご契約前に書面でご説明します。</div></details>
       <details class="qa"><summary>ドメイン（URL）の費用はかかりますか？</summary><div class="a">独自ドメインの取得・費用の扱いや、すでにお持ちのドメインの利用も含めて、ご相談の際にご案内し、ご契約前に書面でご説明します。</div></details>
       <details class="qa"><summary>修正は何回までできますか？</summary><div class="a">デザイン案の修正回数や、公開後の更新作業の範囲はプランによって異なります。ご相談の際にご案内し、ご契約前に書面でご説明します。</div></details>
-      <details class="qa"><summary>最低契約期間（6ヶ月）が終わったあとはどうなりますか？</summary><div class="a">最低契約期間の経過後の更新や解約の扱いは、ご契約前に書面でご説明します。</div></details>
+      <details class="qa"><summary>最低契約期間（6ヶ月）が終わったあとはどうなりますか？</summary><div class="a">そのまま月額でご利用いただけます。7ヶ月目以降は、いつでも解約できます。解約の手続きは、ご契約前に書面でご説明します。</div></details>
       <details class="qa"><summary>開業前でも相談できますか？</summary><div class="a">できます。屋号やサービス内容がまだ整理中の段階でも大丈夫です。開業日から逆算して進め方をご提案します。</div></details>
       <details class="qa"><summary>文章や写真がなくても大丈夫ですか？</summary><div class="a">大丈夫です。お話をうかがって文章づくりをサポートし、写真の選び方や撮影のアドバイスも行います。</div></details>
     </div>
@@ -916,7 +1049,7 @@ footer a{color:#ddd}
     es.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
     bar.classList.toggle('off', seen.size > 0);
   }, { threshold: 0.01 });
-  [document.querySelector('.fv2'), document.getElementById('contact'), document.getElementById('doc'), document.querySelector('.rl-cta')].forEach(function (el) { if (el) io.observe(el); });
+  [document.querySelector('.fv3'), document.getElementById('contact'), document.getElementById('doc'), document.querySelector('.rl-cta')].forEach(function (el) { if (el) io.observe(el); });
 })();
 
 // 資料ダウンロード：送信できたらPDFのボタンを出して、新しいタブで開く
