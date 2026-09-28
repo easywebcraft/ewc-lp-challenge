@@ -943,6 +943,16 @@ footer a{color:#ddd}
 .why-lead{font-size:18px; font-weight:800}
 .why-lead em{font-family:var(--num); font-weight:700; font-size:1.7em; letter-spacing:.02em; margin-right:4px; vertical-align:-.08em; background:linear-gradient(180deg,#fffbe6,#ffe38a 45%,#f0c24a 70%,#fff0a8); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 2px 0 #2a1800)}
 @media (min-width:700px){ .why-lead{font-size:22px} }
+
+/* 不安の声：人物なし・文字だけ */
+.rl-voice{display:block; max-width:760px; text-align:center; padding:34px 18px 30px}
+.rl-voice::before,.rl-voice::after{position:absolute; font-family:var(--serif); font-weight:900; font-size:clamp(64px,16vw,120px); line-height:1; color:rgba(255,255,255,.12)}
+.rl-voice::before{content:"「"; left:0; top:0}
+.rl-voice::after{content:"」"; right:0; bottom:0}
+.rl-q{position:relative; margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(22px,6.2vw,40px); line-height:1.6; color:#e9e4da; letter-spacing:.02em}
+.rl-q .d{display:block; font-size:.62em; color:#a9a194; letter-spacing:.2em; margin-bottom:6px}
+.rl-q em{font-style:normal; color:#fff; border-bottom:2px dotted rgba(255,255,255,.5); padding-bottom:2px; margin-left:2px}
+.rl-q b{color:#ff6b70; background:linear-gradient(transparent 68%,rgba(215,20,26,.28) 68%)}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -1100,9 +1110,8 @@ footer a{color:#ddd}
 <!-- ⑥-2 「安いから、しょぼいのでは？」→「大丈夫。無料でデザイン案を作ります」 -->
 <section id="relief" class="relief">
   <div class="wrap">
-    <div class="rl-ask">
-      <img src="img/v3/q-man.webp" alt="" width="1100" height="1350" loading="lazy">
-      <p class="rl-bubble">でも……<br>月額5,980円〜って、<br><b>しょぼいホームページ</b>に<br>なるんじゃないの？</p>
+    <div class="rl-ask rl-voice">
+      <p class="rl-q"><span class="d">でも……</span>こんなに安くて<em>本当に</em><br><b>ちゃんとしたホームページ</b>が<br>できるの？</p>
     </div>
     <div class="rl-ans">
       <p class="rl-ok">ご安心を！</p>
