@@ -1132,6 +1132,14 @@ body{font-size:16.5px}
 .plan-desc{margin:8px 0 10px; font-size:14.5px; color:#e8e2d5; line-height:1.7}
 @media (max-width:699px){ .plan.reco .plan-desc{grid-column:1 / -1 !important; grid-row:6} .plan.reco ul{grid-row:7} }
 @media (min-width:700px){ .offer-h{white-space:nowrap} .offer{max-width:640px} }
+
+/* 最低契約期間：スマホは解約OKの右下すみ */
+.terms-sp{display:none}
+@media (max-width:699px){
+  .fv3-terms{display:none}
+  .fv3-cancel .c{position:relative; display:inline-block; padding-bottom:13px}
+  .terms-sp{display:block; position:absolute; right:0; bottom:0; font-family:"Noto Sans JP",sans-serif; font-weight:500; font-size:10.5px; line-height:1; color:#e8e2d5; text-shadow:0 1px 3px #000, 0 0 2px #000; white-space:nowrap; letter-spacing:0}
+}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -1171,7 +1179,7 @@ body{font-size:16.5px}
     <p class="fv3-for"><span class="l1"><em>独立したて</em>で、ホームページを検討中の</span><b>経営者様へ</b></p>
     <p class="fv3-h fv3-price"><span class="z">初期費用<b>0</b>円</span><span class="p"><small>月額</small><b class="num">5,980</b><small>円〜</small><span class="tax-sp">税別（税込6,578円〜）</span></span></p>
     <p class="fv3-tax">税別（税込6,578円〜）</p>
-    <p class="fv3-h fv3-cancel"><span class="c">7ヶ月目から<br class="sp-br"><em>いつでも解約OK</em></span></p>
+    <p class="fv3-h fv3-cancel"><span class="c">7ヶ月目から<br class="sp-br"><em>いつでも解約OK</em><span class="terms-sp">※最低契約期間6ヶ月</span></span></p>
     <p class="fv3-terms">※最低契約期間6ヶ月</p>
     <p class="fv3-use"><em>集客・求人・ブランディング</em>に必須な<br class="sp-br">ホームページ活用<em>すべてをサポート</em></p>
     <h1 class="fv3-brand"><span class="k">月額制ホームページ制作サービス</span><img src="img/v3/logo-fv.webp" alt="EasyWebCraft" width="1400" height="150"></h1>
