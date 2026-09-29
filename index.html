@@ -1198,6 +1198,16 @@ body{font-size:16.5px}
   .fv3-h.fv3-price .p b{font-size:21vw !important}
   .fv3-h.fv3-price .p small{font-size:6vw !important}
 }
+
+/* 背景の人物を暗く沈める */
+@media (max-width:699px){
+  .fv3::before{background:
+    radial-gradient(ellipse 30% 26% at 56% 13%, rgba(5,5,5,0) 0%, rgba(5,5,5,0) 55%, rgba(5,5,5,.9) 100%),
+    linear-gradient(180deg,rgba(5,5,5,.15) 0%,rgba(5,5,5,.8) 26%,rgba(5,5,5,.94) 40%,#050505 60%) !important}
+}
+@media (min-width:700px){
+  .fv3::before{background:linear-gradient(90deg,#050505 0%,#050505 44%,rgba(5,5,5,.96) 56%,rgba(5,5,5,.7) 63%,rgba(5,5,5,0) 72%) !important}
+}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
