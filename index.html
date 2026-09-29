@@ -1163,7 +1163,7 @@ body{font-size:16.5px}
     <button class="menu-btn" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
   </div>
   <nav class="mnav" id="mnav" aria-label="メニュー">
-    <a href="#designs">デザイン例</a><a href="#flow">ご利用の流れ</a><a href="#can">サービスの特徴</a><a href="#plans">料金プラン</a><a href="#faq">よくある質問</a><a href="#doc">資料ダウンロード</a>
+    <a href="#designs">デザイン例</a><a href="#flow">ご利用の流れ</a><a href="#can">サービスの特徴</a><a href="#plans">料金プラン</a><a href="#faq">よくある質問</a>
   </nav>
 </header>
 
@@ -1272,7 +1272,6 @@ body{font-size:16.5px}
     <div class="rl-cta">
       <a class="btn-red big" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料でデザイン案を見てみる<span class="arr" aria-hidden="true">→</span></a>
       <p class="cta-note">契約不要｜費用0円｜見送ってもOK</p>
-      <a class="sub-cta" href="#doc">まだ迷っている方は、まず無料の資料で確認する →</a>
     </div>
   </div>
 </section>
@@ -1342,38 +1341,6 @@ body{font-size:16.5px}
     </div>
     <p class="plan-msg">プランに迷う場合も、事業内容に合わせて<em>最適な構成</em>をご提案します。</p>
     <p class="fine">※表示価格は税別です。詳しい条件は<a href="https://easywebcraft.github.io/easyweb-lp/tokushoho.html">特定商取引法に基づく表記</a>をご覧ください。</p>
-  </div>
-</section>
-
-<!-- 資料ダウンロード（まだ検討中の方向け） -->
-<section id="doc" class="docdl">
-  <div class="wrap">
-    <div class="doc-box">
-      <div class="doc-prev">
-        <img class="cover" src="doc/img/p1.jpg" alt="資料の表紙" width="560" height="396" loading="lazy">
-        <div class="thumbs"><img src="doc/img/p4.jpg" alt="資料の中身：デザイン例" width="560" height="396" loading="lazy"><img src="doc/img/p5.jpg" alt="資料の中身：料金プラン" width="560" height="396" loading="lazy"><img src="doc/img/p6.jpg" alt="資料の中身：無料デザイン案の流れ" width="560" height="396" loading="lazy"></div>
-      </div>
-      <div class="doc-txt">
-        <p class="doc-en">FREE GUIDE</p>
-        <h2>ホームページ制作が分かる<br><span class="g">無料ガイド</span></h2>
-        <p>制作デザイン・料金・無料提案の流れを、6ページにまとめました（PDF）。</p>
-        <ul class="doc-list"><li>起業・開業時によくあるお悩み</li><li>できること・公開後のサポート</li><li>業種別のデザイン例</li><li>料金プランと比較表</li><li>無料デザイン案の流れと目安日数</li></ul>
-        <form class="dform" id="dform" action="https://formspree.io/f/maqkzjek" method="POST">
-          <input type="hidden" name="_subject" value="【EasyWebCraft 挑戦LP】資料ダウンロード">
-          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <label>メールアドレス<input type="email" name="email" id="d-email" required autocomplete="email" inputmode="email" placeholder="例：info@example.com"></label>
-          <label>お名前 <span class="opt">（任意）</span><input type="text" name="name" autocomplete="name" placeholder="例：山田 太郎"></label>
-          <button class="btn-gold2" type="submit">無料で資料を受け取る →</button>
-          <p class="d-note">送信後、すぐにこの画面から資料をダウンロードできます。<br>ご入力のメールアドレスに、サービスのご案内をお送りする場合があります。<br>送信いただいた内容は<a href="https://easywebcraft.github.io/easyweb-lp/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に基づいて取り扱います。</p>
-          <p class="form-err" id="d-err" hidden></p>
-        </form>
-        <div class="d-done" id="d-done" hidden>
-          <p><b>ありがとうございます。</b>下のボタンから資料をご覧いただけます。</p>
-          <a class="btn-gold2" href="doc/ewc-guide.pdf" target="_blank" rel="noopener">資料（PDF）を開く</a>
-          <p class="d-note">デザイン案の無料作成もお気軽に<a href="#contact">お申し込みください</a>。</p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1465,22 +1432,9 @@ body{font-size:16.5px}
     es.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
     bar.classList.toggle('off', seen.size > 0);
   }, { threshold: 0.01 });
-  [document.getElementById('contact'), document.getElementById('doc'), document.querySelector('.rl-cta')].forEach(function (el) { if (el) io.observe(el); });
+  [document.getElementById('contact'), document.querySelector('.rl-cta')].forEach(function (el) { if (el) io.observe(el); });
 })();
 
-// 資料ダウンロード：送信できたらPDFのボタンを出して、新しいタブで開く
-document.getElementById('dform').addEventListener('submit', function (e) {
-  e.preventDefault();
-  var f = e.target, btn = f.querySelector('button'), err = document.getElementById('d-err');
-  err.hidden = true; btn.disabled = true; btn.textContent = '送信中…';
-  fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
-    .then(function (res) {
-      if (!res.ok) throw new Error('send failed');
-      f.hidden = true; document.getElementById('d-done').hidden = false;
-      window.open('doc/ewc-guide.pdf', '_blank', 'noopener');
-    })
-    .catch(function () { btn.disabled = false; btn.textContent = '無料で資料をダウンロード'; err.textContent = '送信できませんでした。お手数ですが、時間をおいて再度お試しください。'; err.hidden = false; });
-});
 // フォーム送信
 document.getElementById('cform').addEventListener('submit', function (e) {
   e.preventDefault();
