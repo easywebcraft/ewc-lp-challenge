@@ -1208,6 +1208,16 @@ body{font-size:16.5px}
 @media (min-width:700px){
   .fv3::before{background:linear-gradient(90deg,#050505 0%,#050505 44%,rgba(5,5,5,.96) 56%,rgba(5,5,5,.7) 63%,rgba(5,5,5,0) 72%) !important}
 }
+
+/* 人物なし背景：文字の後ろを軽く暗くするだけにする */
+@media (max-width:699px){
+  .fv3-bg img{object-position:50% 0 !important}
+  .fv3::before{background:linear-gradient(180deg,rgba(5,5,5,.55) 0%,rgba(5,5,5,.45) 30%,rgba(5,5,5,.6) 55%,rgba(5,5,5,.75) 100%) !important}
+}
+@media (min-width:700px){
+  .fv3-bg img{object-position:right center !important}
+  .fv3::before{background:linear-gradient(90deg,rgba(5,5,5,.85) 0%,rgba(5,5,5,.6) 45%,rgba(5,5,5,.2) 70%,rgba(5,5,5,0) 85%) !important}
+}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -1240,8 +1250,8 @@ body{font-size:16.5px}
 <!-- ① ファーストビュー（背景写真＋HTMLの文字） -->
 <section class="fv3" aria-label="EasyWebCraft">
   <picture class="fv3-bg">
-    <source media="(min-width: 700px)" srcset="img/v3/bg-pc.webp 2560w, img/v3/bg-pc@2x.webp 3344w" sizes="100vw">
-    <img src="img/v3/bg-sp.webp" alt="" width="1242" height="2207" fetchpriority="high">
+    <source media="(min-width: 700px)" srcset="img/v3/nbg-pc.webp 2560w, img/v3/nbg-pc@2x.webp 3344w" sizes="100vw">
+    <img src="img/v3/nbg-sp.webp" alt="" width="1242" height="2209" fetchpriority="high">
   </picture>
   <div class="fv3-in">
     <p class="fv3-for"><span class="l1"><em>独立したて</em>で、ホームページを検討中の</span><b>経営者様へ</b></p>
