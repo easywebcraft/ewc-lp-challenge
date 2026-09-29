@@ -1218,6 +1218,10 @@ body{font-size:16.5px}
   .fv3-bg img{object-position:right center !important}
   .fv3::before{background:linear-gradient(90deg,rgba(5,5,5,.85) 0%,rgba(5,5,5,.6) 45%,rgba(5,5,5,.2) 70%,rgba(5,5,5,0) 85%) !important}
 }
+
+.reqm{display:inline-block; margin-left:6px; padding:1px 7px; border-radius:4px; background:#c4121a; color:#fff; font-size:11px; font-weight:800; vertical-align:2px}
+.form .lb{display:flex; align-items:center}
+.form .cta-note{color:#8a6a10}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -1444,32 +1448,20 @@ body{font-size:16.5px}
     <form class="form" id="cform" action="https://formspree.io/f/maqkzjek" method="POST">
       <input type="hidden" name="_subject" value="【EasyWebCraft 挑戦LP】無料デザイン案の申し込み">
           <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <label>お名前
+      <label><span class="lb">会社名（屋号名）<span class="reqm">必須</span></span>
+        <input type="text" name="company" required autocomplete="organization" placeholder="例：〇〇デザイン事務所">
+      </label>
+      <label><span class="lb">代表者名<span class="reqm">必須</span></span>
         <input type="text" name="name" required autocomplete="name" placeholder="例：山田 太郎">
       </label>
-      <fieldset>
-        <legend>いまの状況 <span class="opt">（任意）</span></legend>
-        <div class="stage">
-          <label><input type="radio" name="stage" value="これから開業"><span>これから開業</span></label>
-          <label><input type="radio" name="stage" value="開業1年以内"><span>開業1年以内</span></label>
-          <label><input type="radio" name="stage" value="それ以外"><span>それ以外</span></label>
-        </div>
-      </fieldset>
-      <label>業種・事業の名前 <span class="opt">（任意・未定でも可）</span>
-        <input type="text" name="shop" autocomplete="organization" placeholder="例：パーソナルジム〇〇（開業予定）">
-      </label>
       <div class="pair">
-        <label>メールアドレス
-          <input type="email" name="email" id="f-email" autocomplete="email" inputmode="email" placeholder="例：info@example.com">
+        <label><span class="lb">メールアドレス<span class="reqm">必須</span></span>
+          <input type="email" name="email" id="f-email" required autocomplete="email" inputmode="email" placeholder="例：info@example.com">
         </label>
-        <label>電話番号
-          <input type="tel" name="tel" id="f-tel" autocomplete="tel" inputmode="tel" placeholder="例：090-0000-0000">
+        <label><span class="lb">電話番号<span class="reqm">必須</span></span>
+          <input type="tel" name="tel" id="f-tel" required autocomplete="tel" inputmode="tel" placeholder="例：090-0000-0000">
         </label>
       </div>
-      <p class="req-note">※メールアドレスか電話番号の、どちらか一方は必ずご入力ください</p>
-      <label>ご希望・ご相談内容 <span class="opt">（任意）</span>
-        <textarea name="body" rows="4" placeholder="例：11月に開業予定。体験予約につながるHPにしたい。"></textarea>
-      </label>
       <p class="before">送信後、1営業日以内にご返信します。<br>相談・デザイン案の作成は無料です。ご提案後に契約しなくても費用はかかりません。</p>
       <p class="form-note">送信いただいた内容は<a href="https://easywebcraft.github.io/easyweb-lp/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に基づいて取り扱います。</p>
       <button class="btn-red" type="submit">無料でデザイン案を見てみる<span class="arr" aria-hidden="true">→</span></button>
@@ -1518,9 +1510,8 @@ document.getElementById('cform').addEventListener('submit', function (e) {
   var em = document.getElementById('f-email'), tl = document.getElementById('f-tel');
   em.classList.remove('bad'); tl.classList.remove('bad');
   var ev = em.value.trim(), tv = tl.value.trim();
-  if (!ev && !tv) { em.classList.add('bad'); tl.classList.add('bad'); err.textContent = 'メールアドレスか電話番号の、どちらか一方をご入力ください。'; err.hidden = false; em.focus(); return; }
-  if (ev && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ev)) { em.classList.add('bad'); err.textContent = 'メールアドレスの形式をご確認ください。'; err.hidden = false; em.focus(); return; }
-  if (tv && tv.replace(/[^0-9]/g, '').length < 10) { tl.classList.add('bad'); err.textContent = '電話番号の桁数をご確認ください。'; err.hidden = false; tl.focus(); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ev)) { em.classList.add('bad'); err.textContent = 'メールアドレスの形式をご確認ください。'; err.hidden = false; em.focus(); return; }
+  if (tv.replace(/[^0-9]/g, '').length < 10) { tl.classList.add('bad'); err.textContent = '電話番号の桁数をご確認ください。'; err.hidden = false; tl.focus(); return; }
   err.hidden = true; btn.disabled = true; btn.textContent = '送信中…';
   fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
     .then(function (res) {
