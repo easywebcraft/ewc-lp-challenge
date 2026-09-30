@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- 試作v3（レイアウト検討）：男性なし・コピーを主役に中央揃え。筆文字と背景は仮 -->
+<!-- 試作v3：男性なし・筆文字「その挑戦に、ホームページを。」入りの生成画像を背景に、中央揃え -->
 <base href="/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1233,66 +1233,53 @@ body{font-size:16.5px}
 .reqm{display:inline-block; margin-left:6px; padding:1px 7px; border-radius:4px; background:#c4121a; color:#fff; font-size:11px; font-weight:800; vertical-align:2px}
 .form .lb{display:flex; align-items:center}
 .form .cta-note{color:#8a6a10}
-/* ===== 試作v3：コピー主役・中央揃え ===== */
-.fv3::before{background:radial-gradient(ellipse 60% 45% at 50% 38%,rgba(5,5,5,.15),rgba(5,5,5,.7) 70%),linear-gradient(180deg,rgba(5,5,5,.3),rgba(5,5,5,.85)) !important}
-.fv3-in{text-align:center !important; align-items:center !important}
-.v3-catch{margin:0; line-height:0; filter:drop-shadow(0 8px 20px rgba(0,0,0,.85))}
-.v3-catch img{display:block; height:auto; margin:0 auto}
-.v3-catch .t1{width:72%} .v3-catch .t2{width:100%; margin-top:-2%}
+/* ===== 試作v3：筆文字入りの背景（中央）に合わせた配置 ===== */
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+.fv3-bg img{object-position:center top !important}
+.fv3-in{text-align:center !important; align-items:center !important; justify-content:flex-start !important}
+.fv3 .fv3-for{position:absolute; left:50%; transform:translateX(-50%); margin:0 !important; z-index:3; white-space:nowrap}
+.fv3-tax,.fv3-terms{text-align:center !important}
 @media (max-width:699px){
-  .fv3-in{justify-content:center !important; padding-top:14px !important; padding-bottom:84px !important}
-  .fv3 .fv3-for{font-size:13px !important; padding:6px 16px 7px !important}
-  .fv3 .fv3-for b{font-size:1.5em !important}
-  .v3-catch{width:100%; margin:14px 0 10px}
+  .fv3::before{background:linear-gradient(180deg,rgba(5,5,5,0) 0%,rgba(5,5,5,0) 36%,rgba(5,5,5,.35) 55%,rgba(5,5,5,.6) 100%) !important}
+  .fv3-in{padding-top:59vw !important; padding-bottom:100px !important}
+  .fv3 .fv3-for{top:2vw; font-size:3.4vw !important; padding:5px 14px 7px !important; line-height:1.3 !important}
+  .fv3 .fv3-for .l1 br{display:none}
+  .fv3 .fv3-for b{font-size:1.9em !important; display:block !important; letter-spacing:.06em}
   .fv3-price{margin-top:0 !important}
-  .fv3-h.fv3-price .p b{font-size:20vw !important}
-  .fv3-brand img{width:62% !important}
+  .fv3-price .z{font-size:6.2vw !important}
+  .fv3-h.fv3-price .p b{font-size:19vw !important; line-height:1 !important}
+  .fv3-h.fv3-price .p small{font-size:6.2vw !important}
+  .fv3-cancel{margin-top:2px !important}
+  .fv3-h .c{font-size:5.2vw !important}
+  .fv3-h .c em{font-size:1.6em !important}
+  .fv3-brand{margin-top:6px !important}
+  .fv3-brand .k{font-size:3.2vw !important}
+  .fv3-brand img{width:58% !important}
 }
-@media (min-width:700px){
-  .fv3-in{justify-content:center !important; padding:28px 32px 36px !important; min-height:min(calc(100vh - 62px),900px) !important}
-  .fv3-in > *{max-width:none !important}
-  .fv3 .fv3-for{margin:0 auto !important; font-size:clamp(18px,1.6vw,24px) !important; padding:10px 44px 12px !important}
-  .v3-catch{width:min(62vw,900px); margin:14px auto 6px}
-  .fv3-price{justify-content:center !important; margin-top:0 !important}
-  .fv3-price .z{font-size:clamp(26px,2.6vw,40px) !important}
-  .fv3-h.fv3-price .p b{font-size:clamp(80px,8vw,124px) !important}
-  .fv3-price .p small{font-size:clamp(28px,2.7vw,42px) !important}
-  .fv3-tax,.fv3-terms{text-align:center !important}
-  .fv3-cancel{margin-top:0 !important}
-  .fv3-h .c{font-size:clamp(24px,2.4vw,36px) !important}
-  .fv3-brand{margin-top:14px !important}
-  .fv3-brand .k{text-align:center; font-size:clamp(13px,1.1vw,17px) !important}
-  .fv3-brand img{width:clamp(260px,24vw,380px) !important; margin:6px auto 0 !important}
-}
-@media (min-width:700px){ .v3-catch{width:min(52vw,760px); margin:8px auto 2px} .fv3-in{padding-top:18px !important; padding-bottom:22px !important} .fv3-brand{margin-top:8px !important} }
 @media (max-width:699px) and (max-height:600px){
-  .fv3-in{padding-top:6px !important; padding-bottom:76px !important}
-  .fv3 .fv3-for{font-size:11.5px !important; padding:4px 12px 5px !important}
-  .v3-catch{width:84%; margin:6px auto 4px}
-  .fv3-h.fv3-price .p b{font-size:15vw !important}
+  .fv3-in{padding-top:58vw !important; padding-bottom:84px !important}
+  .fv3 .fv3-for{font-size:3vw !important; padding:4px 12px 5px !important}
+  .fv3 .fv3-for b{font-size:1.7em !important}
+  .fv3-h.fv3-price .p b{font-size:14vw !important}
   .fv3-price .z{font-size:5vw !important}
   .fv3-h .c{font-size:4.4vw !important} .fv3-h .c em{font-size:1.4em !important}
-  .fv3-brand .k{display:none} .fv3-brand{margin-top:2px !important} .fv3-brand img{width:48% !important}
+  .fv3-brand .k{display:none} .fv3-brand{margin-top:2px !important} .fv3-brand img{width:44% !important}
 }
-@media (min-width:700px){ .fv3 .fv3-for{font-size:clamp(22px,2.2vw,32px) !important; padding:12px 56px 14px !important} .v3-catch{width:min(48vw,700px)} }
-/* スマホ：経営者様へを強調／ロゴと固定ボタンの間を空ける */
-@media (max-width:699px){
-  .fv3-in{padding-bottom:104px !important; padding-top:10px !important}
-  .fv3 .fv3-for{font-size:15px !important; padding:8px 18px 10px !important; line-height:1.3 !important}
-  .fv3 .fv3-for b{font-size:2em !important; display:block !important; letter-spacing:.06em}
-  .v3-catch{width:90%; margin:10px auto 6px}
-  .fv3-h.fv3-price .p b{font-size:18vw !important}
+@media (min-width:700px){
+  .fv3::before{background:linear-gradient(180deg,rgba(5,5,5,0) 0%,rgba(5,5,5,0) 58%,rgba(5,5,5,.35) 78%,rgba(5,5,5,.5) 100%) !important}
+  .fv3-in{min-height:56.3vw !important; padding:33.5vw 32px 24px !important}
+  .fv3-in > *{max-width:none !important}
+  .fv3 .fv3-for{top:2.8vw; font-size:clamp(18px,2.1vw,32px) !important; padding:10px 52px 12px !important}
+  .fv3-price{justify-content:center !important; margin-top:0 !important}
+  .fv3-price .z{font-size:clamp(22px,2.3vw,36px) !important}
+  .fv3-h.fv3-price .p b,.fv3-price .p b{font-size:clamp(60px,6.4vw,100px) !important}
+  .fv3-price .p small{font-size:clamp(22px,2.3vw,36px) !important}
+  .fv3-tax{margin-top:0 !important}
   .fv3-cancel{margin-top:0 !important}
+  .fv3-h .c{font-size:clamp(20px,2.1vw,32px) !important}
   .fv3-brand{margin-top:6px !important}
-  .fv3-brand img{width:56% !important}
-}
-@media (max-width:699px) and (max-height:600px){
-  .fv3-in{padding-top:4px !important; padding-bottom:88px !important}
-  .fv3 .fv3-for{font-size:12px !important; padding:5px 14px 6px !important}
-  .fv3 .fv3-for b{font-size:1.8em !important}
-  .v3-catch{width:76%; margin:4px auto 2px}
-  .fv3-h.fv3-price .p b{font-size:14vw !important}
-  .fv3-brand img{width:44% !important}
+  .fv3-brand .k{text-align:center; font-size:clamp(11px,1vw,15px) !important}
+  .fv3-brand img{width:clamp(200px,20vw,320px) !important; margin:4px auto 0 !important}
 }
 </style>
 <script>
@@ -1326,12 +1313,12 @@ body{font-size:16.5px}
 <!-- ① ファーストビュー（背景写真＋HTMLの文字） -->
 <section class="fv3" aria-label="EasyWebCraft">
   <picture class="fv3-bg">
-    <source media="(min-width: 700px)" srcset="img/v3/nbg-pc.webp 2560w, img/v3/nbg-pc@2x.webp 3344w" sizes="100vw">
-    <img src="img/v3/nbg-sp.webp" alt="" width="1242" height="2209" fetchpriority="high">
+    <source media="(min-width: 700px)" srcset="img/v3/v3-pc.webp">
+    <img src="img/v3/v3-sp.webp" alt="" width="1242" height="2207" fetchpriority="high">
   </picture>
   <div class="fv3-in">
     <p class="fv3-for"><span class="l1"><em>起業・開業</em>したばかりで、<br class="sp-br">ホームページを検討中の</span><b>経営者様へ</b></p>
-    <h2 class="v3-catch"><img class="t1" src="img/v3/fv-t1c.webp" alt="その挑戦に、" width="1044" height="270"><img class="t2" src="img/v3/fv-t2c.webp" alt="ホームページを。" width="1410" height="300"></h2>
+    <h2 class="sr">その挑戦に、ホームページを。</h2>
     <p class="fv3-h fv3-price"><span class="z">初期費用<b>0</b>円</span><span class="p"><small>月額</small><b class="num">5,980</b><small>円〜</small><span class="tax-sp">税別（税込6,578円〜）</span></span></p>
     <p class="fv3-tax">税別（税込6,578円〜）</p>
     <p class="fv3-h fv3-cancel"><span class="c">7ヶ月目から<br class="sp-br"><em>いつでも解約OK</em><span class="terms-sp">※最低契約期間6ヶ月</span></span></p>
