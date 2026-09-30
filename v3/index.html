@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- 試作v3（レイアウト検討）：男性なし・コピーを主役に中央揃え。筆文字と背景は仮 -->
+<base href="/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>起業・開業したばかりの方へ｜月額5,980円〜のホームページ制作 EasyWebCraft</title>
+<meta name="description" content="起業・開業したばかりで、ホームページを検討中の経営者様へ。初期費用0円・月額5,980円〜（税別）、7ヶ月目からいつでも解約OK。契約前にあなたの事業専用のデザイン案を無料でお作りします。最低契約期間6ヶ月。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="起業・開業したばかりの方へ｜月額5,980円〜のホームページ制作 EasyWebCraft">
+<meta property="og:description" content="起業・開業したばかりで、ホームページを検討中の経営者様へ。初期費用0円・月額5,980円〜（税別）、7ヶ月目からいつでも解約OK。契約前にあなたの事業専用のデザイン案を無料でお作りします。">
+<meta property="og:url" content="https://start-lp.easywebcraft.jp/">
+<meta property="og:image" content="https://start-lp.easywebcraft.jp/img/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><text x='50' y='72' font-size='62' font-weight='bold' text-anchor='middle' font-family='sans-serif' fill='%23ffc61a'>E</text></svg>">
+<!-- フォントはLPで使う文字だけを抜き出して同梱（fonts/subset.mjs）。Googleフォントの後読みで
+     開いた瞬間に文字が差し替わってカクつくのを防ぐ。文言を変えたら subset.mjs を再実行 -->
+<link rel="preload" href="fonts/lp-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/lp-num.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/lp-sans.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Noto Sans JP"; src:url(fonts/lp-sans.woff2) format("woff2"); font-weight:400 900; font-display:swap}
+@font-face{font-family:"Noto Serif JP"; src:url(fonts/lp-serif.woff2) format("woff2"); font-weight:600 900; font-display:swap}
+@font-face{font-family:"Oswald"; src:url(fonts/lp-num.woff2) format("woff2"); font-weight:600 700; font-display:swap}
+/* 黒×金×赤。デザイン画像（lp_element の 1〜7）の構成と見た目を、文字はHTML・写真は画像で再現 */
+:root{
+  --bg:#070707; --line:rgba(227,180,58,.45); --line2:rgba(255,255,255,.12);
+  --gold:#e3b43a; --gold-lt:#ffe08a; --red:#d7141a; --red-lt:#ff3b40; --ink:#f3f0ea; --muted:#b9b2a5; --paper:#f7f3ea; --paper-ink:#1b1712;
+  --num:"Oswald","Noto Sans JP",sans-serif; --serif:"Noto Serif JP","Hiragino Mincho ProN",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic UI",sans-serif; line-height:1.75; font-size:15px}
+img{max-width:100%; display:block}
+a{color:inherit}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+.wrap{max-width:1180px; margin:0 auto; padding:0 16px}
+section{position:relative; padding:64px 0; scroll-margin-top:58px;
+  background:radial-gradient(60% 50% at 15% 0%,rgba(227,180,58,.10),transparent 70%),radial-gradient(50% 45% at 90% 100%,rgba(227,180,58,.08),transparent 70%),var(--bg)}
+section + section{border-top:1px solid rgba(227,180,58,.18)}
+
+/* 見出し（金のセリフ体・左右の罫線） */
+.sec-h{text-align:center; margin:0 0 30px}
+.sec-h .en{display:block; font-family:var(--num); letter-spacing:.3em; color:var(--gold); font-size:13px; margin-bottom:6px}
+.sec-h h2{display:flex; align-items:center; justify-content:center; gap:18px; margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(26px,6.4vw,48px); line-height:1.25; color:#fff}
+.sec-h h2::before,.sec-h h2::after{content:""; flex:0 1 110px; height:1px; background:linear-gradient(90deg,transparent,var(--gold))}
+.sec-h h2::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.g{background:linear-gradient(180deg,#fff3c4,#e9bd4a 55%,#b8860b); -webkit-background-clip:text; background-clip:text; color:transparent}
+.r{color:var(--red-lt)}
+.sec-h p{margin:12px 0 0; font-size:clamp(15px,3.8vw,22px); font-weight:700; line-height:1.6}
+.sec-h p em{font-style:normal; color:var(--gold-lt)}
+.sec-h small{display:block; margin-top:6px; font-size:13px; color:var(--muted)}
+
+/* ボタン */
+.btn-red{display:flex; align-items:center; justify-content:center; gap:12px; max-width:620px; margin:0 auto; text-decoration:none; color:#fff4c2; font-weight:900; font-size:clamp(18px,4.6vw,28px); letter-spacing:.04em;
+  background:linear-gradient(180deg,#ff3a40,#c10d13 55%,#8e070b); border:2px solid #ff8b8e; border-radius:999px; padding:14px 26px; box-shadow:0 0 0 3px rgba(255,59,64,.18), 0 10px 30px rgba(215,20,26,.5)}
+.btn-red svg{width:1.1em; height:1.1em; flex:0 0 auto; stroke:currentColor; fill:none; stroke-width:2}
+.btn-red .arr{font-weight:400}
+.btn-red:focus-visible{outline:3px solid var(--gold-lt); outline-offset:3px}
+.checks{list-style:none; margin:14px auto 0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:6px 22px; font-size:13px; font-weight:700; color:#fff}
+.checks li{display:flex; align-items:center; gap:6px}
+.checks li::before{content:"✓"; width:20px; height:20px; border-radius:50%; border:2px solid var(--gold); color:var(--gold); font-size:12px; display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto}
+.cta-block{margin-top:34px}
+.fine{margin:8px 0 0; text-align:center; font-size:12px; color:var(--muted)}
+
+/* ヘッダー */
+.top{position:sticky; top:0; z-index:50; background:rgba(0,0,0,.92); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); border-bottom:1px solid rgba(227,180,58,.25)}
+.top-in{max-width:1400px; margin:0 auto; display:flex; align-items:center; gap:14px; padding:8px 16px}
+.top .logo img{height:22px; width:auto}
+.gnav{display:none}
+.top .cta{margin-left:auto; background:linear-gradient(180deg,#ffe07a,#e3b43a); color:#1a1200; text-decoration:none; font-weight:900; font-size:13px; border-radius:999px; padding:8px 16px; white-space:nowrap; box-shadow:0 0 18px rgba(227,180,58,.35)}
+.menu-btn{background:none; border:0; padding:6px; cursor:pointer; display:grid; gap:5px}
+.menu-btn i{display:block; width:24px; height:2px; background:#fff}
+.mnav{display:none; position:absolute; left:0; right:0; top:100%; background:rgba(0,0,0,.96); border-bottom:1px solid var(--line)}
+.mnav.open{display:block}
+.mnav a{display:block; padding:14px 20px; text-decoration:none; font-weight:700; border-top:1px solid var(--line2)}
+
+/* ① ファーストビュー */
+.fv{padding:0; overflow:hidden; background:radial-gradient(70% 90% at 75% 40%,rgba(227,150,40,.22),transparent 60%),radial-gradient(40% 50% at 10% 20%,rgba(227,150,40,.12),transparent 70%),#050505}
+.fv-in{position:relative; max-width:1400px; margin:0 auto; display:grid; grid-template-columns:1fr; padding:0 0 22px}
+.fv-visual{position:relative; height:calc(max(170px, var(--fvh, 664px) - 520px)); overflow:hidden}
+.fv-visual img{width:100%; height:100%; object-fit:cover; object-position:30% 18%}
+.fv-visual::after{content:""; position:absolute; inset:auto 0 0 0; height:45%; background:linear-gradient(transparent,#050505)}
+.fv-text{position:relative; padding:0 14px; margin-top:-34px; z-index:2}
+.fv-lead{display:inline-block; margin:0; padding:3px 14px; font-family:var(--serif); font-weight:900; font-size:13px; color:#fff; background:linear-gradient(90deg,rgba(215,20,26,.9),rgba(215,20,26,.55) 80%,transparent); transform:skewX(-8deg)}
+.fv-lead em{font-style:normal; color:var(--gold-lt)}
+.fv-title{margin:6px 0 0}
+.fv-title img{width:100%; height:auto; filter:drop-shadow(0 4px 12px rgba(0,0,0,.8))}
+.fv-sns{margin:4px 0 0; font-family:var(--serif); font-weight:900; font-size:16px; line-height:1.5}
+.fv-sns em{font-style:normal; color:var(--gold-lt); font-size:1.25em}
+.fv-for{margin:6px 0 0; padding-left:10px; border-left:2px solid var(--gold); font-size:12px; color:#e9e4da; line-height:1.6}
+.badges{list-style:none; margin:12px 0 12px; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+.badges li{border-radius:999px; border:2px solid var(--gold); background:radial-gradient(circle at 50% 30%,#1c1a16,#060606); box-shadow:inset 0 0 0 2px #5a4108, 0 0 16px rgba(227,180,58,.35); text-align:center; padding:6px 4px 8px; line-height:1.1}
+.badges small{display:block; font-size:11px; font-weight:800; color:#fff}
+.badges b{display:block; margin-top:3px; font-family:var(--num); font-weight:700; font-size:24px}
+.badges b i{font-style:normal; font-family:"Noto Sans JP"; font-weight:900; font-size:.55em}
+.badges b.s{font-size:18px}
+.badges b.t{font-family:"Noto Sans JP"; font-weight:900; font-size:14px; line-height:1.25}
+.fv .btn-red{font-size:19px; padding:12px 18px}
+.fv .checks{margin-top:10px; font-size:11.5px; gap:4px 12px}
+.fv .fine{margin-top:4px; font-size:11px}
+
+/* ② 制作デザインのサンプル */
+.cards3{display:grid; gap:16px}
+.scard{background:linear-gradient(180deg,#141210,#0a0908); border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.scard .ph img{width:100%; height:auto}
+.scard .cap{display:flex; align-items:center; gap:14px; padding:14px 16px 16px; border-top:1px solid var(--line)}
+.ic{flex:0 0 52px; height:52px; border-radius:50%; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center}
+.ic svg{width:26px; height:26px; stroke:var(--gold-lt); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+.scard h3{margin:0; font-family:var(--serif); font-weight:900; font-size:24px; line-height:1.3}
+.scard .sb{list-style:none; margin:8px 0 0; padding:0; display:grid; gap:4px; font-size:12.5px; color:#e8e2d5}
+.scard .sb li{display:flex; gap:6px}
+.scard .sb li::before{content:"✓"; color:var(--gold); font-weight:900}
+.scard p{margin:2px 0 0; font-size:14px; color:#e8e2d5}
+
+/* ③ お悩み */
+.worry{display:grid; gap:20px; align-items:center}
+.worry-box{background:linear-gradient(180deg,#fbf8f1,#f1ebdd); color:var(--paper-ink); border-radius:12px; padding:26px 18px 22px; box-shadow:0 12px 40px rgba(0,0,0,.6); border:1px solid rgba(227,180,58,.6)}
+.worry-box h2{margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(30px,8vw,56px); line-height:1.2; text-align:center}
+.worry-box h2 .r{color:#c4121a; background:linear-gradient(100deg,transparent 2%,rgba(227,180,58,.55) 10%,rgba(227,180,58,.35) 85%,transparent)}
+.worry-box .sub{margin:12px 0 16px; text-align:center; font-family:var(--serif); font-weight:700; font-size:16px}
+.worry-box .sub em{font-style:normal; color:#c4121a}
+.worry-list{list-style:none; margin:0; padding:0; display:grid; gap:8px}
+.worry-list li{display:flex; align-items:center; gap:12px; background:#fff; border-radius:8px; padding:10px 12px; font-weight:700; font-size:15px; box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.worry-list li::before{content:"✓"; flex:0 0 26px; height:26px; border-radius:50%; background:#c4121a; color:#fff; font-size:15px; display:flex; align-items:center; justify-content:center}
+.worry-list b{color:#c4121a}
+.worry-man img{width:100%; height:auto; border-radius:12px}
+
+/* ④ できること */
+.can4{display:grid; gap:14px}
+.can{background:linear-gradient(180deg,#141210,#0a0908); border:1px solid var(--line2); border-radius:12px; overflow:hidden; display:flex; flex-direction:column}
+.can .hd{display:flex; align-items:center; gap:10px; padding:14px 14px 10px}
+.no{flex:0 0 34px; height:34px; border-radius:50%; background:linear-gradient(180deg,#ffe07a,#e3b43a); color:#1a1200; font-family:var(--num); font-weight:700; font-size:16px; display:flex; align-items:center; justify-content:center}
+.can h3{margin:0; font-size:18px; font-weight:900; line-height:1.35}
+.can img{width:100%; height:auto}
+.can p{margin:0; padding:12px 14px 16px; font-size:14px; color:#e8e2d5}
+.plus{margin:26px 0 16px; text-align:center; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.6vw,30px); line-height:1.5}
+.plus::before{content:"＋"; display:block; color:var(--gold); font-size:1.4em; line-height:1}
+.plus em{font-style:normal; color:var(--gold-lt)}
+.ops{display:grid; gap:12px}
+.op{background:var(--paper); color:var(--paper-ink); border-radius:10px; overflow:hidden; display:flex; flex-direction:column}
+.op .hd{display:flex; align-items:center; gap:10px; padding:12px 12px 8px}
+.op h3{margin:0; font-size:16px; font-weight:900}
+.op img{width:calc(100% - 24px); margin:0 12px; border-radius:6px; height:auto}
+.op p{margin:0; padding:10px 12px 14px; font-size:13.5px; line-height:1.65}
+.op p small{display:block; color:#6b6254}
+
+/* ⑤ 制作事例 */
+.ex3{display:grid; gap:16px}
+.ex{background:linear-gradient(180deg,#141210,#0a0908); border:1px solid var(--line); border-radius:14px; overflow:hidden; padding:14px 14px 16px}
+.ex .hd{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+.ex .hd .ic{flex-basis:46px; height:46px}
+.ex h3{margin:0; font-family:var(--serif); font-weight:900; font-size:22px; flex:1}
+.tag{background:linear-gradient(180deg,#ffe07a,#e3b43a); color:#1a1200; font-size:12px; font-weight:900; border-radius:999px; padding:3px 14px}
+.ex img{width:100%; height:auto; border-radius:8px}
+.ex ul{list-style:none; margin:12px 0 0; padding:0; display:grid; gap:6px; font-size:14px}
+.ex li{display:flex; gap:8px}
+.ex li::before{content:"✓"; flex:0 0 20px; height:20px; border-radius:50%; border:2px solid var(--gold); color:var(--gold); font-size:11px; display:flex; align-items:center; justify-content:center; margin-top:2px}
+.flow-h{display:flex; align-items:center; gap:14px; margin:40px 0 16px; flex-wrap:wrap}
+.flow-h h3{margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(26px,6vw,40px)}
+.flow-h p{margin:0; font-weight:700; font-size:14px}
+.flow5{list-style:none; margin:0; padding:0; display:grid; gap:12px}
+.flow5 li{background:var(--paper); color:var(--paper-ink); border-radius:10px; overflow:hidden; padding:12px}
+.flow5 .hd{display:flex; align-items:center; gap:10px; margin-bottom:8px}
+.flow5 h4{margin:0; font-size:17px; font-weight:900}
+.flow5 img{width:100%; height:auto; border-radius:6px}
+.flow5 p{margin:8px 0 0; font-size:13.5px; line-height:1.65}
+.note{margin:18px 0 0; text-align:center; font-size:12px; color:var(--muted)}
+
+/* ⑥ 料金 */
+.all{display:table; margin:0 auto 22px; border:1.5px solid var(--gold); border-radius:999px; padding:6px 22px; font-family:var(--serif); font-weight:900; font-size:clamp(14px,3.6vw,20px); text-align:center}
+.all b{color:var(--gold-lt)}
+.plans{display:grid; gap:16px; align-items:stretch}
+.plan{position:relative; background:linear-gradient(180deg,#141210,#0a0908); border:1px solid var(--line2); border-radius:14px; padding:22px 18px 18px}
+.plan.reco{border:2px solid var(--gold); box-shadow:0 0 34px rgba(227,180,58,.35), inset 0 0 40px rgba(227,180,58,.08)}
+.plan .ribbon{position:absolute; top:-2px; right:14px; background:linear-gradient(180deg,#e41d23,#9e0c10); color:#fff; font-weight:900; font-size:15px; padding:6px 14px 10px; clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%)}
+.plan h3{margin:0; font-family:var(--serif); font-weight:900; font-size:30px; line-height:1.2}
+.plan .for{display:inline-block; margin:8px 0 0; background:linear-gradient(180deg,#ffe9a6,#e3b43a); color:#1a1200; font-weight:900; font-size:14px; border-radius:999px; padding:3px 16px}
+.plan .p{margin:8px 0 0; font-family:var(--serif); font-weight:900; font-size:44px; line-height:1.1}
+.plan .p small{font-family:"Noto Sans JP"; font-size:18px; font-weight:900}
+.plan .tx{font-size:14px; font-weight:700; color:var(--muted)}
+.plan .taxin{margin:2px 0 10px; font-size:12px; color:var(--muted)}
+.plan img{width:100%; height:auto; margin:6px 0 10px}
+.plan ul{list-style:none; margin:0; padding:0; display:grid; gap:6px; font-size:15px}
+.plan li{display:flex; gap:8px}
+.plan li::before{content:"✓"; flex:0 0 20px; height:20px; border-radius:50%; border:2px solid var(--gold); color:var(--gold); font-size:11px; display:flex; align-items:center; justify-content:center; margin-top:3px}
+.cmp-wrap{margin-top:22px; overflow-x:auto; border-radius:10px; border:1px solid var(--line)}
+.cmp{width:100%; min-width:620px; border-collapse:collapse; font-size:14px; background:rgba(0,0,0,.6)}
+.cmp th,.cmp td{border-bottom:1px solid var(--line2); padding:9px 10px; text-align:center}
+.cmp thead th{font-family:var(--serif); font-weight:900; font-size:16px; color:#fff; background:linear-gradient(180deg,#9a7418,#6e520c)}
+.cmp thead th.reco{background:linear-gradient(180deg,#b3141a,#7c0a0e)}
+.cmp thead th:first-child{background:#111}
+.cmp tbody th{text-align:left; font-weight:700; white-space:nowrap}
+.ok{display:inline-flex; width:22px; height:22px; border-radius:50%; border:2px solid var(--gold); color:var(--gold); font-size:12px; align-items:center; justify-content:center}
+.plan-msg{margin:16px 0 0; text-align:center; font-weight:700}
+.plan-msg em{font-style:normal; color:var(--gold-lt)}
+
+/* ⑦ 無料デザイン案の流れ */
+.tops{display:flex; flex-wrap:wrap; justify-content:center; gap:10px 26px; margin:0 auto 22px; border:1.5px solid var(--gold); border-radius:30px; padding:10px 22px; max-width:780px; font-family:var(--serif); font-weight:900; font-size:clamp(14px,3.6vw,20px); text-align:center}
+.tops b{color:var(--gold-lt); font-size:1.3em}
+.steps{list-style:none; margin:0; padding:0; display:grid; gap:14px}
+.step{position:relative; background:linear-gradient(180deg,#141210,#0a0908); border:1px solid var(--line); border-radius:12px; padding:14px}
+.step .hd{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+.step .sn{flex:0 0 56px; height:56px; border-radius:50%; background:radial-gradient(circle at 40% 30%,#fff1b0,#e3b43a 60%,#a47510); color:#1a1200; display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1; font-family:var(--num); font-weight:700}
+.step .sn small{font-size:10px; letter-spacing:.06em}
+.step .sn b{font-size:22px}
+.step h3{margin:0; font-family:var(--serif); font-weight:900; font-size:22px; line-height:1.2}
+.step h3 small{display:block; font-family:"Noto Sans JP"; color:var(--gold-lt); font-size:13px; font-weight:700; margin-top:4px}
+.step .ph{position:relative}
+.step .ph img{width:100%; height:auto; border-radius:6px}
+.step .time{position:absolute; left:50%; bottom:-14px; transform:translateX(-50%); display:flex; align-items:center; gap:6px; background:linear-gradient(180deg,#e41d23,#9e0c10); color:#fff; font-weight:900; font-size:14px; border-radius:999px; padding:4px 18px; white-space:nowrap; border:1px solid #ff8b8e}
+.step .time::before{content:""; width:14px; height:14px; border-radius:50%; border:2px solid #fff; box-sizing:border-box}
+.step p{margin:22px 0 0; font-size:14px; color:#e8e2d5}
+.points-h{margin:34px 0 14px; text-align:center; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.6vw,26px)}
+.points-h b{color:var(--gold-lt); font-size:1.3em}
+.points{display:grid; gap:10px}
+.point{display:flex; align-items:center; gap:14px; border:1px solid var(--line); border-radius:10px; padding:14px 16px; background:rgba(0,0,0,.5)}
+.point b{display:block; font-family:var(--serif); font-weight:900; color:var(--gold-lt); font-size:17px; line-height:1.4}
+.point span{font-size:13px}
+
+/* ⑧ FAQ・運営会社 */
+.faq{max-width:860px; margin:0 auto; display:grid; gap:10px}
+.qa{border:1px solid var(--line); border-radius:10px; background:rgba(0,0,0,.5); overflow:hidden}
+.qa summary{list-style:none; cursor:pointer; display:flex; align-items:center; gap:12px; padding:14px 16px; font-weight:800; font-size:15px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::before{content:"Q"; flex:0 0 30px; height:30px; border-radius:50%; background:linear-gradient(180deg,#ffe07a,#e3b43a); color:#1a1200; font-family:var(--num); font-weight:700; display:flex; align-items:center; justify-content:center}
+.qa summary::after{content:"＋"; margin-left:auto; color:var(--gold)}
+.qa[open] summary::after{content:"－"}
+.qa summary:focus-visible{outline:3px solid var(--gold-lt); outline-offset:-3px}
+.qa .a{padding:0 16px 16px 58px; font-size:14px; color:#e8e2d5}
+.company{max-width:860px; margin:34px auto 0}
+.company h3{margin:0 0 12px; text-align:center; font-family:var(--serif); font-weight:900; font-size:24px}
+.company table{width:100%; border-collapse:collapse; font-size:14px}
+.company th,.company td{border-bottom:1px solid var(--line2); padding:12px 10px; text-align:left; vertical-align:top}
+.company th{width:9em; color:var(--gold-lt); font-weight:700; white-space:nowrap}
+
+/* ⑨ 最終CTA・フォーム */
+.scope{max-width:760px; margin:0 auto 22px; padding:0; display:grid; gap:10px}
+.scope li{list-style:none; display:flex; gap:12px; align-items:flex-start; background:rgba(0,0,0,.5); border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-size:14px}
+.scope li b{display:block; color:var(--gold-lt); font-size:16px}
+.scope li::before{content:"✓"; flex:0 0 26px; height:26px; border-radius:50%; background:linear-gradient(180deg,#ffe07a,#e3b43a); color:#1a1200; font-weight:900; display:flex; align-items:center; justify-content:center}
+.form{max-width:640px; margin:0 auto; display:grid; gap:14px; background:var(--paper); color:var(--paper-ink); border-radius:14px; padding:24px 18px; border:1px solid var(--gold)}
+.form label,.form fieldset{display:grid; gap:6px; font-weight:800; font-size:14px}
+.form fieldset{border:0; margin:0; padding:0}
+.form legend{padding:0; margin-bottom:6px}
+.opt{font-weight:700; color:#6b6254; font-size:12px}
+.form input[type=text],.form textarea{width:100%; border:1px solid #cfc6b4; border-radius:8px; padding:12px; font-size:16px; font-family:inherit; background:#fff}
+.form input:focus-visible,.form textarea:focus-visible{outline:3px solid var(--gold); outline-offset:1px}
+.stage{display:flex; flex-wrap:wrap; gap:8px}
+.stage label{display:block; font-weight:700; font-size:13px}
+.stage input{position:absolute; opacity:0}
+.stage span{display:block; border:1px solid #cfc6b4; border-radius:999px; padding:7px 14px; cursor:pointer; background:#fff}
+.stage input:checked + span{background:#1b1712; color:#fff; border-color:#1b1712}
+.stage input:focus-visible + span{outline:3px solid var(--gold); outline-offset:2px}
+.before{margin:0; text-align:center; font-size:13px; font-weight:700; background:#efe6cf; border-radius:8px; padding:10px}
+.form .btn-red{width:100%; max-width:none; border:0; cursor:pointer; font-family:inherit; font-size:20px}
+.form-note{margin:0; text-align:center; font-size:12px; color:#6b6254}
+.form-note a{color:#1f5fbf}
+.form-sent{margin:0; text-align:center; font-weight:800}
+.form-err{margin:0; text-align:center; color:#c4121a; font-size:13px; font-weight:700}
+
+footer{background:#000; color:#aaa; text-align:center; font-size:12px; padding:30px 16px 96px; border-top:1px solid rgba(227,180,58,.25)}
+footer img{height:auto; width:190px; margin:0 auto 10px}
+footer a{color:#ddd}
+
+.sticky-cta{position:fixed; left:10px; right:10px; bottom:calc(10px + env(safe-area-inset-bottom, 0px)); z-index:60; display:flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; color:#fff4c2; font-weight:900; font-size:16px; background:linear-gradient(180deg,#ff3a40,#c10d13 55%,#8e070b); border:2px solid #ff8b8e; border-radius:999px; padding:12px 10px; box-shadow:0 8px 24px rgba(0,0,0,.5); transition:transform .25s, opacity .25s}
+.sticky-cta.off{transform:translateY(140%); opacity:0; pointer-events:none}
+.sticky-cta[hidden]{display:none}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .sticky-cta{transition:none} }
+
+/* タブレット */
+@media (min-width: 700px){
+  .cards3,.ex3,.plans{grid-template-columns:repeat(3,1fr)}
+  .can4{grid-template-columns:repeat(2,1fr)}
+  .ops{grid-template-columns:repeat(3,1fr)}
+  .flow5,.steps{grid-template-columns:repeat(2,1fr)}
+  .points{grid-template-columns:repeat(3,1fr)}
+  .worry{grid-template-columns:1.15fr 1fr}
+  .scard h3{font-size:22px}
+  .plan h3{font-size:24px}
+  .plan .p{font-size:36px}
+}
+/* PC（デザイン画像と同じ横並び） */
+@media (min-width: 1100px){
+  body{font-size:16px}
+  section{padding:84px 0}
+  .gnav{display:flex; margin-left:auto}
+  .gnav a{text-decoration:none; font-size:14px; font-weight:700; padding:4px 18px; border-left:1px solid rgba(255,255,255,.2)}
+  .gnav a:first-child{border-left:0}
+  .gnav a:hover{color:var(--gold-lt)}
+  .top .cta{margin-left:18px; font-size:15px; padding:10px 22px}
+  .menu-btn{display:none}
+  .fv-in{grid-template-columns:1.08fr .92fr; align-items:center; min-height:min(calc(100vh - 56px), 860px); padding:0}
+  .fv-visual{order:2; height:100%; min-height:640px}
+  .fv-visual img{object-position:center 20%}
+  .fv-visual::after{inset:0 auto 0 0; width:28%; height:auto; background:linear-gradient(90deg,#050505,transparent)}
+  .fv-text{order:1; margin:0; padding:34px 0 34px 40px}
+  .fv-lead{font-size:22px; padding:4px 22px}
+  .fv-title{margin:10px -40px 0 -10px}
+  .fv-sns{font-size:28px; margin-top:6px}
+  .fv-for{font-size:17px; margin-top:10px}
+  .badges{margin:22px 0 18px; gap:14px; max-width:720px}
+  .badges li{padding:12px 6px 14px}
+  .badges small{font-size:17px}
+  .badges b{font-size:52px}
+  .badges b.s{font-size:40px}
+  .badges b.t{font-size:24px}
+  .fv .btn-red{font-size:30px; padding:16px 26px; max-width:720px; margin:0}
+  .fv .checks{justify-content:flex-start; font-size:15px; gap:6px 26px; max-width:720px}
+  .fv .fine{text-align:right; max-width:720px; font-size:12px}
+  .can4{grid-template-columns:repeat(4,1fr)}
+  .ops{grid-template-columns:repeat(5,1fr)}
+  .flow5,.steps{grid-template-columns:repeat(5,1fr)}
+  .flow5 li + li::before,.step + .step::before{content:"›"; position:absolute; left:-12px; top:40%; color:var(--gold); font-size:30px; line-height:1; z-index:2}
+  .flow5 li{position:relative; overflow:visible}
+  .worry-man{align-self:stretch}
+  .worry-man img{height:100%; object-fit:cover}
+  .sticky-cta{display:none}
+  footer{padding-bottom:40px}
+}
+
+/* ===== スマホ（〜699px）：lp_element/iphone のデザインに合わせる ===== */
+@media (max-width: 699px){
+  section{padding:44px 0}
+  .sec-h{margin-bottom:20px}
+  .sec-h h2::before,.sec-h h2::after{flex-basis:30px}
+  .sec-h small{font-size:12px}
+  /* ① FV：文字→写真→価格・CTAの順に縦に並べ、重ならないようにする（1画面に収める） */
+  .fv-in{display:block; padding:0 0 14px}
+  .fv-text{margin:0; padding:10px 12px 0; display:flex; flex-direction:column}
+  .fv-lead{font-size:11.5px; align-self:flex-start}
+  .fv-title{margin:6px 0 0; width:92%}
+  .fv-sns{font-size:14px; margin-top:4px}
+  .fv-for{display:none}
+  .fv-visual{height:calc(max(150px, var(--fvh, 664px) - 470px)); margin:8px 0 10px}
+  .fv-visual img{object-position:55% 30%}
+  .fv-visual::after{height:30%}
+  .fv-text .fv-visual{margin-left:-12px; margin-right:-12px}
+  .badges{margin:0 0 10px}
+  .badges b{font-size:26px}
+  .badges b.s{font-size:19px}
+  .fv .btn-red{font-size:19px}
+  /* ② サンプル：左に説明、右に端末 */
+  .scard{display:grid; grid-template-columns:1fr 1.05fr; align-items:center}
+  .scard .ph{order:2; padding:10px 8px 10px 0}
+  .scard .ph img{border-radius:6px}
+  .scard .cap{order:1; border-top:0; display:block; padding:14px 6px 14px 14px}
+  .scard .cap .ic{width:44px; height:44px; margin-bottom:8px}
+  .scard .cap .ic svg{width:22px; height:22px}
+  .scard h3{font-size:19px}
+  .scard p{font-size:13px}
+  /* ③ お悩み：見出しの右上に人物 */
+  .worry{position:relative; display:block}
+  .worry-man{position:absolute; top:-44px; right:-16px; width:62%; z-index:0}
+  .worry-man img{border-radius:0; -webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent); mask-image:linear-gradient(to bottom,#000 70%,transparent)}
+  .worry-box{position:relative; z-index:1; background:none; color:#fff; box-shadow:none; border:0; padding:0}
+  .worry-box h2{text-align:left; font-size:40px; text-shadow:0 3px 12px rgba(0,0,0,.9); padding-top:10px; max-width:66%}
+  .worry-box h2 .r{color:var(--red-lt); background:none}
+  .worry-box .sub{text-align:left; color:#fff; text-shadow:0 2px 8px #000; margin-bottom:14px}
+  .worry-box .sub em{color:var(--gold-lt)}
+  .worry-list{background:linear-gradient(180deg,#fbf8f1,#efe7d6); border:1px solid var(--gold); border-radius:10px; padding:10px; color:var(--paper-ink)}
+  .worry-list li{font-size:14px}
+  /* ④ できること：左に文字、右に画像 */
+  .can{display:grid; grid-template-columns:1fr 44%; grid-template-rows:auto 1fr; border-color:var(--line)}
+  .can .hd{grid-column:1; grid-row:1; padding:12px 0 4px 12px}
+  .can h3{font-size:16px}
+  .can p{grid-column:1; grid-row:2; padding:4px 8px 12px 12px; font-size:12.5px}
+  .can img{grid-column:2; grid-row:1 / span 2; align-self:center; padding:8px 8px 8px 0}
+  .ops{display:grid; grid-auto-flow:column; grid-auto-columns:44%; grid-template-columns:none; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px; gap:8px}
+  .op{scroll-snap-align:start}
+  .op h3{font-size:14px}
+  .op p{font-size:12px}
+  /* ⑤ 制作事例：左に文字、右に端末／流れは横長の行 */
+  .ex{display:grid; grid-template-columns:1fr 1.05fr; gap:0 8px; align-items:center; padding:12px}
+  .ex .hd{grid-column:1 / -1; margin-bottom:6px}
+  .ex .hd .ic{flex-basis:40px; height:40px}
+  .ex h3{font-size:19px}
+  .ex ul{grid-column:1; grid-row:2; margin:0; font-size:12.5px}
+  .ex img{grid-column:2; grid-row:2}
+  .flow-h{justify-content:center; text-align:center; margin-top:30px}
+  .flow5 li{display:grid; grid-template-columns:40px 34% 1fr; grid-template-rows:auto auto; align-items:center; gap:0 10px; padding:8px}
+  .flow5 .hd{display:contents}
+  .flow5 .no{grid-column:1; grid-row:1 / span 2}
+  .flow5 img{grid-column:2; grid-row:1 / span 2; height:62px; object-fit:cover}
+  .flow5 h4{grid-column:3; grid-row:1; font-size:15px}
+  .flow5 p{grid-column:3; grid-row:2; margin:2px 0 0; font-size:12px; line-height:1.5}
+  /* ⑥ 料金：左に価格と内容、右に端末 */
+  .plan{display:grid; grid-template-columns:1fr 46%; gap:0 8px; padding:16px 12px}
+  .plan > *:not(img):not(.ribbon){grid-column:1}
+  .plan img{grid-column:2; grid-row:1 / span 5; align-self:center; margin:0}
+  .plan h3{font-size:24px}
+  .plan .for{font-size:12px; justify-self:start}
+  .plan .p{font-size:32px}
+  .plan ul{grid-column:1 / -1 !important; margin-top:8px; font-size:14px}
+  .plan .ribbon{left:auto; right:auto; top:-2px; left:44%; font-size:13px}
+  /* ⑦ 流れ：左に文字、右に写真 */
+  .step{display:grid; grid-template-columns:1fr 40%; gap:0 8px; padding:12px}
+  .step .hd{grid-column:1; margin-bottom:4px}
+  .step .sn{flex-basis:48px; height:48px}
+  .step h3{font-size:19px}
+  .step .ph{grid-column:2; grid-row:1 / span 2; align-self:center}
+  .step .time{position:static; transform:none; margin:0 0 6px; display:inline-flex; font-size:12px; padding:3px 12px}
+  .step p{grid-column:1; margin:0; font-size:12.5px}
+  .step .tm{grid-column:1}
+  .points{grid-template-columns:repeat(3,1fr); gap:6px}
+  .point{flex-direction:column; text-align:center; padding:10px 6px; gap:6px}
+  .point .ic{width:40px; height:40px; flex-basis:40px}
+  .point b{font-size:13px}
+  .point span{font-size:11px}
+}
+
+@media (max-width: 699px){
+  .sec-h h2::before,.sec-h h2::after{display:none}
+  .sec-h h2{font-size:clamp(22px,6.6vw,28px)}
+  .worry-box h2{font-size:clamp(24px,7.4vw,30px); max-width:60%}
+  .can h3{font-size:14.5px}
+  .plan .ribbon{left:auto; right:10px}
+  .plan .for{font-size:11.5px; white-space:nowrap}
+  .all{font-size:13px; padding:6px 14px}
+  .step h3{font-size:17px}
+  .form .btn-red{font-size:17px}
+}
+/* PCでは写真を右の列に戻す */
+@media (min-width: 1100px){
+  .fv-text .fv-visual{display:none}
+  .step h3{font-size:18px} .step .sn{flex-basis:46px; height:46px} .step .sn b{font-size:18px}
+}
+.pc-only{display:none}
+@media (min-width:1100px){ .pc-only{display:block} }
+
+/* FV：デザイン画像をそのまま表示（人物・文字が切れないよう、画像の縦横比のまま出す） */
+.fv2{padding:0; background:#050505; border-top:0}
+.fv2-in{position:relative; max-width:1672px; margin:0 auto}
+.fv2-in img{width:100%; height:auto}
+.fv2-cta{position:absolute; left:3.2%; top:79.7%; width:93.1%; height:8.2%; border-radius:999px}
+.fv2-cta:focus-visible{outline:3px solid var(--gold-lt); outline-offset:3px}
+@media (min-width: 700px){ .fv2-cta{left:4.7%; top:77.6%; width:48.4%; height:11%} }
+
+/* FV：PCはデザイン画像、スマホは画像＋HTML */
+.fv2-sp{display:none}
+@media (max-width: 699px){
+  .fv2-pc{display:none}
+  .fv2-sp{display:block}
+  .fv2-sp > img{width:100%; height:auto}
+  .fv2-sp-in{padding:10px 12px 16px; position:relative}
+  .fv2-sp .badges{margin:0 0 10px}
+  .fv2-sp .badges b{font-size:26px}
+  .fv2-sp .badges b.s{font-size:19px}
+  .fv2-sp .badges li{display:flex; flex-direction:column; align-items:center; justify-content:center; padding:8px 4px 10px}
+  .fv2-sp .badges b{font-size:30px; line-height:1}
+  .fv2-sp .badges b.s{font-size:21px}
+  .fv2-sp .badges b.t{font-size:14px; line-height:1.25}
+  .fv2-sp .btn-red{font-size:19px; padding:13px 16px}
+  .fv2-note{margin:8px 0 0; text-align:center; font-size:clamp(10.5px,3vw,12.5px); font-weight:700; letter-spacing:-.02em; white-space:nowrap}
+  .fv2-sp .fine{margin-top:2px; font-size:11px}
+}
+.ops .plan-tag{display:inline-block; margin:6px 12px 0; font-size:11px; font-weight:900; color:#6b4a00; background:#f3dea0; border-radius:999px; padding:1px 10px}
+.form .pair{display:grid; gap:12px}
+.form .req-note{margin:-4px 0 0; font-size:12px; color:#6b6254; font-weight:700}
+.form input[type=email],.form input[type=tel]{width:100%; border:1px solid #cfc6b4; border-radius:8px; padding:12px; font-size:16px; font-family:inherit; background:#fff}
+.form input.bad{border-color:#c4121a; outline:2px solid rgba(196,18,26,.2)}
+.samples-more{margin:12px 0 0; text-align:center; font-size:13px}
+.samples-more a{color:var(--gold-lt)}
+@media (min-width:700px){ .form .pair{grid-template-columns:1fr 1fr} }
+
+/* 副CTA（資料） */
+.sub-cta{display:block; width:max-content; max-width:100%; margin:12px auto 0; font-size:13px; font-weight:700; color:var(--gold-lt); text-decoration:underline; text-underline-offset:3px}
+.sp-br{display:none}
+@media (max-width:699px){ .sp-br{display:inline} .fv2-sp .sub-cta{margin-top:6px; font-size:12px} }
+/* 安いから…？ */
+.quality{background:radial-gradient(60% 60% at 50% 0%,rgba(215,20,26,.14),transparent 70%),var(--bg)}
+.q-ask{text-align:center}
+.q-bubble{position:relative; display:inline-block; background:#fff; color:#1b1712; border-radius:16px; padding:14px 22px; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.8vw,26px); line-height:1.5; box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.q-bubble b{color:#c4121a}
+.q-bubble::after{content:""; position:absolute; left:50%; bottom:-14px; transform:translateX(-50%); border:14px solid transparent; border-bottom:0; border-top-color:#fff}
+.q-pts{display:grid; gap:10px; max-width:980px; margin:0 auto}
+@media (min-width:700px){ .q-pts{grid-template-columns:repeat(3,1fr)} }
+.q-pt{border:1px solid var(--line); border-radius:12px; background:rgba(0,0,0,.5); padding:16px; display:grid; gap:4px}
+.q-pt .no{margin-bottom:4px; justify-self:start; width:34px}
+.q-pt b{font-family:var(--serif); font-weight:900; color:var(--gold-lt); font-size:17px}
+.q-pt span:last-child{font-size:13.5px; color:#e8e2d5}
+/* 資料DL */
+.doc-box{display:grid; gap:18px; align-items:center; border:1px solid var(--line); border-radius:14px; background:rgba(0,0,0,.5); padding:18px; max-width:1000px; margin:0 auto}
+@media (min-width:700px){ .doc-box{grid-template-columns:.9fr 1.1fr; padding:26px} }
+.doc-img img{width:100%; height:auto; border-radius:8px; border:1px solid var(--line2); box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.doc-en{margin:0; font-family:var(--num); letter-spacing:.3em; color:var(--gold); font-size:12px}
+.doc-txt h2{margin:4px 0 8px; font-family:var(--serif); font-weight:900; font-size:clamp(22px,5.6vw,32px); line-height:1.3}
+.doc-txt > p{margin:0 0 14px; font-size:14px}
+.dform{display:grid; gap:10px}
+.dform label{display:grid; gap:4px; font-weight:800; font-size:13px}
+.dform input{width:100%; border:1px solid #cfc6b4; border-radius:8px; padding:11px; font-size:16px; font-family:inherit; background:#fff; color:#1b1712}
+.dform input:focus-visible{outline:3px solid var(--gold); outline-offset:1px}
+.dform .opt{color:var(--muted)}
+.btn-gold2{display:block; text-align:center; text-decoration:none; border:0; cursor:pointer; font-family:inherit; font-weight:900; font-size:17px; color:#1a1200; background:linear-gradient(180deg,#fff0a8,#e3b43a 55%,#b88400); border-radius:999px; padding:13px 16px; box-shadow:0 8px 22px rgba(227,180,58,.35)}
+.btn-gold2:focus-visible{outline:3px solid #fff; outline-offset:3px}
+.d-note{margin:0; font-size:12px; color:var(--muted); text-align:center}
+.d-note a{color:var(--gold-lt)}
+.d-done{display:grid; gap:10px}
+.d-done[hidden],.dform[hidden]{display:none}
+.d-done p{margin:0}
+
+/* 2つの選択肢 */
+.choose2{margin-top:36px}
+.c2-h{margin:0 0 14px; text-align:center; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.6vw,24px)}
+.c2-grid{display:grid; gap:12px; max-width:900px; margin:0 auto}
+@media (min-width:700px){ .c2-grid{grid-template-columns:1.25fr 1fr; align-items:stretch} }
+.c2{display:grid; gap:6px; text-decoration:none; border-radius:14px; padding:18px}
+.c2 b{font-family:var(--serif); font-weight:900; font-size:18px}
+.c2 span{font-size:13px}
+.c2 em{font-style:normal; font-weight:900; margin-top:4px}
+.c2.main{background:linear-gradient(180deg,#ff3a40,#c10d13 55%,#8e070b); border:2px solid #ff8b8e; color:#fff; box-shadow:0 10px 30px rgba(215,20,26,.4)}
+.c2.main em{color:#fff4c2; font-size:19px}
+.c2.sub{background:rgba(0,0,0,.5); border:1px solid var(--line); color:var(--ink)}
+.c2.sub b{color:var(--gold-lt)}
+.c2.sub em{color:var(--gold-lt); font-size:15px}
+.c2:focus-visible{outline:3px solid var(--gold-lt); outline-offset:3px}
+/* メリット（⑦冒頭） */
+.merit{max-width:860px; margin:0 auto 26px; text-align:center; border:1px solid var(--line); border-radius:14px; background:rgba(0,0,0,.45); padding:20px 16px}
+.m-q{margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.6vw,24px); color:var(--gold-lt)}
+.m-a{margin:8px 0 12px; font-size:14px}
+.m-list{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; font-weight:800; font-size:14px}
+.m-list li::before{content:"✓ "; color:var(--gold)}
+.flow-sub{margin:0 0 14px; text-align:center; font-weight:800; font-size:15px}
+.after{max-width:860px; margin:26px auto 0; border-top:1px solid var(--line2); padding-top:18px}
+.after-h{margin:0 0 10px; text-align:center; font-weight:900; font-size:16px; color:var(--gold-lt)}
+.after-list{list-style:none; margin:0; padding:0; display:grid; gap:8px; counter-reset:a}
+@media (min-width:700px){ .after-list{grid-template-columns:repeat(4,1fr)} }
+.after-list li{counter-increment:a; background:rgba(0,0,0,.45); border:1px solid var(--line2); border-radius:10px; padding:10px 12px; font-size:12.5px; color:#e8e2d5}
+.after-list b{display:block; color:#fff; font-size:15px}
+.after-list b::before{content:counter(a) ". "; color:var(--gold)}
+/* 資料プレビュー */
+.doc-prev .cover{width:100%; height:auto; border-radius:8px; border:1px solid var(--line2); box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.doc-prev .thumbs{display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:6px}
+.doc-prev .thumbs img{width:100%; height:auto; border-radius:4px; border:1px solid var(--line2)}
+.doc-list{list-style:none; margin:0 0 14px; padding:0; display:grid; gap:4px; font-size:13.5px}
+.doc-list li::before{content:"✓ "; color:var(--gold); font-weight:900}
+
+/* FV（PC）のボタン・チェック上書き */
+.fv2-cta{display:none}
+.fv2-cta2{position:absolute; left:4.3%; top:77%; width:49%; height:12%; display:flex; align-items:center; justify-content:center; gap:1.2vw; text-decoration:none; color:#fff4c2; font-weight:900; font-size:min(2.35vw,39px); letter-spacing:.04em; background:linear-gradient(180deg,#ff3a40,#c10d13 55%,#8e070b); border:2px solid #ff8b8e; border-radius:999px; box-shadow:0 0 0 4px rgba(255,59,64,.18), 0 10px 30px rgba(215,20,26,.5)}
+.fv2-cta2 svg{width:1em; height:1em; stroke:currentColor; fill:none; stroke-width:2}
+.fv2-cta2:focus-visible{outline:3px solid var(--gold-lt); outline-offset:3px}
+.fv2-chk{position:absolute; left:3%; top:89.4%; width:54%; height:10.6%; margin:0; padding:0 1.4%; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:1%; background:#070605; font-size:min(1.05vw,17.5px); font-weight:700; color:#fff}
+.fv2-chk li{display:flex; align-items:center; gap:.5vw; white-space:nowrap}
+.fv2-chk li::before{content:"✓"; display:inline-flex; width:1.6em; height:1.6em; border-radius:50%; border:2px solid var(--gold); color:var(--gold); align-items:center; justify-content:center; font-size:.85em}
+/* サンプル→料金 */
+.to-price{display:block; max-width:620px; margin:24px auto 0; text-align:center; text-decoration:none; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.6vw,24px); border:1px solid var(--line); border-radius:999px; padding:12px 16px}
+.to-price b{color:var(--gold-lt); font-family:var(--num); font-size:1.3em; margin:0 2px}
+.to-price span{display:block; font-family:"Noto Sans JP"; font-size:13px; color:var(--gold-lt)}
+/* 反論→安心 */
+.relief{background:radial-gradient(70% 50% at 50% 0%,rgba(215,20,26,.16),transparent 70%),radial-gradient(60% 40% at 50% 60%,rgba(227,180,58,.12),transparent 70%),var(--bg)}
+.rl-ask{position:relative; max-width:760px; margin:0 auto; display:grid; grid-template-columns:40% 1fr; align-items:center; gap:10px}
+.rl-ask img{width:100%; height:auto; border-radius:12px; -webkit-mask-image:linear-gradient(#000 75%,transparent); mask-image:linear-gradient(#000 75%,transparent)}
+.rl-bubble{position:relative; margin:0; background:#fff; color:#1b1712; border-radius:18px; padding:16px 18px; font-family:var(--serif); font-weight:900; font-size:clamp(16px,4.4vw,26px); line-height:1.5; box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.rl-bubble b{color:#c4121a}
+.rl-bubble::before{content:""; position:absolute; left:-14px; top:50%; transform:translateY(-50%); border:14px solid transparent; border-left:0; border-right-color:#fff}
+.rl-ans{text-align:center; margin-top:26px}
+.rl-ok{margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(30px,9vw,72px); white-space:nowrap; line-height:1.1; background:linear-gradient(180deg,#fff3c4,#e9bd4a 55%,#b8860b); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:0 0 40px rgba(227,180,58,.25)}
+.rl-ans h2{margin:12px 0 0; font-family:var(--serif); font-weight:900; font-size:clamp(20px,5.4vw,38px); line-height:1.45}
+.rl-lead{margin:14px auto 0; max-width:720px; font-size:clamp(14px,3.6vw,17px); font-weight:700}
+.rl-lead em{font-style:normal; color:var(--gold-lt)}
+.rl-show{margin-top:28px; scroll-margin-top:80px}
+.rl-show-h{margin:0 0 10px; text-align:center; font-weight:900; color:var(--gold-lt)}
+.rl-imgs{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; max-width:1000px; margin:0 auto}
+.rl-imgs img{width:100%; height:auto; border-radius:8px; border:1px solid var(--line)}
+.rl-pts{list-style:none; margin:22px auto 0; padding:0; max-width:1000px; display:grid; gap:10px}
+@media (min-width:700px){ .rl-pts{grid-template-columns:repeat(3,1fr)} }
+.rl-pts li{border:1px solid var(--line); border-radius:12px; background:rgba(0,0,0,.5); padding:14px 16px; font-size:13px; color:#e8e2d5}
+.rl-pts b{display:block; font-family:var(--serif); font-weight:900; color:var(--gold-lt); font-size:17px}
+.rl-pts b::before{content:"✓ "; color:var(--gold)}
+.rl-cta{margin-top:30px; text-align:center}
+.rl-cta-h{margin:0 0 12px; font-family:var(--serif); font-weight:900; font-size:clamp(17px,4.4vw,24px)}
+.btn-red.big{max-width:720px; font-size:clamp(17px,4.6vw,30px); padding:18px 16px; white-space:nowrap}
+@media (max-width:699px){ .rl-ask{grid-template-columns:36% 1fr} .rl-bubble{padding:12px 14px} }
+.hp{position:absolute !important; left:-9999px !important; width:1px; height:1px; opacity:0; pointer-events:none}
+
+/* ===== FV v3 ===== */
+.sp-br{display:none}
+@media (max-width:699px){ .sp-br{display:inline} }
+.fv3{position:relative; padding:0; overflow:hidden; background:#050505; border-top:0}
+.fv3-bg img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:62% 0}
+.fv3::before{content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(5,5,5,0) 18%,rgba(5,5,5,.55) 38%,rgba(5,5,5,.92) 52%,#050505 70%)}
+.fv3-in{position:relative; z-index:2; max-width:1400px; margin:0 auto; padding:calc(max(120px, var(--fvh, 664px) - 560px)) 14px 18px; text-align:center}
+.fv3-for{display:inline-block; margin:0; padding:5px 16px; font-weight:800; font-size:14px; line-height:1.5; background:linear-gradient(90deg,rgba(215,20,26,.92),rgba(215,20,26,.6)); transform:skewX(-6deg)}
+.fv3-for b{color:var(--gold-lt)}
+.fv3-h{margin:10px 0 0; font-family:var(--serif); font-weight:900; line-height:1.15}
+.fv3-h .p{display:block; color:#fff}
+.fv3-h .p small{font-size:22px}
+.fv3-h .p b{font-family:var(--num); font-weight:700; font-size:64px; margin:0 4px; background:linear-gradient(180deg,#fff6c4,#f0c24a 55%,#b8860b); -webkit-background-clip:text; background-clip:text; color:transparent; letter-spacing:-.01em}
+.fv3-h .c{display:block; font-size:22px; margin-top:4px}
+.fv3-h .c em{font-style:normal; color:var(--red-lt); font-size:1.25em}
+.fv3-sub{margin:10px 0 0; font-size:14px; font-weight:700; line-height:1.6}
+.fv3-sub em{font-style:normal; color:var(--gold-lt)}
+.fv3-name{margin:8px 0 0; font-size:12px; color:#d9d2c3}
+.fv3-name b{display:inline-block; margin-left:6px; font-family:var(--num); letter-spacing:.04em; color:#fff; font-size:15px}
+.fv3-b{margin:12px auto 12px; max-width:420px}
+.fv3-b li{padding:6px 4px 8px}
+.fv3-b b{font-size:26px}
+.fv3-b b.t{font-size:13px}
+.fv3-cta{font-size:19px; padding:13px 16px}
+@media (max-width:699px){
+  .fv3-in{padding-top:calc(max(150px, var(--fvh, 664px) - 520px)); padding-bottom:14px}
+  .fv3-for{font-size:13px}
+  .fv3-h{margin-top:6px}
+  .fv3-h .p b{font-size:58px}
+  .fv3-h .c{font-size:21px; margin-top:0}
+  .fv3-sub{font-size:13px; margin-top:6px}
+  .fv3-name{margin-top:4px}
+  .fv3-b{margin:8px auto 10px}
+  .fv3-b li{padding:4px 4px 6px}
+  .fv3-b b{font-size:24px}
+  .fv3-b b.t{font-size:12.5px}
+}
+@media (max-width:699px) and (max-height:600px){
+  .fv3-h .p b{font-size:50px}
+  .fv3-b{display:none}
+}
+.fv3-fine{margin-top:6px; font-size:10.5px}
+@media (min-width:700px){
+  .fv3::before{background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.94) 34%,rgba(5,5,5,.6) 52%,rgba(5,5,5,0) 68%)}
+  .fv3-bg img{object-position:right center}
+  .fv3-in{min-height:min(calc(100vh - 56px), 900px); padding:48px 32px; text-align:left; display:flex; flex-direction:column; justify-content:center; align-items:flex-start}
+  .fv3-in > *{max-width:640px}
+  .fv3-for{font-size:20px; padding:6px 22px}
+  .fv3-h .p small{font-size:34px}
+  .fv3-h .p b{font-size:112px}
+  .fv3-h .c{font-size:34px}
+  .fv3-sub{font-size:20px; margin-top:16px}
+  .fv3-name{font-size:15px}
+  .fv3-name b{font-size:20px}
+  .fv3-b{margin:22px 0 18px; max-width:600px; gap:14px}
+  .fv3-b li{padding:10px 6px 12px}
+  .fv3-b small{font-size:15px}
+  .fv3-b b{font-size:44px}
+  .fv3-b b.t{font-size:20px}
+  .fv3-cta{margin:0; width:100%; max-width:600px; font-size:28px; padding:16px 24px}
+  .fv3-fine{text-align:left; font-size:12px}
+}
+/* ===== 悩み v2 ===== */
+.w2-grid{display:grid; gap:18px; align-items:center}
+@media (min-width:700px){ .w2-grid{grid-template-columns:1.15fr 1fr} }
+.w2-box{background:linear-gradient(180deg,#fbf8f1,#efe7d6); color:var(--paper-ink); border:1px solid var(--gold); border-radius:12px; padding:22px 16px}
+.w2-box h2{margin:0 0 12px; text-align:center; font-family:var(--serif); font-weight:900; font-size:clamp(28px,7.6vw,48px); line-height:1.25}
+.w2-box h2 .r{color:#c4121a}
+.w2-g{margin:14px 0 8px; font-family:var(--serif); font-weight:900; font-size:18px; color:#1b1712; border-left:4px solid #c4121a; padding-left:10px}
+.worry2 .worry-man img{width:100%; height:auto; border-radius:12px}
+@media (max-width:699px){ .worry2 .worry-man{display:none} }
+/* ===== 危機感 ===== */
+.risk{background:radial-gradient(60% 50% at 50% 0%,rgba(215,20,26,.18),transparent 70%),var(--bg)}
+.risk4{display:grid; gap:10px; max-width:1000px; margin:0 auto}
+@media (min-width:700px){ .risk4{grid-template-columns:repeat(2,1fr)} }
+@media (min-width:1100px){ .risk4{grid-template-columns:repeat(4,1fr)} }
+.rk{display:grid; gap:6px; border:1px solid rgba(255,59,64,.45); border-radius:12px; background:rgba(40,0,0,.35); padding:16px}
+.rk .ic{width:46px; height:46px; border-color:var(--red-lt)}
+.rk .ic svg{stroke:#ff8b8e}
+.rk b{font-family:var(--serif); font-weight:900; font-size:19px; color:#fff}
+.rk span:last-child{font-size:13px; color:#e8e2d5}
+@media (max-width:699px){
+  .rk{grid-template-columns:44px 1fr; column-gap:12px; row-gap:2px; padding:12px 14px}
+  .rk .ic{grid-row:span 2; width:44px; height:44px; align-self:center}
+  .rk b{font-size:17px}
+}
+.risk-end{margin:20px 0 0; text-align:center; font-family:var(--serif); font-weight:900; font-size:clamp(18px,4.8vw,26px)}
+/* ===== 解決 ===== */
+.why3{display:grid; gap:12px; max-width:1100px; margin:0 auto}
+@media (min-width:700px){ .why3{grid-template-columns:repeat(3,1fr)} }
+.wy{border:1px solid var(--gold); border-radius:14px; background:rgba(0,0,0,.5); padding:18px; display:grid; gap:6px; align-content:start}
+.wn{font-family:var(--serif); font-weight:900; color:var(--gold); font-size:14px}
+.wn b{font-family:var(--num); font-size:30px; margin-left:4px; background:linear-gradient(180deg,#fff6c4,#f0c24a 55%,#b8860b); -webkit-background-clip:text; background-clip:text; color:transparent}
+.wy h3{margin:0; font-family:var(--serif); font-weight:900; font-size:21px}
+.wy p{margin:0; font-size:14px; color:#e8e2d5}
+.wy p b{color:var(--gold-lt)}
+.nw{white-space:nowrap}
+@media (min-width:700px){ .w2-box{padding:28px 26px} .w2-box .worry-list li{font-size:17px; padding:12px 14px} .w2-g{font-size:21px} }
+.wy .for{font-size:12.5px; font-weight:800; color:#ff8b8e}
+
+/* ===== FV v3 装飾（画像風） ===== */
+.fv3-for{position:relative; background:url(img/v3/brush-red.svg) center/100% 100% no-repeat; transform:none; padding:10px 30px 11px; font-family:var(--serif); font-weight:900; letter-spacing:.02em; text-shadow:0 2px 3px rgba(0,0,0,.6)}
+.fv3-for b{color:#ffe38a}
+.fv3-h{position:relative; isolation:isolate}
+.fv3-h::before{content:""; position:absolute; z-index:-1; left:-6%; right:-6%; top:6%; height:62%; background:url(img/v3/brush-gold.svg) center/100% 100% no-repeat; opacity:.5; transform:rotate(-3deg); pointer-events:none}
+.fv3-h .p{text-shadow:0 3px 0 #000, 0 6px 14px rgba(0,0,0,.9)}
+.fv3-h .p b{background:linear-gradient(180deg,#fffbe6 0%,#ffe590 28%,#e0a91f 48%,#fff0a8 60%,#c88d14 80%,#8a5a06 100%); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:none;
+  filter:drop-shadow(1.5px 0 0 #2a1800) drop-shadow(-1.5px 0 0 #2a1800) drop-shadow(0 1.5px 0 #2a1800) drop-shadow(0 -1.5px 0 #2a1800) drop-shadow(0 4px 0 #4a2e00) drop-shadow(0 8px 12px rgba(0,0,0,.9))}
+.fv3-h .c{color:#fff; text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000, 0 4px 10px rgba(0,0,0,.95)}
+.fv3-h .c em{display:inline-block; background:linear-gradient(180deg,#ff8a7a 0%,#ff2d2d 35%,#d10d14 65%,#8a0006 100%); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:none;
+  filter:drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff) drop-shadow(0 -1.5px 0 #fff) drop-shadow(0 3px 0 #3a0000) drop-shadow(0 6px 10px rgba(0,0,0,.9))}
+.fv3-sub{text-shadow:0 2px 6px rgba(0,0,0,.95), 0 0 2px #000}
+.fv3-sub em{color:#ffd966}
+.fv3-name{text-shadow:0 1px 4px #000}
+.fv3-name b{text-shadow:none; filter:drop-shadow(0 1px 2px #000); background:linear-gradient(180deg,#fffbe6,#ffe38a 50%,#f0c24a); -webkit-background-clip:text; background-clip:text; color:transparent}
+.fv3-b li{border:3px solid transparent; background:radial-gradient(circle at 50% 28%,#26221a,#070707 70%) padding-box, linear-gradient(135deg,#fff3b0,#c8961e 28%,#6e4a0c 48%,#f5d36a 68%,#8f6410) border-box; box-shadow:0 0 18px rgba(227,180,58,.45), inset 0 0 12px rgba(0,0,0,.8)}
+.fv3-b b{background:linear-gradient(180deg,#fffbe6,#ffe38a 40%,#d9a21c 70%,#fff0a8); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 2px 0 #2a1800)}
+.fv3-b b i{color:inherit}
+@media (min-width:700px){
+  .fv3-for{padding:12px 40px 13px; margin-left:-14px; font-size:22px}
+  .fv3-h::before{left:-4%; right:-10%; top:4%; height:60%}
+  .fv3-h .p b{filter:drop-shadow(2.5px 0 0 #2a1800) drop-shadow(-2.5px 0 0 #2a1800) drop-shadow(0 2.5px 0 #2a1800) drop-shadow(0 -2.5px 0 #2a1800) drop-shadow(0 7px 0 #4a2e00) drop-shadow(0 12px 18px rgba(0,0,0,.9))}
+  .fv3-h .c em{filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 5px 0 #3a0000) drop-shadow(0 8px 14px rgba(0,0,0,.9))}
+  .fv3-sub{border-left:3px solid var(--gold); padding-left:14px}
+}
+
+/* ===== FV v3 文字を大きく ===== */
+.fv3-for{font-size:15px}
+.fv3-h .p small{font-size:26px}
+.fv3-h .p b{font-size:76px; line-height:1}
+.fv3-h .c{font-size:22px; line-height:1.25; margin-top:6px}
+.fv3-h .c em{font-size:1.5em; letter-spacing:.02em}
+.fv3-sub{font-size:14.5px}
+@media (max-width:699px){
+  .fv3-in{padding-top:calc(max(128px, var(--fvh, 664px) - 580px))}
+  .fv3-h::before{top:0; height:48%}
+}
+@media (max-width:699px) and (max-height:600px){
+  .fv3-h .p b{font-size:62px}
+  .fv3-h .c em{font-size:1.35em}
+}
+@media (min-width:700px){
+  .fv3-in > *{max-width:860px}
+  .fv3-for{font-size:27px; padding:14px 46px 15px}
+  .fv3-h{margin-top:14px}
+  .fv3-h .p small{font-size:46px}
+  .fv3-h .p b{font-size:150px}
+  .fv3-h .c{font-size:44px; margin-top:8px}
+  .fv3-h .c em{font-size:1.28em}
+  .fv3-sub{font-size:23px; margin-top:18px}
+  .fv3-name{font-size:16px}
+  .fv3-name b{font-size:22px}
+}
+@media (min-width:700px) and (max-width:1199px){
+  .fv3-h .p b{font-size:112px}
+  .fv3-h .c{font-size:32px}
+  .fv3-for{font-size:21px}
+}
+
+@media (max-width:699px){
+  .fv3-for{font-size:13px; white-space:nowrap; padding:8px 20px 9px}
+  .fv3-in{padding-top:calc(max(150px, var(--fvh, 664px) - 560px))}
+}
+@media (max-width:389px){ .fv3-sub{font-size:13px} .fv3-for{font-size:12.5px; padding:8px 14px 9px} }
+@media (min-width:700px){ .fv3-cta{max-width:640px} .fv3-b{max-width:640px} }
+
+/* ===== FV v3 ラベル強調 ===== */
+.fv3-for em,.fv3-for b{font-style:normal; font-size:1.22em; background:linear-gradient(180deg,#fffbe6,#ffe38a 45%,#f0c24a 70%,#fff0a8); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:none; filter:drop-shadow(0 2px 0 #3a0000) drop-shadow(0 0 1px #3a0000)}
+.fv3-for .l1{color:#fff}
+@media (max-width:699px){
+  .fv3-bg img{object-position:62% -34px}
+  .fv3-for{white-space:normal; padding:9px 22px 11px; font-size:14px; line-height:1.35}
+  .fv3-for .l1{display:block}
+  .fv3-for b{display:block; font-size:1.75em; letter-spacing:.08em; line-height:1.15}
+  .fv3-in{padding-top:calc(max(132px, var(--fvh, 664px) - 580px))}
+}
+@media (max-width:389px){ .fv3-for{font-size:13px; padding:8px 16px 10px} }
+@media (min-width:700px){
+  .fv3-for{font-size:28px; padding:16px 50px 18px; white-space:nowrap}
+  .fv3-for em,.fv3-for b{font-size:1.25em}
+}
+@media (min-width:700px) and (max-width:1199px){ .fv3-for{font-size:22px} }
+
+/* ===== FV v3 用途の行 ===== */
+.fv3-use{margin:12px 0 0; font-family:var(--serif); font-weight:900; font-size:20px; line-height:1.35; color:#fff; text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000, 0 3px 10px rgba(0,0,0,.95)}
+.fv3-use em{font-style:normal; background:linear-gradient(180deg,#fffbe6,#ffe38a 45%,#f0c24a 70%,#fff0a8); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:none; filter:drop-shadow(0 2px 0 #2a1800) drop-shadow(0 0 1px #000)}
+.fv3-use + .fv3-h{margin-top:2px}
+@media (max-width:699px){
+  .fv3-in{padding-top:calc(max(118px, var(--fvh, 664px) - 600px))}
+}
+@media (max-width:389px){ .fv3-use{font-size:18px; margin-top:8px} }
+@media (min-width:700px){
+  .fv3-use{font-size:36px; margin-top:18px; white-space:nowrap}
+  .fv3-sub{font-size:24px}
+}
+@media (min-width:700px) and (max-width:1199px){ .fv3-use{font-size:26px} }
+
+@media (min-width:700px){
+  .fv3-in{padding-top:28px; padding-bottom:28px}
+  .fv3-use{margin-top:12px}
+  .fv3-h .p b{font-size:140px}
+  .fv3-h .c{margin-top:0}
+  .fv3-sub{margin-top:10px}
+  .fv3-name{margin-top:6px}
+  .fv3-b{margin:14px 0 14px}
+}
+
+/* ===== FV v3 文字を最大に ===== */
+@media (max-width:699px){
+  .fv3-for{font-size:clamp(13px,4.1vw,17px); padding:8px 16px 10px}
+  .fv3-for b{font-size:1.8em}
+  .fv3-use{font-size:clamp(18px,5.9vw,25px); margin-top:8px}
+  .fv3-h .p small{font-size:clamp(22px,6.8vw,28px)}
+  .fv3-h .p b{font-size:clamp(64px,22vw,92px)}
+  .fv3-h .c{font-size:clamp(18px,5.6vw,24px); margin-top:2px}
+  .fv3-h .c em{font-size:1.65em}
+  .fv3-sub{font-size:clamp(14px,4vw,16px); margin-top:4px}
+  .fv3-b{margin:8px auto 10px; gap:6px}
+  .fv3-b li{padding:4px 4px 5px}
+  .fv3-b small{font-size:10.5px}
+  .fv3-b b{font-size:20px; margin-top:1px}
+  .fv3-b b.t{font-size:12.5px; line-height:1.2}
+  .fv3-b b.t br{display:none}
+}
+@media (max-width:699px) and (max-height:600px){
+  .fv3-h .p b{font-size:64px}
+  .fv3-h .c em{font-size:1.45em}
+}
+@media (min-width:1200px){
+  .fv3-for{font-size:30px}
+  .fv3-use{font-size:37px}
+  .fv3-h .p small{font-size:52px}
+  .fv3-h .p b{font-size:176px}
+  .fv3-h .c{font-size:50px}
+  .fv3-h .c em{font-size:1.3em}
+  .fv3-sub{font-size:25px}
+  .fv3-b{grid-template-columns:repeat(3,auto); justify-content:start; gap:12px; margin:12px 0}
+  .fv3-b li{display:flex; align-items:center; gap:8px; padding:8px 22px}
+  .fv3-b small{font-size:16px}
+  .fv3-b b{font-size:32px; margin:0}
+  .fv3-b b.t{font-size:22px}
+  .fv3-b b.t br{display:none}
+}
+
+@media (max-width:699px) and (max-height:600px){
+  .fv3-in{padding-top:112px}
+  .fv3-for{padding:6px 14px 7px}
+  .fv3-for b{font-size:1.6em; line-height:1.1}
+  .fv3-use{font-size:17px; margin-top:6px}
+  .fv3-sub{font-size:13px; margin-top:2px}
+  .fv3-name{margin-top:2px}
+  .fv3-cta{margin-top:8px}
+}
+
+/* ===== FV v3 文字を前面に ===== */
+.fv3::before{background:linear-gradient(180deg,rgba(5,5,5,0) 14%,rgba(5,5,5,.72) 30%,rgba(5,5,5,.9) 42%,#050505 62%)}
+.fv3-h::before{opacity:.3}
+.fv3-for{filter:drop-shadow(0 4px 10px rgba(0,0,0,.8))}
+.fv3-for .l1{text-shadow:2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000,1.5px 1.5px 0 #000,-1.5px -1.5px 0 #000,1.5px -1.5px 0 #000,-1.5px 1.5px 0 #000, 0 3px 8px rgba(0,0,0,.9)}
+.fv3-use{text-shadow:2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000,1.5px 1.5px 0 #000,-1.5px -1.5px 0 #000,1.5px -1.5px 0 #000,-1.5px 1.5px 0 #000, 0 4px 12px rgba(0,0,0,1)}
+.fv3-use em,.fv3-for em,.fv3-for b{filter:drop-shadow(1.5px 0 0 #1a0e00) drop-shadow(-1.5px 0 0 #1a0e00) drop-shadow(0 1.5px 0 #1a0e00) drop-shadow(0 -1.5px 0 #1a0e00) drop-shadow(0 3px 0 #000) drop-shadow(0 0 10px rgba(255,200,70,.35))}
+.fv3-h .p{text-shadow:2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000,1.5px 1.5px 0 #000,-1.5px -1.5px 0 #000,1.5px -1.5px 0 #000,-1.5px 1.5px 0 #000, 0 6px 14px rgba(0,0,0,1)}
+.fv3-h .p b{filter:drop-shadow(2px 0 0 #1a0e00) drop-shadow(-2px 0 0 #1a0e00) drop-shadow(0 2px 0 #1a0e00) drop-shadow(0 -2px 0 #1a0e00) drop-shadow(0 5px 0 #3a2400) drop-shadow(0 0 22px rgba(255,196,60,.55))}
+.fv3-h .c{text-shadow:2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000,1.5px 1.5px 0 #000,-1.5px -1.5px 0 #000,1.5px -1.5px 0 #000,-1.5px 1.5px 0 #000, 0 4px 12px rgba(0,0,0,1)}
+.fv3-h .c em{filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 4px 0 #2a0000) drop-shadow(0 0 18px rgba(255,40,40,.55))}
+.fv3-sub{text-shadow:2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000,1.5px 1.5px 0 #000,-1.5px -1.5px 0 #000,1.5px -1.5px 0 #000,-1.5px 1.5px 0 #000, 0 3px 8px rgba(0,0,0,1)}
+@media (min-width:700px){
+  .fv3::before{background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.97) 42%,rgba(5,5,5,.82) 56%,rgba(5,5,5,.25) 68%,rgba(5,5,5,0) 76%)}
+  .fv3-h .p b{filter:drop-shadow(3px 0 0 #1a0e00) drop-shadow(-3px 0 0 #1a0e00) drop-shadow(0 3px 0 #1a0e00) drop-shadow(0 -3px 0 #1a0e00) drop-shadow(0 8px 0 #3a2400) drop-shadow(0 0 34px rgba(255,196,60,.55))}
+  .fv3-h .c em{filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 6px 0 #2a0000) drop-shadow(0 0 26px rgba(255,40,40,.55))}
+}
+
+/* ===== FV v4：対象・価格・EasyWebCraft を前面に ===== */
+.fv3-brand{margin:14px 0 0; line-height:1}
+.fv3-brand .k{display:block; font-size:15px; font-weight:900; letter-spacing:.12em; color:#fff; text-shadow:2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000,1.5px 1.5px 0 #000,-1.5px -1.5px 0 #000,1.5px -1.5px 0 #000,-1.5px 1.5px 0 #000, 0 3px 8px #000}
+.fv3-brand img{display:block; width:min(94%,460px); height:auto; margin:8px auto 0; filter:drop-shadow(0 3px 0 #000) drop-shadow(0 0 3px #000) drop-shadow(0 0 18px rgba(255,200,70,.4))}
+.fv3-price{margin-top:12px}
+.fv3-price .z{display:block; font-family:var(--serif); font-weight:900; font-size:24px; color:#fff; text-shadow:2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000,1.5px 1.5px 0 #000,-1.5px -1.5px 0 #000,1.5px -1.5px 0 #000,-1.5px 1.5px 0 #000, 0 4px 10px #000; line-height:1.1}
+.fv3-price .z b{font-family:var(--num); font-weight:700; font-size:1.9em; margin:0 2px; background:linear-gradient(180deg,#fffbe6 0%,#ffe590 28%,#e0a91f 48%,#fff0a8 60%,#c88d14 80%,#8a5a06 100%); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:none; filter:drop-shadow(2px 0 0 #1a0e00) drop-shadow(-2px 0 0 #1a0e00) drop-shadow(0 2px 0 #1a0e00) drop-shadow(0 -2px 0 #1a0e00) drop-shadow(0 0 16px rgba(255,196,60,.5))}
+.fv3-terms{margin:8px 0 0; font-size:11.5px; line-height:1.6; color:#e8e2d5; text-shadow:0 1px 3px #000, 0 0 2px #000}
+.fv3-terms em{font-style:normal; font-weight:800; font-size:13px; color:#fff}
+@media (max-width:699px){
+  .fv3-in{min-height:calc(var(--fvh, 664px) - 56px); display:flex; flex-direction:column; justify-content:flex-end; align-items:center; padding-top:120px; padding-bottom:86px}
+  .fv3-price .p{display:block}
+}
+@media (max-width:699px) and (max-height:600px){
+  .fv3-in{padding-top:96px; padding-bottom:80px}
+  .fv3-brand img{width:min(80%,360px)}
+  .fv3-price .z{font-size:20px}
+}
+@media (min-width:700px){
+  .fv3-brand{margin-top:18px}
+  .fv3-brand .k{font-size:24px}
+  .fv3-brand img{width:640px; max-width:100%; margin:10px 0 0}
+  .fv3-price{display:flex; align-items:baseline; flex-wrap:wrap; column-gap:26px; margin-top:14px}
+  .fv3-price .z{font-size:44px}
+  .fv3-terms{font-size:15px; margin-top:10px}
+  .fv3-terms em{font-size:19px}
+}
+@media (min-width:1200px){
+  .fv3-price .p b{font-size:150px}
+  .fv3-price .p small{font-size:46px}
+}
+
+@media (min-width:1200px){ .fv3-price .p b{font-size:136px} .fv3-price .z{font-size:42px} }
+@media (max-width:699px) and (max-height:600px){
+  .fv3-in{padding-top:88px; padding-bottom:78px}
+  .fv3-for b{font-size:1.45em}
+  .fv3-use{font-size:16px; margin-top:4px}
+  .fv3-brand{margin-top:8px}
+  .fv3-brand .k{font-size:13px}
+  .fv3-brand img{width:min(72%,320px); margin-top:4px}
+  .fv3-price{margin-top:6px}
+  .fv3-price .z{font-size:18px}
+  .fv3-h.fv3-price .p b{font-size:58px}
+  .fv3-terms{margin-top:4px; font-size:10.5px; line-height:1.45}
+  .fv3-terms em{font-size:12px}
+}
+
+/* ===== FV v5：価格→解約OK→EasyWebCraft ===== */
+.fv3-tax{margin:4px 0 0; font-size:12px; color:#e8e2d5; text-shadow:0 1px 3px #000, 0 0 2px #000}
+.fv3-cancel{margin-top:6px}
+.fv3-cancel::before{display:none}
+.fv3-terms{margin-top:4px}
+.fv3-brand{margin-top:12px}
+@media (max-width:699px){
+  .fv3-in{padding-top:104px; padding-bottom:84px}
+  .fv3-brand img{width:min(76%,340px); margin-top:4px}
+  .fv3-brand .k{font-size:13px}
+}
+@media (max-width:699px) and (max-height:600px){
+  .fv3-in{padding-top:84px; padding-bottom:76px}
+  .fv3-tax{font-size:10.5px; margin-top:0}
+  .fv3-cancel{margin-top:2px}
+  .fv3-h .c{font-size:15px}
+  .fv3-h .c em{font-size:1.6em}
+  .fv3-terms{margin-top:0}
+  .fv3-brand{margin-top:6px}
+  .fv3-brand img{width:min(64%,280px)}
+  .fv3-brand .k{font-size:11.5px}
+}
+@media (min-width:700px){
+  .fv3-tax{font-size:15px; margin-top:6px}
+  .fv3-cancel{margin-top:8px}
+  .fv3-terms{font-size:14px; margin-top:6px}
+  .fv3-brand{margin-top:22px}
+  .fv3-brand .k{font-size:20px}
+  .fv3-brand img{width:520px}
+}
+
+@media (max-width:699px) and (min-height:601px) and (max-height:700px){
+  .fv3-in{padding-top:92px; padding-bottom:80px}
+  .fv3-use{font-size:20px; margin-top:4px}
+  .fv3-price{margin-top:6px}
+  .fv3-price .z{font-size:21px}
+  .fv3-h.fv3-price .p b{font-size:76px}
+  .fv3-tax{margin-top:0}
+  .fv3-cancel{margin-top:2px}
+  .fv3-h .c{font-size:17px}
+  .fv3-h .c em{font-size:1.75em}
+  .fv3-terms{margin-top:0}
+  .fv3-brand{margin-top:8px}
+  .fv3-brand img{width:min(70%,300px)}
+}
+
+/* 税込表示：スマホは金額の右下すみ */
+.tax-sp{display:none}
+@media (max-width:699px){
+  .fv3-tax{display:none}
+  .fv3-price .p{position:relative; display:inline-block; padding-bottom:14px}
+  .tax-sp{display:block; position:absolute; right:0; bottom:0; font-family:"Noto Sans JP",sans-serif; font-weight:500; font-size:10.5px; line-height:1; color:#e8e2d5; text-shadow:0 1px 3px #000, 0 0 2px #000; white-space:nowrap}
+}
+
+.why-lead{font-size:18px; font-weight:800}
+.why-lead em{font-family:var(--num); font-weight:700; font-size:1.7em; letter-spacing:.02em; margin-right:4px; vertical-align:-.08em; background:linear-gradient(180deg,#fffbe6,#ffe38a 45%,#f0c24a 70%,#fff0a8); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 2px 0 #2a1800)}
+@media (min-width:700px){ .why-lead{font-size:22px} }
+
+/* 不安の声：人物なし・文字だけ */
+.rl-voice{display:block; max-width:760px; text-align:center; padding:34px 18px 30px}
+.rl-voice::before,.rl-voice::after{position:absolute; font-family:var(--serif); font-weight:900; font-size:clamp(64px,16vw,120px); line-height:1; color:rgba(255,255,255,.12)}
+.rl-voice::before{content:"「"; left:0; top:0}
+.rl-voice::after{content:"」"; right:0; bottom:0}
+.rl-q{position:relative; margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(22px,6.2vw,40px); line-height:1.6; color:#e9e4da; letter-spacing:.02em}
+.rl-q .d{display:block; font-size:.62em; color:#a9a194; letter-spacing:.2em; margin-bottom:6px}
+.rl-q em{font-style:normal; color:#fff; border-bottom:2px dotted rgba(255,255,255,.5); padding-bottom:2px; margin-left:2px}
+.rl-q b{color:#ff6b70; background:linear-gradient(transparent 68%,rgba(215,20,26,.28) 68%)}
+
+/* 大丈夫・ご安心 への下矢印 */
+.flow-arrow{display:flex; justify-content:center; margin:0 auto 10px}
+.flow-arrow svg{width:clamp(90px,26vw,150px); height:auto; filter:drop-shadow(0 0 14px rgba(255,196,60,.35))}
+#solve{padding-top:30px}
+.rl-ans .flow-arrow{margin:6px auto 8px}
+
+/* 用途の行を解約OKの下へ */
+.fv3-terms + .fv3-use{margin-top:10px}
+.fv3-for + .fv3-price{margin-top:14px}
+@media (min-width:700px){ .fv3-terms + .fv3-use{font-size:30px; margin-top:14px} }
+@media (min-width:700px) and (max-width:1199px){ .fv3-terms + .fv3-use{font-size:22px} }
+
+@media (max-width:699px){ .fv3-terms + .fv3-use{font-size:clamp(15px,4.4vw,19px); white-space:nowrap; margin-top:6px} }
+@media (max-width:699px) and (max-height:600px){
+  .fv3-in{padding-top:70px}
+  .fv3-terms + .fv3-use{font-size:14.5px; margin-top:3px}
+  .fv3-h.fv3-price .p b{font-size:54px}
+  .fv3-brand img{width:min(58%,250px)}
+}
+@media (min-width:1200px){ .fv3-terms + .fv3-use{font-size:26px} }
+
+/* 料金カード：用途を見出しに */
+.plan .use{margin:0 0 6px; font-family:var(--serif); font-weight:900; font-size:21px; line-height:1.35; color:#fff}
+.plan h3{font-size:22px}
+.plan .for{font-size:13px}
+@media (max-width:699px){
+  .plan .use{font-size:17px; padding-right:0}
+  .plan h3{font-size:19px}
+  .plan .for{font-size:11px; white-space:normal; border-radius:10px}
+  .plan.reco .use{padding-right:64px}
+}
+
+@media (max-width:699px){
+  .plan > .use{grid-column:1 / -1; font-size:18px; white-space:nowrap}
+  .plan.reco .use{padding-right:0; padding-top:18px}
+}
+
+@media (max-width:699px){
+  .plan img{grid-row:2 / span 3}
+  .plan > .use{grid-row:1}
+  .plan.reco .for{grid-column:1 / -1 !important; grid-row:5; justify-self:start; margin-top:8px; font-size:12px; white-space:nowrap}
+  .plan.reco ul{grid-row:6}
+}
+@media (min-width:700px){ .plan.reco .use{padding-right:0; margin-top:20px} .plan .use{white-space:nowrap} }
+
+/* 理由：悩み→解決 */
+.wy .pain{margin:2px 0 0; font-weight:900; font-size:15px; color:#ff8b8e}
+.wy h3{display:flex; gap:6px; align-items:flex-start; font-size:20px; line-height:1.4; color:#ffe38a}
+.wy h3 .arw{flex:0 0 auto; color:var(--gold); font-family:"Noto Sans JP",sans-serif}
+.wy h3 + p{margin-top:2px}
+
+.solve-price{margin:10px 0 14px; font-family:var(--serif); font-weight:900; font-size:clamp(18px,5vw,26px); color:#fff}
+.solve-price b{font-family:var(--num); font-weight:700; font-size:1.45em; margin:0 2px; background:linear-gradient(180deg,#fffbe6,#ffe38a 45%,#f0c24a 70%,#fff0a8); -webkit-background-clip:text; background-clip:text; color:transparent}
+
+/* スマホ料金カード：画像のはみ出し防止 */
+@media (max-width:699px){
+  .plan{grid-template-columns:minmax(0,1fr) 42%}
+  .plan > .use{grid-column:1 / -1 !important; white-space:normal; font-size:clamp(15px,4.5vw,18px)}
+  .plan img{width:100%; max-width:100%; min-width:0}
+  .plan.reco .for{white-space:normal}
+  .all{font-size:clamp(11px,3.4vw,14px)}
+}
+
+/* 共感 → でも、ご安心ください */
+.rl-empathy{max-width:640px; margin:18px auto 0; text-align:center; font-weight:700; font-size:clamp(15px,4.2vw,19px); line-height:1.8; color:#e9e4da}
+.rl-empathy p{margin:0}
+.rl-empathy .e1{margin-bottom:8px; font-family:var(--serif); font-weight:900; font-size:1.35em; color:#fff}
+.rl-empathy b{color:#fff; font-weight:900}
+.rl-ok small{display:block; font-size:.42em; letter-spacing:.2em; margin-bottom:2px}
+
+/* ===== 全体の文字を一回り大きく（FV以外） ===== */
+body{font-size:16.5px}
+.sec-h h2{font-size:clamp(25px,7.2vw,52px)}
+.sec-h p{font-size:clamp(16px,4.2vw,23px)}
+.worry-list li{font-size:16.5px}
+.w2-box h2{font-size:clamp(30px,8.2vw,52px)}
+.w2-g{font-size:19.5px}
+.rk b{font-size:19px}
+.rk span:last-child{font-size:14.5px}
+.risk-end{font-size:clamp(20px,5.4vw,28px)}
+.wy .pain{font-size:16px}
+.wy h3{font-size:21px}
+.wy p{font-size:15.5px}
+.can p{font-size:15.5px}
+.op p{font-size:15px}
+.plan ul{font-size:16px}
+.plan-msg{font-size:16.5px}
+.rl-q{font-size:clamp(24px,6.8vw,42px)}
+.rl-empathy{font-size:clamp(16.5px,4.6vw,20px)}
+.rl-lead{font-size:clamp(15.5px,4.1vw,18px)}
+.rl-pts li{font-size:16.5px}
+.step h3{font-size:23px}
+.step h3 small{font-size:14px}
+.after-list li{font-size:14px}
+.after-list b{font-size:16.5px}
+.qa summary{font-size:16.5px}
+.qa .a{font-size:15.5px}
+.form label,.form fieldset{font-size:15.5px}
+.fine,.note{font-size:13px}
+@media (max-width:699px){
+  .sec-h h2{font-size:clamp(24px,7.2vw,30px)}
+  .can p{font-size:15px}
+  .op p{font-size:14.5px}
+  .plan ul{font-size:15.5px}
+  .wy h3{font-size:20px}
+}
+
+@media (max-width:699px){
+  #can .sec-h h2{font-size:clamp(22px,6.4vw,27px)}
+  .rl-q{font-size:clamp(20px,6vw,26px)}
+  .step h3{font-size:clamp(18px,5.2vw,21px)}
+  .step h3 small{font-size:12.5px}
+  .worry-list li{font-size:15.5px}
+}
+
+@media (max-width:699px){
+  .can .hd h3{font-size:15px}
+  .step h3{font-size:clamp(17px,4.8vw,19px)}
+  .btn-red{font-size:clamp(16px,4.6vw,19px)}
+  .btn-red.big{font-size:clamp(16px,4.6vw,19px)}
+}
+
+@media (max-width:699px){
+  .can .hd h3{font-size:14px}
+  .cta-block .btn-red{white-space:nowrap; font-size:clamp(15px,4.4vw,18px); padding-left:14px; padding-right:14px; gap:8px}
+}
+@media (min-width:700px){ .step h3{font-size:18px; white-space:nowrap} .rl-pts b{font-size:16px; white-space:nowrap} }
+
+.wy .feat{justify-self:start; margin:2px 0 4px; padding:4px 12px; border-radius:6px; background:linear-gradient(180deg,#ffe9a6,#e3b43a); color:#1a1200 !important; font-weight:900; font-size:15px}
+
+/* 放置すると：感情コピー */
+.risk-story{max-width:680px; margin:0 auto; text-align:center; font-weight:700; font-size:clamp(16.5px,4.6vw,21px); line-height:1.9; color:#e9e4da}
+.risk-story p{margin:0 0 14px}
+.risk-story b{color:#fff; font-weight:900}
+.risk-story .voices{display:grid; gap:8px; margin:6px 0 16px}
+.risk-story .voices span{display:inline-block; justify-self:center; font-family:var(--serif); font-weight:900; font-size:1.2em; color:#fff; background:rgba(215,20,26,.16); border:1px solid rgba(255,59,64,.4); border-radius:10px; padding:6px 18px}
+.risk-end{line-height:1.6}
+/* 不安→根拠 */
+.rl-ok2{white-space:normal; font-size:clamp(24px,6.6vw,52px); line-height:1.35}
+.cta-see{white-space:normal !important; text-align:center; line-height:1.35}
+@media (min-width:700px){ .cta-see br{display:none} }
+
+@media (max-width:699px){ .rl-ok2{font-size:clamp(20px,5.8vw,24px)} }
+@media (min-width:700px){ .cta-see{white-space:nowrap !important; max-width:none; width:max-content} }
+
+/* ② 放置すると：流れの図 */
+.risk-chain{list-style:none; margin:18px auto 6px; padding:0; max-width:460px; display:grid; gap:30px}
+.risk-chain li{position:relative; border-radius:12px; padding:12px 14px; font-weight:800}
+.risk-chain li:not(:last-child)::after{content:""; position:absolute; left:50%; bottom:-24px; transform:translateX(-50%); border:10px solid transparent; border-top:13px solid #ff5a5f; border-bottom:0}
+.risk-chain .c1{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25); color:#fff}
+.risk-chain .c1 b{color:#ff8b8e}
+.risk-chain .c2{display:grid; gap:6px; background:rgba(215,20,26,.14); border:1px solid rgba(255,59,64,.45); font-family:var(--serif); font-weight:900; font-size:1.12em; color:#fff}
+.risk-chain .c3{background:linear-gradient(180deg,#b3131a,#7a070b); border:1px solid #ff5a5f; color:#fff; font-family:var(--serif); font-weight:900; font-size:1.3em}
+.risk-chain .c3 b{color:#fff}
+/* ③ 無料デザイン案を主役に */
+.rl-pre{margin:8px 0 6px; font-weight:800; font-size:clamp(16px,4.4vw,21px); line-height:1.7; color:#e9e4da}
+.rl-pre b{font-family:var(--num); font-weight:700; font-size:1.2em; color:var(--gold-lt)}
+.offer{margin:18px auto 0; max-width:560px; display:flex; align-items:center; justify-content:center; gap:18px; padding:14px 20px; border:2px solid var(--gold); border-radius:16px; background:radial-gradient(circle at 70% 50%,rgba(255,196,60,.18),transparent 70%),rgba(0,0,0,.55); box-shadow:0 0 30px rgba(227,180,58,.25)}
+.offer-h{margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(18px,5vw,28px); line-height:1.35; color:#fff; text-align:left}
+.offer-p{margin:0; font-family:var(--serif); font-weight:900; font-size:clamp(26px,7vw,40px); color:#fff; white-space:nowrap}
+.offer-p b{font-family:var(--num); font-weight:700; font-size:2.6em; line-height:1; margin-right:4px; background:linear-gradient(180deg,#fffbe6 0%,#ffe590 28%,#e0a91f 48%,#fff0a8 60%,#c88d14 80%,#8a5a06 100%); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 3px 0 #3a2400) drop-shadow(0 0 18px rgba(255,196,60,.5))}
+.relief .rl-pts{margin-top:18px}
+.relief .rl-show{margin-top:24px}
+/* ⑥ CTA下の一言 */
+.cta-note{margin:10px 0 0; text-align:center; font-weight:800; font-size:14px; color:var(--gold-lt); letter-spacing:.04em}
+/* ④ SERVICE圧縮 */
+.svc3{display:grid; gap:12px; max-width:1000px; margin:0 auto}
+@media (min-width:700px){ .svc3{grid-template-columns:repeat(3,1fr)} }
+.sv{border:1px solid var(--line2); border-radius:14px; background:rgba(0,0,0,.45); padding:18px}
+.sv-h{margin:0 0 10px; display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:900; font-size:24px; color:#fff}
+.sv-h span{display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:linear-gradient(180deg,#ffe07a,#e3b43a); color:#1a1200; font-family:var(--num); font-size:16px}
+.sv ul{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px}
+.sv li{border:1px solid rgba(227,180,58,.5); border-radius:999px; padding:4px 14px; font-weight:800; font-size:15px; color:var(--gold-lt)}
+#can .fine{margin-top:12px}
+/* ⑤ HPカード */
+.plan-desc{margin:8px 0 10px; font-size:14.5px; color:#e8e2d5; line-height:1.7}
+@media (max-width:699px){ .plan.reco .plan-desc{grid-column:1 / -1 !important; grid-row:6} .plan.reco ul{grid-row:7} }
+@media (min-width:700px){ .offer-h{white-space:nowrap} .offer{max-width:640px} }
+
+/* 最低契約期間：スマホは解約OKの右下すみ */
+.terms-sp{display:none}
+@media (max-width:699px){
+  .fv3-terms{display:none}
+  .fv3-cancel .c{position:relative; display:inline-block; padding-bottom:13px}
+  .terms-sp{display:block; position:absolute; right:0; bottom:0; font-family:"Noto Sans JP",sans-serif; font-weight:500; font-size:10.5px; line-height:1; color:#e8e2d5; text-shadow:0 1px 3px #000, 0 0 2px #000; white-space:nowrap; letter-spacing:0}
+}
+
+/* ===== スマホFV：文字を最大に（顔にかかってもOK） ===== */
+@media (max-width:699px){
+  .fv3-in{padding-top:18px !important; padding-bottom:84px !important; justify-content:center !important}
+  .fv3-for{font-size:4.6vw !important; padding:8px 14px 10px !important}
+  .fv3-for b{font-size:2em !important}
+  .fv3-price{margin-top:10px !important}
+  .fv3-price .z{font-size:7.6vw !important}
+  .fv3-h.fv3-price .p small{font-size:8vw !important}
+  .fv3-h.fv3-price .p b{font-size:29vw !important; line-height:.95 !important}
+  .tax-sp{font-size:11.5px !important}
+  .fv3-cancel{margin-top:6px !important}
+  .fv3-h .c{font-size:6vw !important; line-height:1.15 !important}
+  .fv3-h .c em{font-size:1.85em !important}
+  .terms-sp{font-size:11.5px !important}
+  .fv3-terms + .fv3-use{font-size:5.4vw !important; white-space:normal !important; margin-top:10px !important}
+  .fv3-brand{margin-top:10px !important}
+  .fv3-brand .k{font-size:4vw !important}
+  .fv3-brand img{width:88% !important}
+}
+@media (max-width:699px) and (max-height:600px){
+  .fv3-in{padding-top:8px !important; padding-bottom:76px !important}
+  .fv3-for{font-size:4vw !important; padding:6px 12px 7px !important}
+  .fv3-for b{font-size:1.7em !important}
+  .fv3-price{margin-top:4px !important}
+  .fv3-price .z{font-size:6.2vw !important}
+  .fv3-h.fv3-price .p b{font-size:23vw !important}
+  .fv3-h .c{font-size:5.2vw !important}
+  .fv3-h .c em{font-size:1.7em !important}
+  .fv3-terms + .fv3-use{font-size:4.6vw !important; margin-top:4px !important}
+  .fv3-brand{margin-top:4px !important}
+  .fv3-brand img{width:70% !important}
+}
+
+@media (max-width:699px){
+  .fv3-for{font-size:4.2vw !important}
+  .fv3-for .l1{white-space:nowrap}
+  .fv3-for b{font-size:1.9em !important; line-height:1.1 !important}
+  .fv3-h.fv3-price .p{white-space:nowrap}
+  .fv3-h.fv3-price .p small{font-size:7vw !important}
+  .fv3-h.fv3-price .p b{font-size:25.5vw !important}
+  .fv3-price .z{font-size:7vw !important}
+}
+@media (max-width:699px) and (min-height:601px) and (max-height:700px){
+  .fv3-in{padding-top:6px !important; padding-bottom:78px !important}
+  .fv3-for{padding:6px 14px 7px !important}
+  .fv3-price{margin-top:6px !important}
+  .fv3-h.fv3-price .p b{font-size:24vw !important}
+  .fv3-cancel{margin-top:2px !important}
+  .fv3-terms + .fv3-use{margin-top:6px !important; font-size:5vw !important}
+  .fv3-brand{margin-top:6px !important}
+  .fv3-brand .k{font-size:3.6vw !important}
+  .fv3-brand img{width:74% !important; margin-top:2px !important}
+}
+@media (max-width:699px) and (max-height:600px){
+  .fv3-h.fv3-price .p b{font-size:21vw !important}
+  .fv3-h.fv3-price .p small{font-size:6vw !important}
+}
+
+/* 背景の人物を暗く沈める */
+@media (max-width:699px){
+  .fv3::before{background:
+    radial-gradient(ellipse 30% 26% at 56% 13%, rgba(5,5,5,0) 0%, rgba(5,5,5,0) 55%, rgba(5,5,5,.9) 100%),
+    linear-gradient(180deg,rgba(5,5,5,.15) 0%,rgba(5,5,5,.8) 26%,rgba(5,5,5,.94) 40%,#050505 60%) !important}
+}
+@media (min-width:700px){
+  .fv3::before{background:linear-gradient(90deg,#050505 0%,#050505 44%,rgba(5,5,5,.96) 56%,rgba(5,5,5,.7) 63%,rgba(5,5,5,0) 72%) !important}
+}
+
+/* 人物なし背景：文字の後ろを軽く暗くするだけにする */
+@media (max-width:699px){
+  .fv3-bg img{object-position:50% 0 !important}
+  .fv3::before{background:linear-gradient(180deg,rgba(5,5,5,.55) 0%,rgba(5,5,5,.45) 30%,rgba(5,5,5,.6) 55%,rgba(5,5,5,.75) 100%) !important}
+}
+@media (min-width:700px){
+  .fv3-bg img{object-position:right center !important}
+  .fv3::before{background:linear-gradient(90deg,rgba(5,5,5,.85) 0%,rgba(5,5,5,.6) 45%,rgba(5,5,5,.2) 70%,rgba(5,5,5,0) 85%) !important}
+}
+
+.reqm{display:inline-block; margin-left:6px; padding:1px 7px; border-radius:4px; background:#c4121a; color:#fff; font-size:11px; font-weight:800; vertical-align:2px}
+.form .lb{display:flex; align-items:center}
+.form .cta-note{color:#8a6a10}
+/* ===== 試作v3：コピー主役・中央揃え ===== */
+.fv3::before{background:radial-gradient(ellipse 60% 45% at 50% 38%,rgba(5,5,5,.15),rgba(5,5,5,.7) 70%),linear-gradient(180deg,rgba(5,5,5,.3),rgba(5,5,5,.85)) !important}
+.fv3-in{text-align:center !important; align-items:center !important}
+.v3-catch{margin:0; line-height:0; filter:drop-shadow(0 8px 20px rgba(0,0,0,.85))}
+.v3-catch img{display:block; height:auto; margin:0 auto}
+.v3-catch .t1{width:72%} .v3-catch .t2{width:100%; margin-top:-2%}
+@media (max-width:699px){
+  .fv3-in{justify-content:center !important; padding-top:14px !important; padding-bottom:84px !important}
+  .fv3 .fv3-for{font-size:13px !important; padding:6px 16px 7px !important}
+  .fv3 .fv3-for b{font-size:1.5em !important}
+  .v3-catch{width:100%; margin:14px 0 10px}
+  .fv3-price{margin-top:0 !important}
+  .fv3-h.fv3-price .p b{font-size:20vw !important}
+  .fv3-brand img{width:62% !important}
+}
+@media (min-width:700px){
+  .fv3-in{justify-content:center !important; padding:28px 32px 36px !important; min-height:min(calc(100vh - 62px),900px) !important}
+  .fv3-in > *{max-width:none !important}
+  .fv3 .fv3-for{margin:0 auto !important; font-size:clamp(18px,1.6vw,24px) !important; padding:10px 44px 12px !important}
+  .v3-catch{width:min(62vw,900px); margin:14px auto 6px}
+  .fv3-price{justify-content:center !important; margin-top:0 !important}
+  .fv3-price .z{font-size:clamp(26px,2.6vw,40px) !important}
+  .fv3-h.fv3-price .p b{font-size:clamp(80px,8vw,124px) !important}
+  .fv3-price .p small{font-size:clamp(28px,2.7vw,42px) !important}
+  .fv3-tax,.fv3-terms{text-align:center !important}
+  .fv3-cancel{margin-top:0 !important}
+  .fv3-h .c{font-size:clamp(24px,2.4vw,36px) !important}
+  .fv3-brand{margin-top:14px !important}
+  .fv3-brand .k{text-align:center; font-size:clamp(13px,1.1vw,17px) !important}
+  .fv3-brand img{width:clamp(260px,24vw,380px) !important; margin:6px auto 0 !important}
+}
+@media (min-width:700px){ .v3-catch{width:min(52vw,760px); margin:8px auto 2px} .fv3-in{padding-top:18px !important; padding-bottom:22px !important} .fv3-brand{margin-top:8px !important} }
+@media (max-width:699px) and (max-height:600px){
+  .fv3-in{padding-top:6px !important; padding-bottom:76px !important}
+  .fv3 .fv3-for{font-size:11.5px !important; padding:4px 12px 5px !important}
+  .v3-catch{width:84%; margin:6px auto 4px}
+  .fv3-h.fv3-price .p b{font-size:15vw !important}
+  .fv3-price .z{font-size:5vw !important}
+  .fv3-h .c{font-size:4.4vw !important} .fv3-h .c em{font-size:1.4em !important}
+  .fv3-brand .k{display:none} .fv3-brand{margin-top:2px !important} .fv3-brand img{width:48% !important}
+}
+</style>
+<script>
+// FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
+(function () {
+  var w = window.innerWidth;
+  function set() { document.documentElement.style.setProperty('--fvh', window.innerHeight + 'px'); }
+  set();
+  window.addEventListener('resize', function () { if (window.innerWidth !== w) { w = window.innerWidth; set(); } });
+})();
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="logo" href="#top" aria-label="EasyWebCraft ページの先頭へ"><img src="img/logo-mark.webp" alt="EasyWebCraft" width="640" height="69"></a>
+    <nav class="gnav" aria-label="ページ内メニュー">
+      <a href="#designs">デザイン例</a><a href="#flow">ご利用の流れ</a><a href="#can">サービスの特徴</a><a href="#plans">料金プラン</a><a href="#faq">よくある質問</a>
+    </nav>
+    <a class="cta" href="#contact">無料デザイン案を見る →</a>
+    <button class="menu-btn" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="メニュー">
+    <a href="#designs">デザイン例</a><a href="#flow">ご利用の流れ</a><a href="#can">サービスの特徴</a><a href="#plans">料金プラン</a><a href="#faq">よくある質問</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ① ファーストビュー（背景写真＋HTMLの文字） -->
+<section class="fv3" aria-label="EasyWebCraft">
+  <picture class="fv3-bg">
+    <source media="(min-width: 700px)" srcset="img/v3/nbg-pc.webp 2560w, img/v3/nbg-pc@2x.webp 3344w" sizes="100vw">
+    <img src="img/v3/nbg-sp.webp" alt="" width="1242" height="2209" fetchpriority="high">
+  </picture>
+  <div class="fv3-in">
+    <p class="fv3-for"><span class="l1"><em>起業・開業</em>したばかりで、<br class="sp-br">ホームページを検討中の</span><b>経営者様へ</b></p>
+    <h2 class="v3-catch"><img class="t1" src="img/v3/fv-t1c.webp" alt="その挑戦に、" width="1044" height="270"><img class="t2" src="img/v3/fv-t2c.webp" alt="ホームページを。" width="1410" height="300"></h2>
+    <p class="fv3-h fv3-price"><span class="z">初期費用<b>0</b>円</span><span class="p"><small>月額</small><b class="num">5,980</b><small>円〜</small><span class="tax-sp">税別（税込6,578円〜）</span></span></p>
+    <p class="fv3-tax">税別（税込6,578円〜）</p>
+    <p class="fv3-h fv3-cancel"><span class="c">7ヶ月目から<br class="sp-br"><em>いつでも解約OK</em><span class="terms-sp">※最低契約期間6ヶ月</span></span></p>
+    <p class="fv3-terms">※最低契約期間6ヶ月</p>
+    <h1 class="fv3-brand"><span class="k">月額制ホームページ制作サービス</span><img src="img/v3/logo-fv.webp" alt="EasyWebCraft" width="1400" height="150"></h1>
+  </div>
+</section>
+
+<!-- ② 悩みへの共感 -->
+<section id="worry" class="worry2">
+  <div class="wrap">
+    <div class="w2-grid">
+      <div class="w2-box">
+        <h2>独立前後で、<br><span class="r">こんなお悩み</span><br>ありませんか？</h2>
+        <p class="w2-g">ホームページが無いから……</p>
+        <ul class="worry-list">
+          <li><span>銀行や取引先から<br><b>信用されにくい！</b></span></li>
+          <li><span>検索されても<br><b>会社の情報が出てこない！</b></span></li>
+          <li><span>せっかく興味を持たれても<br><b>問い合わせにつながらない！</b></span></li>
+        </ul>
+        <p class="w2-g">ホームページが必要だけど……</p>
+        <ul class="worry-list">
+          <li><span>初期投資を抑えたいのに、<br><b>制作費が高い！</b></span></li>
+          <li><span>事業が忙しくて、<br><b>HPまで手が回らない！</b></span></li>
+          <li><span>そもそも何から始めれば<br>いいか<b>わからない！</b></span></li>
+        </ul>
+      </div>
+      <div class="worry-man"><img src="img/v3/q-man.webp" alt="考え込む男性" width="1100" height="1350" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ③ 危機感 -->
+<section id="risk" class="risk">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2><span>その悩み、<span class="r">放置すると……</span></span></h2>
+    </div>
+    <div class="risk-story">
+      <p>あなたの会社を知った見込み客は、<br>問い合わせる前に<b>会社名を検索する</b><br class="sp-br">かもしれません。</p>
+      <ol class="risk-chain">
+        <li class="c1">ホームページが<b>見つからない</b></li>
+        <li class="c2"><span>「どんな会社なんだろう？」</span><span>「本当にここに頼んで大丈夫？」</span></li>
+        <li class="c3">そのまま<b>他社へ……</b></li>
+      </ol>
+    </div>
+    <p class="risk-end">ホームページを<br class="sp-br">後回しにしている間にも、<br>本来取れたはずの<b class="r">問い合わせ</b>を<br class="sp-br">逃しているかもしれません</p>
+  </div>
+</section>
+
+<!-- ④ 解決 -->
+<section id="solve" class="solve">
+  <div class="wrap">
+    <div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 120 64"><defs><linearGradient id="fag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a5a06" stop-opacity=".15"/><stop offset=".55" stop-color="#e0a91f"/><stop offset="1" stop-color="#ffe590"/></linearGradient></defs><path d="M0 0h120L60 64z" fill="url(#fag)"/></svg></div>
+    <div class="sec-h">
+      <h2><span>そのホームページの悩み、<br><span class="nw"><span class="g">EasyWebCraft</span>に<br class="sp-br">まとめてお任せください</span></span></h2>
+      <p class="why-lead"><em>EasyWebCraft</em>が選ばれる3つの理由</p>
+    </div>
+    <div class="why3">
+      <div class="wy"><span class="wn">理由<b>01</b></span><p class="pain">制作費が高い…</p><h3><span class="arw" aria-hidden="true">→</span>まとまった制作費は<br>必要ありません</h3><p class="feat">初期費用0円・月額5,980円〜</p><p>起業直後でも、できるだけ負担を抑えてホームページを持てます。</p></div>
+      <div class="wy"><span class="wn">理由<b>02</b></span><p class="pain">HPまで手が回らない…</p><h3><span class="arw" aria-hidden="true">→</span>本業に集中したままでOK</h3><p class="feat">文章・構成・デザインまでお任せ</p><p>必要な内容はこちらで整理。打ち合わせをもとにホームページを形にします。</p></div>
+      <div class="wy"><span class="wn">理由<b>03</b></span><p class="pain">何から始めればいいかわからない…</p><h3><span class="arw" aria-hidden="true">→</span>何も決まっていなくても、<br>相談するところから<br>始められます</h3><p class="feat">ヒアリングから公開までサポート</p><p>「何を載せる？」「何ページ必要？」も分からなくて大丈夫。事業内容をお聞きして、必要な内容から一緒に整理します。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥-2 「安いから、しょぼいのでは？」→「大丈夫。無料でデザイン案を作ります」 -->
+<section id="relief" class="relief">
+  <div class="wrap">
+    <div class="rl-ask rl-voice">
+      <p class="rl-q"><span class="d">でも……</span>こんなに安くて<em>本当に</em><br><b>ちゃんとしたホームページ</b>が<br>できるの？</p>
+    </div>
+    <div class="rl-empathy">
+      <p class="e1">その不安、ごもっともです。</p>
+      <p>月額5,980円〜と聞けば、<br>「<b>安っぽいデザインでは？</b>」<br>そう思う方もいると思います。</p>
+    </div>
+    <div class="rl-ans">
+      <div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 120 64"><defs><linearGradient id="fag2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a5a06" stop-opacity=".15"/><stop offset=".55" stop-color="#e0a91f"/><stop offset="1" stop-color="#ffe590"/></linearGradient></defs><path d="M0 0h120L60 64z" fill="url(#fag2)"/></svg></div>
+      <p class="rl-pre">だから<b>EasyWebCraft</b>では、<br>契約してから判断してもらうのではなく、</p>
+      <p class="rl-ok rl-ok2">契約する前に、<br>実際のデザインを作ります</p>
+      <div class="offer"><p class="offer-h">あなたの事業専用<br class="sp-br">HPデザイン案</p><p class="offer-p"><b>0</b>円</p></div>
+    </div>
+    <ul class="rl-pts">
+      <li><b>テンプレートではなく、1からデザイン</b></li>
+      <li><b>PC・スマホ両方のイメージを確認</b></li>
+      <li><b>見送っても費用は0円</b></li>
+    </ul>
+    <div class="rl-show" id="designs">
+      <div class="rl-imgs"><img src="img/v3/s-izakaya.webp" alt="飲食店のデザイン案の例" width="1100" height="806" loading="lazy"><img src="img/v3/s-salon.webp" alt="美容室のデザイン案の例" width="1100" height="815" loading="lazy"><img src="img/v3/s-gym.webp" alt="パーソナルジムのデザイン案の例" width="1100" height="803" loading="lazy"></div>
+      <p class="note">※掲載しているのはサンプルデザインです。実際の制作実績・お客様の声は、公開の許可をいただけしだい掲載します。</p>
+    </div>
+    <div class="rl-cta">
+      <a class="btn-red big" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料でデザイン案を見てみる<span class="arr" aria-hidden="true">→</span></a>
+      <p class="cta-note">契約不要｜費用0円｜見送ってもOK</p>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ 無料デザイン案の制作の流れ -->
+<section id="flow">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2><span><span class="g">無料デザイン案</span>の流れ</span></h2>
+    </div>
+    <p class="tops"><span>最短<b>7日</b>でデザイン案をご提案</span><span>開業前・準備中の方もご相談OK</span></p>
+    <ol class="steps">
+      <li class="step"><div class="hd"><span class="sn"><small>STEP</small><b>01</b></span><h3>お申し込み<small>フォームから送信</small></h3></div><div class="ph"><img src="img/v3/st-1.webp" alt="" width="760" height="439" loading="lazy"><span class="time">最短1分</span></div></li>
+      <li class="step"><div class="hd"><span class="sn"><small>STEP</small><b>02</b></span><h3>ヒアリング<small>目的・イメージ確認</small></h3></div><div class="ph"><img src="img/v3/st-2.webp" alt="" width="760" height="464" loading="lazy"><span class="time">当日〜1営業日</span></div></li>
+      <li class="step"><div class="hd"><span class="sn"><small>STEP</small><b>03</b></span><h3>構成整理<small>情報をわかりやすく整理</small></h3></div><div class="ph"><img src="img/v3/st-3.webp" alt="" width="760" height="462" loading="lazy"><span class="time">1〜2営業日</span></div></li>
+      <li class="step"><div class="hd"><span class="sn"><small>STEP</small><b>04</b></span><h3>デザイン案作成<small>トップページ案を制作</small></h3></div><div class="ph"><img src="img/v3/st-4.webp" alt="" width="760" height="460" loading="lazy"><span class="time">2〜4営業日</span></div></li>
+      <li class="step"><div class="hd"><span class="sn"><small>STEP</small><b>05</b></span><h3>ご提案・確認<small>デザインを確認</small></h3></div><div class="ph"><img src="img/v3/st-5.webp" alt="" width="760" height="454" loading="lazy"><span class="time">最短7日</span></div></li>
+    </ol>
+    <div class="cta-block"><a class="btn-red" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料でデザイン案を見てみる<span class="arr" aria-hidden="true">→</span></a><p class="cta-note">契約不要｜費用0円｜見送ってもOK</p></div>
+    <p class="fine">※「最短7日」は無料デザイン案をご提案するまでの目安です。ご契約後、ホームページ公開までの日数はページ数や内容によって異なるため、ご相談時にご案内します。<br>※ご提案内容はヒアリング内容に応じて異なります。※混雑状況により日数が前後する場合があります。</p>
+    <div class="after">
+      <p class="after-h">ご契約後の流れ</p>
+      <ol class="after-list"><li><b>ご契約</b>内容と料金にご納得いただいてから</li><li><b>制作</b>文章・写真の準備もサポート</li><li><b>修正・確認</b>実際の画面で確認して仕上げ</li><li><b>公開・運用開始</b>公開後の更新・保守も月額で</li></ol>
+    </div>
+  </div>
+</section>
+
+<!-- ④ EasyWebCraftでできること -->
+<section id="can">
+  <div class="wrap">
+    <div class="sec-h">
+      <span class="en">SERVICE</span>
+      <h2><span>制作も、公開後も<br><span class="g">必要なことをまとめてサポート</span></span></h2>
+    </div>
+    <div class="svc3">
+      <div class="sv"><p class="sv-h"><span>01</span>つくる</p><ul><li>オリジナルデザイン</li><li>文章づくり</li><li>スマホ対応</li><li>SEO基本設定</li></ul></div>
+      <div class="sv"><p class="sv-h"><span>02</span>公開する</p><ul><li>サーバー</li><li>SSL（暗号化）</li><li>お問い合わせフォーム</li></ul></div>
+      <div class="sv"><p class="sv-h"><span>03</span>運用する</p><ul><li>更新</li><li>保守</li><li>アクセス解析</li><li>改善相談</li></ul></div>
+    </div>
+    <p class="fine">※対応範囲はプランにより異なります（SEO基本設定はHP・HP+、アクセス解析はHP+が対象）。詳しくは料金プランをご覧ください。</p>
+  </div>
+</section>
+
+<!-- ⑥ 料金プランとサービス比較 -->
+<section id="plans">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2><span><span class="g">料金プラン</span>とサービス比較</span></h2>
+    </div>
+    <p class="all">すべてのプランで <b>初期費用0円</b> ／ <b>最低契約期間6ヶ月</b></p>
+    <div class="plans">
+      <article class="plan"><p class="use">まず名刺代わりのHPが欲しい</p><h3 class="g">EasyWeb LP</h3>
+        <p class="p g">5,980<small>円/月</small></p><p class="taxin"><span class="tx">（税別）</span>税込 6,578円/月</p>
+        <img src="img/v3/p-lp.webp" alt="" width="1100" height="526" loading="lazy">
+        <ul><li>トップページ1P</li><li>スマホ対応</li><li>お問い合わせフォーム</li><li>サーバー・SSL込み</li></ul></article>
+      <article class="plan reco"><span class="ribbon">おすすめ</span><p class="use">起業・開業した会社のホームページに</p><h3 class="g">EasyWeb HP</h3><span class="for">トップページ＋下層5ページ</span>
+        <p class="p g">7,700<small>円/月</small></p><p class="taxin"><span class="tx">（税別）</span>税込 8,470円/月</p>
+        <img src="img/v3/p-hp.webp" alt="" width="1100" height="492" loading="lazy">
+        <p class="plan-desc">会社概要・サービス紹介・お問い合わせなど、会社サイトに必要なページをまとめて制作。</p>
+        <ul><li>スマホ対応</li><li>基本SEO設定</li><li>お問い合わせフォーム</li><li>サーバー・SSL込み</li></ul></article>
+      <article class="plan"><p class="use">集客・採用まで活用したい</p><h3 class="g">EasyWeb HP+</h3>
+        <p class="p g">9,800<small>円/月</small></p><p class="taxin"><span class="tx">（税別）</span>税込 10,780円/月</p>
+        <img src="img/v3/p-hpp.webp" alt="" width="1100" height="563" loading="lazy">
+        <ul><li>さらに下層ページ追加</li><li>スマホ対応</li><li>アクセス解析設定</li><li>基本SEO設定</li><li>サーバー・SSL込み</li></ul></article>
+    </div>
+    <p class="plan-msg">プランに迷う場合も、事業内容に合わせて<em>最適な構成</em>をご提案します。</p>
+    <p class="fine">※表示価格は税別です。詳しい条件は<a href="https://easywebcraft.github.io/easyweb-lp/tokushoho.html">特定商取引法に基づく表記</a>をご覧ください。</p>
+  </div>
+</section>
+
+<!-- ⑧ よくある質問 -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-h"><span class="en">FAQ</span><h2><span>よくある<span class="g">質問</span></span></h2></div>
+    <div class="faq">
+      <details class="qa"><summary>本当にデザイン案まで無料ですか？</summary><div class="a">はい。トップページ1ページ分を無料でお作りします。見送られても費用はかかりません。</div></details>
+      <details class="qa"><summary>契約期間はありますか？</summary><div class="a">最低契約期間は6ヶ月です。7ヶ月目以降はそのまま月額で続けられ、メールでいつでも解約できます。詳しい条件はご契約前に書面でご説明します。</div></details>
+      <details class="qa"><summary>デザインの修正はできますか？</summary><div class="a">できます。修正回数や公開後の更新の範囲はプランによって異なるため、ご相談時にご案内します。</div></details>
+      <details class="qa"><summary>ドメイン（URL）の費用はかかりますか？</summary><div class="a">取得やお持ちのドメインの利用も含め、ご相談時にご案内し、ご契約前に書面でご説明します。</div></details>
+      <details class="qa"><summary>開業前でも相談できますか？</summary><div class="a">できます。屋号やサービス内容が整理中でも大丈夫です。</div></details>
+      <details class="qa"><summary>文章や写真がなくても大丈夫ですか？</summary><div class="a">大丈夫です。文章づくりをサポートし、撮影のアドバイスも行います。</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ⑨ 最終CTA・申し込みフォーム -->
+<section class="last" id="contact">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2><span>あなたの事業の<span class="g">デザイン案</span>を無料で</span></h2>
+    </div>
+    <form class="form" id="cform" action="https://formspree.io/f/maqkzjek" method="POST">
+      <input type="hidden" name="_subject" value="【EasyWebCraft 挑戦LP】無料デザイン案の申し込み">
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label><span class="lb">会社名（屋号名）<span class="reqm">必須</span></span>
+        <input type="text" name="company" required autocomplete="organization" placeholder="例：〇〇デザイン事務所">
+      </label>
+      <label><span class="lb">代表者名<span class="reqm">必須</span></span>
+        <input type="text" name="name" required autocomplete="name" placeholder="例：山田 太郎">
+      </label>
+      <div class="pair">
+        <label><span class="lb">メールアドレス<span class="reqm">必須</span></span>
+          <input type="email" name="email" id="f-email" required autocomplete="email" inputmode="email" placeholder="例：info@example.com">
+        </label>
+        <label><span class="lb">電話番号<span class="reqm">必須</span></span>
+          <input type="tel" name="tel" id="f-tel" required autocomplete="tel" inputmode="tel" placeholder="例：090-0000-0000">
+        </label>
+      </div>
+      <p class="before">送信後、1営業日以内にご返信します。<br>相談・デザイン案の作成は無料です。ご提案後に契約しなくても費用はかかりません。</p>
+      <p class="form-note">送信いただいた内容は<a href="https://easywebcraft.github.io/easyweb-lp/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に基づいて取り扱います。</p>
+      <button class="btn-red" type="submit">無料でデザイン案を見てみる<span class="arr" aria-hidden="true">→</span></button>
+      <p class="cta-note">契約不要｜費用0円｜見送ってもOK</p>
+      <p class="form-err" id="form-err" hidden>送信できませんでした。お手数ですが、時間をおいて再度お試しください。</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<a class="sticky-cta" href="#contact" hidden>無料でデザイン案を見てみる →</a>
+
+<footer>
+  <img src="img/logo-full.webp" alt="EasyWebCraft Web Design &amp; Development" width="800" height="124" loading="lazy">
+  <div>運営：株式会社TAC</div>
+  <div>愛知県名古屋市守山区瀬古東1-1701 201</div>
+  <div style="margin-top:10px"><a href="https://easywebcraft.github.io/easyweb-lp/privacy.html">プライバシーポリシー</a>｜<a href="https://easywebcraft.github.io/easyweb-lp/tokushoho.html">特定商取引法に基づく表記</a></div>
+  <div style="margin-top:8px">※表示価格は税別です。最低契約期間は6ヶ月です。</div>
+</footer>
+
+<script>
+// スマホのメニュー
+(function () {
+  var b = document.querySelector('.menu-btn'), m = document.getElementById('mnav');
+  b.addEventListener('click', function () { var o = m.classList.toggle('open'); b.setAttribute('aria-expanded', o); });
+  m.addEventListener('click', function (e) { if (e.target.tagName === 'A') { m.classList.remove('open'); b.setAttribute('aria-expanded', false); } });
+})();
+// スマホの固定CTA：フォームなどが見えている間だけ隠す（FVにはボタンを置かないので最初から出す）
+(function () {
+  var bar = document.querySelector('.sticky-cta');
+  if (!bar || !('IntersectionObserver' in window)) return;
+  bar.hidden = false;
+  var seen = new Set();
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
+    bar.classList.toggle('off', seen.size > 0);
+  }, { threshold: 0.01 });
+  [document.getElementById('contact'), document.querySelector('.rl-cta')].forEach(function (el) { if (el) io.observe(el); });
+})();
+
+// フォーム送信
+document.getElementById('cform').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.target, btn = f.querySelector('button[type="submit"]'), err = document.getElementById('form-err');
+  var em = document.getElementById('f-email'), tl = document.getElementById('f-tel');
+  em.classList.remove('bad'); tl.classList.remove('bad');
+  var ev = em.value.trim(), tv = tl.value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ev)) { em.classList.add('bad'); err.textContent = 'メールアドレスの形式をご確認ください。'; err.hidden = false; em.focus(); return; }
+  if (tv.replace(/[^0-9]/g, '').length < 10) { tl.classList.add('bad'); err.textContent = '電話番号の桁数をご確認ください。'; err.hidden = false; tl.focus(); return; }
+  err.hidden = true; btn.disabled = true; btn.textContent = '送信中…';
+  fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+    .then(function (res) {
+      if (!res.ok) throw new Error('send failed');
+      f.innerHTML = '<p class="form-sent">送信しました。ありがとうございます。<br>1営業日以内にご連絡いたします。</p>';
+    })
+    .catch(function () { btn.disabled = false; btn.textContent = '無料でデザイン案を見てみる →'; err.textContent = '送信できませんでした。お手数ですが、時間をおいて再度お試しください。'; err.hidden = false; });
+});
+</script>
+</body>
+</html>
