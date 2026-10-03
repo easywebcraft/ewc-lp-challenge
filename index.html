@@ -1325,6 +1325,38 @@ body{font-size:16.5px}
   .fv3-brand{margin-top:4px !important}
   .fv3-brand img{width:52% !important}
 }
+
+/* ===== FV PC 微調整（2026-10-03）：コピー → 余白 → 料金 → 解約OK → 少し広め → ブランド → CTA ===== */
+.fv3-pc-cta{display:none}
+@media (min-width:700px){
+  .fv3-in{padding-bottom:20px !important; justify-content:flex-end !important}
+  .fv3-for{margin-bottom:auto}
+  .fv3-price .z{font-size:39px}
+  .fv3-price .p b{font-size:104px}
+  .fv3-price .p small{font-size:31px}
+  .fv3-h .c{font-size:27px}
+  .fv3-h .c em{font-size:1.55em}
+  .fv3-brand{margin-top:26px}
+  .fv3-brand .k{font-size:22px}
+  .fv3-brand img{margin-top:3px}
+
+  .fv3-price{margin-top:0 !important}
+  .fv3-cancel{margin-top:2px}
+}
+/* PCの広い画面（固定ボタンが出ない幅）だけ、FVの中に申し込みボタンを置き、直下の赤いボタンは外す（重複させない） */
+@media (min-width:1100px){
+  .fv3-pc-cta{display:inline-flex; margin:16px 0 0; width:auto; max-width:none; font-size:19px; padding:10px 26px}
+  .fv-cta .btn-red, .fv-cta .cta-note{display:none}
+  .fv-cta{padding:16px 0 18px}
+  .fv-line{margin-top:0}
+}
+@media (min-width:700px) and (max-width:1099px){
+  .fv3-in{padding-bottom:28px !important}
+}
+@media (min-width:1200px){
+  .fv3-price .p b{font-size:126px}
+  .fv3-price .p small{font-size:42px}
+}
 </style>
 <script>
 // FVの高さ用：開いたときの見える高さを1回だけ測って固定（アドレスバーの出入りでFVが伸び縮みしないように）
@@ -1368,6 +1400,7 @@ body{font-size:16.5px}
     <p class="fv3-h fv3-cancel"><span class="c">7ヶ月目から<br class="sp-br"><em>いつでも解約OK</em><span class="terms-sp">※最低契約期間6ヶ月</span></span></p>
     <p class="fv3-terms">※最低契約期間6ヶ月</p>
     <h1 class="fv3-brand"><span class="k">月額制ホームページ制作サービス</span><img src="img/v3/logo-fv.webp" alt="EasyWebCraft" width="1400" height="150"></h1>
+    <a class="btn-red fv3-pc-cta" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料でデザイン案を見てみる<span class="arr" aria-hidden="true">→</span></a>
   </div>
 </section>
 
