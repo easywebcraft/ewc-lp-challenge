@@ -262,6 +262,26 @@ section + section{border-top:1px solid rgba(227,180,58,.18)}
 .form-sent{margin:0; text-align:center; font-weight:800}
 .form-err{margin:0; text-align:center; color:#c4121a; font-size:13px; font-weight:700}
 
+/* 公式LINEの導線（メインの申し込みフォームより控えめに置く） */
+.line-alt{max-width:640px; margin:22px auto 0; text-align:center; padding:20px 18px 18px; border:1px solid rgba(255,255,255,.18); border-radius:14px; background:rgba(0,0,0,.35)}
+.line-alt-t{margin:0 0 12px; font-size:14px; font-weight:700; color:#f3ead6}
+.line-alt-t b{color:#fff}
+.btn-line{display:inline-flex; align-items:center; justify-content:center; gap:10px; min-width:260px; padding:13px 26px; border-radius:999px;
+  background:#06C755; color:#fff; font-weight:900; font-size:17px; text-decoration:none; box-shadow:0 6px 18px rgba(6,199,85,.3)}
+.btn-line svg{width:22px; height:22px; fill:#fff}
+.btn-line:hover{background:#05b34c}
+.btn-line:focus-visible{outline:3px solid #fff; outline-offset:3px}
+.line-alt-n{margin:10px 0 0; font-size:12px; color:#bdb3a0}
+.sticky-line{position:fixed; right:10px; bottom:calc(10px + env(safe-area-inset-bottom, 0px)); z-index:61; width:58px; height:52px; border-radius:999px;
+  background:#06C755; border:2px solid #7fe3a8; color:#fff; text-decoration:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px;
+  font-size:10px; font-weight:900; box-shadow:0 8px 24px rgba(0,0,0,.5); transition:transform .25s, opacity .25s}
+.sticky-line svg{width:22px; height:22px; fill:#fff}
+.sticky-line.off{transform:translateY(140%); opacity:0; pointer-events:none}
+.sticky-line[hidden]{display:none}
+a.sticky-cta{right:76px}
+@media (min-width: 700px){ .sticky-line{display:none} }
+@media (prefers-reduced-motion: reduce){ .sticky-line{transition:none} }
+
 footer{background:#000; color:#aaa; text-align:center; font-size:12px; padding:30px 16px 96px; border-top:1px solid rgba(227,180,58,.25)}
 footer img{height:auto; width:190px; margin:0 auto 10px}
 footer a{color:#ddd}
@@ -1531,18 +1551,24 @@ body{font-size:16.5px}
       <p class="cta-note">契約不要｜費用0円｜見送ってもOK</p>
       <p class="form-err" id="form-err" hidden>送信できませんでした。お手数ですが、時間をおいて再度お試しください。</p>
     </form>
+    <div class="line-alt">
+      <p class="line-alt-t">入力が面倒な方は、<b>LINEでもご相談いただけます</b></p>
+      <a class="btn-line" href="https://line.me/R/ti/p/@508ijijg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.3 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a>
+      <p class="line-alt-n">友だち追加して、メッセージを送るだけ。返信は営業時間内に順次いたします。</p>
+    </div>
   </div>
 </section>
 
 </main>
 
 <a class="sticky-cta" href="#contact" hidden>無料でデザイン案を見てみる →</a>
+<a class="sticky-line" href="https://line.me/R/ti/p/@508ijijg" target="_blank" rel="noopener" aria-label="LINEで相談する" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.3 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg><span>LINE</span></a>
 
 <footer>
   <img src="img/logo-full.webp" alt="EasyWebCraft Web Design &amp; Development" width="800" height="124" loading="lazy">
   <div>運営：株式会社TAC</div>
   <div>愛知県名古屋市守山区瀬古東1-1701 201</div>
-  <div style="margin-top:10px"><a href="https://easywebcraft.github.io/easyweb-lp/privacy.html">プライバシーポリシー</a>｜<a href="https://easywebcraft.github.io/easyweb-lp/tokushoho.html">特定商取引法に基づく表記</a></div>
+  <div style="margin-top:10px"><a href="https://line.me/R/ti/p/@508ijijg" target="_blank" rel="noopener">公式LINE</a>｜<a href="https://easywebcraft.github.io/easyweb-lp/privacy.html">プライバシーポリシー</a>｜<a href="https://easywebcraft.github.io/easyweb-lp/tokushoho.html">特定商取引法に基づく表記</a></div>
   <div style="margin-top:8px">※表示価格は税別です。最低契約期間は6ヶ月です。</div>
 </footer>
 
@@ -1555,13 +1581,14 @@ body{font-size:16.5px}
 })();
 // スマホの固定CTA：フォームなどが見えている間だけ隠す（FVにはボタンを置かないので最初から出す）
 (function () {
-  var bar = document.querySelector('.sticky-cta');
+  var bar = document.querySelector('.sticky-cta'), line = document.querySelector('.sticky-line');
   if (!bar || !('IntersectionObserver' in window)) return;
-  bar.hidden = false;
+  bar.hidden = false; if (line) line.hidden = false;
   var seen = new Set();
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
     bar.classList.toggle('off', seen.size > 0);
+    if (line) line.classList.toggle('off', seen.size > 0);
   }, { threshold: 0.01 });
   [document.getElementById('contact'), document.querySelector('.rl-cta')].forEach(function (el) { if (el) io.observe(el); });
 })();
