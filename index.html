@@ -1361,15 +1361,17 @@ body{font-size:16.5px}
    高さは「画像の縦横比」と「画面の高さ−ヘッダー」の小さい方。文字の大きさも画面の高さに合わせて縮める */
 @media (min-width:1100px){
   .fv3-in{max-width:none !important; padding-left:max(32px, 2.5vw) !important; min-height:0 !important; height:min(56.3vw, calc(100vh - 63px)); padding-top:0 !important; padding-bottom:min(20px, 2.2vh) !important; justify-content:flex-end !important}
-  .fv3-price .z{font-size:min(2.6vw, 4.1vh) !important}
-  .fv3-price .p small{font-size:min(2.6vw, 4.1vh) !important}
-  .fv3-h.fv3-price .p b,.fv3-price .p b{font-size:min(7.4vw, 11.6vh) !important}
+  .fv3-price .z{font-size:min(3.3vw, 5.2vh) !important}
+  .fv3-price .p small{font-size:min(3.3vw, 5.2vh) !important}
+  .fv3-h.fv3-price .p b,.fv3-price .p b{font-size:min(7.9vw, 12.4vh) !important}
   .fv3-tax{font-size:min(15px, 1.8vh) !important}
   .fv3-h .c{font-size:min(2.1vw, 3.4vh) !important}
   .fv3-terms{font-size:min(15px, 1.8vh) !important; margin-top:min(6px,.6vh) !important}
   .fv3-brand{margin-top:min(22px, 2.4vh) !important}
   .fv3-brand .k{font-size:min(1.1vw, 1.9vh) !important}
   .fv3-brand img{width:min(26vw, 40vh) !important}
+  .fv3-price, .fv3-cancel{max-width:none !important; flex-wrap:nowrap !important; white-space:nowrap}
+  .fv3-cancel br{display:none}
   .fv3-pc-cta{margin-top:min(16px, 1.8vh); font-size:min(19px, 2.4vh); padding:min(10px,1.2vh) 26px}
   .fv3 .fv3-for{left:max(32px, 2.5vw) !important}
 }
