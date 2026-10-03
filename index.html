@@ -1328,6 +1328,7 @@ body{font-size:16.5px}
 
 /* ===== FV PC 微調整（2026-10-03）：コピー → 余白 → 料金 → 解約OK → 少し広め → ブランド → CTA ===== */
 .fv3-pc-cta{display:none}
+.fv3-pc-line{display:none}
 @media (min-width:700px){
   .fv3-in{padding-bottom:20px !important; justify-content:flex-end !important}
   .fv3-for{margin-bottom:auto}
@@ -1374,6 +1375,11 @@ body{font-size:16.5px}
   .fv3-cancel br{display:none}
   .fv3-pc-cta{margin-top:min(16px, 1.8vh); font-size:min(19px, 2.4vh); padding:min(10px,1.2vh) 26px}
   .fv3 .fv3-for{left:max(32px, 2.5vw) !important}
+  /* 申し込みボタンの横にLINEを並べ、FV直下の帯は広いPCでは出さない（列をそろえるため） */
+  .fv3-pc-ctas{display:flex; align-items:center; gap:18px; margin-top:min(16px, 1.8vh); max-width:none !important}
+  .fv3-pc-ctas .fv3-pc-cta{margin-top:0}
+  .fv3-pc-line{display:inline-flex !important; font-size:min(16px, 2vh); padding:min(9px,1.1vh) 20px; background:rgba(0,0,0,.45)}
+  .fv-cta{display:none}
 }
 </style>
 <script>
@@ -1418,7 +1424,7 @@ body{font-size:16.5px}
     <p class="fv3-h fv3-cancel"><span class="c">7ヶ月目から<br class="sp-br"><em>いつでも解約OK</em><span class="terms-sp">※最低契約期間6ヶ月</span></span></p>
     <p class="fv3-terms">※最低契約期間6ヶ月</p>
     <h1 class="fv3-brand"><span class="k">月額制ホームページ制作サービス</span><img src="img/v3/logo-fv.webp" alt="EasyWebCraft" width="1400" height="150"></h1>
-    <a class="btn-red fv3-pc-cta" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料でデザイン案を見てみる<span class="arr" aria-hidden="true">→</span></a>
+    <div class="fv3-pc-ctas"><a class="btn-red fv3-pc-cta" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料でデザイン案を見てみる<span class="arr" aria-hidden="true">→</span></a><a class="btn-line-sub fv3-pc-line" href="https://line.me/R/ti/p/@508ijijg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.3 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで気軽に相談する</a></div>
   </div>
 </section>
 
