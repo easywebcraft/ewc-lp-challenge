@@ -604,6 +604,23 @@ footer a{color:#ddd}
 .rl-show-h{margin:0 0 10px; text-align:center; font-weight:900; color:var(--gold-lt)}
 .rl-imgs{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; max-width:1000px; margin:0 auto}
 .rl-imgs img{width:100%; height:auto; border-radius:8px; border:1px solid var(--line)}
+/* 制作実績 */
+.works{max-width:1000px; margin:0 auto 30px; scroll-margin-top:80px}
+.works-h{margin:0 0 14px; text-align:center; font-family:var(--serif); font-weight:900; font-size:clamp(20px,5vw,28px); color:var(--gold-lt)}
+.works-h span{display:inline-block; padding:0 1.2em; background:linear-gradient(90deg,transparent,rgba(227,180,58,.18),transparent)}
+.work{display:grid; gap:18px; align-items:center; padding:18px; border:1px solid var(--line); border-radius:16px; background:rgba(0,0,0,.5); color:var(--ink); text-decoration:none; transition:border-color .2s, transform .2s}
+.work:hover{border-color:var(--gold); transform:translateY(-2px)}
+@media (min-width:700px){ .work{grid-template-columns:1.35fr 1fr; padding:24px; gap:28px} }
+.work-mock{position:relative; display:block; padding-right:16%}
+.work-mock img{display:block; height:auto; border-radius:8px; box-shadow:0 12px 30px rgba(0,0,0,.6)}
+.work-mock .pc{width:100%; border:1px solid var(--line2)}
+.work-mock .sp{position:absolute; right:0; bottom:-6%; width:24%; border:3px solid #1b1712; border-radius:14px}
+.work-txt{display:block; text-align:left}
+.work-cat{display:inline-block; padding:2px 12px; border:1px solid rgba(227,180,58,.6); border-radius:999px; font-size:12px; font-weight:800; color:var(--gold-lt)}
+.work-name{display:block; margin:10px 0 8px; font-family:var(--serif); font-weight:900; font-size:clamp(19px,4.8vw,24px); color:#fff}
+.work-desc{display:block; font-size:14px; line-height:1.8; color:#e8e2d5}
+.work-link{display:inline-flex; gap:6px; margin-top:12px; font-weight:800; font-size:14px; color:var(--gold-lt); border-bottom:1px solid currentColor}
+@media (max-width:699px){ .work-mock{margin-bottom:10px} }
 .rl-pts{list-style:none; margin:22px auto 0; padding:0; max-width:1000px; display:grid; gap:10px}
 @media (min-width:700px){ .rl-pts{grid-template-columns:repeat(3,1fr)} }
 .rl-pts li{border:1px solid var(--line); border-radius:12px; background:rgba(0,0,0,.5); padding:14px 16px; font-size:13px; color:#e8e2d5}
@@ -1421,13 +1438,13 @@ body{font-size:16.5px}
   <div class="top-in">
     <a class="logo" href="#top" aria-label="EasyWebCraft ページの先頭へ"><img src="img/logo-mark.webp" alt="EasyWebCraft" width="640" height="69"></a>
     <nav class="gnav" aria-label="ページ内メニュー">
-      <a href="#designs">デザイン例</a><a href="#flow">ご利用の流れ</a><a href="#can">サービスの特徴</a><a href="#plans">料金プラン</a><a href="#faq">よくある質問</a>
+      <a href="#works">制作実績</a><a href="#flow">ご利用の流れ</a><a href="#can">サービスの特徴</a><a href="#plans">料金プラン</a><a href="#faq">よくある質問</a>
     </nav>
     <a class="cta" href="#contact">無料デザイン案を見る →</a>
     <button class="menu-btn" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
   </div>
   <nav class="mnav" id="mnav" aria-label="メニュー">
-    <a href="#designs">デザイン例</a><a href="#flow">ご利用の流れ</a><a href="#can">サービスの特徴</a><a href="#plans">料金プラン</a><a href="#faq">よくある質問</a>
+    <a href="#works">制作実績</a><a href="#flow">ご利用の流れ</a><a href="#can">サービスの特徴</a><a href="#plans">料金プラン</a><a href="#faq">よくある質問</a>
   </nav>
 </header>
 
@@ -1543,8 +1560,21 @@ body{font-size:16.5px}
       <li><b>見送っても費用は0円</b></li>
     </ul>
     <div class="rl-show" id="designs">
+      <div class="works" id="works">
+        <p class="works-h"><span>制作実績</span></p>
+        <a class="work" href="https://lfgroup.jp/" target="_blank" rel="noopener">
+          <span class="work-mock"><img class="pc" src="img/v3/w-lf-pc.webp" alt="LFグループ株式会社のホームページ（パソコン表示）" width="1280" height="800" loading="lazy"><img class="sp" src="img/v3/w-lf-sp.webp" alt="LFグループ株式会社のホームページ（スマホ表示）" width="780" height="1688" loading="lazy"></span>
+          <span class="work-txt">
+            <span class="work-cat">コーポレートサイト</span>
+            <span class="work-name">LFグループ株式会社 様</span>
+            <span class="work-desc">個人のお客様・法人のお客様それぞれへの案内から、事業紹介・会社概要・採用情報までをまとめたホームページです。</span>
+            <span class="work-link">実際のサイトを見る<span aria-hidden="true">→</span></span>
+          </span>
+        </a>
+      </div>
+      <p class="rl-show-h">デザイン案の例</p>
       <div class="rl-imgs"><img src="img/v3/s-izakaya.webp" alt="飲食店のデザイン案の例" width="1100" height="806" loading="lazy"><img src="img/v3/s-salon.webp" alt="美容室のデザイン案の例" width="1100" height="815" loading="lazy"><img src="img/v3/s-gym.webp" alt="パーソナルジムのデザイン案の例" width="1100" height="803" loading="lazy"></div>
-      <p class="note">※掲載しているのはサンプルデザインです。実際の制作実績・お客様の声は、公開の許可をいただけしだい掲載します。</p>
+      <p class="note">※「デザイン案の例」の3点はサンプルデザインです。</p>
     </div>
     <div class="rl-cta">
       <a class="btn-red big" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg>無料でデザイン案を見てみる<span class="arr" aria-hidden="true">→</span></a>
