@@ -3,6 +3,14 @@
 <head>
 <!-- FV：生成AIで作り直した旧版FV（筆文字「その挑戦に、ホームページを。」＋男性）を背景に、経営者様へ・料金・解約OK・ロゴを重ねる（2026-09-30 v2を本番に） -->
 <meta charset="utf-8">
+<!-- Google アナリティクス（アクセス数・ボタンのクリック・お問い合わせの数を数える） -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X6PBY44TTB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'G-X6PBY44TTB');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>起業・開業したばかりの方へ｜月額5,980円〜のホームページ制作 EasyWebCraft</title>
@@ -1742,6 +1750,16 @@ body{font-size:16.5px}
   }
 })();
 
+// ボタンが押された回数を Google アナリティクスに送る（どのボタンかは link_text で分かる）
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a');
+  if (!a || typeof gtag !== 'function') return;
+  var h = a.getAttribute('href') || '', name = null;
+  if (h.indexOf('line.me') !== -1) name = 'line_click';
+  else if (h === '#contact' || h === '#cform') name = 'cta_click';
+  else if (a.classList.contains('work')) name = 'works_click';
+  if (name) gtag('event', name, { link_text: a.textContent.replace(/\s+/g, ' ').trim().slice(0, 40), link_url: h });
+});
 // フォーム送信
 document.getElementById('cform').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -1755,6 +1773,7 @@ document.getElementById('cform').addEventListener('submit', function (e) {
   fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
     .then(function (res) {
       if (!res.ok) throw new Error('send failed');
+      if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'form' });
       f.innerHTML = '<p class="form-sent">送信しました。ありがとうございます。<br>1営業日以内にご連絡いたします。</p>';
     })
     .catch(function () { btn.disabled = false; btn.textContent = '無料でデザイン案を見てみる →'; err.textContent = '送信できませんでした。お手数ですが、時間をおいて再度お試しください。'; err.hidden = false; });
